@@ -6,6 +6,7 @@ import DrugSection from '../components/Drug/DrugSection'
 import NavButtons from '../components/NavButtons/NavButtons'
 import OfferSection from '../components/Offers/OfferSection'
 import ServiceSection from '../components/Service/ServiceSection'
+import SubscriptionSection from '../components/SubscriptionSection/SubscriptionSection'
 // import Header from '../components/Header'
 
 const HomePage = () => {
@@ -19,6 +20,7 @@ const HomePage = () => {
         <ArticleSection />
         <DrugSection />
         <RecommendationSection />
+        <SubscriptionSection />
     </div>
   )
 }
