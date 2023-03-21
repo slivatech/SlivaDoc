@@ -6,9 +6,38 @@ export const StyledArticle = styled(Container)`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-
-`
+`;
 
 export const ArticleLayout = styled.div`
-    
+  display: flex;
+  column-gap: 2rem;
+`;
+
+export const ArticleBanner = styled.img<{ large?: boolean }>(
+  ({ large }) => `
+  max-width:${large ? "100%" : "400px"};
 `
+);
+
+export const Article = styled.article<{ column?: boolean }>(
+  ({ column }) => `
+  display:flex;
+  flex-direction:${column ? "column" : "row"};
+  gap:1rem;
+  max-width:800px;
+
+`
+);
+
+export const TextArticle = styled.div`
+  & > * {
+    margin-top: 12px;
+  }
+`;
+
+export const BannerSection = styled.div`
+  display: flex;
+  
+  flex-direction: column;
+  row-gap:1rem
+`;

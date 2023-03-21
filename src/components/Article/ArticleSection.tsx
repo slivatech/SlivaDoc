@@ -2,7 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
-import { StyledArticle } from "./ArticleStyled";
+import ArticleContent from "./ArticleContent";
+import {
+  Article,
+  ArticleBanner,
+  ArticleLayout,
+  BannerSection,
+  StyledArticle,
+  TextArticle,
+} from "./ArticleStyled";
 
 const StyledHref = styled.a`
   font-weight: 500;
@@ -50,14 +58,49 @@ const ArticleSection = () => {
       </div>
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
-        {buttonList.map((button) => (
-          <Button
-            color="white"
-            text={button}
-            bgColor="linear-gradient(360deg, rgba(146,172,210,1) 21%, rgba(235,235,235,1) 100%);"
-          />
+        {buttonList.map((button,i) => (
+          <Button text={button} key={i} active={false} />
         ))}
       </GroupButtons>
+      <ArticleLayout>
+        <div
+          style={{ display: "flex", flexDirection: "column", rowGap: "1rem",flex:1,marginTop:"1rem" }}
+        >
+          <Article column={true}>
+            <ArticleBanner large={true} src="/promo-banner.png" />
+            <ArticleContent
+              subheader="Makanan sehat"
+              header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
+            />
+          </Article>
+          <Article>
+            <ArticleBanner src="/allergic.png" />
+            <ArticleContent
+              subheader="Makanan sehat"
+              header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
+            />
+          </Article>
+          <Article>
+            <ArticleBanner src="/allergic-2.png" />
+            <ArticleContent
+              subheader="Makanan sehat"
+              header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
+            />
+          </Article>
+          <Article>
+            <ArticleBanner src="/allergic-3.png" />
+            <ArticleContent
+              subheader="Makanan sehat"
+              header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
+            />
+          </Article>
+        </div>
+        <BannerSection>
+          <img src="/peliharaan.png" />
+          <img src="/petshop.png" />
+          <img src="/pet-services.png" />
+        </BannerSection>
+      </ArticleLayout>
     </StyledArticle>
   );
 };

@@ -4,30 +4,32 @@ import { GroupButtons } from "../GroupButtons/GroupButtons";
 import { OfferCarousel, OfferImage, StyledOffer } from "./OfferStyle";
 
 const OfferSection: FC = () => {
+  let active = true;
   return (
     <StyledOffer>
       <h1>Penawaran Menarik</h1>
       <GroupButtons>
         <Button
-          color="white"
+          // color="white"
           text="Semua"
-          bgColor="linear-gradient(360deg, rgba(146,172,210,1) 21%, rgba(235,235,235,1) 100%);"
+          active={true}
         />
         <Button
-          color="white"
+          // color="black"
           text="Promo"
-          bgColor="linear-gradient(360deg, rgba(146,172,210,1) 21%, rgba(235,235,235,1) 100%);"
+          active={false}
         />
         <Button
-          color="white"
+          // color="black"
           text="Kerjasama"
-          bgColor="linear-gradient(360deg, rgba(146,172,210,1) 21%, rgba(235,235,235,1) 100%);"
+          active={false}
         />
       </GroupButtons>
       <OfferCarousel>
-        <OfferImage src="https://images.unsplash.com/photo-1679000631940-4fab43b817d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
-        <OfferImage src="https://images.unsplash.com/photo-1679000631940-4fab43b817d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
-        <OfferImage src="https://images.unsplash.com/photo-1679000631940-4fab43b817d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
+        <OfferImage src="/promo-banner.png" />
+        <OfferImage src="/ig-banner.png" />
+
+        <OfferImage src="/promo-banner.png" />
       </OfferCarousel>
     </StyledOffer>
   );
