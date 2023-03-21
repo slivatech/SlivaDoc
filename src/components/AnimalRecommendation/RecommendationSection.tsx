@@ -6,7 +6,7 @@ import { SVGBox } from "../SVGBox";
 
 const RecommendationSection = () => {
   return (
-    <Container style={{ padding: "2rem 0" }}>
+    <Container style={{ padding: "2rem 1rem" }}>
       <RowHeader title="Rekomendasi Hewan Terbaik" />
       <p style={{ margin: "1rem 0", color: "gray", fontSize: "12px" }}>
         Dapatkan informasi seputar jenis hewan kesukaan anda disini

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container } from "../Container";
 
 export const ServiceStyle = styled(Container)`
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;

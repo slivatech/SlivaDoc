@@ -4,8 +4,12 @@ import Button from '../Button/Button'
 import SearchInput from './SearchStyle'
 
 const StyledForm = styled.form`
-  width:750px;
+  max-width:750px;
   white-space: nowrap;
+  @media (max-width:768px) {
+    width:100%;
+  }
+
 `
 const Search:FC = () => {
   return (
