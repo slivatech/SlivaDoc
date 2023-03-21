@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
+import RowHeader from "../RowHeader";
 import ArticleContent from "./ArticleContent";
 import {
   Article,
@@ -46,25 +47,22 @@ const buttonList: string[] = [
 const ArticleSection = () => {
   return (
     <StyledArticle>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h1>Baca Artikel Kesehatan</h1>
-        <StyledHref>Lihat Semua Kategori</StyledHref>
-      </div>
+      <RowHeader title="Baca Artikel Kesehatan" />
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
-        {buttonList.map((button,i) => (
+        {buttonList.map((button, i) => (
           <Button text={button} key={i} active={false} />
         ))}
       </GroupButtons>
       <ArticleLayout>
         <div
-          style={{ display: "flex", flexDirection: "column", rowGap: "1rem",flex:1,marginTop:"1rem" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "1rem",
+            flex: 1,
+            marginTop: "1rem",
+          }}
         >
           <Article column={true}>
             <ArticleBanner large={true} src="/promo-banner.png" />

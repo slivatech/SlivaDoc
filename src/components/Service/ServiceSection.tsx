@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../Button/Button";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
 import NavButtons from "../NavButtons/NavButtons";
+import RowHeader from "../RowHeader";
 import { servicesList } from "./data";
 import { Service, ServiceGrid, ServiceStyle } from "./ServiceStyle";
 
@@ -29,16 +30,8 @@ const StyledHref = styled.a`
 const ServiceSection: FC = () => {
   return (
     <ServiceStyle>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h1>Layanan SlivaDoc</h1>
-        <StyledHref>Lihat Semua</StyledHref>
-      </div>
+      <RowHeader title="Layanan SlivaDoc" />
+
 
       <ServiceGrid>
         {servicesList.map((service)=>(
