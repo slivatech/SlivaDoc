@@ -1,8 +1,9 @@
-import React from 'react';
-import './App.css';
-import DetailArtikel from './pages/DetailArtikel';
 
-function App() {
+import './App.css';
+import DetailArtikel from './pages/DetailArtikel/DetailArtikel';
+
+
+const App = () => {
   return (
     <DetailArtikel/>
   );

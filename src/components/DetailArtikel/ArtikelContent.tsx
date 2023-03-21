@@ -1,5 +1,6 @@
 import React from "react";
-import {ArticleAuthor,ArticleContent,ArticleImage,ArticleTitle,ArticleWrapper,CoreArticleContent} from '../../pages/DetailArtikelStyle'
+import Sidebar from "./Sidebar";
+import {ArticleAuthor,ArticleContent,ArticleImage,ArticleTitle,ArticleWrapper,CoreArticleContent} from '../../pages/DetailArtikel/DetailArtikelStyle'
 
 type Props = {
   title: string;

@@ -1,9 +1,9 @@
 import React from "react";
-import ArticlePage from "../components/DetailArtikel/ArtikelContent";
-import banner from'../assets/banner.png';
-import DoctorListItem from "../components/DetailArtikel/DoctorListItem";
+import ArticlePage from "../../components/DetailArtikel/ArtikelContent";
+import banner from'../../assets/banner.png';
+import DoctorListItem from '../../components/DetailArtikel/DoctorListItem';
 import { DoctorListContainer } from "./DetailArtikelStyle";
-import doctor from '../assets/doctor.png'
+import doctor from '../../assets/doctor.png'
 
 interface Doctor {
   id: number;

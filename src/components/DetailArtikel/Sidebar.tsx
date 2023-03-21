@@ -28,8 +28,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <CategoryList>
         <CategoryItem>Category 1</CategoryItem>
-  
-      </CategoryList>
+        </CategoryList>
     </SidebarContainer>
   );
 };
