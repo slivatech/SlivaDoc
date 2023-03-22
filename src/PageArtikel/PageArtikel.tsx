@@ -1,6 +1,6 @@
 import React from 'react'
 import img from '../image/artikel/img-artikel.svg';
-import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Top } from './PageArtikelStyle';
+import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Search, Top } from './PageArtikelStyle';
 
 
 interface IListArticle {
@@ -46,6 +46,13 @@ const PageArtikel = () => {
   return (
     <>
         <Container>
+            <Search>
+                <form>
+                    <input type="text" placeholder="Cari artikel berdasarkan judul, kategori, topik" name="search"/>
+                    <button type="submit">Submit</button>
+                </form>
+                <button className='btn-all'>Lihat Semua</button>
+            </Search>
             <Top>
                 <h1 style={{marginBottom: '28px'}}>Artikel Terpopuler</h1>
                 <div className='top-article'>

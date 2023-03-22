@@ -229,3 +229,45 @@ export const Button = styled.div`
         border: none;
     }
 `
+export const Search = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #ECE4E4;
+
+    button {
+        background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
+        color: white;
+        border: none;
+    }
+    
+    form {
+        display: flex;
+        width: 85%;
+        border: 1px solid #0D6EFD;
+        border-radius: 5px;
+        @media (max-width: 720px) {
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 23px;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .btn-all {
+        padding: 11px 26px;
+        border-radius: 5px;
+        @media (max-width: 720px) {
+            display: none;
+        }
+    }
+`
