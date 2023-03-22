@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledH3 } from "../FontStyle/Font";
 import { Article, ArticleBanner, TextArticle } from "./ArticleStyled";
 
 interface IContent {
@@ -10,9 +11,9 @@ const ArticleContent = ({ header,subheader }:IContent) => {
   return (
 
       <TextArticle>
-        <h3>{header}.</h3>
-        <p>{subheader}</p>
-        <p style={{ fontSize: "12px", color: "gray" }}>
+        <StyledH3>{header}</StyledH3>
+        <p style={{ fontWeight:"normal" }}>{subheader}</p>
+        <p style={{ fontSize: "clamp(10px,4vw,12px)", color: "gray", }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio
           corporis cupiditate porro, eveniet dolores.
         </p>
@@ -21,7 +22,7 @@ const ArticleContent = ({ header,subheader }:IContent) => {
           style={{
             textDecoration: "none",
             marginTop: "1rem",
-            fontSize: "14px",
+            fontSize: "clamp(10px,5vw,12px)",
           }}
         >
           Baca Selengkapnya

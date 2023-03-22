@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Button from "../Button/Button";
+import { StyledH1 } from "../FontStyle/Font";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
 import { OfferCarousel, OfferImage, StyledOffer } from "./OfferStyle";
 
@@ -7,7 +8,7 @@ const OfferSection: FC = () => {
   let active = true;
   return (
     <StyledOffer>
-      <h1>Penawaran Menarik</h1>
+      <StyledH1>Penawaran Menarik</StyledH1>
       <GroupButtons>
         <Button
           // color="white"

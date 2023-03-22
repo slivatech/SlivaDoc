@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const GridRow = styled.div`
   display: grid;
-  gap: 1rem;
-  grid-template-rows: auto auto;
-  grid-auto-rows: 0px;
-  position: relative;
-  overflow: hidden;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding: 2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap:1rem;
 `;

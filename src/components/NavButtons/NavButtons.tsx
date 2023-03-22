@@ -23,6 +23,7 @@ const NavButton = styled.button(
     padding:12px 24px;
   display:flex;
   align-items: center;
+  font-weight:${theme.fontWeights.normal};
   color:${theme.colors.txtSecondary} ;
   border-radius:10px;
 

@@ -32,8 +32,8 @@ export const defaultTheme: DefaultTheme = {
     xl: "4.5rem",
   },
   fontWeights: {
-    light: 100,
-    normal: 300,
+    light: 400,
+    normal: 500,
     bold: 600,
   },
 };
