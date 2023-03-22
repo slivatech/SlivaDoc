@@ -94,7 +94,7 @@ const ArticleSection = () => {
           </Article>
         </div>
         <BannerSection>
-          <img src="/peliharaan.png" />
+          <img src="/peliharaan.png" style={{ maxWidth: "100%" }} />
           <img src="/petshop.png" />
           <img src="/pet-services.png" />
         </BannerSection>

@@ -22,6 +22,8 @@ export const StyledButton = styled.button<{
   border: none;
   border-radius: ${(props) => props.borderRadius || "4px"};
   cursor: pointer;
+  white-space: nowrap;
+  font-weight: ${(props)=>props.theme.fontWeights.normal};
   box-shadow: ${(props) =>
     props.active ? null : " rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px"};
 `;
