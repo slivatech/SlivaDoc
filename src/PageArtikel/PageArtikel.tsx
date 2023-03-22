@@ -1,13 +1,14 @@
 import React from 'react'
 import img from '../image/artikel/img-artikel.svg';
-import { Banner, Container, List, ListImage, ListInfo, Row } from './PageArtikelStyle';
+import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Top } from './PageArtikelStyle';
 
 
 interface IListArticle {
     id: number;
     image: string;
     title: string;
-    status: string;
+    desc?: string;
+    category?: string;
 }
 
 const ListArticle = [
@@ -15,25 +16,29 @@ const ListArticle = [
         id: 1,
         image: img,
         title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
-        status: "Radang Usus",
+        desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+        category: "Radang Usus",
     },
     {
         id: 2,
         image: img,
         title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
-        status: "Radang Usus",
+        desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+        category: "Radang Usus",
     },
     {
         id: 3,
         image: img,
         title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
-        status: "Radang Usus",
+        desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+        category: "Radang Usus",
     },
     {
         id: 4,
         image: img,
         title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
-        status: "Radang Usus",
+        desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+        category: "Radang Usus",
     },
 ]
 
@@ -41,15 +46,14 @@ const PageArtikel = () => {
   return (
     <>
         <Container>
-            <div style={{paddingTop: '23px'}}>
+            <Top>
                 <h1 style={{marginBottom: '28px'}}>Artikel Terpopuler</h1>
-                <Row>
+                <div className='top-article'>
                     <Banner>
                         <div>
                             <h1>Penyebab Bintik Putih di Kelopak Mata Bagian Dalam</h1>
                         </div>
                     </Banner>
-                    
                     <List>
                         {ListArticle.map((i: IListArticle) => 
                             <Row className='item'>
@@ -57,17 +61,44 @@ const PageArtikel = () => {
                                 <ListInfo>
                                     <h2>{i.title}</h2>
                                     <span>
-                                        <a href='#'>{i.status}</a>
+                                        <a href='#'>{i.category}</a>
                                     </span>
                                 </ListInfo>
                             </Row>
                         )}
                     </List>
-                </Row>
-            </div>
-            <div>
+                </div>
+            </Top>
+            <Content>
                 <h1>Artikel Terbaru</h1>
-            </div>
+                <Row className='cards'>
+                    {ListArticle.map((i: IListArticle) =>
+                    <Card>
+                        <CardImage src={img}/>
+                        <button>{i.category}</button>
+                        <div>
+                            <h3>{i.title}</h3>
+                            <p>{i.desc}</p>
+                            <a href='#'>Selengkapnya</a>
+                        </div>
+                    </Card>
+                    )}
+                    {ListArticle.map((i: IListArticle) =>
+                    <Card>
+                        <CardImage src={img}/>
+                        <button>{i.category}</button>
+                        <div>
+                            <h3>{i.title}</h3>
+                            <p>{i.desc}</p>
+                            <a href='#'>Selengkapnya</a>
+                        </div>
+                    </Card>
+                    )}
+                </Row>
+                <Button>
+                    <button>Tampilkan Lebih Banyak</button>
+                </Button>
+            </Content>
         </Container>
     </>
   )
