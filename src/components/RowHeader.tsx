@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledH1 } from "./FontStyle/Font";
+import {  StyledH3 } from "./FontStyle/Font";
 
 const StyledHref = styled.a`
   font-weight: 500;
@@ -24,7 +24,7 @@ const RowHeader = ({ title }: { title: string }) => {
         alignItems: "center",
       }}
     >
-      <StyledH1>{title}</StyledH1>
+      <StyledH3>{title}</StyledH3>
 
       <StyledHref>Lihat Semua</StyledHref>
     </div>

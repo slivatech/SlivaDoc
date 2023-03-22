@@ -11,3 +11,11 @@ export const StyledAbout = styled(Container)`
     flex-direction: column-reverse;
   }
 `;
+
+export const HeroImageWrapper = styled.div`
+  @media (max-width: 768px) {
+    width: 75%;
+    margin:0 auto;
+  }
+  width: 100%;
+`;

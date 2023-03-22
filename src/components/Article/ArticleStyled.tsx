@@ -16,7 +16,7 @@ export const ArticleLayout = styled.div`
 export const ArticleBanner = styled.img<{ large?: boolean }>(
   ({ large }) => `
   max-width:${large ? "100%" : "400px"};
-  
+  border-radius:5px;
 `
 );
 
@@ -24,7 +24,6 @@ export const Article = styled.article<{ column?: boolean }>(({ column }) => `
   display:flex;
   flex-direction:${column ? "column" : "row"};
   gap:1rem;
-  max-width:800px;
   align-items:${!column ? "start" : null};
   @media (max-width: 768px) {
     & > div > p {
@@ -37,17 +36,36 @@ export const Article = styled.article<{ column?: boolean }>(({ column }) => `
 
 export const TextArticle = styled.div`
   & > * {
-    margin-top: 12px;
+    margin-bottom: 12px;
   }
+
+
 
 `;
 
 export const BannerSection = styled.div`
   display: flex;
-  flex: 0.5;
+  flex: 0.4;
   flex-direction: column;
   row-gap: 1rem;
   @media (max-width: 1024px) {
     display: none;
   }
+  height:100%;
+  max-width:500px;
 `;
+
+
+export const BannerAds = styled.img`
+  width:100%;
+  height:100%;
+  border-radius:5px;
+  object-fit: cover;
+  @media (max-width:768px) {
+    display:none;
+  }
+
+  
+
+
+`

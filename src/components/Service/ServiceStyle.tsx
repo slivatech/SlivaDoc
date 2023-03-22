@@ -14,13 +14,24 @@ export const ServiceGrid = styled.div`
 
   position: relative;
   overflow: hidden;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
-export const Service = styled.div`
+export const ServiceButton = styled.button`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  border-radius:10px;
-  
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-radius: 10px;
 `;
