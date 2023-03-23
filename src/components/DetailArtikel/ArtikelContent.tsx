@@ -1,5 +1,16 @@
 import React from "react";
-import {ArticleAuthor,ArticleContent,ArticleImage,ArticleTitle,ArticleWrapper,CoreArticleContent} from '../../pages/DetailArtikel/DetailArtikelStyle'
+import promo from "../../assets/promo.png"
+import {
+  Article,
+  ArticleAuthor,
+  ArticleContent,
+  ArticleImage,
+  Sidebar,
+  ArticleTitle,
+  ArticleWrapper,
+  CoreArticleContent,
+  BannerSection
+} from '../../pages/DetailArtikel/DetailArtikelStyle'
 
 type Props = {
   title: string;
@@ -14,12 +25,19 @@ type Props = {
 const ArticlePage: React.FC<Props> = ({ title, author, date, content, image ,coreContent}) => {
   return (
     <ArticleWrapper>
+      <Article>
       <ArticleTitle>{title}</ArticleTitle>
-      <ArticleAuthor>Ditinjau oleh {author} : {date}</ArticleAuthor>
+      <ArticleAuthor >Ditinjau oleh {author} : {date}</ArticleAuthor>
       <CoreArticleContent>{coreContent}</CoreArticleContent>
       <ArticleImage src={image} alt={title} />
-      <ArticleContent>{content}
-      </ArticleContent>
+      <ArticleContent>{content}</ArticleContent>
+      </Article>
+      <Sidebar>
+        <BannerSection>
+          <img src={promo} alt="promo" />
+        </BannerSection>
+      
+      </Sidebar>
       
     </ArticleWrapper>
     
