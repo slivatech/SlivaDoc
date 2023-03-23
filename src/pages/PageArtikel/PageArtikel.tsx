@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../image/artikel/img-artikel.svg';
+import img from '../../image/artikel/img-artikel.svg';
 import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Search, Top } from './PageArtikelStyle';
 
 
