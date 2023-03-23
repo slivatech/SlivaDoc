@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import banner from '../../assets/image/artikel/Banner-artikel.svg'
+import banner from '../../assets/image/Banner-artikel.svg'
 
 
 export const Container = styled.div`
@@ -38,6 +38,7 @@ export const Top = styled.div`
         display: flex;
         flex-direction: row;
         width: 100%;
+        margin-top: 28px;
         @media (max-width : 720px) {
             flex-direction: column;
         }
@@ -63,6 +64,18 @@ export const Row = styled.div`
     width: 100%;
    
 `;
+
+export const Col = styled.div`
+    display: grid;
+    margin-top: 29px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    @media (max-width : 720px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem 1rem;
+        margin-top: 20px;
+    }
+`
 
 export const Banner = styled.div`
     background-image: url(${banner});
@@ -143,31 +156,9 @@ export const ListInfo = styled.div`
     }
 `;
 
-export const Content = styled.div`
-    .cards {
-        gap: 23px 28px;
-        flex-wrap: wrap;
-        margin-top: 29px;
-        @media(max-width: 720px) {
-            gap: 19px 7px;
-            margin-top: 20px;
-        }
-    }
-
-    p {
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 10px;
-        color: rgba(28, 28, 28, 0.7);
-        @media(max-width: 720px) {
-            font-size: 8px;
-        }
-    }
-`
-
 export const Card = styled.div`
     min-height: 231px;
-    max-width: 200px;
+    // max-width: 200px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -193,6 +184,16 @@ export const Card = styled.div`
         @media (max-width : 720px) {
             font-size: 10px;
             line-height: 15px;
+        }
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 10px;
+        color: rgba(28, 28, 28, 0.7);
+        @media(max-width: 720px) {
+            font-size: 8px;
         }
     }
     
@@ -240,6 +241,7 @@ export const Search = styled.div`
         background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
         color: white;
         border: none;
+        cursor: pointer;
     }
     
     form {
@@ -253,6 +255,9 @@ export const Search = styled.div`
 
         button {
             padding: 10px 23px;
+            @media (max-width: 720px) {
+                padding: 9px 20px;
+            }
         }
     }
 

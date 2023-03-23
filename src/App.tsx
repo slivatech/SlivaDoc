@@ -17,6 +17,7 @@ const App = () => {
       <Artikel/>
       <DetailArtikel/>
     </ThemeProvider>
+
   );
 }
 

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import img from '../../assets/image/artikel/img-artikel.svg';
-import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Search, Top } from './PageArtikelStyle';
+import img from '../../assets/image/img-artikel.svg';
+import { Banner, Button, Card, CardImage, Col, Container, List, ListImage, ListInfo, Row, Search, Top } from './PageArtikelStyle';
 
 
 interface IListArticle {
@@ -50,12 +50,12 @@ const PageArtikel = () => {
             <Search>
                 <form>
                     <input type="text" placeholder="Cari artikel berdasarkan judul, kategori, topik" name="search"/>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Search</button>
                 </form>
                 <button className='btn-all'>Lihat Semua</button>
             </Search>
             <Top>
-                <h1 style={{marginBottom: '28px'}}>Artikel Terpopuler</h1>
+                <h1>Artikel Terpopuler</h1>
                 <div className='top-article'>
                     <Banner>
                         <div>
@@ -77,9 +77,9 @@ const PageArtikel = () => {
                     </List>
                 </div>
             </Top>
-            <Content>
+            <div>
                 <h1>Artikel Terbaru</h1>
-                <Row className='cards'>
+                <Col>
                     {ListArticle.map((i: IListArticle) =>
                     <Card>
                         <CardImage src={img}/>
@@ -102,11 +102,11 @@ const PageArtikel = () => {
                         </div>
                     </Card>
                     )}
-                </Row>
+                </Col>
                 <Button>
                     <button>Tampilkan Lebih Banyak</button>
                 </Button>
-            </Content>
+            </div>
         </Container>
     </>
   )
