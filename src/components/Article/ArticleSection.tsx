@@ -138,7 +138,7 @@ const ArticleSection = () => {
               <Article>
                 <ArticleBanner>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "100%",objectFit:"cover" }}
                     src="/allergic.png"
                   />
                 </ArticleBanner>
@@ -150,7 +150,7 @@ const ArticleSection = () => {
               <Article>
                 <ArticleBanner>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "100%",objectFit:"cover" }}
                     src="/allergic-2.png"
                   />
                 </ArticleBanner>
@@ -162,7 +162,7 @@ const ArticleSection = () => {
               <Article>
                 <ArticleBanner>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "100%",objectFit:"cover" }}
                     src="/allergic-3.png"
                   />
                 </ArticleBanner>
