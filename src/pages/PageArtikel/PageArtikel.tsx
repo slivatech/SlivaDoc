@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import img from '../../image/artikel/img-artikel.svg';
+import img from '../../assets/image/artikel/img-artikel.svg';
 import { Banner, Button, Card, CardImage, Container, Content, List, ListImage, ListInfo, Row, Search, Top } from './PageArtikelStyle';
 
 
