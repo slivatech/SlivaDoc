@@ -5,23 +5,19 @@ import { GroupButtons } from "../GroupButtons/GroupButtons";
 import { OfferCarousel, OfferImage, StyledOffer } from "./OfferStyle";
 
 const OfferSection: FC = () => {
-  let active = true;
   return (
     <StyledOffer>
       <StyledH3>Penawaran Menarik</StyledH3>
       <GroupButtons>
         <Button
-          // color="white"
           text="Semua"
           active={true}
         />
         <Button
-          // color="black"
           text="Promo"
           active={false}
         />
         <Button
-          // color="black"
           text="Kerjasama"
           active={false}
         />

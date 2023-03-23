@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import Button from "../Button/Button";
 import { Container } from "../Container";
-import { GroupButtons } from "../GroupButtons/GroupButtons";
 
 const NavButtonsStyled = styled.div`
   /* max-width: 80%;
@@ -72,11 +70,6 @@ const NavButtons: FC = () => {
           <SVGIcon src="/shop.svg" />
           <p>SilvaShop</p>
         </NavButton>
-        {/* <Button  color="#27292a" bgColor='#E0E5ED' text="Chat dengan dokter" />
-        <Button color="#27292a" bgColor='#E0E5ED' text="Cari dokter" />
-        <Button color="#27292a" bgColor='#E0E5ED' text="SilvaProteksi" />
-        <Button color="#27292a" bgColor='#E0E5ED' text="SlivaShop" />
-  */}
       </NavButtonsStyled>
     </Container>
   );

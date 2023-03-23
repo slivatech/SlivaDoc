@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { StyledH3 } from "../FontStyle/Font";
-import { Article, ArticleBanner, TextArticle } from "./ArticleStyled";
+import { TextArticle } from "./ArticleStyled";
 
 interface IContent {
   header:string;

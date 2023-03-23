@@ -14,27 +14,27 @@ const DrugSection = () => {
       </p>
       <GridRow>
         <SVGBox>
-          <img src="fever.png" />
+          <img src="fever.png" alt="DrugSection"/>
           <p>Demam</p>
         </SVGBox>
         <SVGBox>
-          <img src="digestion.png" />
+          <img src="digestion.png" alt="DrugSection"/>
           <p>Pencernaan</p>
         </SVGBox>
         <SVGBox>
-          <img src="jack-wolf.png" />
+          <img src="jack-wolf.png" alt="DrugSection"/>
           <p>Kulit</p>
         </SVGBox>
         <SVGBox>
-          <img src="flu.png" />
+          <img src="flu.png" alt="DrugSection"/>
           <p>Flu</p>
         </SVGBox>
         <SVGBox>
-          <img src="fever.png" />
+          <img src="fever.png" alt="DrugSection"/>
           <p>Demam</p>
         </SVGBox>
         <SVGBox>
-          <img src="fever.png" />
+          <img src="fever.png" alt="DrugSection"/>
           <p>Demam</p>
         </SVGBox>
       </GridRow>

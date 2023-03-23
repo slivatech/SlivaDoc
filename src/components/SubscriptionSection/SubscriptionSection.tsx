@@ -21,7 +21,7 @@ const SubscriptionSection = () => {
         <p style={{ color:"gray",fontSize:"12px" }}>Get new daily news on upcoming offers from upcoming suppliers all over the world</p>
         <StyledForm>
             <div style={{ display:"flex",border:"1px solid #dddddd",padding:"0 4px",borderRadius:"5px"}}>
-                <img src="/email-svg.svg" />
+                <img src="/email-svg.svg" alt='email'/>
                 <EmailInput placeholder='Email' />
                 
             </div>

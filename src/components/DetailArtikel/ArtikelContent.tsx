@@ -1,5 +1,4 @@
 import React from "react";
-import Sidebar from "./Sidebar";
 import {ArticleAuthor,ArticleContent,ArticleImage,ArticleTitle,ArticleWrapper,CoreArticleContent} from '../../pages/DetailArtikel/DetailArtikelStyle'
 
 type Props = {
