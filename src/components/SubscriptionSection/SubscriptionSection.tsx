@@ -6,6 +6,12 @@ import { EmailInput, SubscriptionStyled } from './SubsriptionSectionStyle'
 const StyledForm = styled.form`
     display:flex;
     gap:.5rem;
+    @media (max-width:400px) {
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      
+    }
 `
 
 const SubscriptionSection = () => {

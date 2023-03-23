@@ -5,7 +5,7 @@ import { GroupButtons } from "../GroupButtons/GroupButtons";
 import NavButtons from "../NavButtons/NavButtons";
 import RowHeader from "../RowHeader";
 import { servicesList } from "./data";
-import { Service, ServiceGrid, ServiceStyle } from "./ServiceStyle";
+import { ServiceButton, ServiceGrid, ServiceStyle } from "./ServiceStyle";
 
 
 
@@ -35,10 +35,10 @@ const ServiceSection: FC = () => {
 
       <ServiceGrid>
         {servicesList.map((service)=>(
-            <Service>
-                <img style={{ borderRadius:"10px",maxHeight:"200px",objectFit:"cover" }} src={service.imageSrc} />
+            <ServiceButton>
+                <img style={{ borderRadius:"5px",height:"200px",objectFit:"cover",width:"100%" }} src={service.imageSrc} />
                 <p>{service.title}</p>
-            </Service>
+            </ServiceButton>
         ))}
       </ServiceGrid>
     </ServiceStyle>

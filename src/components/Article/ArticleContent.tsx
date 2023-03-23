@@ -12,16 +12,14 @@ const ArticleContent = ({ header,subheader }:IContent) => {
 
       <TextArticle>
         <StyledH3>{header}</StyledH3>
-        <p style={{ fontWeight:"normal" }}>{subheader}</p>
+        <StyledH3 style={{ fontWeight:"normal" }}>{subheader}</StyledH3>
         <p style={{ fontSize: "clamp(10px,4vw,12px)", color: "gray", }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio
-          corporis cupiditate porro, eveniet dolores.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in veritatis eligendi? Cumque nobis inventore ex provident odio porro voluptatem.
         </p>
         <a
           href="#"
           style={{
             textDecoration: "none",
-            marginTop: "1rem",
             fontSize: "clamp(10px,5vw,12px)",
           }}
         >

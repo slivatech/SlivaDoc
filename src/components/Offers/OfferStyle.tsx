@@ -19,7 +19,7 @@ export const OfferCarousel = styled.div`
 `
 
 export const OfferImage = styled.img`
-    border-radius: 10px;
+    border-radius: 5px;
     width:100%;
     object-fit: cover;
 `

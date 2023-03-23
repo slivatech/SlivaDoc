@@ -1,22 +1,30 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
+import { Container } from "../Container";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
 
 const NavButtonsStyled = styled.div`
-   max-width: 800px;
+  /* max-width: 80%;
   margin: 0 auto;
   display: grid;
   grid-auto-rows: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   padding: 2rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-
-  /* @media (max-width:640px) {
-    rep
-  } */
-`
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  /* white-space: nowrap; */
+  @media (max-width: 400px) {
+    display: grid;
+    max-width: 80%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
 
 const NavButton = styled.button(
   ({ theme }) => `
@@ -25,8 +33,8 @@ const NavButton = styled.button(
   align-items: center;
   font-weight:${theme.fontWeights.normal};
   color:${theme.colors.txtSecondary} ;
-  border-radius:10px;
-
+  border-radius:5px;
+  font-size:clamp(10px,2vw,16px);
   outline:none;
   border:none;
   cursor:pointer;
@@ -46,7 +54,8 @@ const SVGIcon = styled.img`
 
 const NavButtons: FC = () => {
   return (
-    <NavButtonsStyled>
+    <Container>
+      <NavButtonsStyled>
         <NavButton>
           <SVGIcon src="/chat.svg" />
           <p>Chat dengan dokter</p>
@@ -68,7 +77,8 @@ const NavButtons: FC = () => {
         <Button color="#27292a" bgColor='#E0E5ED' text="SilvaProteksi" />
         <Button color="#27292a" bgColor='#E0E5ED' text="SlivaShop" />
   */}
-    </NavButtonsStyled>
+      </NavButtonsStyled>
+    </Container>
   );
 };
 
