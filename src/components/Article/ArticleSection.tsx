@@ -37,13 +37,13 @@ const SecondaryArticleWrapper = styled.div`
   column-gap: 2rem;
   max-height: "auto";
   @media (max-width: 1024px) {
-    max-height: "600px"
+    max-height: "600px";
   }
 `;
 
 const MainArticleContainer = styled.div`
   flex: 0.6;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex: 1;
   }
   height: 100%;
@@ -53,9 +53,16 @@ const ListArticleContainer = styled.div`
   flex: 0.6;
   @media (max-width: 1024px) {
     flex: 1;
+    & > * {
+      border-top: 1px solid #8B96A5;
+      padding:1rem 0;
+    }
   }
   & > * {
     margin-top: 1rem;
+  }
+  & a {
+    display:none
   }
   /* height: 100%; */
 `;
@@ -63,7 +70,7 @@ const ListArticleContainer = styled.div`
 const AdsWrapper = styled.div`
   flex: 0.4;
   max-height: 600px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -110,7 +117,12 @@ const ArticleSection = () => {
           <MainArticleWrapper>
             <MainArticleContainer>
               <Article column={true}>
-                <ArticleBanner large={true} src="/promo-banner.png" />
+                <ArticleBanner large={true}>
+                  <img
+                    style={{ width: "100%", height: "100%" }}
+                    src="/promo-banner.png"
+                  />
+                </ArticleBanner>
                 <ArticleContent
                   subheader="Makanan sehat"
                   header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
@@ -124,21 +136,36 @@ const ArticleSection = () => {
           <SecondaryArticleWrapper>
             <ListArticleContainer>
               <Article>
-                <ArticleBanner src="/allergic.png" />
+                <ArticleBanner>
+                  <img
+                    style={{ width: "100%", height: "100%" }}
+                    src="/allergic.png"
+                  />
+                </ArticleBanner>
                 <ArticleContent
                   subheader="Makanan sehat"
                   header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
                 />
               </Article>
               <Article>
-                <ArticleBanner src="/allergic-2.png" />
+                <ArticleBanner>
+                  <img
+                    style={{ width: "100%", height: "100%" }}
+                    src="/allergic-2.png"
+                  />
+                </ArticleBanner>
                 <ArticleContent
                   subheader="Makanan sehat"
                   header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
                 />
               </Article>
               <Article>
-                <ArticleBanner src="/allergic-3.png" />
+                <ArticleBanner>
+                  <img
+                    style={{ width: "100%", height: "100%" }}
+                    src="/allergic-3.png"
+                  />
+                </ArticleBanner>
                 <ArticleContent
                   subheader="Makanan sehat"
                   header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"

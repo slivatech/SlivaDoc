@@ -17,5 +17,5 @@ export const HeroImageWrapper = styled.div`
     width: 75%;
     margin:0 auto;
   }
-  width: 100%;
+  max-width: 1000px;
 `;

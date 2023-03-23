@@ -15,12 +15,13 @@ const NavButtonsStyled = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
   padding: 2rem 1rem;
-
-  @media (max-width: 768px) {
+  /* white-space: nowrap; */
+  @media (max-width: 400px) {
     display: grid;
+    max-width: 80%;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
   }
 `;

@@ -13,9 +13,10 @@ export const ArticleLayout = styled.div`
   column-gap: 2rem;
 `;
 
-export const ArticleBanner = styled.img<{ large?: boolean }>(
+export const ArticleBanner = styled.div<{ large?: boolean }>(
   ({ large }) => `
-  max-width:${large ? "100%" : "400px"};
+  max-width:${large ? "100%" : "300px"};
+  height:${large ? null : "100%"};
   border-radius:5px;
 `
 );
@@ -24,6 +25,8 @@ export const Article = styled.article<{ column?: boolean }>(({ column }) => `
   display:flex;
   flex-direction:${column ? "column" : "row"};
   gap:1rem;
+
+  height:${!column ?"150px":null};
   align-items:${!column ? "start" : null};
   @media (max-width: 768px) {
     & > div > p {

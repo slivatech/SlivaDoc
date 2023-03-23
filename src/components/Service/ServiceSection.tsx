@@ -36,7 +36,7 @@ const ServiceSection: FC = () => {
       <ServiceGrid>
         {servicesList.map((service)=>(
             <ServiceButton>
-                <img style={{ borderRadius:"5px",maxHeight:"200px",objectFit:"cover",maxWidth:"200px" }} src={service.imageSrc} />
+                <img style={{ borderRadius:"5px",height:"200px",objectFit:"cover",width:"100%" }} src={service.imageSrc} />
                 <p>{service.title}</p>
             </ServiceButton>
         ))}
