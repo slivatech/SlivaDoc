@@ -69,7 +69,7 @@ const ListArticleContainer = styled.div`
 
 const AdsWrapper = styled.div`
   flex: 0.4;
-  max-height: 600px;
+  max-height: 100%;
   @media (max-width: 1024px) {
     display: none;
   }

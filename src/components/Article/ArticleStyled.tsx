@@ -54,6 +54,9 @@ export const BannerSection = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
+  &>img {
+    margin-top:1rem;
+  }
   height:100%;
   max-width:500px;
 `;
