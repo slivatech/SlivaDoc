@@ -149,7 +149,6 @@ export const ListInfo = styled.div`
         font-style: normal;
         font-weight: 300;
         font-size: 10px;
-        line-height: 12px;
         text-align: center;
         color: #2C4AE8;
         text-decoration: none;
@@ -158,14 +157,12 @@ export const ListInfo = styled.div`
 
 export const Card = styled.div`
     min-height: 231px;
-    // max-width: 200px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 9px 10px;
     @media (max-width : 720px) {
-        min-height: 215px;
-        max-width: 141px;
+        min-height: 150px;
     }
 
     button {
@@ -175,6 +172,10 @@ export const Card = styled.div`
         padding: 2px 14px;
         color: white;
         font-size: 8px;
+        @media (max-width: 720px) {
+            padding: 4px 5px;
+            font-size: 6px;
+        }
     }
 
     h3 {
@@ -183,7 +184,7 @@ export const Card = styled.div`
         line-height: 17px;
         @media (max-width : 720px) {
             font-size: 10px;
-            line-height: 15px;
+            line-height: 10px;
         }
     }
 
@@ -194,15 +195,16 @@ export const Card = styled.div`
         color: rgba(28, 28, 28, 0.7);
         @media(max-width: 720px) {
             font-size: 8px;
+            line-height: 8px;
         }
     }
     
     a {
         font-weight: 300;
         font-size: 8px;
-        line-height: 10px;
         color: #2C4AE8;
         text-decoration: none;
+        margin: 0;
     }
     
 `;
@@ -212,6 +214,9 @@ export const CardImage = styled.img`
     height: 92px;
     object-fit: cover;
     border-radius: 5px;
+    @media (max-width: 720px) {
+        height: 45px;
+    }
     
 `;
 
