@@ -1,8 +1,11 @@
 import React, { FC } from "react";
 // import styled from "styled-components";
 import RowHeader from "../RowHeader";
+import SwiperWrapper from "../SwiperWrapper/SwiperWrapper";
 import { servicesList } from "./data";
 import { ServiceButton, ServiceGrid, ServiceStyle } from "./ServiceStyle";
+import "swiper/css";
+import { SwiperSlide, Swiper } from "swiper/react";
 
 // const StyledHref = styled.a`
 //   font-weight: 500;
@@ -22,23 +25,25 @@ const ServiceSection: FC = () => {
     <ServiceStyle>
       <RowHeader title="Layanan SlivaDoc" />
 
-      <ServiceGrid>
+      <SwiperWrapper slides={6} spacing={25}>
         {servicesList.map((service) => (
-          <ServiceButton>
-            <img
-              style={{
-                borderRadius: "5px",
-                height: "200px",
-                objectFit: "cover",
-                width: "100%",
-              }}
-              src={service.imageSrc}
-              alt='service'
-            />
-            <p>{service.title}</p>
-          </ServiceButton>
+          <SwiperSlide>
+            <ServiceButton>
+              <img
+                style={{
+                  borderRadius: "5px",
+                  height:"175px",
+                  objectFit: "cover",
+                  width: "100%",
+                }}
+                src={service.imageSrc}
+                alt="service"
+              />
+              <p>{service.title}</p>
+            </ServiceButton>
+          </SwiperSlide>
         ))}
-      </ServiceGrid>
+      </SwiperWrapper>
     </ServiceStyle>
   );
 };

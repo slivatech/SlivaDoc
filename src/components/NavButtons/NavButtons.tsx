@@ -12,9 +12,11 @@ const NavButtonsStyled = styled.div`
   padding: 2rem 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   display: flex;
-  justify-content: center;
   gap: 1rem;
-  padding: 2rem 1rem;
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+  /* max-width:90%; */
+  padding: 2rem 12%;
   /* white-space: nowrap; */
   @media (max-width: 400px) {
     display: grid;
@@ -24,10 +26,11 @@ const NavButtonsStyled = styled.div`
   }
 `;
 
-const NavButton = styled.button(
-  ({ theme }) => `
-    padding:12px 24px;
+const NavButton = styled.button(({ theme }) => `
+  padding:12px 24px;
   display:flex;
+  flex:1;
+
   align-items: center;
   font-weight:${theme.fontWeights.normal};
   color:${theme.colors.txtSecondary} ;
@@ -39,8 +42,9 @@ const NavButton = styled.button(
   background:#E3E8EF;
   flex-direction:row;
   gap:.5rem;
+  justify-content:center;
   @media (max-width:768px){
-    flex-direction:column
+    flex-direction:column;
   }
 `
 );

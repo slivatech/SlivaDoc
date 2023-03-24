@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { Container } from "../Container";
 
 export const StyledArticle = styled(Container)`
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  padding: 2rem 8%;
+
+  & > * {
+    margin-top:1rem;
+  }
 `;
 
 export const ArticleLayout = styled.div`
@@ -33,6 +34,12 @@ export const Article = styled.article<{ column?: boolean }>(({ column }) => `
       display:${column ? null : "none"};
     }
   }
+
+  & > div > img {
+    border-radius:5px;
+  }
+
+  
 
 `
 );
