@@ -1,12 +1,11 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import HomePage from "./pages/HomePage";
-import GlobalCss from "./styles/Global";
-import { defaultTheme } from "./styles/Theme";
 
 import './App.css';
-import Artikel from './pages/PageArtikel/PageArtikel';
+import HomePage from './pages/HomePage';
+import Artikel from './pages/PageArtikel/PageArtikel'; 
 import DetailArtikel from './pages/DetailArtikel/DetailArtikel';
+import GlobalCss from './styles/Global'
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from './styles/Theme';
 
 
 const App = () => {
