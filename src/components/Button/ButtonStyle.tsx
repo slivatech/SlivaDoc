@@ -24,13 +24,13 @@ export const StyledButton = styled.button<{
   font-weight: ${(props) => props.theme.fontWeights.normal};
   box-shadow: ${(props) =>
     props.active ? null : " rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px"};
-    transition: all .1s linear;
+  transition: all 0.1s linear;
   &:hover {
     background: linear-gradient(
       0deg,
       rgba(144, 170, 209, 1) 0%,
       rgba(82, 150, 229, 1) 100%
     );
-    color:white;
+    color: white;
   }
 `;

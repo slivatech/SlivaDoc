@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import icon from '../../assets/icon/icon.png'
+import React from "react";
+import styled from "styled-components";
+import icon from "../../assets/icon/icon.png";
 
 interface Doctor {
   id: number;
@@ -15,14 +15,13 @@ interface DoctorListItemProps {
 }
 
 const DoctorListItemContainer = styled.div`
-max-width:1280px;
+  max-width: 1280px;
   display: flex;
   flex-direction: row;
   margin: 20px;
   @media (max-width: 700px) {
-    width:20px;
+    width: 20px;
   }
-  
 `;
 
 const DoctorImage = styled.img`
@@ -42,23 +41,21 @@ const DoctorName = styled.span`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
-  text-align:left;
-  
+  text-align: left;
 `;
 
 const DoctorSpecialty = styled.span`
-font-size: 12px;
-font-weight: 400;
-line-height: 22px;
-letter-spacing: 0px;
-
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
 `;
 
 const DoctorPrice = styled.span`
   font-size: 8px;
   margin-bottom: 10px;
-  text-align:left;
-  color:#F90909B2;
+  text-align: left;
+  color: #f90909b2;
 `;
 
 export const ConsultButton = styled.button`
@@ -73,7 +70,7 @@ export const ConsultButton = styled.button`
   padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
-  background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+  background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
 `;
 
 const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
@@ -85,21 +82,26 @@ const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
       <DoctorInfo>
         <DoctorName>{name}</DoctorName>
         <DoctorSpecialty>{specialty}</DoctorSpecialty>
-        <img src={icon} style={{
-          width: "59px",
-          height:"16px",
-          display: "flex",
-      }} alt='icon'/>
-        <p 
+        <img
+          src={icon}
+          style={{
+            width: "59px",
+            height: "16px",
+            display: "flex",
+          }}
+          alt="icon"
+        />
+        <p
           style={{
             fontSize: "8px",
-          }}>Mulai dari  :</p>
+          }}
+        >
+          Mulai dari :
+        </p>
         <DoctorPrice>{`RP ${price}`}</DoctorPrice>
         <ConsultButton>Mulai Konsultasi</ConsultButton>
       </DoctorInfo>
-      
     </DoctorListItemContainer>
-    
   );
 };
 

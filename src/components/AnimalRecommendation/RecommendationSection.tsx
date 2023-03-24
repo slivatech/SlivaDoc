@@ -13,31 +13,31 @@ const RecommendationSection = () => {
       </p>
       <GridRow>
         <SVGBox>
-          <img src="dog-svg.png" alt="Animal Recomendation"/>
+          <img src="dog-svg.png" alt="Animal Recomendation" />
           <p>Anjing</p>
         </SVGBox>
         <SVGBox>
-          <img src="cat-svg.png" alt="Animal Recomendation"/>
+          <img src="cat-svg.png" alt="Animal Recomendation" />
           <p>Cat</p>
         </SVGBox>
         <SVGBox>
-          <img src="hamster-svg.png" alt="Animal Recomendation"/>
+          <img src="hamster-svg.png" alt="Animal Recomendation" />
           <p>Hamster</p>
         </SVGBox>
         <SVGBox>
-          <img src="porcupine-svg.png" alt="Animal Recomendation"/>
+          <img src="porcupine-svg.png" alt="Animal Recomendation" />
           <p>Landak Mini</p>
         </SVGBox>
         <SVGBox>
-          <img src="rabbit-svg.png" alt="Animal Recomendation"/>
+          <img src="rabbit-svg.png" alt="Animal Recomendation" />
           <p>Kelinci</p>
         </SVGBox>
         <SVGBox>
-          <img src="dove-svg.png" alt="Animal Recomendation"/>
+          <img src="dove-svg.png" alt="Animal Recomendation" />
           <p>Burung</p>
         </SVGBox>
         <SVGBox>
-          <img src="fish-svg.png" alt="Animal Recomendation"/>
+          <img src="fish-svg.png" alt="Animal Recomendation" />
           <p>Ikan</p>
         </SVGBox>
       </GridRow>

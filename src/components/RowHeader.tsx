@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {  StyledH3 } from "./FontStyle/Font";
+import { StyledH3 } from "./FontStyle/Font";
 
 const StyledHref = styled.a`
   font-weight: 500;

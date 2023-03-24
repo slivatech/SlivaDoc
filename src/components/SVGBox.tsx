@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const SVGBox = styled.button(({ theme }) => `
+export const SVGBox = styled.button(
+  ({ theme }) => `
     border-radius:10px;
     cursor:pointer;
     border:none;
@@ -21,5 +22,4 @@ export const SVGBox = styled.button(({ theme }) => `
     }
      
   `
-  );
-  
+);

@@ -21,12 +21,13 @@ export const ArticleBanner = styled.div<{ large?: boolean }>(
 `
 );
 
-export const Article = styled.article<{ column?: boolean }>(({ column }) => `
+export const Article = styled.article<{ column?: boolean }>(
+  ({ column }) => `
   display:flex;
   flex-direction:${column ? "column" : "row"};
   gap:1rem;
 
-  height:${!column ?"150px":null};
+  height:${!column ? "150px" : null};
   align-items:${!column ? "start" : null};
   @media (max-width: 768px) {
     & > div > p {
@@ -41,9 +42,6 @@ export const TextArticle = styled.div`
   & > * {
     margin-bottom: 12px;
   }
-
-
-
 `;
 
 export const BannerSection = styled.div`
@@ -54,21 +52,16 @@ export const BannerSection = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
-  height:100%;
-  max-width:500px;
+  height: 100%;
+  max-width: 500px;
 `;
 
-
 export const BannerAds = styled.img`
-  width:100%;
-  height:100%;
-  border-radius:5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
   object-fit: cover;
-  @media (max-width:768px) {
-    display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
-
-  
-
-
-`
+`;

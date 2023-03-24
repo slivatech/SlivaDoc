@@ -18,5 +18,5 @@ export const EmailInput = styled.input`
   }
   outline: none;
   background: none;
-  color:gray;
+  color: gray;
 `;

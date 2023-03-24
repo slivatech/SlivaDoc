@@ -7,8 +7,8 @@ const SearchInput = styled.input`
 
   background-color: transparent;
   font-size: 0.8rem;
-  &:focus{
-    border-color:#127FFF;
+  &:focus {
+    border-color: #127fff;
   }
   ::placeholder,
   ::-webkit-input-placeholder {

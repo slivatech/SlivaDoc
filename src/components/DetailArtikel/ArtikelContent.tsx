@@ -1,5 +1,5 @@
 import React from "react";
-import promo from "../../assets/promo.png"
+import promo from "../../assets/promo.png";
 import {
   Article,
   ArticleAuthor,
@@ -9,8 +9,8 @@ import {
   ArticleTitle,
   ArticleWrapper,
   CoreArticleContent,
-  BannerSection
-} from '../../pages/DetailArtikel/DetailArtikelStyle'
+  BannerSection,
+} from "../../pages/DetailArtikel/DetailArtikelStyle";
 
 type Props = {
   title: string;
@@ -18,29 +18,34 @@ type Props = {
   date: string;
   content: string;
   image: string;
-  coreContent : string;
+  coreContent: string;
 };
 
-
-const ArticlePage: React.FC<Props> = ({ title, author, date, content, image ,coreContent}) => {
+const ArticlePage: React.FC<Props> = ({
+  title,
+  author,
+  date,
+  content,
+  image,
+  coreContent,
+}) => {
   return (
     <ArticleWrapper>
       <Article>
-      <ArticleTitle>{title}</ArticleTitle>
-      <ArticleAuthor >Ditinjau oleh {author} : {date}</ArticleAuthor>
-      <CoreArticleContent>{coreContent}</CoreArticleContent>
-      <ArticleImage src={image} alt={title} />
-      <ArticleContent>{content}</ArticleContent>
+        <ArticleTitle>{title}</ArticleTitle>
+        <ArticleAuthor>
+          Ditinjau oleh {author} : {date}
+        </ArticleAuthor>
+        <CoreArticleContent>{coreContent}</CoreArticleContent>
+        <ArticleImage src={image} alt={title} />
+        <ArticleContent>{content}</ArticleContent>
       </Article>
       <Sidebar>
         <BannerSection>
           <img src={promo} alt="promo" />
         </BannerSection>
-      
       </Sidebar>
-      
     </ArticleWrapper>
-    
   );
 };
 

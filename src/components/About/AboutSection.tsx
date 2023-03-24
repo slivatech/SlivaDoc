@@ -4,10 +4,6 @@ import { HeroImageWrapper, StyledAbout } from "./AboutStyle";
 import Search from "../Search/Search";
 import { StyledH1 } from "../FontStyle/Font";
 
-// const Styledh1 = styled.h1`
-//   font-weight: ${(props) => props.theme.fontWeights.bold};
-// `;
-
 const StyledP = styled.p(
   ({ theme }) => `
   color:${theme.colors.txtSecondary};
@@ -44,9 +40,13 @@ const AboutSection: React.FC = () => {
         <Search />
         <StyledHref href="#">Lihat Semua Dokter</StyledHref>
       </div>
-        <HeroImageWrapper>
-          <img style={{ width: "100%" }} src="/banner-pets.png" alt="Banner Pets"/>
-        </HeroImageWrapper>
+      <HeroImageWrapper>
+        <img
+          style={{ width: "100%" }}
+          src="/banner-pets.png"
+          alt="Banner Pets"
+        />
+      </HeroImageWrapper>
     </StyledAbout>
   );
 };

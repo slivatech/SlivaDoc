@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const SidebarContainer = styled.div`
   width: 250px;
@@ -28,7 +28,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <CategoryList>
         <CategoryItem>Category 1</CategoryItem>
-        </CategoryList>
+      </CategoryList>
     </SidebarContainer>
   );
 };

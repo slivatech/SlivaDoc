@@ -9,18 +9,9 @@ const OfferSection: FC = () => {
     <StyledOffer>
       <StyledH3>Penawaran Menarik</StyledH3>
       <GroupButtons>
-        <Button
-          text="Semua"
-          active={true}
-        />
-        <Button
-          text="Promo"
-          active={false}
-        />
-        <Button
-          text="Kerjasama"
-          active={false}
-        />
+        <Button text="Semua" active={true} />
+        <Button text="Promo" active={false} />
+        <Button text="Kerjasama" active={false} />
       </GroupButtons>
       <OfferCarousel>
         <OfferImage src="/promo-banner.png" />

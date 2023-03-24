@@ -5,33 +5,27 @@ interface IService {
 
 export const servicesList: IService[] = [
   {
-    imageSrc:
-      "/dog.png",
+    imageSrc: "/dog.png",
     title: "Covid 19",
   },
   {
-    imageSrc:
-      "/vaccine.png",
+    imageSrc: "/vaccine.png",
     title: "Vaksinasi",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Gigi & mulut",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Covid 19",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Covid 19",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Covid 19",
   },
 ];

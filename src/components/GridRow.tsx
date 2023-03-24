@@ -7,5 +7,5 @@ export const GridRow = styled.div`
   grid-row-gap: 30px;
   padding: 2rem 1rem;
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  gap:1rem;
+  gap: 1rem;
 `;

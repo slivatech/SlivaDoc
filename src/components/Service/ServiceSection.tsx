@@ -33,7 +33,7 @@ const ServiceSection: FC = () => {
                 width: "100%",
               }}
               src={service.imageSrc}
-              alt='service'
+              alt="service"
             />
             <p>{service.title}</p>
           </ServiceButton>
