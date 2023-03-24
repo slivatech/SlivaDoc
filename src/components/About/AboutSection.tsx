@@ -45,7 +45,7 @@ const AboutSection: React.FC = () => {
         <StyledHref href="#">Lihat Semua Dokter</StyledHref>
       </div>
         <HeroImageWrapper>
-          <img style={{ width: "100%" }} src="/banner-pets.png" />
+          <img style={{ width: "100%" }} src="/banner-pets.png" alt="Banner Pets"/>
         </HeroImageWrapper>
     </StyledAbout>
   );

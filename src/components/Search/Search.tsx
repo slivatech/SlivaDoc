@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import Button from '../Button/Button'
 import SearchInput from './SearchStyle'
 
 const StyledForm = styled.form`

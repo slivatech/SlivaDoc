@@ -11,21 +11,20 @@ import {
   BannerAds,
   BannerSection,
   StyledArticle,
-  TextArticle,
 } from "./ArticleStyled";
 
-const StyledHref = styled.a`
-  font-weight: 500;
-  padding: 8px 16px;
-  font-size: 12px;
-  cursor: pointer;
-  color: #454467;
-  background-color: #e7ebf0;
-  font-weight: 700;
-  box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
-  -webkit-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
-  -moz-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
-`;
+// const StyledHref = styled.a`
+//   font-weight: 500;
+//   padding: 8px 16px;
+//   font-size: 12px;
+//   cursor: pointer;
+//   color: #454467;
+//   background-color: #e7ebf0;
+//   font-weight: 700;
+//   box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
+//   -webkit-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
+//   -moz-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
+// `;
 
 const MainArticleWrapper = styled.div`
   display: flex;
@@ -120,7 +119,7 @@ const ArticleSection = () => {
                 <ArticleBanner large={true}>
                   <img
                     style={{ width: "100%", height: "100%" }}
-                    src="/promo-banner.png"
+                    src="/promo-banner.png" alt="promoBanner"
                   />
                 </ArticleBanner>
                 <ArticleContent
@@ -139,7 +138,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{ width: "100%", height: "100%",objectFit:"cover" }}
-                    src="/allergic.png"
+                    src="/allergic.png" alt="allertgic"
                   />
                 </ArticleBanner>
                 <ArticleContent
@@ -151,7 +150,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{ width: "100%", height: "100%",objectFit:"cover" }}
-                    src="/allergic-2.png"
+                    src="/allergic-2.png" alt="allergic-2"
                   />
                 </ArticleBanner>
                 <ArticleContent
@@ -163,7 +162,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{ width: "100%", height: "100%",objectFit:"cover" }}
-                    src="/allergic-3.png"
+                    src="/allergic-3.png" alt="allergic-3"
                   />
                 </ArticleBanner>
                 <ArticleContent
