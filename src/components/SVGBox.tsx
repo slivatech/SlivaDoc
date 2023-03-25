@@ -11,7 +11,7 @@ export const SVGBox = styled.button(({ theme }) => `
     align-items:center;
     border-radius:5px;
     row-gap:.5rem;
-    font-size:clamp(16px,2vw,20px);
+    font-size:clamp(14px,2vw,20px);
     color:${theme.colors.txtPrimary};
     background:#E3E8EF;
     
@@ -22,10 +22,10 @@ export const SVGBox = styled.button(({ theme }) => `
 
     @media (max-width:500px) {
     & > img {
-        max-width:35px;
-        max-height:35px;
+        max-width:40px;
+        max-height:40px;
     }
-    padding:5%;
+    padding:10% .5rem;
 
     }
      

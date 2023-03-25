@@ -6,6 +6,7 @@ import { servicesList } from "./data";
 import { ServiceButton, ServiceGrid, ServiceStyle } from "./ServiceStyle";
 import "swiper/css";
 import { SwiperSlide, Swiper } from "swiper/react";
+import styled from "styled-components";
 
 // const StyledHref = styled.a`
 //   font-weight: 500;
@@ -20,22 +21,53 @@ import { SwiperSlide, Swiper } from "swiper/react";
 //   -moz-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
 // `;
 
+const ServiceImg = styled.img`
+  border-radius: 5px;
+  height: 175px;
+  object-fit: cover;
+  width: 100%;
+  @media (max-width:768px) {
+    height:125px;
+  }
+
+  @media(max-width:640px) {
+    width:100px;
+  }
+`;
+
 const ServiceSection: FC = () => {
+  const breakPoints = {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    480: {
+      slidesPerView: 4,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+    },
+    1280: {
+      slidesPerView: 6,
+      spaceBetween: 30,
+    },
+  };
   return (
     <ServiceStyle>
       <RowHeader title="Layanan SlivaDoc" />
 
-      <SwiperWrapper slides={6} spacing={25}>
+      <SwiperWrapper breakPoints={breakPoints}>
         {servicesList.map((service) => (
           <SwiperSlide>
             <ServiceButton>
-              <img
-                style={{
-                  borderRadius: "5px",
-                  height:"175px",
-                  objectFit: "cover",
-                  width: "100%",
-                }}
+              <ServiceImg
+         
                 src={service.imageSrc}
                 alt="service"
               />

@@ -4,12 +4,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { EffectFade, EffectCards } from "swiper";
 
 import "swiper/css/effect-cards";
-const SwiperWrapper = ({ children,slides,spacing }: { children: React.ReactNode,slides:number,spacing:number }) => {
+
+type BreakPointValue = 0 | 480 | 768 | 1024 | 1280;
+interface IBreakPoint {
+  slidesPerView: number;
+  spaceBetween: number;
+}
+
+interface ISwiper {
+  children: React.ReactNode;
+
+  breakPoints: Record<BreakPointValue, IBreakPoint>;
+}
+
+const SwiperWrapper = ({ children, breakPoints }: ISwiper) => {
   return (
-    <Swiper style={{ marginTop:"1rem" }} spaceBetween={spacing} slidesPerView={slides}>
+    <Swiper style={{ marginTop: "1rem" }} breakpoints={breakPoints}>
       {children}
     </Swiper>
   );

@@ -8,4 +8,8 @@ export const GroupButtons = styled.div`
   @media (max-width: 1024px) {
     overflow-x: scroll;
   }
+  &::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 `;

@@ -2,7 +2,7 @@ import { FC } from "react";
 import Button from "../Button/Button";
 import { StyledH3 } from "../FontStyle/Font";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
-import { OfferCarousel, OfferImage, StyledOffer } from "./OfferStyle";
+import {  OfferImage, StyledOffer } from "./OfferStyle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,6 +16,28 @@ import SwiperWrapper from "../SwiperWrapper/SwiperWrapper";
 
 
 const OfferSection: FC = () => {
+  const breakPoints = {
+    0:{
+      slidesPerView:1,
+      spaceBetween:10
+    },
+    480:{
+      slidesPerView:2,
+      spaceBetween:10
+    },
+    768:{
+      slidesPerView:3,
+      spaceBetween:15
+    },
+    1024:{
+      slidesPerView:3,
+      spaceBetween:15
+    },
+    1280:{
+      slidesPerView:3,
+      spaceBetween:15
+    }
+  }
   return (
     <StyledOffer>
       <StyledH3>Penawaran Menarik</StyledH3>
@@ -25,8 +47,8 @@ const OfferSection: FC = () => {
         <Button text="Kerjasama" active={false} />
       </GroupButtons>
       <SwiperWrapper
-        slides={3}
-        spacing={50}
+    
+        breakPoints={breakPoints}
       >
         <>
         <SwiperSlide>
