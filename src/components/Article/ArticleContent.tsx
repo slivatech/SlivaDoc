@@ -12,7 +12,12 @@ const ArticleContent = ({ header, subheader }: IContent) => {
   return (
     <TextArticle>
       <StyledH3>{header}</StyledH3>
-      <StyledH3 style={{ fontWeight: "normal" }}>{subheader}</StyledH3>
+      <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+        <img src="/live-streaming.svg" alt="live-Stream"/>
+        <p style={{ fontSize: "clamp(10px,4vw,16px)", fontWeight: "500" }}>
+          {subheader}
+        </p>
+      </div>
       <p style={{ fontSize: "clamp(10px,4vw,12px)", color: "gray" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in
         veritatis eligendi? Cumque nobis inventore ex provident odio porro

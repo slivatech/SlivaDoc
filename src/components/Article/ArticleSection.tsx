@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../Button/Button";
 import { GroupButtons } from "../GroupButtons/GroupButtons";
 import RowHeader from "../RowHeader";
+// import SwiperWrapper from "../SwiperWrapper/SwiperWrapper";
 import ArticleContent from "./ArticleContent";
 import {
   Article,
@@ -12,6 +13,9 @@ import {
   BannerSection,
   StyledArticle,
 } from "./ArticleStyled";
+import "swiper/css";
+
+// import { SwiperSlide } from "swiper/react";
 
 const MainArticleWrapper = styled.div`
   display: flex;
@@ -45,7 +49,7 @@ const ListArticleContainer = styled.div`
     }
   }
   & > * {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   & a {
     display: none;
@@ -55,7 +59,7 @@ const ListArticleContainer = styled.div`
 
 const AdsWrapper = styled.div`
   flex: 0.4;
-  max-height: 600px;
+  max-height: 100%;
   @media (max-width: 1024px) {
     display: none;
   }
@@ -86,7 +90,7 @@ const ArticleSection = () => {
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
         {buttonList.map((button, i) => (
-          <Button text={button} key={i} active={false} />
+            <Button text={button} key={i} active={false} />
         ))}
       </GroupButtons>
       <ArticleLayout>

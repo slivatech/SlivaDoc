@@ -26,11 +26,15 @@ export const StyledButton = styled.button<{
     props.active ? null : " rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px"};
   transition: all 0.1s linear;
   &:hover {
-    background: linear-gradient(
-      0deg,
-      rgba(144, 170, 209, 1) 0%,
-      rgba(82, 150, 229, 1) 100%
-    );
+    background: ${(props) =>
+      props.bgColor
+        ? props.bgColor
+        : "linear-gradient(0deg,rgba(144, 170, 209, 1) 0%,rgba(82, 150, 229, 1) 100%)"};
+
     color: white;
+  }
+
+  @media (max-width: 640px) {
+    padding: 4px 12px;
   }
 `;

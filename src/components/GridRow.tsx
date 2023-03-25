@@ -8,4 +8,9 @@ export const GridRow = styled.div`
   padding: 2rem 1rem;
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   gap: 1rem;
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(3, 1fr);
+ 
+  }
 `;
