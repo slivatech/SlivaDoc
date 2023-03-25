@@ -9,7 +9,7 @@ const StyledHref = styled.a`
   cursor: pointer;
   color: #454467;
   background-color: #e7ebf0;
-  border-radius:5px;
+  border-radius: 5px;
   font-weight: 700;
   box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);
   -webkit-box-shadow: 2px -2px 18px -10px rgba(0, 0, 0, 0.61);

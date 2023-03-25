@@ -29,13 +29,11 @@ export const servicesList: IService[] = [
     title: "Covid 19",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Covid 19",
   },
   {
-    imageSrc:
-      "/vet.png",
+    imageSrc: "/vet.png",
     title: "Covid 19",
   },
 ];

@@ -4,7 +4,6 @@ import { Container } from "../Container";
 export const ServiceStyle = styled(Container)`
   padding: 2rem 8%;
 
-
   row-gap: 1rem;
 `;
 
