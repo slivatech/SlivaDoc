@@ -71,7 +71,7 @@ const ListArticle = [
 const DetailArtikel: React.FC = () => {
   const article = {
     title: "Ini 4 Cara Ampuh Mengatasi Kolitis pada Orang Dewasa",
-    author: "dr. indra",
+    author: "dr. Fadhli",
     date: "March 21, 2023",
     content:
       "Slivadoc, Jakarta – Kolitis adalah kondisi peradangan pada usus besar, yang merupakan bagian utama dari sistem pencernaan. Bisa dibilang, usus besar adalah tempat terakhir dari perjalanan makanan yang kamu konsumsi. Jika terjadi kolitis atau peradangan pada usus besar, proses perjalanan makanan tersebut dapat terganggu. Bahkan dapat mengakibatkan sakit perut, diare, dan adanya darah pada feses. Peradangan merupakan bentuk respon tubuh terhadap infeksi atau cedera pada usus besar. Kondisi tersebut dapat menyebabkan pembengkakan dan nyeri pada jaringan usus. Kolitis bisa menjadi kondisi yang serius jika tidak kunjung sembuh. Bahkan, bisa mengakibatkan kerusakan serius di usus besar yang akan mempengaruhi kualitas hidup. Nah, pertanyaannya bagaimana cara mengatasi kolitis pada orang dewasa?",
@@ -135,6 +135,7 @@ const DetailArtikel: React.FC = () => {
       </Sidebar>
       <Top>
       <List>
+        <h4>Artikel Terkait</h4>
         {ListArticle.map((i: IListArticle) => 
             <Row className='item'>
                 <ListImage src={i.image}/>

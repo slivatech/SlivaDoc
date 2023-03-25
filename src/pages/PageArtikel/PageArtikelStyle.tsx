@@ -240,6 +240,10 @@ export const Search = styled.div`
         background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
         color: white;
         border: none;
+        @media (max-width : 620px) {
+        width: 100%;
+        margin: 0;
+    }
     }
     
     form {

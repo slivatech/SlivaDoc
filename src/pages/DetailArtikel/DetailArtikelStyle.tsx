@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const ArticleWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 15px;
   margin: 100px;
   max-width:1280px;
 `;
 export const Article = styled.div`
    margin-right:160px;
-   flex: 3;
+   flex: 2;
    @media (max-width: 700px) {
     margin: 0;
   }
@@ -19,23 +19,38 @@ text-align: left;
   font-size: 1.5rem;
   margin-bottom: 20px;
 `;
-export const Button= styled.div`
+export const Button = styled.div`
   justify-content: center;
-    margin-top: 22px;
-    margin-bottom: 10px;
-    button {
-      background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
-      color:#ffff;
-        border-radius: 5px;
-        padding: 10px 17px;
-        border: none;
-        margin-left:222px;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  margin-left: 200px;
+
+  button {
+    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 17px;
+    border: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      padding: 8px 14px;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const ArticleAuthor = styled.p`
 text-align: left;
   font-size: 0.75rem;
   margin-bottom: 5px;
+  a{
+    color:#F91E1E;
+  }
 
 `;
 
@@ -62,7 +77,6 @@ export const ArticleContent = styled.div`
   margin-top:19px;
 `;
 export const DoctorContainer = styled.div`
-max-width:1280px;
   display: flex;
   flex-direction: row;
   gap: 24px;
@@ -96,26 +110,44 @@ export const DoctorListContainer = styled.div`
   border-top: 2px grey;
  flex: 3;
  justify-content: left;
+ @media (max-width : 720px) {
+        width: 100%;
+        margin-left: 0;
+    }
+
  `;
  
-export const Consult = styled.div`
-margin-top:26px;
-margin-bottom:20px;
-display: flex;
-  flex-direction: row;
-  padding:40px 19px;
+ export const Consult = styled.div`
+  margin-top: 26px;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 40px 19px;
   background: linear-gradient(180deg, #E6EAEE 0%, #CFDEF3 100%);
-border-radius: 10px;
-h3{
-  margin-left:20px;
-  order:1;
-  font-size:14px;
+  border-radius: 10px;
+  
+  h3 {
+    margin-left: 20px;
+    order: 1;
+    font-size: 14px;
 
-}
-p{
-  margin-left:20px;
-  font-size:14px
-}
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  p {
+    margin-left: 20px;
+    font-size: 14px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
 `;
 
 export const BannerSection = styled.div`

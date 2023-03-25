@@ -15,14 +15,18 @@ interface DoctorListItemProps {
 }
 
 const DoctorListItemContainer = styled.div`
-max-width:1280px;
   display: flex;
   flex-direction: row;
   margin: 20px;
-  @media (max-width: 700px) {
-    width:20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  @media (max-width: 700px) {
+    width: 200px;
+  }
 `;
 
 const DoctorImage = styled.img`
@@ -31,50 +35,66 @@ const DoctorImage = styled.img`
   object-fit: cover;
   margin-right: 20px;
   border-radius: 5px;
+
+  @media (max-width: 1024px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const DoctorInfo = styled.div`
   display: flex;
   flex-direction: column;
+
+  button {
+    cursor: pointer;
+    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 17px;
+    border: none;
+    margin-left: 370px;
+
+    @media (max-width: 1024px) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
 `;
 
 const DoctorName = styled.span`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
-  text-align:left;
-  
+  text-align: left;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const DoctorSpecialty = styled.span`
-font-size: 12px;
-font-weight: 400;
-line-height: 22px;
-letter-spacing: 0px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
 
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const DoctorPrice = styled.span`
   font-size: 8px;
   margin-bottom: 10px;
-  text-align:left;
-  color:#F90909B2;
+  text-align: left;
+  color: #f90909b2;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
-export const ConsultButton = styled.button`
-  background-color: #007aff;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  margin-left: 398px;
-  align-items: center;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
-`;
 
 const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
   const { name, specialty, price, image } = doctor;
@@ -95,7 +115,7 @@ const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
             fontSize: "8px",
           }}>Mulai dari  :</p>
         <DoctorPrice>{`RP ${price}`}</DoctorPrice>
-        <ConsultButton>Mulai Konsultasi</ConsultButton>
+        <button>Mulai konsultasi</button>
       </DoctorInfo>
       
     </DoctorListItemContainer>
