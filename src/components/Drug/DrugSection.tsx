@@ -1,7 +1,7 @@
 import React from "react";
 import { GridRow } from "../GridRow";
 import RowHeader from "../RowHeader";
-import {  StyledDrug } from "./DrugStyle";
+import { StyledDrug } from "./DrugStyle";
 import { SVGBox } from "../SVGBox";
 
 const DrugSection = () => {
@@ -14,27 +14,27 @@ const DrugSection = () => {
       </p>
       <GridRow>
         <SVGBox>
-          <img src="fever.png" alt="DrugSection"/>
+          <img src="fever.png" alt="DrugSection" />
           <p>Demam</p>
         </SVGBox>
         <SVGBox>
-          <img src="digestion.png" alt="DrugSection"/>
+          <img src="digestion.png" alt="DrugSection" />
           <p>Pencernaan</p>
         </SVGBox>
         <SVGBox>
-          <img src="jack-wolf.png" alt="DrugSection"/>
+          <img src="jack-wolf.png" alt="DrugSection" />
           <p>Kulit</p>
         </SVGBox>
         <SVGBox>
-          <img src="flu.png" alt="DrugSection"/>
+          <img src="flu.png" alt="DrugSection" />
           <p>Flu</p>
         </SVGBox>
         <SVGBox>
-          <img src="fever.png" alt="DrugSection"/>
+          <img src="fever.png" alt="DrugSection" />
           <p>Demam</p>
         </SVGBox>
         <SVGBox>
-          <img src="fever.png" alt="DrugSection"/>
+          <img src="fever.png" alt="DrugSection" />
           <p>Demam</p>
         </SVGBox>
       </GridRow>

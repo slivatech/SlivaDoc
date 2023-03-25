@@ -9,10 +9,18 @@ interface IButton {
   color?: string;
   icon?: React.ReactNode;
   size?: Size;
-  active?:boolean;
+  active?: boolean;
 }
 
-const Button: FC<IButton> = ({ text, radius, bgColor, color, icon, size,active }) => {
+const Button: FC<IButton> = ({
+  text,
+  radius,
+  bgColor,
+  color,
+  icon,
+  size,
+  active,
+}) => {
   return (
     <StyledButton
       size={size as Size}

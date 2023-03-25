@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import icon from '../../assets/icon/icon.png'
+import React from "react";
+import styled from "styled-components";
+import icon from "../../assets/icon/icon.png";
 
 interface Doctor {
   id: number;
@@ -15,6 +15,7 @@ interface DoctorListItemProps {
 }
 
 const DoctorListItemContainer = styled.div`
+<<<<<<< HEAD
   display: flex;
   flex-direction: row;
   margin: 20px;
@@ -26,6 +27,14 @@ const DoctorListItemContainer = styled.div`
 
   @media (max-width: 700px) {
     width: 200px;
+=======
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  @media (max-width: 700px) {
+    width: 20px;
+>>>>>>> Development
   }
 `;
 
@@ -67,10 +76,13 @@ const DoctorName = styled.span`
   font-weight: bold;
   margin-bottom: 10px;
   text-align: left;
+<<<<<<< HEAD
 
   @media (max-width: 1024px) {
     text-align: center;
   }
+=======
+>>>>>>> Development
 `;
 
 const DoctorSpecialty = styled.span`
@@ -78,10 +90,13 @@ const DoctorSpecialty = styled.span`
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 0px;
+<<<<<<< HEAD
 
   @media (max-width: 1024px) {
     text-align: center;
   }
+=======
+>>>>>>> Development
 `;
 
 const DoctorPrice = styled.span`
@@ -89,12 +104,31 @@ const DoctorPrice = styled.span`
   margin-bottom: 10px;
   text-align: left;
   color: #f90909b2;
+<<<<<<< HEAD
 
   @media (max-width: 1024px) {
     text-align: center;
   }
 `;
 
+=======
+`;
+
+export const ConsultButton = styled.button`
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 398px;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
+`;
+>>>>>>> Development
 
 const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
   const { name, specialty, price, image } = doctor;
@@ -105,21 +139,26 @@ const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
       <DoctorInfo>
         <DoctorName>{name}</DoctorName>
         <DoctorSpecialty>{specialty}</DoctorSpecialty>
-        <img src={icon} style={{
-          width: "59px",
-          height:"16px",
-          display: "flex",
-      }} alt='icon'/>
-        <p 
+        <img
+          src={icon}
+          style={{
+            width: "59px",
+            height: "16px",
+            display: "flex",
+          }}
+          alt="icon"
+        />
+        <p
           style={{
             fontSize: "8px",
-          }}>Mulai dari  :</p>
+          }}
+        >
+          Mulai dari :
+        </p>
         <DoctorPrice>{`RP ${price}`}</DoctorPrice>
         <button>Mulai konsultasi</button>
       </DoctorInfo>
-      
     </DoctorListItemContainer>
-    
   );
 };
 
