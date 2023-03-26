@@ -4,8 +4,8 @@ import ArticlePage from "../../components/DetailArtikel/ArtikelContent";
 import banner from "../../assets/banner.png";
 import DoctorListItem from "../../components/DetailArtikel/DoctorListItem";
 import {
-  Button,
   Consult,
+  Container,
   Description,
   DoctorContainer,
   DoctorListContainer,
@@ -95,7 +95,7 @@ const DetailArtikel: React.FC = () => {
   };
 
   return (
-    <div>
+    <Container>
       <ArticlePage
         title={article.title}
         author={article.author}
@@ -112,15 +112,17 @@ const DetailArtikel: React.FC = () => {
         <DoctorListItem key={doctor.id} doctor={doctor} />
       ))}
       <Consult>
-      <img style={{marginLeft:"40px"}} src={imgconsult} alt="consult" />
+      <img src={imgconsult} alt="consult" />
       <div>
         <h3>Konsultasi Instan</h3>
       <p>Tanya dokter untuk buat resep.</p>
       </div>
-        <Button>
-          <button>Mulai Konsultasi</button>
-        </Button>
+        <button>Mulai konsultasi</button>
     </Consult>
+    <div >
+        <h3>Baca Artikel Silivadoc</h3>
+        <Search />
+      </div>
     </DoctorListContainer>
     <div>
      <Sidebar>
@@ -164,11 +166,8 @@ const DetailArtikel: React.FC = () => {
           </Top>
         </div>
       </DoctorContainer>
-      <div style={{ margin: "100px" }}>
-        <h3>Baca Artikel Silivadoc</h3>
-        <Search />
-      </div>
-    </div>
+      
+    </Container>
   );
 };
 
