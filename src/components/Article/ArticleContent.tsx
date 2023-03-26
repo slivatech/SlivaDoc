@@ -13,7 +13,7 @@ const ArticleContent = ({ header, subheader }: IContent) => {
     <TextArticle>
       <StyledH3>{header}</StyledH3>
       <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-        <img src="/live-streaming.svg" alt="live-Stream"/>
+        <img src="./assets/live-streaming.svg" alt="live-Stream"/>
         <p style={{ fontSize: "clamp(10px,4vw,16px)", fontWeight: "500" }}>
           {subheader}
         </p>

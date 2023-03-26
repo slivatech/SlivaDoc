@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   #root{
     padding: 0;
-    max-width: auto;
+    max-width: 1920px;
     margin: 0 auto;
   }
 

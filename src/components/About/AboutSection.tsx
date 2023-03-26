@@ -4,13 +4,15 @@ import { HeroImageWrapper, StyledAbout } from "./AboutStyle";
 import Search from "../Search/Search";
 import { StyledH1 } from "../FontStyle/Font";
 
-const StyledP = styled.p(
-  ({ theme }) => `
-  color:${theme.colors.txtSecondary};
-  font-weight:${theme.fontWeights.bold}
-  font-size:clamp(.5rem,4vw,1rem);
+const StyledP = styled.p`
+  color:${({ theme }) => theme.colors.txtSecondary};
+  font-weight:${({ theme }) => theme.fontWeights.bold};
+  font-size: clamp(.1rem,4vw,1rem);
+
+  @media (max-width: 768px) {
+     font-size: 12px;
+  }
 `
-);
 
 const StyledHref = styled.a(
   ({ theme }) => `
@@ -43,7 +45,7 @@ const AboutSection: React.FC = () => {
       <HeroImageWrapper>
         <img
           style={{ width: "100%" }}
-          src="/banner-pets.png"
+          src="./assets/banner-pets.png"
           alt="Banner Pets"
         />
       </HeroImageWrapper>

@@ -19,13 +19,18 @@ const ServiceImg = styled.img`
   @media (max-width: 640px) {
     width: 100px;
   }
+
+  @media (max-width: 400px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const ServiceSection: FC = () => {
   const breakPoints = {
     0: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+      slidesPerView: 4,
+      spaceBetween: 100,
     },
     480: {
       slidesPerView: 4,

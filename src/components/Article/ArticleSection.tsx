@@ -110,7 +110,7 @@ const ArticleSection = () => {
                 <ArticleBanner large={true}>
                   <img
                     style={{ width: "100%", height: "100%" }}
-                    src="/promo-banner.png"
+                    src="./assets/promo-banner.png"
                     alt="promoBanner"
                   />
                 </ArticleBanner>
@@ -121,7 +121,7 @@ const ArticleSection = () => {
               </Article>
             </MainArticleContainer>
             <AdsWrapper>
-              <BannerAds src="/peliharaan.png" />
+              <BannerAds src="./assets/peliharaan.png" />
             </AdsWrapper>
           </MainArticleWrapper>
           <SecondaryArticleWrapper>
@@ -134,7 +134,7 @@ const ArticleSection = () => {
                       height: "100%",
                       objectFit: "cover",
                     }}
-                    src="/allergic.png"
+                    src="./assets/allergic.png"
                     alt="allertgic"
                   />
                 </ArticleBanner>
@@ -151,7 +151,7 @@ const ArticleSection = () => {
                       height: "100%",
                       objectFit: "cover",
                     }}
-                    src="/allergic-2.png"
+                    src="./assets/allergic-2.png"
                     alt="allergic-2"
                   />
                 </ArticleBanner>
@@ -168,7 +168,7 @@ const ArticleSection = () => {
                       height: "100%",
                       objectFit: "cover",
                     }}
-                    src="/allergic-3.png"
+                    src="./assets/allergic-3.png"
                     alt="allergic-3"
                   />
                 </ArticleBanner>
@@ -179,8 +179,8 @@ const ArticleSection = () => {
               </Article>
             </ListArticleContainer>
             <BannerSection>
-              <BannerAds src="/petshop.png" />
-              <BannerAds src="/pet-services.png" />
+              <BannerAds src="./assets/petshop.png" />
+              <BannerAds src="./assets/pet-services.png" />
             </BannerSection>
           </SecondaryArticleWrapper>
         </div>

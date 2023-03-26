@@ -33,7 +33,7 @@ const SubscriptionSection = () => {
             width: "100%",
           }}
         >
-          <img src="/email-svg.svg" alt="email" />
+          <img src="./assets/email-svg.svg" alt="email" />
           <EmailInput placeholder="Email" />
         </div>
         <Button text="Subscribe" bgColor="#0a74ff" color="white" />

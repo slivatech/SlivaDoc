@@ -46,22 +46,22 @@ const OfferSection: FC = () => {
       <SwiperWrapper breakPoints={breakPoints}>
         <>
           <SwiperSlide>
-            <OfferImage src="/promo-banner.png" />
+            <OfferImage src="./assets/promo-banner.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="/ig-banner.png" />
+            <OfferImage src="./assets/ig-banner.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="/promo-banner.png" />
+            <OfferImage src="./assets/promo-banner.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="/promo-banner.png" />
+            <OfferImage src="./assets/promo-banner.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="/ig-banner.png" />
+            <OfferImage src="./assets/ig-banner.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="/promo-banner.png" />
+            <OfferImage src="./assets/promo-banner.png" />
           </SwiperSlide>
         </>
       </SwiperWrapper>

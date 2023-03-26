@@ -3,13 +3,14 @@ import { Container } from "../Container";
 
 export const StyledAbout = styled(Container)`
   display: flex;
-  padding: 2rem 8%;
+  padding: 3rem 8%;
 
   gap: 2rem;
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 768px) {
     flex-direction: column-reverse;
+    padding: 0.5rem 5%;
   }
 `;
 

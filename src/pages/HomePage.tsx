@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
 import AboutSection from "../components/About/AboutSection";
 import RecommendationSection from "../components/AnimalRecommendation/RecommendationSection";
 import ArticleSection from "../components/Article/ArticleSection";
@@ -7,11 +8,16 @@ import NavButtons from "../components/NavButtons/NavButtons";
 import OfferSection from "../components/Offers/OfferSection";
 import ServiceSection from "../components/Service/ServiceSection";
 import SubscriptionSection from "../components/SubscriptionSection/SubscriptionSection";
+import Footer from "../components/Footer/Footer";
 
-const HomePage = () => {
+interface HomePageProps {
+  width: number
+}
+const HomePage: React.FC<HomePageProps> = ({width}) => {
   return (
     <div>
       {/* <Header /> */}
+      <Navbar width={width} />
       <AboutSection />
       <NavButtons />
       <OfferSection />
@@ -20,6 +26,7 @@ const HomePage = () => {
       <DrugSection />
       <RecommendationSection />
       <SubscriptionSection />
+      <Footer />
     </div>
   );
 };

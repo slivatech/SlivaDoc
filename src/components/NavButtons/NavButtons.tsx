@@ -2,17 +2,32 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Container } from "../Container";
 
+const card = [
+  {
+    id: 1,
+    text: 'Chat dengan dokter',
+    img: './assets/chat.svg'
+  },
+  {
+    id: 2,
+    text: 'Cari Dokter',
+    img: './assets/search.svg'
+  },
+  {
+    id: 3,
+    text: 'Sliva Proteksi',
+    img: './assets/protection.svg'
+  },
+  {
+    id: 4,
+    text: 'SlivaShop',
+    img: './assets/shop.svg'
+  },
+]
+
 const NavButtonsStyled = styled.div`
-  /* max-width: 80%;
-  margin: 0 auto;
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  padding: 2rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   /* justify-content: center; */
   /* margin: 0 auto; */
   /* max-width:90%; */
@@ -20,14 +35,16 @@ const NavButtonsStyled = styled.div`
   /* white-space: nowrap; */
   @media (max-width: 400px) {
     display: grid;
-    max-width: 80%;
+    max-width: 90%;
+    padding: 1rem 2%;
     margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
+    /* background: red; */
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
 const NavButton = styled.button(({ theme }) => `
-  padding:12px 24px;
+  padding:10px 20px;
   display:flex;
   flex:1;
 
@@ -52,28 +69,23 @@ const NavButton = styled.button(({ theme }) => `
 const SVGIcon = styled.img`
   max-width: 25px;
   max-height: 25px;
+
+  @media (max-width: 400px) {
+    max-width: 22px;
+    max-height: 22px;
+  }
 `;
 
 const NavButtons: FC = () => {
   return (
     <Container>
       <NavButtonsStyled>
-        <NavButton>
-          <SVGIcon src="/chat.svg" />
-          <p>Chat dengan dokter</p>
-        </NavButton>
-        <NavButton>
-          <SVGIcon src="/search.svg" />
-          <p>Cari Dokter</p>
-        </NavButton>
-        <NavButton>
-          <SVGIcon src="/protection.svg" />
-          <p>Silva Proteksi</p>
-        </NavButton>
-        <NavButton>
-          <SVGIcon src="/shop.svg" />
-          <p>SilvaShop</p>
-        </NavButton>
+        {card.map((data) => (
+          <NavButton key={data.id}>
+            <SVGIcon src={data.img} />
+            <p>{data.text}</p>
+          </NavButton>
+        ))}
       </NavButtonsStyled>
     </Container>
   );
