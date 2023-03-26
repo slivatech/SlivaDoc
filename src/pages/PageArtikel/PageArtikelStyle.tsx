@@ -253,10 +253,20 @@ export const Search = styled.div`
     }
 
     button {
+<<<<<<< HEAD
+        background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
+        color: white;
+        border: none;
+        @media (max-width : 620px) {
+        width: 100%;
+        margin: 0;
+    }
+=======
       padding: 10px 23px;
       @media (max-width: 720px) {
         padding: 9px 20px;
       }
+>>>>>>> Development
     }
   }
 

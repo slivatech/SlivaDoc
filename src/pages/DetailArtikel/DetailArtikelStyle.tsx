@@ -1,16 +1,26 @@
 import styled from "styled-components";
 
+
+export const Container = styled.div`
+  width: 100%;
+  max-width: 1400px;
+`;
 export const ArticleWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 15px;
   margin: 100px;
   max-width: 1280px;
+  @media (max-width: 700px) {
+    margin: 20px;
+    
+  }
+
 `;
 export const Article = styled.div`
-  margin-right: 160px;
-  flex: 3;
-  @media (max-width: 700px) {
+   margin-right:160px;
+   flex: 2;
+   @media (max-width: 700px) {
     margin: 0;
   }
 `;
@@ -19,23 +29,16 @@ export const ArticleTitle = styled.h1`
   font-size: 1.5rem;
   margin-bottom: 20px;
 `;
-export const Button = styled.div`
-  justify-content: center;
-  margin-top: 22px;
-  margin-bottom: 10px;
-  button {
-    background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
-    color: #ffff;
-    border-radius: 5px;
-    padding: 10px 17px;
-    border: none;
-    margin-left: 222px;
-  }
-`;
+
+
 export const ArticleAuthor = styled.p`
   text-align: left;
   font-size: 0.75rem;
   margin-bottom: 5px;
+  a{
+    color:#F91E1E;
+  }
+
 `;
 
 export const ArticleDate = styled.p`
@@ -60,66 +63,116 @@ export const ArticleContent = styled.div`
   margin-top: 19px;
 `;
 export const DoctorContainer = styled.div`
-  max-width: 1280px;
   display: flex;
   flex-direction: row;
   gap: 24px;
-  margin: 0 100px;
+  margin: 0 85px;
   @media (max-width: 700px) {
-    display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0 16px;
   }
 `;
 
 export const Title = styled.h1`
-  font-size: 1.25;
-  justify-content: center;
+margin-left:100px;
   font-size: 20px;
   font-weight: 700;
   line-height: 22px;
   letter-spacing: 0px;
-  margin: 0 100px;
+  @media (max-width: 700px) {
+    font-size: 18px;
+    text-align: justify;
+    margin: 24px 20px;
+  }
 `;
 
 export const Description = styled.div`
   font-size: 14px;
-  margin: 2px 100px;
-  display: flex;
-  flex-direction: column;
+  margin-left:100px;
   letter-spacing: 0px;
   color: rgba(28, 28, 28, 0.7);
+  @media (max-width: 700px) {
+    margin: 8px 20px;
+    text-align: justify;
+  }
 `;
 
 export const DoctorListContainer = styled.div`
   border-top: 2px grey;
-  flex: 3;
+  flex: 4;
   justify-content: left;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    align-items:left;
+  }
 `;
-
+ 
 export const Consult = styled.div`
   margin-top: 26px;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 40px 19px;
-  background: linear-gradient(180deg, #e6eaee 0%, #cfdef3 100%);
+  background: linear-gradient(180deg, #E6EAEE 0%, #CFDEF3 100%);
   border-radius: 10px;
+
   h3 {
-    margin-left: 20px;
+    margin: 0;
+    font-size: 14px;
     order: 1;
-    font-size: 14px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+      text-align: center;
+      order: 2;
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
+
   p {
-    margin-left: 20px;
+    margin: 0;
     font-size: 14px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  button {
+    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 17px;
+    border: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      order: 3;
+      margin-top: 10px;
+      width: 100%;
+      justify-self: flex-end;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
 export const BannerSection = styled.div`
   height: 700px;
   width: 366px;
-  left: 946px;
-  top: 268px;
+  margin-right:0;
   border-radius: 5px;
 
   @media (max-width: 720px) {
@@ -129,7 +182,6 @@ export const BannerSection = styled.div`
 
 export const Sidebar = styled.div`
   display: flex;
-  flex: 1;
   margin-left: 55px;
   flex-direction: column;
   @media (max-width: 700px) {
