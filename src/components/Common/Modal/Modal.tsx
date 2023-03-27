@@ -38,11 +38,11 @@ const ModalContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   position: absolute;
-  top: 40%;
-  left: 10%;
+  top: 50%;
+  left: 50%;
   padding: 10px;
   z-index: 100;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 `
 
 export default Modal
