@@ -6,6 +6,7 @@ import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
+import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -32,9 +33,10 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       {/* <Auth /> */}
-      <HomePage width={dimension.width} />
+      {/* <HomePage width={dimension.width} />
       <Artikel />
-      <DetailArtikel />
+      <DetailArtikel /> */}
+      <DetailKlinik />
     </ThemeProvider>
   );
 };
