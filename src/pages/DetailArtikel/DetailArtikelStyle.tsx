@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 export const Container = styled.div`
@@ -263,3 +264,11 @@ export const Top = styled.div`
     flex-direction: column;
   }
 `;
+
+export const ListWrap = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: #2C4AE8;
+`

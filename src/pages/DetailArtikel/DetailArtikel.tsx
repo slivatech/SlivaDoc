@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+// import { Link } from "react-router-dom";
 import ArticlePage from "../../components/DetailArtikel/ArtikelContent";
 import banner from "../../assets/banner.png";
 import DoctorListItem from "../../components/DetailArtikel/DoctorListItem";
+import Live from '../../assets/icon/live.png'
 import {
   Consult,
   Container,
@@ -12,6 +14,7 @@ import {
   List,
   ListImage,
   ListInfo,
+  ListWrap,
   Row,
   Sidebar,
   SidebarListItem,
@@ -128,11 +131,12 @@ const DetailArtikel: React.FC = () => {
      <Sidebar>
       <SidebarTitle>Kategori</SidebarTitle>
       <SidebarTitle>
-        <SidebarListItem>
-          <a href='#'> Radang Usus</a>
-        </SidebarListItem>
+        <ListWrap to={''}>
+          <img src={Live} alt="live" />
+          <div>Radang Usus</div>
+        </ListWrap>
       </SidebarTitle>
-      <SidebarTitle>Topik Terkait</SidebarTitle>
+      <SidebarTitle>Topik Terkini</SidebarTitle>
       <SidebarTitle>
       <SidebarListItem>
           <a href='#'> Radang Usus</a>
