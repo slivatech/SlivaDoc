@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Form = styled.div`
+    margin-top: 52px;
+
     h2 {
         font-family: 'DM Sans';
         font-weight: 700;
@@ -30,6 +32,7 @@ export const Form = styled.div`
             border-radius: 5px;
             font-weight: 400;
             font-size: 24px;
+            cursor: pointer;
         }
 
         .btn-cancel {
@@ -66,6 +69,66 @@ export const Form = styled.div`
             background: #FFFFFF
             font-weight: 500;
             font-size: 14px;
+        }
+    }
+`
+
+export const Card = styled.div`
+    background: #FCF6F6;
+    border-radius: 10.5635px;
+    min-width: 292.61px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 13px 17px 15px 25px;
+    
+    .text {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        color: #06152B;
+        margin-bottom: 12px;
+        
+        h1 {
+            font-weight: 700;
+            font-size: 24.0637px;
+            opacity: 0.7;
+        }
+        
+        span {
+            font-weight: 400;
+            font-size: 15.0213px;
+            opacity: 0.7;
+        }
+    }
+    
+    img {
+        width: 63.38px;
+    }
+
+    button {
+        background: #127FFF;
+        border-radius: 5px;
+        color: #FFF;
+        border: none;
+        font-weight: 400;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    .btn-detail {
+        padding: 8px 17px;
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .btn-money {
+        padding: 8px 16px;
+        line-height: 12px;
+        text-align: center;
+
+        img {
+            width: 12px;
+            margin-left: 3px;
         }
     }
 `

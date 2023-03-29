@@ -1,17 +1,23 @@
 import React from 'react'
 import pict from '../../assets/doctor.png'
+import iconMoney from '../../assets/icon/money.svg'
+import topUp from '../../assets/icon/topUp.svg'
+import tarik from '../../assets/icon/tarik-tunai.svg'
 import { Container } from '../PageArtikel/PageArtikelStyle'
-import { Form } from './EditProfilStyle'
+import { Card, Form } from './EditProfilStyle'
+
 
 const EditProfil = () => {
 
     interface IProfile {
         id: number;
-        input: string;
-        name: string;
+        input?: string;
+        name?: string;
         type?: string;
         placeholder?: string;
         option?: any;
+        total?: number;
+        title?: string;
     }
 
     const profileName = [
@@ -84,9 +90,54 @@ const EditProfil = () => {
             type: "password"
         },
     ]
+
+    const jobAp = [
+        {
+            id: 1,
+            total: 16,
+            title: "Total Transaksi",
+            
+        },
+        {
+            id: 2,
+            total: 59,
+            title: "Total Konsultasi",
+        }
+    ]
   return (
     <>
         <Container>
+            <div style={{display: 'flex', gap: '33px'}}>
+                {jobAp.map((i: IProfile) => (
+                    <Card key={i.id}>
+                        <div className='text'>
+                            <img src={iconMoney}/>
+                            <div>
+                                <h1>{i.total}</h1>
+                                <span>{i.title}</span>
+                            </div>
+                        </div>
+                        <button className='btn-detail'>View Detail</button>
+                    </Card>
+                ))}
+                <Card>
+                    <div className='text'>
+                        <img src={iconMoney}/>
+                        <div>
+                            <h1>Rp.2.000.000</h1>
+                            <span>Saldo</span>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+                        <button className='btn-money'>TopUp
+                            <img src={topUp}/>
+                        </button>
+                        <button className='btn-money'>Tarik Tunai
+                            <img src={tarik}/>
+                        </button>
+                    </div>
+                </Card>
+            </div>
             <Form>
                 <div>
                     <h2>PROFILE</h2>
@@ -102,10 +153,10 @@ const EditProfil = () => {
                         ))}
                     </div>
                     {profile.map((i: IProfile) =>(
-                    <div className="inpWrap" key={i.id}>
-                        <label htmlFor={i.input}>{i.name}</label>
-                        <input type={i.type} id={i.input} placeholder={i.placeholder} />
-                    </div>
+                        <div className="inpWrap" key={i.id}>
+                            <label htmlFor={i.input}>{i.name}</label>
+                            <input type={i.type} id={i.input} placeholder={i.placeholder} />
+                        </div>
                     ))}
                     <div className='row'>
                         {profilePlace.map((i: IProfile) => (
@@ -120,10 +171,10 @@ const EditProfil = () => {
                         ))}
                     </div>
                     {profilePass.map((i: IProfile) =>(
-                    <div className="inpWrap" key={i.id}>
-                        <label htmlFor={i.input}>{i.name}</label>
-                        <input type={i.type} id={i.input} />
-                    </div>
+                        <div className="inpWrap" key={i.id}>
+                            <label htmlFor={i.input}>{i.name}</label>
+                            <input type={i.type} id={i.input} />
+                        </div>
                     ))}
                     <div style={{margin: '44px 0'}}>
                         <button className='btn-cancel'>Cancel</button>
