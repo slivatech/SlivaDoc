@@ -7,6 +7,12 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 14px;
   max-width: 1400px;
+  
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
 `;
 
 export const ContainerInformasi = styled.div`
@@ -15,12 +21,21 @@ export const ContainerInformasi = styled.div`
   margin: 100px;
   margin-right:0;
   width:739px;
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+    margin-top: 50px;
+    border-radius: 0;
+    width:100%;
+  }
 `;
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction:column;
   margin: 50px;
-
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+    width:100%;
+  }
 `;
 
 export const DoctorPhoto = styled.img`
@@ -105,17 +120,27 @@ export const ExperienceDescription = styled.p`
   font-size: 12px;
   margin:11px 0;
 `;
-export const BookingContainer =styled.div`
-    background: #ffff;
+export const BookingContainer = styled.div`
+  background: #ffff;
   border-radius: 5px;
-  margin:80px;
-  margin-left:0;
-  margin-bottom:auto;
-  width:418px;
+  margin: 80px;
+  margin-top: 100px;
+  margin-left: 0;
+  margin-bottom: auto;
+  width: 418px;
 
+  @media only screen and (max-width: 768px) {
+
+    width: 100%;
+  }
 `;
+
 export const ConsultationContainer = styled.div`
   margin: 50px;
+
+  @media only screen and (max-width: 768px) {
+    margin:0;
+  }
 `;
 
 export const HeaderConsultation = styled.h2`
@@ -125,57 +150,94 @@ export const HeaderConsultation = styled.h2`
 `;
 
 export const List = styled.ul`
-  margin-left:20px;
-  font-color:rgba(28, 28, 28, 0.7);
+  margin-left: 20px;
+  font-color: rgba(28, 28, 28, 0.7);
   font-size: 12px;
   padding: 0;
   line-height: 22px;
 `;
-export const DropdownWrap = styled.div``
+
+export const DropdownWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  @media only screen and (max-width: 768px) {
+    justify-content:left;
+    width:100%;
+    
+
+  }
+`;
+
 
 export const Watch = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
-  margin-top:20px;
+  margin-top: 20px;
   border-top: 0.5px solid rgba(28, 28, 28, 0.6);
-transform: rotate(-0.16deg);
-  
+  transform: rotate(-0.16deg);
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
+  }
 `;
 
 export const WatchHead = styled.div`
-  margin:0;
-  display:flex;
-  flex-direction:warp;
-  margin-top:27px;
-  
-  h1{
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 27px;
+
+  h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 22px;
   }
-  img{
+
+  img {
     width: 19px;
     height: 19px;
-    margin-right:6px;
+    margin-right: 6px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
+    
   }
 `;
 
 export const WatchContent = styled.div`
-  display:flex;
-  flex:wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-  div{
-    display:flex;
-    background: #ECE4E4;
+  div {
+    display: flex;
+    background: #ece4e4;
     border-radius: 3px;
     width: 107px;
     height: 24px;
-    align-items:center;
-    margin-right:12px;
+    align-items: center;
+    margin-right: 12px;
   }
 `;
 
-export const ButtonContainer =styled.div`
-  margin-top:50px;
+export const CalendarContainer = styled.div`
+  margin:0;
+  
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+    border-top: 0.5px solid rgba(28, 28, 28, 0.6);
+    width:100%;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  margin-top: 50px;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+
+    width:100%;
+  }
 `;

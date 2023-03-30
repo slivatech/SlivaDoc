@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer } from "./DetailDokterStyle";
+import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer } from "./DetailDokterStyle";
 import img from "../../assets/doctor.png"
 import Dropdown from "../../components/Common/Dropdown/Dropdown";
 import CalendarComponent from "../../components/Calender/CalendarComponent";
@@ -101,7 +101,9 @@ const DetailDokter: React.FC = () => {
           height="39px"
       />
        </DropdownWrap>
+       <CalendarContainer>
        <CalendarComponent  />
+       </CalendarContainer>
        <Watch> {data.map((item, index) => (
     <React.Fragment key={index}>
       <WatchHead>
@@ -124,6 +126,7 @@ const DetailDokter: React.FC = () => {
       fontSize="14px"
       radius="8px"
       height='40px'
+      width='auto'
       />
       </ButtonContainer>
       </ConsultationContainer>
