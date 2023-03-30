@@ -114,21 +114,17 @@ export const Card = styled.div`
         cursor: pointer;
     }
 
-    .btn-detail {
-        padding: 8px 17px;
-        display: block;
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    .btn-money {
+    .btn-card {
         padding: 8px 16px;
         line-height: 12px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 3px;
 
         img {
             width: 12px;
-            margin-left: 3px;
+            // margin-left: 3px;
         }
     }
 `

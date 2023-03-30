@@ -10,56 +10,17 @@ import { Card, Form } from './EditProfilStyle'
 const EditProfil = () => {
 
     interface IProfile {
-        id: number;
-        input?: string;
-        name?: string;
-        type?: string;
+        input: string;
+        name: string;
+        type: string;
         placeholder?: string;
-        option?: any;
-        total?: number;
-        title?: string;
     }
 
-    const profileName = [
-        {
-            id: 1,
-            input: "name",
-            name: "First Name",
-            type: "text",
-            placeholder: "contoh: Evan Moris"
-        },
-        {
-            id: 2,
-            input: "name",
-            name: "Last Name",
-            type: "text",
-            placeholder: "contoh: Cheahn"
-        },
-    ]
-
-    const profile = [
-        {
-            id: 1,
-            input: "email",
-            name: "Email Address",
-            type: "email",
-            placeholder: "contoh: evansmoris@gmail.com"
-        },
-        {
-            id: 2,
-            input: "address",
-            name: "Address",
-            type: "text",
-            placeholder: "contoh: Jl.Sukses Selalu"
-        },
-        {
-            id: 3,
-            input: "phone",
-            name: "Contact Number",
-            type: "number",
-            placeholder: "contoh: +6281282818292"
-        },
-    ]
+    interface ICard {
+        total: any;
+        title: string;
+        btn: any;
+    }
 
     const profilePlace = [
         {
@@ -76,67 +37,88 @@ const EditProfil = () => {
         },
     ]
 
-    const profilePass = [
-        {
-            id: 1,
-            input: "password",
-            name: "Password",
-            type: "password"
-        },
-        {
-            id: 2,
-            input: "re-password",
-            name: "Re-type Password",
-            type: "password"
-        },
-    ]
-
     const jobAp = [
         {
             id: 1,
             total: 16,
             title: "Total Transaksi",
+            btn : [
+                {
+                    text : "View Detail"
+                },
+            ]
             
         },
         {
             id: 2,
             total: 59,
             title: "Total Konsultasi",
+            btn : [
+                {
+                    text : "View Detail"
+                },
+            ]
+        },
+        {
+            id: 3,
+            total: "Rp.2.000.000",
+            title: "Saldo",
+            btn : [
+                {
+                    text : "TopUp",
+                    icon : topUp
+                },
+                {
+                    text : "Tarik Tunai",
+                    icon : tarik
+                }
+            ]
         }
     ]
+    function Cards (props:ICard) {
+       return (
+        <Card >
+            <div className='text'>
+                <img src={iconMoney}/>
+                <div>
+                    <h1>{props.total}</h1>
+                    <span>{props.title}</span>
+                </div>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+                {props.btn.map((button: any) =>
+                    <button className='btn-card'>
+                        {button.text}
+                        {button.icon ? 
+                            <img src={button.icon}/> : ''
+                        }
+                    </button> 
+                )}
+            </div>
+        </Card>
+       ) 
+    }
+
+    function Input (props: IProfile) {
+        return (
+            <div className="inpWrap">
+                <label htmlFor={props.input}>{props.name}</label>
+                <input type={props.type} id={props.input} placeholder={props.placeholder} />
+            </div>
+        )
+    }
+
   return (
     <>
         <Container>
             <div style={{display: 'flex', gap: '33px'}}>
-                {jobAp.map((i: IProfile) => (
-                    <Card key={i.id}>
-                        <div className='text'>
-                            <img src={iconMoney}/>
-                            <div>
-                                <h1>{i.total}</h1>
-                                <span>{i.title}</span>
-                            </div>
-                        </div>
-                        <button className='btn-detail'>View Detail</button>
-                    </Card>
+                {jobAp.map((i: ICard) => (
+                    <Cards 
+                        total={i.total} 
+                        title={i.title} 
+                        btn={i.btn}
+                    />
                 ))}
-                <Card>
-                    <div className='text'>
-                        <img src={iconMoney}/>
-                        <div>
-                            <h1>Rp.2.000.000</h1>
-                            <span>Saldo</span>
-                        </div>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
-                        <button className='btn-money'>TopUp
-                            <img src={topUp}/>
-                        </button>
-                        <button className='btn-money'>Tarik Tunai
-                            <img src={tarik}/>
-                        </button>
-                    </div>
-                </Card>
             </div>
             <Form>
                 <div>
@@ -145,21 +127,12 @@ const EditProfil = () => {
                 </div>
                 <form>
                     <div className='row'>
-                        {profileName.map((i: IProfile) => (
-                        <div className="inpWrap" key={i.id}>
-                            <label htmlFor={i.input}>{i.name}</label>
-                            <input type={i.type} id={i.input} placeholder={i.placeholder} />
-                        </div>
-                        ))}
+                        <Input input='name' name='First Name' type='text' placeholder='contoh: Evan Moris' />
+                        <Input input='name' name='Last Name' type='text' placeholder='contoh: Cheahn' />
                     </div>
-                    {profile.map((i: IProfile) =>(
-                        <div className="inpWrap" key={i.id}>
-                            <label htmlFor={i.input}>{i.name}</label>
-                            <input type={i.type} id={i.input} placeholder={i.placeholder} />
-                        </div>
-                    ))}
+                    <Input input='email' name='Email' type='email' placeholder='contoh: evansmoris@gmail.com' />
                     <div className='row'>
-                        {profilePlace.map((i: IProfile) => (
+                        {profilePlace.map((i:any) => (
                             <div className='inpWrap' key={i.id}>
                                 <label htmlFor={i.input}>{i.name}</label>
                                 <select name={i.input}>
@@ -170,12 +143,8 @@ const EditProfil = () => {
                             </div>
                         ))}
                     </div>
-                    {profilePass.map((i: IProfile) =>(
-                        <div className="inpWrap" key={i.id}>
-                            <label htmlFor={i.input}>{i.name}</label>
-                            <input type={i.type} id={i.input} />
-                        </div>
-                    ))}
+                    <Input input='password' name='Passrowd' type='password' />
+                    <Input input='repassword' name='Re-Type Passrowd' type='password' />
                     <div style={{margin: '44px 0'}}>
                         <button className='btn-cancel'>Cancel</button>
                         <button className='btn-save'>Save</button>

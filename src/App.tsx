@@ -36,9 +36,9 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       {/* <Auth /> */}
-      {/* <HomePage width={dimension.width} /> */}
-      {/* <Artikel /> */}
-      {/* <DetailArtikel /> */}
+      {/* <HomePage width={dimension.width} />
+      <Artikel />
+      <DetailArtikel /> */}
       <Routes>
         <Route path='/profil' element={<EditProfil/>}/>
       </Routes>
