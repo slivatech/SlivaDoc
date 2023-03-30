@@ -1,3 +1,5 @@
+import useMediaQuery from "../../hooks/useMediaQuery";
+import Select from "../Select/Select";
 import CategorySection from "./CategorySection";
 import DoctorsList from "./DoctorsList";
 import { facilities, jamOperasional } from "./fakeData";
@@ -7,8 +9,20 @@ import { StyledInfoTab, StyledServiceTab } from "./TabSectionStyle";
 interface TabProps {
   tab: "informasi" | "layanan" | "dokter";
 }
+const values = ["Covid 19", "Radiologi & Elektromedik"];
+
 const Tab = ({ tab }: TabProps) => {
-  return <div style={{paddingTop:"1rem"}}>{tab === "informasi" ? <InfoTab /> : tab==="layanan" ? <ServiceTab /> : <DoctorTab />}</div>;
+  return (
+    <div style={{ paddingTop: "1rem" }}>
+      {tab === "informasi" ? (
+        <InfoTab />
+      ) : tab === "layanan" ? (
+        <ServiceTab />
+      ) : (
+        <DoctorTab />
+      )}
+    </div>
+  );
 };
 
 const InfoTab = () => {
@@ -41,10 +55,8 @@ const InfoTab = () => {
       <StyledInfoTab>
         <h2>Fasilitas</h2>
         <ul>
-          {facilities.map((facility,i)=>(
-            <li key={i}>
-              {facility}
-            </li>
+          {facilities.map((facility, i) => (
+            <li key={i}>{facility}</li>
           ))}
         </ul>
       </StyledInfoTab>
@@ -53,20 +65,57 @@ const InfoTab = () => {
 };
 
 const ServiceTab = () => {
+  const desktop = useMediaQuery("(min-width:768px)");
   return (
-    <StyledServiceTab>
-      <CategorySection />
-      <ServicesList />
-    </StyledServiceTab>
-  )
-}
+    <>
+      {!desktop ? (
+        <Select
+          label="Semua Layanan"
+          radius="5px"
+          border="0.5px solid rgba(153, 146, 146, 0.7)"
+          icon={
+            <span
+              style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
+            >
+              Ubah
+            </span>
+          }
+          values={values}
+        />
+      ) : null}
+
+      <StyledServiceTab>
+        <CategorySection />
+        <ServicesList />
+      </StyledServiceTab>
+    </>
+  );
+};
 
 const DoctorTab = () => {
+  const desktop = useMediaQuery("(min-width:768px)");
+
   return (
     <div>
+      {!desktop ? (
+        <Select
+          label="Semua Layanan"
+          radius="5px"
+          border="0.5px solid rgba(153, 146, 146, 0.7)"
+          icon={
+            <span
+              style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
+            >
+              Ubah
+            </span>
+          }
+          values={values}
+        />
+      ) : null}
+
       <DoctorsList />
     </div>
-  )
-}
+  );
+};
 
 export default Tab;
