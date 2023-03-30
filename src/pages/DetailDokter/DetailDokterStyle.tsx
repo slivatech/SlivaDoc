@@ -92,9 +92,11 @@ export const ExperienceContainer = styled.div`
   flex:column;
 `;
 export const ExperienceHeader = styled.h1`
-  border-bottom: 2px dashed #fff;
+   border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
   font-size:20px;
   margin-bottom:36px;
+  display:flex;
+
 `;
 
 export const HeaderInfo = styled.h2`
@@ -107,6 +109,7 @@ export const InfoDescription = styled.p`
   font-size: 12px;
   margin: 0;
   margin-bottom: 20px;
+  
 `;
 
 export const HeaderExperience = styled.h2`
@@ -116,9 +119,10 @@ export const HeaderExperience = styled.h2`
 
 `;
 
-export const ExperienceDescription = styled.p`
+export const ExperienceDescription = styled.h1`
   font-size: 12px;
   margin:11px 0;
+  
 `;
 export const BookingContainer = styled.div`
   background: #ffff;
