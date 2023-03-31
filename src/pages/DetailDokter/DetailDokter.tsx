@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer } from "./DetailDokterStyle";
 import Dropdown from "../../components/Common/Dropdown/Dropdown";
 import CalendarComponent from "../../components/Calender/CalendarComponent";
-import { consultType, data, doctor } from "./Datas";
+import { consultType, data, doctor,rate } from "./Datas";
 import Button from "../../components/Common/Buttons/BaseButton";
-import porto from "../../assets/icon/portfolio.png"
-import review from "../../assets/icon/review.png";
+
 
 
 const DetailDokter: React.FC = () => {
@@ -22,17 +21,14 @@ const DetailDokter: React.FC = () => {
             <DoctorSpecialty>{doctor.specialty}</DoctorSpecialty>
             <DoctorSTR>STR {doctor.STR}</DoctorSTR>
    
-          <DoctorAbout>
-            <div>
-              <img src={porto} alt="Icon 1" />
-              <p>3 Tahun</p>
+            <DoctorAbout>
+          {rate.map((item, index) => (
+            <div key={index}>
+              <img src={item.icon} alt={`Icon ${index}`} />
+              <p>{item.text}</p>
             </div>
-            <div>
-              <img src={review}alt="Icon 2" />
-              <p>99%</p>
-            </div>
+          ))}
           </DoctorAbout>
-
           </Profile>
         </DoctorInfoContainer>
         <ExperienceContainer>

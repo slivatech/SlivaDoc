@@ -2,6 +2,8 @@ import img from "../../assets/doctor.png";
 import morning from "../../assets/icon/morning.png";
 import sun from "../../assets/icon/sun.png";
 import night from "../../assets/icon/night.png";
+import porto from "../../assets/icon/portfolio.png"
+import review from "../../assets/icon/review.png";
 
 interface Doctor {
   name: string;
@@ -62,3 +64,5 @@ export const data = [
     schedule: ["08:00 - 12:00", "08:00 - 12:00"],
   },
 ];
+
+export const rate = [  { icon: porto, text: '3 Tahun' },  { icon: review, text: '99%' },];
