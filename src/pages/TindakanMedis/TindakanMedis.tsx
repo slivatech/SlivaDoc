@@ -97,7 +97,7 @@ const TindakanMedis = () => {
         },
     ];
 
-    function CardImage(props: any) {
+    const CardImage = (props: any) => {
         return (
             <CardDoc key={props.id}>
                 <div>
@@ -107,7 +107,7 @@ const TindakanMedis = () => {
         )
     };
 
-    function Title(props: any) {
+    const Title = (props: any) => {
         return (
             <Top>
                 <h1>{props.text}</h1>
