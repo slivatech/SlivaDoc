@@ -7,10 +7,11 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 14px;
   max-width: 1400px;
-
   
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    gap: 0;
+    padding: 20px;
   }
 `;
 
@@ -25,7 +26,6 @@ export const ContainerInformasi = styled.div`
     margin-top: 50px;
     border-radius: 0;
     width:100%;
-    padding: 20px;
   }
 `;
 export const InfoContainer = styled.div`
@@ -78,40 +78,12 @@ export const DoctorSTR = styled.p`
 font-size: 8px;
 line-height: 10px;
   margin: 0;
-  color:#5B34F6;
 `;
 
 export const DoctorAbout = styled.p`
+  font-size: 18px;
   margin: 0;
   margin-bottom: 20px;
-  display: flex;
-    align-items: center;
-    flex-direction:row;
-  div {
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    margin-right: 10px;
-    width: 60px;
-    height: 19px;
-    background: #ECE4E4;
-    border-radius: 3px;
-  }
-  
-  img {
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-  }
-  
-  p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 10px;
-    margin: 0;
-  }
-  
 `;
 
 export const ExperienceContainer = styled.div`
@@ -162,10 +134,8 @@ export const BookingContainer = styled.div`
   width: 418px;
 
   @media only screen and (max-width: 768px) {
-    margin-top: 0;
+
     width: 100%;
-    padding: 20px;
-    margin-bottom: 50px;
   }
 `;
 
@@ -273,5 +243,3 @@ export const ButtonContainer = styled.div`
     margin-top: 20px;
   }
 `;
-
-

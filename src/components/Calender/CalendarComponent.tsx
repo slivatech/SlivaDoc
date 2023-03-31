@@ -52,6 +52,7 @@ const IconWrapper = styled.div`
   margin-top:10px;
   left: 0;
   cursor: pointer;
+  padding: 3px;
 `;
 
 const CalendarComponent: React.FC<MultipleDatePickerProps> = ({

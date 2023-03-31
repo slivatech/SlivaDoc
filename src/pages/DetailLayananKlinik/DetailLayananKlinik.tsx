@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer } from "./DetailDokterStyle";
+import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer } from "./DetailLayananKlinikStyle";
 import Dropdown from "../../components/Common/Dropdown/Dropdown";
 import CalendarComponent from "../../components/Calender/CalendarComponent";
 import { consultType, data, doctor } from "./Datas";
 import Button from "../../components/Common/Buttons/BaseButton";
-import porto from "../../assets/icon/portfolio.png"
-import review from "../../assets/icon/review.png";
+
 
 
 const DetailDokter: React.FC = () => {
@@ -21,18 +20,7 @@ const DetailDokter: React.FC = () => {
             <DoctorName>{doctor.name}</DoctorName>
             <DoctorSpecialty>{doctor.specialty}</DoctorSpecialty>
             <DoctorSTR>STR {doctor.STR}</DoctorSTR>
-   
-          <DoctorAbout>
-            <div>
-              <img src={porto} alt="Icon 1" />
-              <p>3 Tahun</p>
-            </div>
-            <div>
-              <img src={review}alt="Icon 2" />
-              <p>99%</p>
-            </div>
-          </DoctorAbout>
-
+            <DoctorAbout>3tahun</DoctorAbout>
           </Profile>
         </DoctorInfoContainer>
         <ExperienceContainer>
