@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
 import DetailDokter from './pages/DetailDokter/DetailDokter';
+import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -37,6 +38,7 @@ const App = () => {
       <Artikel />
       <DetailArtikel />
       <DetailDokter/>
+      <DetailLayananKlinik/>
     </ThemeProvider>
   );
 };

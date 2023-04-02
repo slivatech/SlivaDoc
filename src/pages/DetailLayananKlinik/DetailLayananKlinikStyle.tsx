@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
   background: rgba(230, 231, 232, 0.3);
   display: flex;
   flex-direction: row;
@@ -38,92 +37,73 @@ export const InfoContainer = styled.div`
   }
 `;
 
-export const DoctorPhoto = styled.img`
-  width: 117px;
-height: 150px;
-left: 157px;
-margin-right:30px;
-top: 285px;
+export const KlinikBanner = styled.img`
+ max-width: 672px;
+height: 173px;
+border: 0.5px solid #B98D8D;
+border-radius: 5px;
 
 `;
 
-export const DoctorInfoContainer = styled.div`
-display: flex;
-flex-direction:wrap;
-align-items: center;
-`;
 
-export const Profile= styled.div`
+export const  Price = styled.div`
   display:flex;
   flex-direction:column;
+  border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
+  margin-top:45px;
+  h1{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  h3{
+    font-style:none;
+    color:#F90909;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+    margin-bottom: 10px;
+  }
+  p{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+    margin-bottom: 3px;
+
+  }
 `;
 
-export const DoctorName = styled.h1`
-  font-weight: 700;
-font-size: 20px;
-line-height: 22px;
-  margin: 0;
-  margin-bottom:3px;
-`;
-
-export const DoctorSpecialty = styled.p`
-  font-weight: 400;
-font-size: 12px;
-line-height: 22px;
-  margin: 0;
-`;
-
-export const DoctorSTR = styled.p`
-  font-weight: 400;
-font-size: 8px;
-line-height: 10px;
-  margin: 0;
-`;
-
-export const DoctorAbout = styled.p`
-  font-size: 18px;
-  margin: 0;
-  margin-bottom: 20px;
-`;
-
-export const ExperienceContainer = styled.div`
-  margin-top: 50px;
-  display:flex-direction;
-  flex:column;
-`;
-export const ExperienceHeader = styled.h1`
-   border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
-  font-size:20px;
-  margin-bottom:36px;
+export const  LocationContainer = styled.div`
   display:flex;
-
+  flex-direction:column;
+  border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
+  margin-top:10px;
+  h1{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+  }
 `;
 
-export const HeaderInfo = styled.h2`
-  font-size: 18px;
-  margin: 0;
-  margin-bottom: 20px;
+export const Location=styled.div`
+   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  img{
+    justify-content:flex-start;
+  }
+  p{
+    ont-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color:#000000;
+    
+  }
+`;
+export const LocationLogo=styled.img`
+  margin-left: auto;
 `;
 
-export const InfoDescription = styled.p`
-  font-size: 12px;
-  margin: 0;
-  margin-bottom: 20px;
-  
-`;
-
-export const HeaderExperience = styled.h2`
-  font-size: 18px;
-  margin: 0;
-  margin-top: 21px;
-
-`;
-
-export const ExperienceDescription = styled.h1`
-  font-size: 12px;
-  margin:11px 0;
-  
-`;
 export const BookingContainer = styled.div`
   background: #ffff;
   border-radius: 5px;
@@ -134,7 +114,7 @@ export const BookingContainer = styled.div`
   width: 418px;
 
   @media only screen and (max-width: 768px) {
-
+    margin-top: 15px;
     width: 100%;
   }
 `;
@@ -151,26 +131,6 @@ export const HeaderConsultation = styled.h2`
   font-size: 14px;
   margin: 0;
   margin-bottom: 20px;
-`;
-
-export const List = styled.ul`
-  margin-left: 20px;
-  font-color: rgba(28, 28, 28, 0.7);
-  font-size: 12px;
-  padding: 0;
-  line-height: 22px;
-`;
-
-export const DropdownWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  @media only screen and (max-width: 768px) {
-    justify-content:left;
-    width:100%;
-    
-
-  }
 `;
 
 

@@ -1,70 +1,40 @@
 import React, { useState } from "react";
-import { ConsultationContainer, Container,DoctorSTR, DoctorAbout, DoctorInfoContainer, DoctorName, DoctorPhoto, DoctorSpecialty, ExperienceContainer, ExperienceDescription, ExperienceHeader, HeaderConsultation, HeaderExperience, HeaderInfo, InfoContainer, InfoDescription, List, Profile, ContainerInformasi, BookingContainer, DropdownWrap, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer } from "./DetailLayananKlinikStyle";
-import Dropdown from "../../components/Common/Dropdown/Dropdown";
+import { ConsultationContainer, Container , HeaderConsultation, ContainerInformasi, BookingContainer, Watch, WatchContent, WatchHead, ButtonContainer, CalendarContainer, InfoContainer, KlinikBanner, Price, LocationContainer, Location, LocationLogo } from "./DetailLayananKlinikStyle";
 import CalendarComponent from "../../components/Calender/CalendarComponent";
-import { consultType, data, doctor } from "./Datas";
+import {data} from "./Datas";
 import Button from "../../components/Common/Buttons/BaseButton";
+import banner from "../../assets/image/KBanner.png"
+import location from "../../assets/icon/location.png"
+import locimage from "../../assets/image/locimage.png"
+import TabSection from "../../components/DetailLayananKlinik/TabSection";
 
 
-
-const DetailDokter: React.FC = () => {
-  const [type, setType] = useState()
-
+const DetailLayananKlinik: React.FC = () => {
+ 
   return (
     <Container>
       <ContainerInformasi>
       <InfoContainer>
-        <DoctorInfoContainer>
-          <DoctorPhoto src={doctor.photo} alt="Foto Dokter" />
-          <Profile>
-            <DoctorName>{doctor.name}</DoctorName>
-            <DoctorSpecialty>{doctor.specialty}</DoctorSpecialty>
-            <DoctorSTR>STR {doctor.STR}</DoctorSTR>
-            <DoctorAbout>3tahun</DoctorAbout>
-          </Profile>
-        </DoctorInfoContainer>
-        <ExperienceContainer>
-          <ExperienceHeader>Informasi</ExperienceHeader>
-          <HeaderInfo>Tentang Dokter</HeaderInfo>
-          <InfoDescription>{doctor.about}</InfoDescription>
-          <HeaderExperience>Pengalaman Praktik </HeaderExperience>
-          {doctor.experienceDetails.map((experience, index) => (
-          <React.Fragment key={index}>
-            <ExperienceDescription>{experience}</ExperienceDescription>
-            <InfoDescription>{doctor.experienceTime[index]}</InfoDescription>
-          </React.Fragment>
-          ))}
-           
-           <HeaderExperience>Pendidikan Terakhir </HeaderExperience>
-            {doctor.education.map((edu, index) => (
-              <React.Fragment key={index}>
-                <ExperienceDescription>{edu}</ExperienceDescription>
-                  <InfoDescription>{doctor.graduation[index]}</InfoDescription>
-              </React.Fragment>
-            ))}
-          <HeaderExperience>Tindakan Medis</HeaderExperience>
-          <List>
-          {doctor.medicalTreatment.map((treatment, index) => (
-            <li key={index}>{treatment}</li>
-          ))}
-          </List>
-        </ExperienceContainer>
+        <KlinikBanner src={banner} alt="photo"/>
+      <Price>
+        <h1>Swab Antigen Covid-19</h1>
+        <p>Biaya</p>
+        <h3>Rp.25.000</h3>
+      </Price>
+      <LocationContainer>
+        <h1>Klinik Hewan Indonesia</h1>
+        <Location>
+          <img src={location} alt="location"/>
+          <p>4.7 Km</p>
+          <LocationLogo src={locimage}/>
+        </Location>
+      </LocationContainer>
+      <TabSection/>
       </InfoContainer>
       </ContainerInformasi>
       <BookingContainer>
       <ConsultationContainer>
-        <HeaderConsultation>Tipe Konsultasi</HeaderConsultation>
-       <DropdownWrap>
-      <Dropdown
-          options={consultType}
-          border='0.5px solid rgba(153, 146, 146, 0.7);'
-          fontSize="15px"
-          value={type}
-          setValue={setType}
-          width= "363px"
-          height="39px"
-      />
-       </DropdownWrap>
+        <HeaderConsultation>Atur Schedule Janji Anda</HeaderConsultation>
        <CalendarContainer>
        <CalendarComponent  />
        </CalendarContainer>
@@ -100,4 +70,4 @@ const DetailDokter: React.FC = () => {
   );
 };
 
-export default DetailDokter;
+export default DetailLayananKlinik;
