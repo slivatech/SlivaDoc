@@ -6,6 +6,7 @@ import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
+import DetailDokter from './pages/DetailDokter/DetailDokter';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -35,6 +36,7 @@ const App = () => {
       <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel />
+      <DetailDokter/>
     </ThemeProvider>
   );
 };
