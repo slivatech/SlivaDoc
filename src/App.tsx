@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
 import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
+import Table from './components/Table/Table';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -36,7 +37,9 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      <DetailKlinik />
+      {/* <DetailKlinik /> */}
+      {/* <CustomerList /> */}
+      <Table />
     </ThemeProvider>
   );
 };
