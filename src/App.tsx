@@ -7,6 +7,9 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import InvoiceList from './pages/InvoiceList/InvoiceList';
+
 const App = () => {
   const [dimension, setDimension] = React.useState({
     width: window.innerWidth,
@@ -32,9 +35,12 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       {/* <Auth /> */}
-      <HomePage width={dimension.width} />
+      {/* <HomePage width={dimension.width} />
       <Artikel />
-      <DetailArtikel />
+      <DetailArtikel /> */}
+      <Routes>
+        <Route path='/invoice' element={<InvoiceList/>}/>
+      </Routes>
     </ThemeProvider>
   );
 };
