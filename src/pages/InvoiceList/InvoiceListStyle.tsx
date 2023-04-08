@@ -6,14 +6,21 @@ export const TableStyle = styled.table`
   border-collapse: separate;
   border-spacing: 0 0.5rem;
   margin: 0 auto;
+  
   td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    padding-left: 2rem;
   }
   td:last-child {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    text-align: end;
+    padding-right: 2rem;
   }
+  // td:nth-last-child(2) {
+  //   width: 200px;
+  // }
 
   button {
     border: none;
@@ -52,31 +59,15 @@ export const TableHead = styled.thead`
     
 `;
 
-export const TableRow = styled.tr`
+export const TableRow = styled.td`
   font-size: 14px;
   background-color: #fff;
   height: 70px;
-    td:first-child {
-        padding-left: 2rem;
-    }
-    td:last-child {
-        text-align: end;
-        padding-right: 2rem;
-    }
-    td:nth-last-child(2) {
-        width: 200px;
-    }
     .name {
-        display: flex;
-        align-items: center;
-        column-gap: 15px;
-    
-        img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
     }
     .list-icon {
         display: flex;

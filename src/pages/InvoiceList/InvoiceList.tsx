@@ -9,12 +9,10 @@ import { customers } from './InvoiceListData'
 import { Column, useSortBy, useTable, useRowSelect, Cell } from "react-table";
 import Checkbox from './Checkbox'
 
-export type TableProps = {
-    data: Array<any>;
-    columns: Array<Column>;
-    enableSorting?: boolean;
-    hideHeaders?: boolean;
-};
+// export type TableProps = {
+//     data: Array<any>;
+//     columns: Array<Column>;
+// };
 
 interface ColumnDetails {
     // [id: number]: any;
@@ -23,7 +21,7 @@ interface ColumnDetails {
 
 const InvoiceList = () => {
     const data = useMemo<ColumnDetails[]>(() => customers, []);
-    const columns:any = useMemo(
+    const columns: Column<ColumnDetails>[] = useMemo(
         () => [
         {
             Header: "Invoice Id",
@@ -31,107 +29,119 @@ const InvoiceList = () => {
         },
         {
             Header: "Name",
+            accessor: "image",
+            Cell: ({ cell: { value } }) => <img src={value} className='name'/>
+        },
+        {
+            Header: "",
             accessor: "name",
+            width: 200
         },
         {
             Header: "Total Price",
             accessor: "payment",
+            Cell: ({ cell: { value } }) => {
+                return (
+                    <div className='list-icon'>
+                        <img src={moneyIc}/>
+                        <div>{value}</div>
+                    </div>
+                )
+            },
         },
         {
             Header: "Date",
             accessor: "date",
+            Cell: ({ cell: { value } }) => {
+                return (
+                    <div className='list-icon'>
+                        <img src={calenderIC}/>
+                        <div> {value}</div>
+                    </div>
+                )
+            }
         },
         {
             Header: "Status",
             accessor: "status",
+            Cell: ({ cell: { value } }) => {
+                return (
+                    <button className={`${value.toLowerCase()} btn-status`}>{value}</button>
+                )
+            },
+            width: 200
         },
     ], []
     );
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, selectedFlatRows } =
-    useTable({ columns, data }, useSortBy, 
-        // useRowSelect,
-        // (hooks) => {
-        //     hooks.visibleColumns.push(() => {
-        //         return [
-        //             {
-        //                 id: 'selection',
-        //                 Header: ({getToggleAllRowsSelectedProps}) => (
-        //                     <Checkbox {...getToggleAllRowsSelectedProps}/>
-        //                 ),
-        //                 Row: ({getToggleRowSelectedProps}) => (
-        //                     <Checkbox {...getToggleRowSelectedProps}/> 
-        //                 )
-        //             }
-        //         ]
-        //     })
-        // }
-        );
-    
-    const [editable, setEditable] = useState(false);
+    useTable({ columns, data }, useSortBy, useRowSelect, insertCheckbox, insertEdit);
 
+    function insertCheckbox  (hooks:any)  {
+        hooks.visibleColumns.push((columns: any) => {
+            return [
+                {
+                    id: 'selection',
+                    Header: ({getToggleAllRowsSelectedProps} : (any)) => (
+                        <Checkbox {...getToggleAllRowsSelectedProps()}/>
+                    ),
+                    Cell: ({ row }: (any)) => (
+                        <Checkbox {...row.getToggleRowSelectedProps()}/> 
+                    )
+                },            
+                ...columns
+            ]
+        })
+    }
 
-  
+    function insertEdit  (hooks:any)  {
+        hooks.visibleColumns.push((columns: any) => {
+            return [
+                ...columns,
+                {
+                    id: 'edit',
+                    Header: ({getToggleAllRowsSelectedProps} : (any)) => (
+                        <ButtonEdit {...getToggleAllRowsSelectedProps()}/>
+                    ),
+                    Cell: ({ row }: (any)) => (
+                        <ButtonEdit {...row.getToggleRowSelectedProps()}/> 
+                    )
+                },            
+              
+            ]
+        })
+    }
+
     return (
         <>
         <Container>
             <TableStyle {...getTableProps()}>
                 <TableHead>
                 {headerGroups.map((headerGroup, i) => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        <th> <input type='checkbox' /> </th>
+                    <tr {...headerGroup.getHeaderGroupProps()} key={i}>
                         {headerGroup.headers.map((column) => (
                             <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                             {column.render("Header")}
                             {column.isSorted ? (column.isSortedDesc ? " ▼" : " ▲") : ""}
                             </th>
                         ))}
-                        <th> <button className='btn-edit'><img src={editIc}/></button> </th>
                     </tr>
                 ))}
                 </TableHead>
                 <tbody {...getTableBodyProps()}>
 
-                {rows.map((row, id) => {
+                {rows.map((row) => {
                     prepareRow(row);
-                    const {date, invoiceId, name, payment, status} = row.values;
                     return (
-                        <TableRow {...row.getRowProps()}>
-                            <td><input type='checkbox'/></td>
-                            <td>{invoiceId}</td>
-                            <td>
-                                <div className='name'>
-                                    <img src={ava}/>
-                                    <div>{name}</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='list-icon'>
-                                    <img src={moneyIc}/>
-                                    <div>{payment}</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='list-icon'>
-                                    <img src={calenderIC}/>
-                                    <div> {date}</div>
-                                </div>
-                            </td>
-                            <td> <button className={`${status.toLowerCase()} btn-status`}>{status}</button> </td>
-                            <td> 
-                                <button className='btn-edit' key={id} onClick = {()=> setEditable(prev => !prev)}>
-                                    <img src={editIc} />
-                                </button>
-                                {
-                                    editable  ? 
-                                    <span>
-                                        <button style={{display : "block"}}>Complete</button> 
-                                        <button style={{display : "block"}}>Cancel</button> 
-                                        <button style={{display : "block"}}>Pending</button> 
-                                    </span>  : " "
-                                }
-                            </td>
-                        </TableRow>
+                        <tr {...row.getRowProps()}>
+                            {row.cells.map((cell) => {
+                            return (
+                                <TableRow {...cell.getCellProps()}>
+                                    {cell.render("Cell")}
+                                </TableRow>
+                            );
+                            })}
+                        </tr>
                     );
                 })}
                 </tbody>
@@ -140,24 +150,32 @@ const InvoiceList = () => {
         </>
     )
 }
-// const TableContent = (cell: {value: value<ReactNodecolumn, any>; cell: Cell<ColumnDetails, any> }) => {
-//     console.log(cell);
-//     return (
-//       <TableData>
-//         {cell.column.id === "name" ? (
-//           <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-//             <img src={cell.row.original.image} />
-//             {cell.value}
-//           </div>
-//         ) : cell.column.id === "gender" ? (
-//           <div className={`${cell.value.toLowerCase()} genderRow`}>
-//             {cell.value}
-//           </div>
-//         ) : (
-//           cell.value
-//         )}
-//       </TableData>
-//     );
-//   };
+
+const ButtonEdit = () => {
+    const [editable, setEditable] = useState(false);
+  return (
+    <div style={{position : "relative"}}>
+        <button className='btn-edit' onClick={ () => setEditable(v => !v)}>
+            <img src={editIc}/>
+        </button>
+        {
+            editable ?
+            <span style={{
+                position : "absolute", 
+                right : '4rem', 
+                display : 'flex', 
+                width : '100%', 
+                flexDirection : 'column',
+                }}>
+                <button style={{display : "flex", padding : "1rem"}}>Complete</button> 
+                <button style={{display : "flex", padding : "1rem"}}>Cancel</button> 
+                <button style={{display : "flex", padding : "1rem"}}>Pending</button> 
+            </span>  : ""
+        }
+    </div>
+  )
+}
+
+
 
 export default InvoiceList
