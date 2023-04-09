@@ -1,5 +1,3 @@
-import img from '../../assets/doctor.png';
-
 export const customers = [
     {
         id: 1,

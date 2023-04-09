@@ -1,12 +1,11 @@
-import React, {SetStateAction, useState, Dispatch, useMemo, useEffect} from 'react'
-import arrowIc from '../../assets/icon/arrow-down.svg'
+import React, { useState, useMemo} from 'react'
 import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import {  TableRow, TableHead, TableStyle } from './InvoiceListStyle'
 import { customers } from './InvoiceListData'
-import { Column, useSortBy, useTable, useRowSelect, Cell, useGlobalFilter } from "react-table";
+import { Column, useSortBy, useTable, useRowSelect, useGlobalFilter } from "react-table";
 import Checkbox from './Checkbox'
 import { GlobalFilter } from './GlobalFilter'
 

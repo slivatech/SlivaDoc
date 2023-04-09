@@ -38,9 +38,7 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      <Routes>
-        <Route path='/invoice' element={<InvoiceList/>}/>
-      </Routes>
+      <InvoiceList/>
     </ThemeProvider>
   );
 };
