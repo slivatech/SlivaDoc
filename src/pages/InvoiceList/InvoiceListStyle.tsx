@@ -51,9 +51,9 @@ export const TableHead = styled.thead`
         transform: rotateX(3.142rad);
     }
     .btn-edit {
-        background-color: #FAFAFA;
+        background-color: transparent;
         img {
-            background-color: #FAFAFA;
+            background-color: transparent;
         }
     }
     
@@ -97,6 +97,36 @@ export const TableRow = styled.td`
     .cancel {
         background-color: rgba(255, 105, 180, 0.1);
         color: #FF69B4;;
+    }
+`
+export const GlobalSearch = styled.div`
+    display: flex;
+    align-items: center;
+    width: 25%;
+    background-color: #FFFFFF;
+    font-size: 0.8rem;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    padding: 9px;
+   
+    input {
+        border: none;
+        outline: none;
+        margin-left: 13px;
+        width: 100%;
+        &:focus {
+            border-color: #127fff;
+            }
+            ::placeholder,
+            ::-webkit-input-placeholder {
+            color: #dadada;
+            }
+            :-ms-input-placeholder {
+            color: #dadada;
+            }
+        @media (max-width: 720px) {
+            background-color: #FAFAFA;
+        }
     }
 `
 

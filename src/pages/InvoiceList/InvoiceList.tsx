@@ -1,13 +1,14 @@
 import React, {SetStateAction, useState, Dispatch, useMemo, useEffect} from 'react'
-import ava from '../../assets/doctor.png'
+import arrowIc from '../../assets/icon/arrow-down.svg'
 import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import {  TableRow, TableHead, TableStyle } from './InvoiceListStyle'
 import { customers } from './InvoiceListData'
-import { Column, useSortBy, useTable, useRowSelect, Cell } from "react-table";
+import { Column, useSortBy, useTable, useRowSelect, Cell, useGlobalFilter } from "react-table";
 import Checkbox from './Checkbox'
+import { GlobalFilter } from './GlobalFilter'
 
 // export type TableProps = {
 //     data: Array<any>;
@@ -74,8 +75,17 @@ const InvoiceList = () => {
     ], []
     );
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, selectedFlatRows } =
-    useTable({ columns, data }, useSortBy, useRowSelect, insertCheckbox, insertEdit);
+    const TableInstance = useTable(
+        { columns, data },
+        useGlobalFilter, 
+        useSortBy, 
+        useRowSelect, 
+        insertCheckbox, 
+        insertEdit 
+    );
+
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, state, setGlobalFilter } = TableInstance
+    const {globalFilter} = state
 
     function insertCheckbox  (hooks:any)  {
         hooks.visibleColumns.push((columns: any) => {
@@ -114,7 +124,11 @@ const InvoiceList = () => {
 
     return (
         <>
-        <Container>
+        <Container style={{ background: 'rgba(153, 178, 198, 0.2)'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '2rem'}}>
+                <h2 style={{ fontSize: '2rem', fontWeight: '700'}}>Invoice List</h2>
+                <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+            </div>
             <TableStyle {...getTableProps()}>
                 <TableHead>
                 {headerGroups.map((headerGroup, i) => (
