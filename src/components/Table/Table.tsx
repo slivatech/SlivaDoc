@@ -16,11 +16,10 @@ export const CustomerListStyle = styled.div<{ isSidebarOpen:boolean }>(({ isSide
     background: #f1f4fa;
   height: 100vh;
   overflow-x:hidden;
-  width:${isSidebarOpen ? "75%" : "100%"};
-  transition: all 500ms cubic-bezier(0.465, 0.183, 0.153, 0.946);
-  
+  width:100%;
+  margin-right:${isSidebarOpen ? "25%" : 0};
+  transition: margin-right .5s; 
 `)
-
 
 
 interface ColumnDetails {
@@ -55,7 +54,7 @@ const Table = () => {
     useTable({ columns, data }, useSortBy);
 
   return (
-    <div style={{ display: "flex",overflowX:"hidden" }}>
+    <div style={{ display: "flex",overflowX:"hidden",background:"#f1f4fa" }}>
       <CustomerListStyle isSidebarOpen={isSidebarOpen}>
         <Container>
           <TableStyle {...getTableProps()}>
@@ -104,11 +103,14 @@ const Table = () => {
 const TableContent = ({ cell,setSidebarOpen }: { cell: Cell<ColumnDetails, any>,setSidebarOpen:Dispatch<SetStateAction<boolean>> }) => {
   console.log(cell);
   return (
-    <TableData onClick={()=>setSidebarOpen(true)}>
+    <TableData >
       {cell.column.id === "name" ? (
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
           <img src={cell.row.original.image} />
+          <span style={{ cursor:"pointer"}} onClick={()=>setSidebarOpen(true)}>
           {cell.value}
+
+          </span>
         </div>
       ) : cell.column.id === "gender" ? (
         <div className={`${cell.value.toLowerCase()} genderRow`}>
