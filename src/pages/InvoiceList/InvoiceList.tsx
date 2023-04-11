@@ -3,19 +3,13 @@ import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
 import { Container } from '../PageArtikel/PageArtikelStyle'
-import {  TableRow, TableHead, TableStyle } from './InvoiceListStyle'
+import {  TableHead, TableStyle, TableData } from './InvoiceListStyle'
 import { customers } from './InvoiceListData'
 import { Column, useSortBy, useTable, useRowSelect, useGlobalFilter } from "react-table";
 import Checkbox from './Checkbox'
 import { GlobalFilter } from './GlobalFilter'
 
-// export type TableProps = {
-//     data: Array<any>;
-//     columns: Array<Column>;
-// };
-
 interface ColumnDetails {
-    // [id: number]: any;
     [key: string]: any;
 };
 
@@ -35,7 +29,6 @@ const InvoiceList = () => {
         {
             Header: "",
             accessor: "name",
-            width: 200
         },
         {
             Header: "Total Price",
@@ -69,7 +62,6 @@ const InvoiceList = () => {
                     <button className={`${value.toLowerCase()} btn-status`}>{value}</button>
                 )
             },
-            width: 200
         },
     ], []
     );
@@ -149,9 +141,9 @@ const InvoiceList = () => {
                         <tr {...row.getRowProps()}>
                             {row.cells.map((cell) => {
                             return (
-                                <TableRow {...cell.getCellProps()}>
+                                <TableData {...cell.getCellProps()}>
                                     {cell.render("Cell")}
-                                </TableRow>
+                                </TableData>
                             );
                             })}
                         </tr>

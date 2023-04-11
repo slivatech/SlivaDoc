@@ -17,10 +17,20 @@ export const TableStyle = styled.table`
     border-top-right-radius: 10px;
     text-align: end;
     padding-right: 2rem;
+    width: 100px;
   }
-  // td:nth-last-child(2) {
-  //   width: 200px;
-  // }
+  td:nth-child(3) {
+    width: 50px;
+  }
+  td:nth-child(5) {
+    width: 300px;
+  }
+  td:nth-child(6) {
+    width: 190px;
+  }
+  td:nth-child(7) {
+    width: 190px;
+  }
 
   button {
     border: none;
@@ -59,7 +69,7 @@ export const TableHead = styled.thead`
     
 `;
 
-export const TableRow = styled.td`
+export const TableData = styled.td`
   font-size: 14px;
   background-color: #fff;
   height: 70px;
