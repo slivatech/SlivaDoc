@@ -8,7 +8,6 @@ import { Card, Form } from './EditProfilStyle'
 
 
 const EditProfil = () => {
-
     interface IProfile {
         input: string;
         name: string;

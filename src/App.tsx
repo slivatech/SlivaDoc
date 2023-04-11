@@ -7,7 +7,6 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import Auth from './pages/Auth/Auth';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import EditProfil from './pages/EditProfil/EditProfil';
 
 
@@ -39,9 +38,7 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      <Routes>
-        <Route path='/profil' element={<EditProfil/>}/>
-      </Routes>
+      <EditProfil/>
     </ThemeProvider>
   );
 };

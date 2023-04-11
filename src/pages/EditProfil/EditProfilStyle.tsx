@@ -124,7 +124,7 @@ export const Card = styled.div`
 
         img {
             width: 12px;
-            // margin-left: 3px;
+            margin-left: 3px;
         }
     }
 `
