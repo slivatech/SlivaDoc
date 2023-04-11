@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Avatar from "../Avatar/Avatar";
 import BarChartComponent from "../Chart/BarChart";
@@ -98,11 +97,11 @@ const CustomerSidebar = ({ isOpen }: { isOpen: boolean }) => {
       <ContactSection>
         <h2>Contact Info</h2>
         <div className="email">
-          <img src={"/assets/message.svg"} />
+          <img src={"/assets/message.svg"}  alt="msg"/>
           <p>kajope5182@ummoh.com</p>
         </div>
         <div className="location">
-          <img src={"/assets/location-2.svg"} />
+          <img src={"/assets/location-2.svg"} alt="location" />
           <p>2239 Hog Camp Road</p>
         </div>
       </ContactSection>
