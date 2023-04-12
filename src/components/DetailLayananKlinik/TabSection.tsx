@@ -12,7 +12,6 @@ const TabSection = () => {
   return (
       <StyledClinicNav>
         <ClinicWrapper>
-
         {tabs.map((tab, i) => (
           <StyledLi key={i} onClick={() => setCurTab(tab)} isActive={curTab === tab}>
             {tab}
