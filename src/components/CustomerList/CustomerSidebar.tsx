@@ -23,10 +23,12 @@ export const ProfileSection = styled.section`
   flex-direction: column;
   gap: 0.5rem;
   border-bottom: 1px solid #06152b18;
-  padding: 2rem 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
   .name {
     font-size: 22px;
     color: #06152b;
+    margin: 0 !important;
   }
   p {
     color: #06152b;
@@ -38,13 +40,14 @@ export const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem ;
   color: #06152b;
+  padding:1rem ;
 
-  div {
-    padding: 1rem 0;
+  h2 {
+    font-size: 18px;
+    margin:0;
+
   }
-
   .email {
     display: flex;
     gap: 0.5rem;
@@ -64,23 +67,32 @@ export const PerformanceSection = styled.section`
   flex-direction: column;
   gap: 0.5rem;
   color: #06152b;
-  padding:0 1rem;
+  padding: 0 1rem;
+
+  h2 {
+    font-size: 18px;
+    margin:0;
+    padding:1rem 0 0 1rem;
+  }
 `;
 
 export const CircularProgressContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: .5rem;
-  justify-content:space-between;
+  margin-top: 0.5rem;
+  justify-content: space-between;
 `;
 
 export const CircularProgressBox = styled.div`
   border: 1px solid #f1f4fa;
   border-radius: 5px;
-  padding:.5rem;
-  max-width:150px;
+  max-width: 150px;
+`;
 
+export const BarContainer = styled.div`
+  border: 1px solid #f1f4fa;
+  border-radius: 5px;
 `;
 
 const CustomerSidebar = ({ isOpen }: { isOpen: boolean }) => {
@@ -97,7 +109,7 @@ const CustomerSidebar = ({ isOpen }: { isOpen: boolean }) => {
       <ContactSection>
         <h2>Contact Info</h2>
         <div className="email">
-          <img src={"/assets/message.svg"}  alt="msg"/>
+          <img src={"/assets/message.svg"} alt="msg" />
           <p>kajope5182@ummoh.com</p>
         </div>
         <div className="location">
@@ -106,8 +118,11 @@ const CustomerSidebar = ({ isOpen }: { isOpen: boolean }) => {
         </div>
       </ContactSection>
       <PerformanceSection>
-        <h2>Performance</h2>
-        <BarChartComponent />
+        <BarContainer>
+          <h2>Performance</h2>
+          <BarChartComponent />
+        </BarContainer>
+
         <CircularProgressContainer>
           <CircularProgressBox>
             <CircularProgressbar

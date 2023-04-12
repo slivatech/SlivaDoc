@@ -33,13 +33,13 @@ const App = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalCss />
+      {/* <GlobalCss />
       <Auth />
       <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel />
       <DetailKlinik />
-      <CustomerList />
+      <CustomerList /> */}
       <CustomerList />
     </ThemeProvider>
   );

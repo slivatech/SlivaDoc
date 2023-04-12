@@ -17,9 +17,7 @@ const TooltipStyle = styled.div`
 
 `;
 const BarContainer = styled.div`
-  border: 1px solid #f1f4fa;
   padding: 1rem;
-  border-radius: 7px;
 `;
 
 const CustomTooltip = ({ payload, active }: any) => {
