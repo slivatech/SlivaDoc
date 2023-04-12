@@ -8,6 +8,7 @@ import { defaultTheme } from "./styles/Theme";
 import { useWindowDimensions } from './Hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
 import { Route, Routes } from 'react-router-dom';
+import TablePage from './pages/Example/TablePage';
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -16,11 +17,12 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
 
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
         <Route path='/article' element={<Artikel/>} />
-      </Routes>
+      </Routes> */}
+      <TablePage />
       {/* <Auth /> */}
       {/* <HomePage width={width} />
       <Artikel />
