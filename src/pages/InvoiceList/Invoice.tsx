@@ -4,12 +4,15 @@ import { customers } from './InvoiceListData'
 import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
+import Modal from '../../components/Common/Modal/Modal'
 import { IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
 
 const Invoice = () => {
-    const { alertColumn } =  useAlertColumn()
+    const [editable, setEditable] = useState<any>(false);
+    const { alertColumn } =  useAlertColumn({editable: editable, setEditable: setEditable})
     const [data, setData] = useState(customers)
     const [selectedRow, setSelectedRow] = useState<any>([])
+    const [selectedData, setSelectedData] = useState()
     const alertRef: any = useRef(null)
     const itemPerPage = 10;
     const detailItemPerPage = 1;
@@ -27,9 +30,10 @@ const Invoice = () => {
     const toDetail = useCallback((selectedRow:any, columnId:any) => {
     if(
         alertRef && alertRef.current && 
-        columnId !== 'checked' 
+        columnId === 'edit'
     ){
         console.log({selectedRow})
+        setSelectedData(selectedRow)
     }
     },[])
 
@@ -53,7 +57,9 @@ const Invoice = () => {
 
     useEffect(() => {
         console.log({selectedRow})
-    },[selectedRow])
+        console.log({selectedData})
+    },[selectedData, selectedRow])
+    
   return (
     <div style={{width: '100%', height:'100%', background:"#f1f4fa", display:'flex', justifyContent: 'center'}}>
         <div style={{width:'90%'}}>
@@ -81,6 +87,30 @@ const Invoice = () => {
             />
         </div>
 
+        {
+            editable && 
+            <Modal
+                open={editable} 
+                setIsOpen={setEditable} 
+                isBackgroundClick={true}                       
+            >
+                {/* <div>tessss</div> */}
+                <div>
+                    <span style={{
+                        // position : "absolute", 
+                        right : '4rem', 
+                        display : 'flex', 
+                        width : '100%', 
+                        flexDirection : 'column',
+                        }}>
+                        <button style={{display : "flex", padding : "1rem"}}>Complete</button> 
+                        <button style={{display : "flex", padding : "1rem"}}>Cancel</button> 
+                        <button style={{display : "flex", padding : "1rem"}}>Pending</button> 
+                    </span> 
+                </div>
+            </Modal>
+        }
+
       
     </div>
   )
@@ -88,9 +118,18 @@ const Invoice = () => {
 
 export default Invoice
 
-export const useAlertColumn = () => {
-    const [editable, setEditable] = useState<any>(false);
+interface IuseAlertColumn {
+    editable?: boolean;
+    setEditable?: any;
+}
+
+export const useAlertColumn = ({editable, setEditable} : IuseAlertColumn) => {
     const table = createColumnHelper()
+
+    useEffect(() => {
+        console.log({editable})
+    }, [editable])
+
     const alertColumn = React.useMemo(() => [
         table.display({
             size: 5,
@@ -195,22 +234,8 @@ export const useAlertColumn = () => {
             cell: (props: any) => (
                 <div style={{position : "relative"}}>
                     <button style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer'}} onClick={ () => setEditable(true)}>
-                        <img src={editIc}/>
+                        <img src={editIc} alt=''/>
                     </button>
-                    {
-                        editable ?
-                        <span style={{
-                            position : "absolute", 
-                            right : '4rem', 
-                            display : 'flex', 
-                            width : '100%', 
-                            flexDirection : 'column',
-                            }}>
-                            <button style={{display : "flex", padding : "1rem"}}>Complete</button> 
-                            <button style={{display : "flex", padding : "1rem"}}>Cancel</button> 
-                            <button style={{display : "flex", padding : "1rem"}}>Pending</button> 
-                        </span>  : ""
-                    }
                 </div>
             ),
         }),
