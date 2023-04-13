@@ -1,4 +1,4 @@
-import  { SetStateAction, useState, Dispatch, useMemo } from "react";
+import { SetStateAction, useState, Dispatch, useMemo } from "react";
 import { customers } from "./fakeData";
 import { Cell, Column, useSortBy, useTable } from "react-table";
 import { TableData, TableHead, TableStyle } from "./TableStyle";
@@ -20,6 +20,10 @@ export const CustomerListStyle = styled.div<{ isSidebarOpen: boolean }>(
   width:100%;
   margin-right:${isSidebarOpen ? "25%" : 0};
   transition: margin-right .5s; 
+
+  h2 {
+    margin:0;
+  }
 `
 );
 
@@ -59,6 +63,8 @@ const CustomerList = () => {
       <div style={{ display: "flex", overflowX: "hidden" }}>
         <CustomerListStyle isSidebarOpen={isSidebarOpen}>
           <Container>
+            <h2 style={{ margin: "0 auto",padding:"1rem 4rem" }}>Customer List</h2>
+
             <TableStyle {...getTableProps()}>
               <TableHead>
                 {headerGroups.map((headerGroup, i) => (
@@ -72,7 +78,7 @@ const CustomerList = () => {
                         {column.render("Header")}
                         {/* {column.isSorted ? (column.isSortedDesc ? " ▼" : " ▲") : ""} */}
                         <img
-                        alt="arrow"
+                          alt="arrow"
                           src="/assets/arrow_dropdown2.svg"
                           className={column.isSortedDesc ? "desc" : ""}
                         />

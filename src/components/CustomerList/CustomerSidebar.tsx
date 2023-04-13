@@ -21,18 +21,19 @@ export const ProfileSection = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.5rem;
   border-bottom: 1px solid #06152b18;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   .name {
     font-size: 22px;
     color: #06152b;
     margin: 0 !important;
+    margin-top:1rem;
   }
   p {
     color: #06152b;
     font-size: 14px;
+    margin:0;
   }
 `;
 
@@ -88,6 +89,7 @@ export const CircularProgressBox = styled.div`
   border: 1px solid #f1f4fa;
   border-radius: 5px;
   max-width: 150px;
+  padding:.5rem;
 `;
 
 export const BarContainer = styled.div`

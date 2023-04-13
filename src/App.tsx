@@ -9,6 +9,7 @@ import Auth from "./pages/Auth/Auth";
 import DetailKlinik from "./pages/DetailKlinik/DetailKlinik";
 import Table from "./components/CustomerList/CustomerList";
 import CustomerList from "./components/CustomerList/CustomerList";
+import TablePage from "./pages/Example/TablePage";
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -40,7 +41,8 @@ const App = () => {
       <DetailArtikel />
       <DetailKlinik />
       <CustomerList /> */}
-      <CustomerList />
+      {/* <CustomerList /> */}
+      <TablePage />
     </ThemeProvider>
   );
 };
