@@ -9,6 +9,13 @@ import { Column, useSortBy, useTable, useRowSelect, useGlobalFilter } from "reac
 import Checkbox from './Checkbox'
 import { GlobalFilter } from './GlobalFilter'
 
+// export type TableProps = {
+//     data: Array<any>;
+//     columns: Array<Column>;
+//     enableSorting?: boolean;
+//     hideHeaders?: boolean;
+// };
+
 interface ColumnDetails {
     [key: string]: any;
 };
