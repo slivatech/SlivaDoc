@@ -6,13 +6,15 @@ import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
 import Modal from '../../components/Common/Modal/Modal'
 import { IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
+import { GlobalFilter } from './GlobalFilter'
+import { Container } from '../PageArtikel/PageArtikelStyle'
 
 const Invoice = () => {
-    const [editable, setEditable] = useState<any>(false);
+    const [editable, setEditable] = useState<number>(0);
     const { alertColumn } =  useAlertColumn({editable: editable, setEditable: setEditable})
     const [data, setData] = useState(customers)
     const [selectedRow, setSelectedRow] = useState<any>([])
-    const [selectedData, setSelectedData] = useState()
+    const [selectedData, setSelectedData] = useState<any>([])
     const alertRef: any = useRef(null)
     const itemPerPage = 10;
     const detailItemPerPage = 1;
@@ -27,12 +29,11 @@ const Invoice = () => {
         [pageIndex, pageSize]
       )
 
-    const toDetail = useCallback((selectedRow:any, columnId:any) => {
+    const toDetail = useCallback((selectedRow:any, columnId:any, selectedData:any) => {
     if(
         alertRef && alertRef.current && 
         columnId === 'edit'
     ){
-        console.log({selectedRow})
         setSelectedData(selectedRow)
     }
     },[])
@@ -61,9 +62,12 @@ const Invoice = () => {
     },[selectedData, selectedRow])
     
   return (
-    <div style={{width: '100%', height:'100%', background:"#f1f4fa", display:'flex', justifyContent: 'center'}}>
-        <div style={{width:'90%'}}>
-            <h2 style={{marginBottom: '35px'}}>Invoice List</h2>
+    <Container style={{ background: 'rgba(153, 178, 198, 0.2)'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '2rem'}}>
+            <h2 style={{ fontSize: '2rem', fontWeight: '700'}}>Invoice List</h2>
+            <GlobalFilter/>
+        </div>
+        <div style={{width: '100%', height:'100%'}}>
             <TableV8 
                 data={data}
                 ref={alertRef}
@@ -83,51 +87,28 @@ const Invoice = () => {
                 stickyHeader={true}
                 // stickyFromTop={0} 
                 noDataLabel={''}
-                      
+                        
             />
         </div>
-
-        {
-            editable && 
-            <Modal
-                open={editable} 
-                setIsOpen={setEditable} 
-                isBackgroundClick={true}                       
-            >
-                {/* <div>tessss</div> */}
-                <div>
-                    <span style={{
-                        // position : "absolute", 
-                        right : '4rem', 
-                        display : 'flex', 
-                        width : '100%', 
-                        flexDirection : 'column',
-                        }}>
-                        <button style={{display : "flex", padding : "1rem"}}>Complete</button> 
-                        <button style={{display : "flex", padding : "1rem"}}>Cancel</button> 
-                        <button style={{display : "flex", padding : "1rem"}}>Pending</button> 
-                    </span> 
-                </div>
-            </Modal>
-        }
-
       
-    </div>
+    </Container>
   )
 }
 
 export default Invoice
 
 interface IuseAlertColumn {
-    editable?: boolean;
+    editable?: number;
     setEditable?: any;
+    selectedRow?: any;
+    selectedData?: any;
 }
 
-export const useAlertColumn = ({editable, setEditable} : IuseAlertColumn) => {
+export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData} : IuseAlertColumn) => {
     const table = createColumnHelper()
 
     useEffect(() => {
-        console.log({editable})
+       console.log(editable);
     }, [editable])
 
     const alertColumn = React.useMemo(() => [
@@ -225,17 +206,38 @@ export const useAlertColumn = ({editable, setEditable} : IuseAlertColumn) => {
             ),
         }),
         table.accessor('edit',{
-            size: 5,
+            size: 30,
             enableSorting: false,
             header: () => (
-                <div>status</div>
-            ),
-            id: "edit",
-            cell: (props: any) => (
                 <div style={{position : "relative"}}>
                     <button style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer'}} onClick={ () => setEditable(true)}>
                         <img src={editIc} alt=''/>
                     </button>
+                </div>
+            ),
+            id: "edit",
+            cell: (props: any) => (
+                <div style={{position : "relative"}}>
+                    <button style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer'}} onClick={ () => editable === 0 ? setEditable(props.row.original.id) : setEditable(0)
+                    }>
+                        <img src={editIc} alt=''/>
+                    </button>
+                    {
+                        editable === props.row.original.id ?
+                            <span style={{
+                                position: 'relative',
+                                right : '0', 
+                                display : 'flex', 
+                                width : '100%', 
+                                flexDirection : 'column',
+                                }}>
+                                <button style={{display : "flex", padding : "5px"}}>Complete</button> 
+                                <button style={{display : "flex", padding : "5px"}}>Cancel</button> 
+                                <button style={{display : "flex", padding : "5px"}}>Pending</button> 
+                            </span> 
+                        : ''
+                        
+                    }
                 </div>
             ),
         }),

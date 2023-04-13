@@ -9,7 +9,7 @@ import { useWindowDimensions } from './Hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
 import TablePage from './pages/Example/TablePage';
 import Invoice from './pages/InvoiceList/Invoice';
-// import InvoiceList from './pages/InvoiceList/InvoiceList';
+import InvoiceList from './pages/InvoiceList/InvoiceList';
 
 const App = () => {
   const {width} = useWindowDimensions()
