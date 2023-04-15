@@ -10,9 +10,9 @@ import Auth from './pages/Auth/Auth';
 import { Route, Routes } from 'react-router-dom';
 import TablePage from './pages/Example/TablePage';
 import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
-
 import EditProfil from './pages/EditProfil/EditProfil';
-
+import TindakanMedis from './pages/TindakanMedis/TindakanMedis';
+import PageArtikel from './pages/PageArtikel/PageArtikel';
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -20,7 +20,6 @@ const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
-
       {/* <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
@@ -32,7 +31,11 @@ const App = () => {
       <Artikel />
       <DetailArtikel /> */}
       {/* <DetailKlinik /> */}
-      <EditProfil/>
+      {/* <EditProfil/> */}
+      {/* <Routes>
+        <Route path='/medis' element={<TindakanMedis/>}/>
+        <Route path='/artikel' element={<PageArtikel/>}/>
+      </Routes> */}
     </ThemeProvider>
   );
 };
