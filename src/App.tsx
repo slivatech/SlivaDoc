@@ -9,6 +9,7 @@ import { useWindowDimensions } from './Hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
 import { Route, Routes } from 'react-router-dom';
 import TablePage from './pages/Example/TablePage';
+import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -22,11 +23,12 @@ const App = () => {
         <Route path='/auth' element={<Auth/>} />
         <Route path='/article' element={<Artikel/>} />
       </Routes> */}
-      <TablePage />
+      {/* <TablePage /> */}
       {/* <Auth /> */}
-      {/* <HomePage width={width} />
+      {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
+      <DetailKlinik />
     </ThemeProvider>
   );
 };
