@@ -35,7 +35,7 @@ const HeroClinic = () => {
   return (
     <Container>
       <StyledHeroClinic>
-        <img className="interiorImg" src="/assets/interior.png" />
+        <img className="interiorImg" alt="hero" src="/assets/interior.png" />
         <div className="location">
           <AboutClinic>
             <h1>Klinik hewan indonesia</h1>

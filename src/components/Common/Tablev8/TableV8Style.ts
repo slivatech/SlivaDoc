@@ -98,7 +98,7 @@ display: block;
   }
   .td {
     padding: ${({ paddingStyle }) => paddingStyle!.td || defaultPaddingStyle.td};
-    font-size: 13px;
+    font-size: 14px;
   }
   .th, .td {
     display: flex; 
@@ -116,7 +116,7 @@ display: block;
   .th {
     flex: 1 0 auto; 
     padding: ${({ paddingStyle }) => paddingStyle!.th || defaultPaddingStyle.th};
-    font-size: 16px;
+    font-size: 12px;
     /* border-right: solid 1px #E6E6E6; */
     margin: 1rem 0;
     &.edit-th{

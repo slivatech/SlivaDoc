@@ -8,7 +8,7 @@ const TablePage = () => {
     const [selectedRow, setSelectedRow] = useState<any>([])
     const alertRef: any = useRef(null)
     const itemPerPage = 10;
-    const detailItemPerPage = 1;
+    // const detailItemPerPage = 1;
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(Math.ceil(AlertData.length / itemPerPage));
     const [{ pageIndex, pageSize }, setPagination] = useState({ pageIndex: 0, pageSize: itemPerPage });
