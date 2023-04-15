@@ -117,4 +117,4 @@ import {
         UseGroupByRowProps<D>,
         UseRowSelectRowProps<D>,
         UseRowStateRowProps<D> {}
-  }
+}

@@ -7,7 +7,6 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 import { useWindowDimensions } from './Hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
-import { Route, Routes } from 'react-router-dom';
 import TablePage from './pages/Example/TablePage';
 import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
 import EditProfil from './pages/EditProfil/EditProfil';
@@ -17,6 +16,7 @@ import DetailDokter from './pages/DetailDokter/DetailDokter';
 import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
+import Invoice from './pages/InvoiceList/Invoice';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -63,6 +63,8 @@ const App = () => {
       <DetailLayananKlinik/>
       <TanyaDokter/>
       <CustomerListPage />
+      {/* <InvoiceList/> */}
+      <Invoice/>
     </ThemeProvider>
   );
 };
