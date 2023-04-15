@@ -6,19 +6,24 @@ interface ISelect {
   label: string;
   values: string[];
   onChange?: (e: React.ChangeEvent) => void;
-  icon?:any;
+  iconEnd?:any;
+  iconStart?:any;
   borderType?:"bottom" | "top";
   radius?:string;
   border?:string;
 }
-const Select = ({ label, values, onChange,icon,radius,borderType,border }: ISelect) => {
+const Select = ({ label, values, iconStart,onChange,iconEnd,radius,borderType,border }: ISelect) => {
 
     const { currentValue,handleOpen,open,handleChange } = useSelect();
    return (
     <SelectContainer>
       <SelectLabelButton onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
+        <div style={{display:"flex",alignItems:'center',gap:".5rem"}}>
+          {iconStart}
         <p>{currentValue !== "" ? currentValue : label}</p>
-        {icon}
+
+        </div>
+        {iconEnd}
         
       </SelectLabelButton>
       <DropdownStyle isVisible={open}>

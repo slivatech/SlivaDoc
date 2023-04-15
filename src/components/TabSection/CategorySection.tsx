@@ -26,7 +26,7 @@ const CategorySection = () => {
             label={category.mainValue}
             borderType="bottom"
             values={[category.mainValue]}
-            icon={<img src="/assets/arrow_dropdown.svg" />}
+            iconEnd={<img src="/assets/arrow_dropdown.svg" />}
           />
 
           {category.radios.map((radio, i) => (

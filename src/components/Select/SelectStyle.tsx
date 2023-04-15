@@ -18,11 +18,11 @@ export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius,
   padding: .5rem 1.25rem;
   min-width: 7rem;
   width:100%;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   background-color: #fff;
   border-radius: ${radius ? radius : ""};
-  color: #1c1c1c;
+  color: rgba(28, 28, 28, 0.7);
   display:flex;
   align-items: center;
   justify-content: space-between;

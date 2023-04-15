@@ -9,6 +9,7 @@ import Auth from "./pages/Auth/Auth";
 import DetailKlinik from "./pages/DetailKlinik/DetailKlinik";
 import TablePage from "./pages/Example/TablePage";
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
+import ConsultationComponent from "./components/BookingComponents/ConsultationComponent";
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -33,14 +34,15 @@ const App = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalCss />
+      {/* <GlobalCss />
       <Auth />
       <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel />
       <DetailKlinik />
       <CustomerListPage />
-      <TablePage />
+      <TablePage /> */}
+      <ConsultationComponent />
     </ThemeProvider>
   );
 };
