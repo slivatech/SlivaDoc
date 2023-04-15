@@ -11,6 +11,9 @@ import { Route, Routes } from 'react-router-dom';
 import TablePage from './pages/Example/TablePage';
 import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
 
+import EditProfil from './pages/EditProfil/EditProfil';
+
+
 const App = () => {
   const {width} = useWindowDimensions()
 
@@ -28,7 +31,8 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      <DetailKlinik />
+      {/* <DetailKlinik /> */}
+      <EditProfil/>
     </ThemeProvider>
   );
 };
