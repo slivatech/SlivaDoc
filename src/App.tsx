@@ -15,6 +15,7 @@ import TindakanMedis from './pages/TindakanMedis/TindakanMedis';
 import PageArtikel from './pages/PageArtikel/PageArtikel';
 import DetailDokter from './pages/DetailDokter/DetailDokter';
 import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
+import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -41,6 +42,7 @@ const App = () => {
       <DetailArtikel />
       <DetailDokter/>
       <DetailLayananKlinik/>
+      <TanyaDokter/>
     </ThemeProvider>
   );
 };
