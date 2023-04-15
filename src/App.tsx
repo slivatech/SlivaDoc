@@ -13,6 +13,8 @@ import DetailKlinik from './pages/DetailKlinik/DetailKlinik';
 import EditProfil from './pages/EditProfil/EditProfil';
 import TindakanMedis from './pages/TindakanMedis/TindakanMedis';
 import PageArtikel from './pages/PageArtikel/PageArtikel';
+import DetailDokter from './pages/DetailDokter/DetailDokter';
+import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -36,6 +38,9 @@ const App = () => {
         <Route path='/medis' element={<TindakanMedis/>}/>
         <Route path='/artikel' element={<PageArtikel/>}/>
       </Routes> */}
+      <DetailArtikel />
+      <DetailDokter/>
+      <DetailLayananKlinik/>
     </ThemeProvider>
   );
 };
