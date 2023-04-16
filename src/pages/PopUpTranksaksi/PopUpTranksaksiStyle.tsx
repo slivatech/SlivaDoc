@@ -64,10 +64,107 @@ export const Card = styled.div`
     }
 `;
 
- export const PopUpCard  =styled.div`
-    background: #FCF6F6;
-    border-radius: 10.5635px;
+export const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+export const ModalHeader = styled.div`
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  color:#06152B;
+  font-weight: 700;
+font-size: 22.78px;
+line-height: 30px;
+margin-bottom: 50px;;
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  label{
+    color: #000000;
+    display: flex;
+    opacity: 0.3;
+    border-radius: 10px;
+    background: #FF69B4;
+    width: 132px;
+    height: 40px;
+    justify-content: center;
+    font-size: 14.22px;
+    align-items: center;
+    margin-bottom:18px ;
     
- `;
+  }
+  input{
+    background: #99B2C6;
+opacity: 0.3;
+border-radius: 10px;
+width: 406px;
+height: 42px;
+  }
+`;
+
+export const ModalActions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  border-top: 1px solid #ddd;
+`;
+
+export const ModalButton = styled.button`
+  background-color:#3A36DB;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #0069d9;
+  }
+`;
+
+export const Modal = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  width: 466px;
+height: 317px;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+`;
+
+export const ModalCloseButton = styled.button`
+  border: 1px ;
+border-radius: 10px;
+color: #3A36DB;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(180deg, #DCE3EB 0%, #E3E8EF 100%);
+  }
+`;
+
+export const ModalFooter = styled.div`
+display: flex;
+justify-content: flex-end;
+margin-top: 24px;
+gap: 16px;
+`;
