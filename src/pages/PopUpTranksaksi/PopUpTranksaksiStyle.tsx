@@ -95,9 +95,9 @@ export const ModalContent = styled.div`
   label{
     color: #000000;
     display: flex;
-    opacity: 0.3;
+
     border-radius: 10px;
-    background: #FF69B4;
+    background: #ff69b465;
     width: 132px;
     height: 40px;
     justify-content: center;
@@ -107,11 +107,12 @@ export const ModalContent = styled.div`
     
   }
   input{
-    background: #99B2C6;
-opacity: 0.3;
+    background: #99b2c675;
+
 border-radius: 10px;
 width: 406px;
 height: 42px;
+border: none;
   }
 `;
 
