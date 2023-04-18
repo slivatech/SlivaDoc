@@ -6,7 +6,13 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 100vh;
-
+@media (max-width: 767px) {
+        width:auto;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+  }
 `;
 
 
@@ -64,6 +70,7 @@ export const Card = styled.div`
             margin-left: 3px;
         }
     }
+
 `;
 
 export const ModalContainer = styled.div`
@@ -114,6 +121,7 @@ export const ModalContent = styled.div`
     width: 406px;
     height: 42px;
     border: none;
+    padding:15px;
   }
 `;
 
