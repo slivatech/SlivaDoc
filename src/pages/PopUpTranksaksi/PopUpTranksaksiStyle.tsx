@@ -6,7 +6,9 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 100vh;
+
 `;
+
 
 export const Card = styled.div`
     background: #FCF6F6;
@@ -108,11 +110,10 @@ export const ModalContent = styled.div`
   }
   input{
     background: #99b2c675;
-
-border-radius: 10px;
-width: 406px;
-height: 42px;
-border: none;
+    border-radius: 10px;
+    width: 406px;
+    height: 42px;
+    border: none;
   }
 `;
 

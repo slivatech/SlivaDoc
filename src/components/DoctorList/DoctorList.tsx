@@ -26,6 +26,7 @@ const DoctorCard = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor:pointer;
 `;
 
 const DoctorImage = styled.img`

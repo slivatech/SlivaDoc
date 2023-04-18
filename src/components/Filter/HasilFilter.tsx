@@ -13,7 +13,15 @@ const HasilFilterContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height:264px;
   background-color: #ffffff;
+
+  .ElseResult{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
@@ -68,12 +76,7 @@ display: flex;
   flex-direction: wrap;
   align-items: center;
 `;
-const Profile = styled.div`
-display: flex;
-  flex-direction: wrap;
-  align-items: center;
-  
-`;
+
 const Paragraph =styled.div`
 font-weight: 400;
 font-size: 8px;
@@ -107,9 +110,13 @@ const WrapperContainer= styled.div`
 `;
 
 const ButtonContainer= styled.div`
-margin-left:7.25rem;
 display: flex;
-  justify-content: flex-end;
+  margin-left: auto;
+ align-items: end;
+ @media only screen and (max-width: 768px) {
+    width:110px;
+    
+  }
 `;
 
 const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
@@ -118,7 +125,7 @@ const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
       {data.length > 0 ? (
         data.map((item) => (
           <Card key={item.id}>
-            <Profile>
+  
             <Detailcontainer>
             <Foto src={item.foto} alt={item.nama} />
             <DetailProfile>
@@ -140,14 +147,14 @@ const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
               radius="5px"
               height='32px'
               width='156px'
+              
               />
               </ButtonContainer>
               </Detailcontainer>
-            </Profile>
           </Card>
         ))
       ) : (
-        <div>{text}</div>
+        <div className='ElseResult'>{text}</div>
       )}
     </HasilFilterContainer>
   );
