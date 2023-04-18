@@ -6,6 +6,7 @@ export const Container = styled.div`
   flex-direction: wrap;
   gap: 10px;
   max-width: 1400px;
+  width:100%;
   
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -16,35 +17,63 @@ export const Container = styled.div`
 
 export const SliderContainer = styled.div`
 
-  width: 574px;
-  height: 454px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const FilterContainer = styled.div`
-  margin: 0 ;
+  margin: 0;
   padding: 2rem;
   background: #FFFFFF;
   box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
-  width:574px;
+  width: 574px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+    margin-top: 3rem;
+    padding: 20px;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 export const ColumnContainer =styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
-  margin:100px;
+  margin:50px;
   margin-right: 0;
   width:574px;
+
+  @media only screen and (max-width: 768px) {
+    margin:  0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    margin:  0;
+    padding: 10px;
+  }
 `;
 
-export const WrapperContainer =styled.div`
-display: flex;
+export const WrapperContainer = styled.div`
+  display: flex;
   flex-direction: column;
-  width:574px;
-  margin:100px;
-  margin-left:0;
-  background-color:hsl(0, 0%, 100%);
- padding:35px;
+  width: 597px;
+  margin: 50px;
+  margin-left: 0;
+  background-color: hsl(0, 0%, 100%);
+  padding: 20px;
   box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 767px) {
+    margin:0;
+    padding: 10px;
+    width: auto;
+  }
 `;
 
 export const Title = styled.h1`
@@ -52,66 +81,102 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 22px;
   letter-spacing: 0px;
-  @media (max-width: 700px) {
+
+  @media (max-width: 767px) {
     font-size: 18px;
     text-align: justify;
     margin: 24px 20px;
   }
 `;
 
-
 export const Heading = styled.div`
   display: flex;
-  flex-direction: wrap;
+  flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const Link = styled.p`
-font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-color: rgba(28, 28, 28, 0.7);
-`;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(28, 28, 28, 0.7);
+  cursor: pointer;
 
+  @media (max-width: 767px) {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+`;
 
 export const Banner = styled.div`
- width:auto;
- background: linear-gradient(180deg, #E6EAEE 0%, #CFDEF3 100%);
-border-radius: 10px;
-display: flex;
-align-items: center;
-height: 90px;
-flex-wrap: wrap;
-justify-content: space-between;
+  width: auto;
+  background: linear-gradient(180deg, #e6eaee 0%, #cfdef3 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 19px;
+
+  @media (max-width: 767px) {
+    height: auto;
+    padding: 10px;
+   
+  }
 `;
 
-export const ImgBanner =styled.img`
+export const ImgBanner = styled.img`
   width: 46px;
-height: 52px;
-margin-left: 36px;
+  height: 52px;
+  margin-right:5px;
 
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 `;
+
 export const DescBanner = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 
-h1{
-  font-weight: 700;
-font-size: 14px;
-line-height: 22px;
-}
-p{
-  color: rgba(28, 28, 28, 0.7);
-  font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-}
+  h1 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    
+  }
+
+  p {
+    color: rgba(28, 28, 28, 0.7);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  
+  }
+
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+  display: flex;
+  }
 `;
 
-export const ButtonContainer= styled.div`
- margin-right:20px;
-
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+ display: flex;
+  margin-left: auto;
+ align-items: end;
+ @media only screen and (max-width: 768px) {
+    width:110px;
+    
+  }
 `;
 
 

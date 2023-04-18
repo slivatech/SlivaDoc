@@ -56,7 +56,7 @@ const TanyaDokter: React.FC = () => {
     setFilteredData(filterData());
   }, [hargaKonsultasi, pengalamanPraktik]);
 
-  const [limit, setLimit] = useState(2);
+
 
   return (
     <Container>
@@ -93,7 +93,7 @@ const TanyaDokter: React.FC = () => {
         {filteredData.length > 0? (
       <HasilFilter data={filteredData.slice(0, 2)} text={""} />
       ) : (
-      <HasilFilter text="Tidak ada yang cocok" data={[]}  />
+      <HasilFilter text="Sepertinya yang kamu cari tidak ada, coba kata kunci lain." data={[]}  />
       )}
       <Banner>
           <ImgBanner src={ConsultImg}/>
@@ -123,12 +123,12 @@ const TanyaDokter: React.FC = () => {
           <Button 
               text="Tampilkan lebih banyak"
               textColor="#040000"
-              color="#ECE4E4"
+              color="#ece4e4"
               fontSize="14px"
               radius="5px"
               height='35px'
               width='179px'
-              outline="false"
+
               />
               </ButtonGrid>
           </DoctorGrid>
