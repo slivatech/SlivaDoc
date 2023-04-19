@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Cell, IndeterminateCheckbox, TableV8, createColumnHelper } from '../../components/Common/Tablev8'
+import { IndeterminateCheckbox, TableV8, createColumnHelper } from '../../components/Common/Tablev8'
 import { customers } from './InvoiceListData'
 import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
-import Modal from '../../components/Common/Modal/Modal'
-import { IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
+import { Edit, IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
 import { GlobalFilter } from './GlobalFilter'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 
@@ -43,6 +42,7 @@ const Invoice = () => {
 
         setSelectedRow([...temp])
     }, [])
+
 
     useEffect(() => {
         setPage(pageIndex + 1)
@@ -100,12 +100,19 @@ export default Invoice
 interface IuseAlertColumn {
     editable?: number;
     setEditable?: any;
-    selectedRow?: any;
-    selectedData?: any;
 }
 
-export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData} : IuseAlertColumn) => {
+export const useAlertColumn = ({editable, setEditable} : IuseAlertColumn) => {
     const table = createColumnHelper()
+
+    const currency = (number: number) => {
+		return new Intl.NumberFormat('id-ID', {
+			style: 'currency',
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
+			currency: 'IDR',
+		}).format(number);
+	};
 
     useEffect(() => {
        console.log(editable);
@@ -165,7 +172,7 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
             header: 'name',
             cell: (props: any) => (
                 <NameColumn>
-                    <img src={props.row.original.image}/>
+                    <img src={props.row.original.image} alt=''/>
                     <div>{props.row.original.name}</div>
                 </NameColumn>
             ),
@@ -177,8 +184,8 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
             enableSorting: false,
             cell: (props: any) => (
                 <IconColumn>
-                    <img src={moneyIc}/>
-                    <div>{props.row.original.payment}</div>
+                    <img src={moneyIc} alt=''/>
+                    <div>{currency(props.row.original.payment)}</div>
                 </IconColumn>
             ),
         }),
@@ -189,7 +196,7 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
             enableSorting: true,
             cell: (props: any) => (
                 <IconColumn>
-                    <img src={calenderIC}/>
+                    <img src={calenderIC} alt=''/>
                     <div>{props.row.original.date}</div>
                 </IconColumn>
             ),
@@ -224,17 +231,11 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
                     </button>
                     {
                         editable === props.row.original.id ?
-                            <span style={{
-                                position: 'relative',
-                                right : '0', 
-                                display : 'flex', 
-                                width : '100%', 
-                                flexDirection : 'column',
-                                }}>
-                                <button style={{display : "flex", padding : "5px"}}>Complete</button> 
-                                <button style={{display : "flex", padding : "5px"}}>Cancel</button> 
-                                <button style={{display : "flex", padding : "5px"}}>Pending</button> 
-                            </span> 
+                            <Edit>
+                                <button className='complete'>Complete</button> 
+                                <button className='cancel'>Cancel</button> 
+                                <button className='pending'>Pending</button> 
+                            </Edit>
                         : ''
                         
                     }

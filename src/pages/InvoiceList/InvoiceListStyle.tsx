@@ -63,3 +63,37 @@ export const StatusColumn = styled.div<{ status:"Complete" | "Pending" | "Cancel
     justify-content:center;
     align-items:center;
 `)
+
+export const Edit = styled.span`
+  overflow: visible !important;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: absolute;
+  display : flex; 
+  width : 110px; 
+  flex-direction : column;
+  padding: 10px;
+  z-index: 10;
+  right: 0;
+  gap: 5px;
+
+  button {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .complete {
+    background: rgba(3, 168, 158, 0.05);
+    color: #03A89E;
+  }
+  .pending {
+    background: rgba(58, 54, 219, 0.05);
+    color: #3A36DB;
+  }
+  .cancel {
+    background: rgba(255, 105, 180, 0.05);
+    color: #FF69B4;
+  }
+`

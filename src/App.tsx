@@ -27,7 +27,6 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      {/* <InvoiceList/> */}
       <Invoice/>
     </ThemeProvider>
   );
