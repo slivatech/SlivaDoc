@@ -5,36 +5,29 @@ import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
 import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
+import { useWindowDimensions } from './Hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
+import TablePage from './pages/Example/TablePage';
+import Invoice from './pages/InvoiceList/Invoice';
 
 const App = () => {
-  const [dimension, setDimension] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  })
-
-  const resize = () => {
-    setDimension({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
-  }
-
-  React.useEffect(() => {
-    window.addEventListener('resize', resize)
-
-    return () => {
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+  const {width} = useWindowDimensions()
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
+
+      {/* <Routes>
+        <Route path='/' element={<HomePage width={width}/>} />
+        <Route path='/auth' element={<Auth/>} />
+        <Route path='/article' element={<Artikel/>} />
+      </Routes> */}
+      {/* <TablePage /> */}
       {/* <Auth /> */}
-      <HomePage width={dimension.width} />
+      {/* <HomePage width={dimension.width} />
       <Artikel />
-      <DetailArtikel />
+      <DetailArtikel /> */}
+      <Invoice/>
     </ThemeProvider>
   );
 };

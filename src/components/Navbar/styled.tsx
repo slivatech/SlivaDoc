@@ -55,6 +55,7 @@ export const BottomNav = styled.div`
     display: flex;
     background: #ffeded;
     padding: 10px 8%;
+    height: 40px;
     justify-content: space-between;
 
     @media (max-width: 768px) {
@@ -64,6 +65,7 @@ export const BottomNav = styled.div`
 
 export const MenuWrap = styled.div`
     display: flex;
+    align-items: center;
     gap: 10px;
 `
 
