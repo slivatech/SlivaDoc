@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import HomePage from "./pages/HomePage";
+import Artikel from "./pages/PageArtikel/PageArtikel";
+import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
+import GlobalCss from "./styles/Global";
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from "./styles/Theme";
+import Auth from './pages/Auth/Auth';
 
-function App() {
+const App = () => {
+  const [dimension, setDimension] = React.useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
+
+  const resize = () => {
+    setDimension({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('resize', resize)
+
+    return () => {
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalCss />
+      {/* <Auth /> */}
+      <HomePage width={dimension.width} />
+      <Artikel />
+      <DetailArtikel />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
