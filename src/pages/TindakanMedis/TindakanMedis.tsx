@@ -7,9 +7,11 @@ import iconLoc from '../../assets/icon/location.svg'
 import iconCheck from '../../assets/icon/check-circle.svg'
 import iconFill from '../../assets/icon/location-fill.svg'
 import Search from '../../components/Search/Search'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 
-const TindakanMedis = () => {
+const TindakanMedis = ({width} : any) => {
     interface IMedis {
         id: number;
         title: string;
@@ -120,21 +122,22 @@ const TindakanMedis = () => {
 
   return (
     <>
+        <Navbar width={width} />
         <Container>
                 <h1>Buat Janji Mudah dan Cepat</h1>
                 <Brand>
                     {service.map((i: string, index: number) => (
                         <div className='service' key={index}>
-                            <img src={iconCheck}/>
+                            <img src={iconCheck} alt=''/>
                             <span>{i}</span>
                         </div>
                     ))}
                 </Brand>
                 <SearchBar>
                     <div className='input-loc'>
-                        <img src={iconLoc}/>
+                        <img src={iconLoc} alt=''/>
                         <input type="text" placeholder="Seluruh Lokasi" name="search"/>
-                        <img src={iconFill}/>
+                        <img src={iconFill} alt='' style={{cursor:'pointer'}}/>
                     </div>
                     <Search/>
                 </SearchBar>
@@ -173,12 +176,12 @@ const TindakanMedis = () => {
                     {location.map((i: ILocation) => (
                         <Location to='/' key={i.id}>
                             <div className='img-cover'>
-                                <img src={i.img}/>
+                                <img src={i.img} alt=''/>
                             </div>
                             <div>
                                 <h2>{i.location}</h2>
                                 <div className='link'>
-                                    <img src={iconLoc}/>
+                                    <img src={iconLoc} alt=''/>
                                     <span>{i.range}</span> 
                                 </div> 
                             </div>
@@ -190,6 +193,7 @@ const TindakanMedis = () => {
                 </Button>
             </>
         </Container>
+        <Footer />
     </>
   )
 }

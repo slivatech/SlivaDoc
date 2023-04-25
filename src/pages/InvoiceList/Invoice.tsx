@@ -28,6 +28,7 @@ const Invoice = () => {
         }),
         [pageIndex, pageSize]
       )
+    
 
     const toDetail = useCallback((selectedRow:any, columnId:any, selectedData:any) => {
     if(
@@ -177,8 +178,8 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
             enableSorting: false,
             cell: (props: any) => (
                 <IconColumn>
-                    <img src={moneyIc}/>
-                    <div>{props.row.original.payment}</div>
+                    <img src={moneyIc} alt=''/>
+                    <div>Rp.{props.row.original.payment}</div>
                 </IconColumn>
             ),
         }),
@@ -189,7 +190,7 @@ export const useAlertColumn = ({editable, setEditable, selectedRow, selectedData
             enableSorting: true,
             cell: (props: any) => (
                 <IconColumn>
-                    <img src={calenderIC}/>
+                    <img src={calenderIC} alt=''/>
                     <div>{props.row.original.date}</div>
                 </IconColumn>
             ),

@@ -61,4 +61,93 @@ export const customers = [
     image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
 
   },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  {
+    name: "Carl Dijk",
+    email: "qabcde@gmail.com",
+    location:"Indonesia",
+    gender:"Male",
+    image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  },
+  
 ];

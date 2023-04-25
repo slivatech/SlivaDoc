@@ -31,7 +31,7 @@ export const Form = styled.div`
             padding: 8px 43px;
             border-radius: 5px;
             font-weight: 400;
-            font-size: 24px;
+            font-size: 14px;
             cursor: pointer;
         }
 

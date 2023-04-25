@@ -17,54 +17,28 @@ import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik
 import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
+import {Routes, Route} from 'react-router-dom'
 
 const App = () => {
-  const [dimension, setDimension] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  const resize = () => {
-    setDimension({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
-
-  React.useEffect(() => {
-    window.addEventListener("resize", resize);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  const {width} = useWindowDimensions()
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
-      {/* <Routes>
+      <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
-        <Route path='/article' element={<Artikel/>} />
-      </Routes> */}
-      {/* <TablePage /> */}
-      {/* <Auth /> */}
-      {/* <HomePage width={dimension.width} />
-      <Artikel />
-      <DetailArtikel /> */}
-      {/* <DetailKlinik /> */}
-      {/* <EditProfil/> */}
-      {/* <Routes>
-        <Route path='/medis' element={<TindakanMedis/>}/>
-        <Route path='/artikel' element={<PageArtikel/>}/>
-      </Routes> */}
-      <DetailArtikel />
-      <DetailDokter/>
-      <DetailLayananKlinik/>
-      <TanyaDokter/>
-      <CustomerListPage />
-      {/* <InvoiceList/> */}
-      <Invoice/>
+        <Route path='/articles' element={<Artikel width={width}/>}/>
+        <Route path='/article' element={<DetailArtikel width={width}/>}/>
+        <Route path="/clinic" element={<DetailKlinik width={width}/>} />
+        <Route path='/medical' element={<TindakanMedis width={width}/>}/>
+        <Route path='/ask' element={<TanyaDokter width={width}/>}/>
+        <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
+        <Route path='/doctor' element={<DetailDokter width={width} />}/>
+        <Route path='/profileUpdate' element={<EditProfil />}/>
+        <Route path='/invoice' element={<Invoice />}/>
+        <Route path='/customers' element={<CustomerListPage />}/>
+      </Routes>
     </ThemeProvider>
   );
 };

@@ -61,9 +61,9 @@ export const CardMed = styled.div`
 `
 
 export const SeeAll = styled(Link)`
-    font-family: 'Inter';
+    /* font-family: 'Inter'; */
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: 2px;
     color: rgba(28, 28, 28, 0.7);

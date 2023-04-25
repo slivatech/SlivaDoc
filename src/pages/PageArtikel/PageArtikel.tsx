@@ -17,6 +17,8 @@ import {
   Top,
 } from "./PageArtikelStyle";
 import { ListWrap } from "../DetailArtikel/DetailArtikelStyle";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 interface IListArticle {
   id: number;
@@ -57,9 +59,14 @@ const ListArticle = [
   },
 ];
 
-const PageArtikel = () => {
+interface PageArtikelProps {
+  width: number;
+}
+
+const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
   return (
     <>
+      <Navbar width={width} />
       <Container>
         <Search>
           <form>
@@ -127,6 +134,7 @@ const PageArtikel = () => {
           </Button>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

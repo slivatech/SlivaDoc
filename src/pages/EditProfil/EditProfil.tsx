@@ -122,14 +122,29 @@ const EditProfil = () => {
             <Form>
                 <div>
                     <h2>PROFILE</h2>
-                    <img src={pict}/>
+                    <img src={pict} alt=''/>
                 </div>
                 <form>
                     <div className='row'>
-                        <Input input='name' name='First Name' type='text' placeholder='contoh: Evan Moris' />
-                        <Input input='name' name='Last Name' type='text' placeholder='contoh: Cheahn' />
+                        <Input 
+                            input='name' 
+                            name='First Name' 
+                            type='text' 
+                            // placeholder='contoh: Evan Moris' 
+                        />
+                        <Input 
+                            input='name' 
+                            name='Last Name' 
+                            type='text' 
+                            // placeholder='contoh: Cheahn' 
+                        />
                     </div>
-                    <Input input='email' name='Email' type='email' placeholder='contoh: evansmoris@gmail.com' />
+                    <Input 
+                        input='email' 
+                        name='Email' 
+                        type='email' 
+                        // placeholder='contoh: evansmoris@gmail.com' 
+                    />
                     <div className='row'>
                         {profilePlace.map((i:any) => (
                             <div className='inpWrap' key={i.id}>
@@ -142,8 +157,8 @@ const EditProfil = () => {
                             </div>
                         ))}
                     </div>
-                    <Input input='password' name='Passrowd' type='password' />
-                    <Input input='repassword' name='Re-Type Passrowd' type='password' />
+                    <Input input='password' name='Password' type='password' />
+                    <Input input='repassword' name='Re-Type Password' type='password' />
                     <div style={{margin: '44px 0'}}>
                         <button className='btn-cancel'>Cancel</button>
                         <button className='btn-save'>Save</button>
