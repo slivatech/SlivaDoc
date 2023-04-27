@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: wrap;
   gap: 10px;
+  max-width: 1400px;
   width:100%;
   
   @media only screen and (max-width: 768px) {

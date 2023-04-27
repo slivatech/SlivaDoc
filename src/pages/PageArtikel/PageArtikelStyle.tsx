@@ -5,7 +5,8 @@ import banner from "../../assets/image/Banner-artikel.svg";
 export const Container = styled.div`
   width: 100%;
   max-width: 1400px;
-  padding: 1rem 3rem;
+  /* padding: 1rem 3rem; */
+  padding: 15px 8%;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #fafafa;
@@ -59,6 +60,7 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  cursor: pointer;
 `;
 
 export const Col = styled.div`
@@ -155,6 +157,7 @@ export const Card = styled.div`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   padding: 8px 5px;
+  cursor: pointer;
   @media (max-width: 720px) {
     min-height: 150px;
   }
@@ -228,13 +231,14 @@ export const Button = styled.div`
     border-radius: 5px;
     padding: 10px 17px;
     border: none;
+    cursor: pointer;
   }
 `;
 export const Search = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #ece4e4;
 
   button {
@@ -265,7 +269,8 @@ export const Search = styled.div`
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    outline: none;
+    border-radius: 5px  0 5px 0;
   }
 
   .btn-all {
