@@ -9,6 +9,7 @@ import Auth from './pages/Auth/Auth';
 import DetailDokter from './pages/DetailDokter/DetailDokter';
 import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
+import SlivaProteksi from './pages/SlivaProteksi/SlivaProteksi';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -41,6 +42,7 @@ const App = () => {
       <DetailDokter/>
       <DetailLayananKlinik/>
       <TanyaDokter/>
+      <SlivaProteksi/>
     </ThemeProvider>
   );
 };

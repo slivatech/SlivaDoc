@@ -12,12 +12,12 @@ export const data = [
   {
     timePeriod: "Siang",
     imgSrc: sun,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["11:00 - 12:00"],
   },
   {
     timePeriod: "Malam",
     imgSrc: night,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["19:00 - 20:00"],
   },
 ];
 
