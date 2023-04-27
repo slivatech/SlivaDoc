@@ -5,14 +5,14 @@ import Search from "../Search/Search";
 import { StyledH1 } from "../FontStyle/Font";
 
 const StyledP = styled.p`
-  color:${({ theme }) => theme.colors.txtSecondary};
-  font-weight:${({ theme }) => theme.fontWeights.bold};
-  font-size: clamp(.1rem,4vw,1rem);
+  color: ${({ theme }) => theme.colors.txtSecondary};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: clamp(0.1rem, 4vw, 1rem);
 
   @media (max-width: 768px) {
-     font-size: 12px;
+    font-size: 12px;
   }
-`
+`;
 
 const StyledHref = styled.a(
   ({ theme }) => `
@@ -20,7 +20,6 @@ const StyledHref = styled.a(
   text-decoration:none;
   font-weight:${theme.fontWeights.light};
   font-size:${theme.fontSizes.small};
-
 `
 );
 

@@ -11,7 +11,7 @@ import SubscriptionSection from "../components/SubscriptionSection/SubscriptionS
 import Footer from "../components/Footer/Footer";
 
 interface HomePageProps {
-  width: number
+  width: number;
 }
 const HomePage: React.FC<HomePageProps> = ({width}) => {
   return (

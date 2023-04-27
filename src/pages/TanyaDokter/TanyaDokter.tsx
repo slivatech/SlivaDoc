@@ -8,8 +8,14 @@ import PengalamanPraktikFilter from "../../components/Filter/PengalamanPraktikFi
 import ConsultImg from "../../assets/consult.png"
 import Button from "../../components/Common/Buttons/BaseButton";
 import DoctorList from "../../components/DoctorList/DoctorList";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
-const TanyaDokter: React.FC = () => {
+interface TanyaDokterProps {
+  width: number;
+}
+
+const TanyaDokter: React.FC<TanyaDokterProps> = ({width}) => {
   const [hargaKonsultasi, setHargaKonsultasi] = useState("");
   const [pengalamanPraktik, setPengalamanPraktik] = useState("");
 
@@ -19,6 +25,11 @@ const TanyaDokter: React.FC = () => {
 
   const handlePengalamanPraktikChange = (value: string) => {
     setPengalamanPraktik(value);
+  };
+
+  const handleReset = () => {
+    setHargaKonsultasi("");
+    setPengalamanPraktik("");
   };
 
   const filterData = () => {
@@ -59,6 +70,8 @@ const TanyaDokter: React.FC = () => {
 
 
   return (
+    <>
+    <Navbar width={width} />
     <Container>
       <ColumnContainer>
         <SliderContainer>
@@ -134,6 +147,8 @@ const TanyaDokter: React.FC = () => {
           </DoctorGrid>
       </WrapperContainer>
       </Container>
+      <Footer/>
+      </>
       );
       };
 

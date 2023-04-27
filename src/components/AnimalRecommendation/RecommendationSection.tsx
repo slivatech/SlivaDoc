@@ -4,6 +4,44 @@ import { GridRow } from "../GridRow";
 import RowHeader from "../RowHeader";
 import { SVGBox } from "../SVGBox";
 
+const recom = [
+  {
+    id: 1,
+    img:"./assets/dog-svg.png",
+    text: 'Anjing'
+  },
+  {
+    id: 2,
+    img:"./assets/cat-svg.png",
+    text: 'Kucing'
+  },
+  {
+    id: 3,
+    img:"./assets/hamster-svg.png",
+    text: 'Hamster'
+  },
+  {
+    id: 4,
+    img:"./assets/porcupine-svg.png",
+    text: 'Landak Mini'
+  },
+  {
+    id: 5,
+    img:"./assets/rabbit-svg.png",
+    text: 'Kelinci'
+  },
+  {
+    id: 6,
+    img:"./assets/dove-svg.png",
+    text: 'Burung'
+  },
+  {
+    id: 7,
+    img:"./assets/fish-svg.png",
+    text: 'Ikan'
+  },
+]
+
 const RecommendationSection = () => {
   return (
     <Container style={{ padding: "2rem 8%" }}>
@@ -12,34 +50,12 @@ const RecommendationSection = () => {
         Dapatkan informasi seputar jenis hewan kesukaan anda disini
       </p>
       <GridRow>
-        <SVGBox>
-          <img src="./assets/dog-svg.png" alt="Animal Recomendation" />
-          <p>Anjing</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/cat-svg.png" alt="Animal Recomendation" />
-          <p>Cat</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/hamster-svg.png" alt="Animal Recomendation" />
-          <p>Hamster</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/porcupine-svg.png" alt="Animal Recomendation" />
-          <p>Landak Mini</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/rabbit-svg.png" alt="Animal Recomendation" />
-          <p>Kelinci</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/dove-svg.png" alt="Animal Recomendation" />
-          <p>Burung</p>
-        </SVGBox>
-        <SVGBox>
-          <img src="./assets/fish-svg.png" alt="Animal Recomendation" />
-          <p>Ikan</p>
-        </SVGBox>
+        {recom?.map((data) => (
+          <SVGBox key={data.id}>
+            <img src={data.img} alt="Animal Recomendation" />
+            <p>{data.text}</p>
+          </SVGBox>
+        ))}
       </GridRow>
     </Container>
   );
