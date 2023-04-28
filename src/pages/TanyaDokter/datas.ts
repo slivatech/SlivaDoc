@@ -1,18 +1,18 @@
 import slideimg from "../../assets/image/slidedoctor.png"
 import doctorimg from "../../assets/doctor.png"
+
 export const sliderData = [
   {
-    image: doctorimg,
-    text: 'Dokter akan segera menerima permintaan chat kamu'
-
+    image: slideimg,
+    desc:'Dokter akan segera menerima permintaan chat kamu',
   },
   {
     image: slideimg,
-    text: 'Perawat akan segera menerima permintaan chat kamu'
+    desc:'Perawat akan segera menerima permintaan chat kamu',
   },
   {
-    image: doctorimg,
-    text: 'CS akan segera menerima permintaan chat kamu'
+    image: slideimg,
+    desc:'Admin akan segera menerima permintaan chat kamu',
   },
 ];
 

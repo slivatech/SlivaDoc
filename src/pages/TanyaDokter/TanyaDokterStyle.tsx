@@ -7,6 +7,8 @@ export const Container = styled.div`
   gap: 10px;
   max-width: 1400px;
   width:100%;
+  margin-bottom: 58px;
+  justify-content: center;
   
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -43,7 +45,6 @@ export const FilterContainer = styled.div`
 export const ColumnContainer =styled.div`
   display: flex;
   flex-direction: column;
-  margin:50px;
   margin-right: 0;
   width:574px;
 
@@ -63,7 +64,6 @@ export const WrapperContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 597px;
-  margin: 50px;
   margin-left: 0;
   background-color: hsl(0, 0%, 100%);
   padding: 20px;
