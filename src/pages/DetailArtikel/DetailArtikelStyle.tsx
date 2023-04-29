@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export const Container = styled.div`
   width: 100%;
   max-width: 1400px;
+  margin-bottom: 3.188rem;
 `;
 export const ArticleWrapper = styled.div`
   display: flex;
@@ -75,8 +76,27 @@ export const DoctorContainer = styled.div`
   }
 `;
 
+export const Heading = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+`;
+
+export const LinkTo = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(28, 28, 28, 0.7);
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+    
+  }
+`;
+
 export const Title = styled.h1`
-margin-left:100px;
   font-size: 20px;
   font-weight: 700;
   line-height: 22px;
@@ -90,7 +110,7 @@ margin-left:100px;
 
 export const Description = styled.div`
   font-size: 14px;
-  margin-left:100px;
+
   letter-spacing: 0px;
   color: rgba(28, 28, 28, 0.7);
   @media (max-width: 700px) {
@@ -100,9 +120,12 @@ export const Description = styled.div`
 `;
 
 export const DoctorListContainer = styled.div`
-  border-top: 2px grey;
+  border-bottom: 2px grey;
   flex: 4;
   justify-content: left;
+  padding-top:39px ;
+  border-top: 1px solid #ECE4E4;
+transform: rotate(-0.18deg);
   
   @media (max-width: 700px) {
     width: 100%;
@@ -116,7 +139,7 @@ export const Consult = styled.div`
   margin-top: 26px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  
   align-items: center;
   flex-wrap: wrap;
   padding: 40px 19px;
@@ -147,21 +170,7 @@ export const Consult = styled.div`
     }
   }
 
-  button {
-    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
-    color: #ffff;
-    border-radius: 5px;
-    padding: 10px 17px;
-    border: none;
-    cursor: pointer;
-
-    @media screen and (max-width: 768px) {
-      order: 3;
-      margin-top: 10px;
-      width: 100%;
-      justify-self: flex-end;
-    }
-  }
+ 
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -272,3 +281,19 @@ export const ListWrap = styled(Link)`
   text-decoration: none;
   color: #2C4AE8;
 `
+
+export const ButtonContainer=styled.div`
+display: flex;
+margin-left:auto;
+justify-content: flex-end;
+align-items: center;
+button{
+    cursor: pointer;
+    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 17px;
+    border: none;
+
+  }
+`;

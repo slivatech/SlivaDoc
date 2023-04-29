@@ -94,9 +94,6 @@ export const Heading = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  @media (max-width: 767px) {
-    flex-direction: column;
-  }
 `;
 
 export const Link = styled.p`
@@ -108,7 +105,7 @@ export const Link = styled.p`
 
   @media (max-width: 767px) {
     font-size: 12px;
-    margin-bottom: 10px;
+    
   }
 `;
 

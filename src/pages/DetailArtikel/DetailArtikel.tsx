@@ -6,11 +6,14 @@ import banner from "../../assets/banner.png";
 import DoctorListItem from "../../components/DetailArtikel/DoctorListItem";
 import Live from "../../assets/icon/live.png";
 import {
+  ButtonContainer,
   Consult,
   Container,
   Description,
   DoctorContainer,
   DoctorListContainer,
+  Heading,
+  LinkTo,
   List,
   ListImage,
   ListInfo,
@@ -29,12 +32,15 @@ import Search from "../../components/Search/Search";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
+
 interface Doctor {
   id: number;
   name: string;
   specialty: string;
   price: number;
   image: string;
+  rating:number;
+  exp:number;
 }
 interface IListArticle {
   id: number;
@@ -51,6 +57,8 @@ const doctors: Doctor[] = [
     specialty: "Dokter Umum",
     price: 250000,
     image: doctor,
+    rating:90,
+    exp:3,
   },
   {
     id: 2,
@@ -58,6 +66,8 @@ const doctors: Doctor[] = [
     specialty: "Dokter Anak",
     price: 300000,
     image: doctor,
+    rating:96,
+    exp:4,
   },
 ];
 const ListArticle = [
@@ -115,20 +125,27 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
           content={article.content}
           image={article.image}
         />
-        <Title>konsultasi Dokter Terkait</Title>
-        <Description>Konsultasi online dengan dokter siaga kami</Description>
+     
         <DoctorContainer>
           <DoctorListContainer>
+            <Heading>
+          <Title>konsultasi Dokter Terkait</Title>
+          <LinkTo>Lihat Semua</LinkTo>
+          </Heading>
+        <Description>Konsultasi online dengan dokter siaga kami</Description>
             {doctors.map((doctor) => (
               <DoctorListItem key={doctor.id} doctor={doctor} />
             ))}
+            
             <Consult>
-              <img src={imgconsult} alt="consult" />
+              <img style={{marginRight:"0.625rem"}} src={imgconsult} alt="consult" />
               <div>
                 <h3>Konsultasi Instan</h3>
                 <p>Tanya dokter untuk buat resep.</p>
               </div>
+              <ButtonContainer>
               <button>Mulai konsultasi</button>
+              </ButtonContainer>
             </Consult>
             <div>
               <h3>Baca Artikel Slivadoc</h3>
