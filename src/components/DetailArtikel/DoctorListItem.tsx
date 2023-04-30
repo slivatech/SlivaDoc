@@ -23,6 +23,7 @@ const DoctorListItemContainer = styled.div`
   border-bottom: 1px solid #ECE4E4;
 transform: rotate(0.28deg);
 padding: 26px 0;
+width:100%;;
 
 `;
 

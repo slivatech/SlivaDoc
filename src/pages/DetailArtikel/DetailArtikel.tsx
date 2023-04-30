@@ -6,6 +6,7 @@ import banner from "../../assets/banner.png";
 import DoctorListItem from "../../components/DetailArtikel/DoctorListItem";
 import Live from "../../assets/icon/live.png";
 import {
+  ButtonArtikel,
   ButtonContainer,
   Consult,
   Container,
@@ -13,12 +14,13 @@ import {
   DoctorContainer,
   DoctorListContainer,
   Heading,
-  LinkTo,
+  Linked,
   List,
   ListImage,
   ListInfo,
   ListWrap,
   Row,
+  Search,
   Sidebar,
   SidebarListItem,
   SidebarTitle,
@@ -28,9 +30,10 @@ import {
 import doctor from "../../assets/doctor.png";
 import img from "../../assets/artikelterkait.png";
 import imgconsult from "../../assets/consult.png";
-import Search from "../../components/Search/Search";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 
 interface Doctor {
@@ -130,7 +133,7 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
           <DoctorListContainer>
             <Heading>
           <Title>konsultasi Dokter Terkait</Title>
-          <LinkTo>Lihat Semua</LinkTo>
+          <Linked>Lihat Semua</Linked>
           </Heading>
         <Description>Konsultasi online dengan dokter siaga kami</Description>
             {doctors.map((doctor) => (
@@ -147,10 +150,18 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
               <button>Mulai konsultasi</button>
               </ButtonContainer>
             </Consult>
-            <div>
               <h3>Baca Artikel Slivadoc</h3>
-              <Search />
-            </div>
+              <Search>
+          <form>
+            <input
+              type="text"
+              placeholder="Ketik email"
+              name="search"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </Search>
+       
           </DoctorListContainer>
           <div>
             <Sidebar>
@@ -163,19 +174,12 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
               </SidebarTitle>
               <SidebarTitle>Topik Terkini</SidebarTitle>
               <SidebarTitle>
-                <SidebarListItem>
-                  <a href="#"> Radang Usus</a>
-                </SidebarListItem>
-                <SidebarListItem>
-                  <a href="#"> Radang Usus</a>
-                </SidebarListItem>
-                <SidebarListItem>
-                  <a href="#"> Radang Usus</a>
-                </SidebarListItem>
-                <SidebarListItem>
-                  <a href="#"> Radang Usus</a>
-                </SidebarListItem>
-              </SidebarTitle>
+          {['Radang Usus', 'Radang Usus', 'Radang Usus', 'Radang Usus'].map((item, index) => (
+            <SidebarListItem key={index}>
+              <Link to={""}>{item}</Link>
+            </SidebarListItem>
+          ))}
+        </SidebarTitle>
             </Sidebar>
             <Top>
               <List>
@@ -186,11 +190,15 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
                     <ListInfo>
                       <h2>{i.title}</h2>
                       <span>
+                        <img src={Live} alt="live"/>
                         <a href="#">{i.category}</a>
                       </span>
                     </ListInfo>
                   </Row>
                 ))}
+                <ButtonArtikel>
+                  <button>Tampilkan lebih banyak</button>
+                </ButtonArtikel>
               </List>
             </Top>
           </div>
