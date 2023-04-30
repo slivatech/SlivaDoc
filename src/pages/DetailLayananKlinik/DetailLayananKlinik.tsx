@@ -32,6 +32,11 @@ interface DetailLayananKlinikProps {
 }
 
 const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
+  const [selectedTime, setSelectedTime] = useState("");
+
+  const handleSelectTime = (time: string) => {
+    setSelectedTime(time);
+  };
   return (
     <>
       <Navbar width={width} />
@@ -46,11 +51,12 @@ const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
             </Price>
             <LocationContainer>
               <h1>Klinik Hewan Indonesia</h1>
-              <Location>
+             <Location>
                 <img src={location} alt="location" />
                 <p>4.7 Km</p>
                 <LocationLogo src={locimage} />
               </Location>
+             
             </LocationContainer>
             <TabSection />
           </InfoContainer>
