@@ -51,17 +51,17 @@ export const data = [
   {
     timePeriod: "Pagi",
     imgSrc: morning,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["08:00", "09:00"],
   },
   {
     timePeriod: "Siang",
     imgSrc: sun,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["12:00", "14:00"],
   },
   {
     timePeriod: "Malam",
     imgSrc: night,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["19:00", "20:00"],
   },
 ];
 

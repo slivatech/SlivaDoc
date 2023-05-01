@@ -20,6 +20,7 @@ export const ContainerInformasi = styled.div`
   margin: 100px;
   margin-right:0;
   width:739px;
+  flex:1;
   @media only screen and (max-width: 768px) {
     margin: 0;
     margin-top: 50px;
@@ -242,17 +243,24 @@ export const WatchHead = styled.div`
 `;
 
 export const WatchContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
+    display: flex;
+  flex-direction: wrap;
+  width: 107px;
+height: 24px;;
   div {
     display: flex;
-    background: #ece4e4;
-    border-radius: 3px;
-    width: 107px;
-    height: 24px;
+    justify-content: center;
     align-items: center;
-    margin-right: 12px;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #ECE4E4;
+    border-radius: 5px;
+    width: 107px;
+  height: 24px;
+    &.selected {
+      background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);;
+      color: white;
+    }
   }
 `;
 

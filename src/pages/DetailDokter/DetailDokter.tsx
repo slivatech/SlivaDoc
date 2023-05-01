@@ -9,7 +9,12 @@ import Button from "../../components/Common/Buttons/BaseButton";
 
 const DetailDokter: React.FC = () => {
   const [type, setType] = useState()
+  const [selectedSchedule, setSelectedSchedule] = useState("");
 
+  const handleScheduleClick = (schedule: string) => {
+    setSelectedSchedule(schedule);
+  };
+  
   return (
     <Container>
       <ContainerInformasi>
@@ -83,10 +88,16 @@ const DetailDokter: React.FC = () => {
         <h1>{item.timePeriod}</h1>
       </WatchHead>
       <WatchContent>
-        {item.schedule.map((schedule, index) => (
-          <div key={index}>{schedule}</div>
-        ))}
-      </WatchContent>
+                    {item.schedule.map((schedule, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleScheduleClick(schedule)}
+                        className={selectedSchedule === schedule ? "selected" : ""}
+                      >
+                        {schedule}
+                      </div>
+                    ))}
+                  </WatchContent>
     </React.Fragment>
   ))}
 </Watch>
