@@ -77,23 +77,30 @@ export const  Price = styled.div`
 `;
 
 export const  LocationContainer = styled.div`
-  display:flex;
-  flex-direction:column;
+  
   border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+ 
   margin-top:10px;
-  h1{
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 40px;
-  }
+  
 `;
 
 export const Location=styled.div`
-   display: flex;
-  flex-wrap: wrap;
+  display:flex;
+  flex-direction:column;
+
+  div{
+    display:flex;
+  flex-direction:wrap;
   align-items: center;
+  }
   img{
     justify-content:flex-start;
+    width: 15px;
+height: 16px;
+margin-right:6px;
   }
   p{
     font-weight: 400;
@@ -102,10 +109,15 @@ export const Location=styled.div`
     color:#000000;
     
   }
+  h1{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+  }
 `;
 export const LocationLogo=styled.img`
   margin-left: auto;
-  position: relative;
+  position: a;
   top:0;
 `;
 
@@ -176,17 +188,26 @@ export const WatchHead = styled.div`
 `;
 
 export const WatchContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+  flex-direction: wrap;
+  width: 107px;
+height: 24px;;
 
   div {
     display: flex;
-    background: #ece4e4;
-    border-radius: 3px;
-    width: 107px;
-    height: 24px;
+    justify-content: center;
     align-items: center;
-    margin-right: 12px;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #ECE4E4;
+    border-radius: 5px;
+    width: 107px;
+  height: 24px;
+
+    &.selected {
+      background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);;
+      color: white;
+    }
   }
 `;
 

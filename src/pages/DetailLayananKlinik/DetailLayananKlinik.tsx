@@ -32,11 +32,12 @@ interface DetailLayananKlinikProps {
 }
 
 const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
-  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedSchedule, setSelectedSchedule] = useState("");
 
-  const handleSelectTime = (time: string) => {
-    setSelectedTime(time);
+  const handleScheduleClick = (schedule: string) => {
+    setSelectedSchedule(schedule);
   };
+  
   return (
     <>
       <Navbar width={width} />
@@ -50,13 +51,15 @@ const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
               <h3>Rp.25.000</h3>
             </Price>
             <LocationContainer>
-              <h1>Klinik Hewan Indonesia</h1>
+              
              <Location>
+             <h1>Klinik Hewan Indonesia</h1>
+             <div>
                 <img src={location} alt="location" />
                 <p>4.7 Km</p>
-                <LocationLogo src={locimage} />
+                </div>
               </Location>
-             
+              <LocationLogo src={locimage} />
             </LocationContainer>
             <TabSection />
           </InfoContainer>
@@ -77,12 +80,19 @@ const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
                   </WatchHead>
                   <WatchContent>
                     {item.schedule.map((schedule, index) => (
-                      <div key={index}>{schedule}</div>
+                      <div
+                        key={index}
+                        onClick={() => handleScheduleClick(schedule)}
+                        className={selectedSchedule === schedule ? "selected" : ""}
+                      >
+                        {schedule}
+                      </div>
                     ))}
                   </WatchContent>
                 </React.Fragment>
               ))}
             </Watch>
+
             <ButtonContainer>
               <Button
                 text="Buat Janji"
