@@ -16,7 +16,7 @@ import DetailDokter from './pages/DetailDokter/DetailDokter';
 import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
-import Invoice from './pages/InvoiceList/Invoice';
+import Invoice from "./pages/InvoiceList/Invoice";
 import {Routes, Route} from 'react-router-dom'
 
 const App = () => {
@@ -26,6 +26,7 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       <Routes>
+
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
         <Route path='/articles' element={<Artikel width={width}/>}/>
@@ -35,7 +36,7 @@ const App = () => {
         <Route path='/ask' element={<TanyaDokter width={width}/>}/>
         <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
         <Route path='/doctor' element={<DetailDokter width={width} />}/>
-        <Route path='/profileUpdate' element={<EditProfil />}/>
+        <Route path='/profileUpdate' element={<EditProfil width={width} />}/>
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
       </Routes>

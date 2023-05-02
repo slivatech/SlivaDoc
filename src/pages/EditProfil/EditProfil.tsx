@@ -1,38 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pict from '../../assets/doctor.png'
 import iconMoney from '../../assets/icon/money.svg'
 import topUp from '../../assets/icon/topUp.svg'
 import tarik from '../../assets/icon/tarik-tunai.svg'
 import { Container } from '../PageArtikel/PageArtikelStyle'
-import { Card, Form } from './EditProfilStyle'
+import { Card, Cards, Form } from './EditProfilStyle'
+import Dropdown from '../../components/Common/Dropdown/Dropdown'
+import BaseButton from '../../components/Common/Buttons/BaseButton'
+import consult from '../../assets/consult.png'
+import payment from '../../assets/payment-successful.png'
+import wallet from '../../assets/money-wallet.png'
+import Navbar from '../../components/Navbar/Navbar'
 
+interface EditProfilProps {
+    width: number;
+}
 
-const EditProfil = () => {
-    interface IProfile {
-        input: string;
-        name: string;
-        type: string;
-        placeholder?: string;
-    }
+interface IProfile {
+    input: string;
+    name: string;
+    type: string;
+    placeholder?: string;
+}
 
-    interface ICard {
-        total: any;
-        title: string;
-        btn: any;
-    }
+interface ICard {
+    total: any;
+    title: string;
+    btn?: any;
+    image: string
+}
+const EditProfil:  React.FC<EditProfilProps> = ({width}) => {
+    const [place, setPlace] = useState('select one')
 
     const profilePlace = [
         {
             id: 1,
-            input: "city",
-            name: "City",
-            option: ['Semarang', 'Surabaya', 'Surakarta']
+            place: ['Semarang', 'Surabaya', 'Surakarta'] 
         },
         {
             id: 2,
-            input: "state",
-            name: "State",
-            option: ['Indonesia', 'India', 'Italy']
+            place: ['Indonesia', 'India', 'Italy']
+            
+        },
+    ]
+
+    const countries = [
+        {
+            value: 'Indonesia'
+        },
+        {
+            value: 'India'
+        },
+        {
+            value: 'Italy'
+        },
+    ]
+    const cities = [
+        {
+            value: 'Semarang'
+        },
+        {
+            value: 'Surabaya'
+        },
+        {
+            value: 'Surakarta'
         },
     ]
 
@@ -41,27 +72,20 @@ const EditProfil = () => {
             id: 1,
             total: 16,
             title: "Total Transaksi",
-            btn : [
-                {
-                    text : "View Detail"
-                },
-            ]
+            image: payment,
             
         },
         {
             id: 2,
             total: 59,
             title: "Total Konsultasi",
-            btn : [
-                {
-                    text : "View Detail"
-                },
-            ]
+            image: consult,
         },
         {
             id: 3,
             total: "Rp.2.000.000",
             title: "Saldo",
+            image: wallet,
             btn : [
                 {
                     text : "TopUp",
@@ -74,29 +98,40 @@ const EditProfil = () => {
             ]
         }
     ]
-    function Cards (props:ICard) {
-       return (
-        <Card >
-            <div className='text'>
-                <img src={iconMoney}/>
-                <div>
-                    <h1>{props.total}</h1>
-                    <span>{props.title}</span>
-                </div>
-            </div>
-            <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
-                {props.btn.map((button: any) =>
-                    <button className='btn-card'>
-                        {button.text}
-                        {button.icon ? 
-                            <img src={button.icon}/> : ''
-                        }
-                    </button> 
-                )}
-            </div>
-        </Card>
-       ) 
-    }
+    // function Cards (props:ICard) {
+    //    return (
+    //     <Card >
+    //         <div>
+    //             <div className='text'>
+    //                 <img src={props.image}/>
+    //                 <div>
+    //                     <h1>{props.total}</h1>
+    //                     <span>{props.title}</span>
+    //                 </div>
+    //             </div> 
+    //             {props.btn ?  
+    //                 <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+    //                     {props.btn.map((button: any) =>
+    //                         <BaseButton 
+    //                         text={button.text}
+    //                         iconEnd={
+    //                             <img src={button.icon} alt="" width={12} height={10} />
+    //                         }
+    //                         textColor="#fff"
+    //                         color="#127FFF"
+    //                         fontSize="10px"
+    //                         radius="5px"
+    //                         width="max-content"
+    //                         height="28px"
+    //                         gap="5px"
+    //                     />
+    //                     )}
+    //                 </div>
+    //             : ''}
+    //         </div>
+    //     </Card>
+    //    ) 
+    // }
 
     function Input (props: IProfile) {
         return (
@@ -107,21 +142,67 @@ const EditProfil = () => {
         )
     }
 
+
   return (
     <>
+        <Navbar width={width} />
         <Container>
-            <div style={{display: 'flex', gap: '33px'}}>
-                {jobAp.map((i: ICard) => (
-                    <Cards 
-                        total={i.total} 
-                        title={i.title} 
-                        btn={i.btn}
-                    />
-                ))}
-            </div>
+            <Cards>
+                <Card>
+                    <img src={payment} alt='' width='40%'/>
+                    <div className='text'>
+                        <h1>16</h1>
+                        <span>Total Transaksi</span>
+                    </div> 
+                </Card>
+                <Card>
+                    <img src={consult} alt='' width='30%'/>
+                    <div className='text'>
+                        <h1>16</h1>
+                        <span>Total Konsultasi</span>
+                    </div> 
+                </Card>
+                <Card>
+                    <img src={wallet} alt='' width='30%'/>
+                    <div>
+                        <div className='text'>
+                            <h1>Rp. 2.000.000</h1>
+                            <span>Saldo</span>
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'flex-end', gap: '8px'}}>
+                            <BaseButton 
+                                text="TopUp"
+                                iconEnd={
+                                    <img src={topUp} alt="" width={12} height={10} />
+                                }
+                                textColor="#fff"
+                                color="#127FFF"
+                                fontSize="10px"
+                                radius="5px"
+                                width="50%"
+                                height="28px"
+                                gap="5px"
+                            />
+                            <BaseButton 
+                                text="Tarik Tunai"
+                                iconEnd={
+                                    <img src={tarik} alt="" width={12} height={10} />
+                                }
+                                textColor="#fff"
+                                color="#127FFF"
+                                fontSize="10px"
+                                radius="5px"
+                                width="57%"
+                                height="28px"
+                                gap="5px"
+                            />
+                        </div>
+                    </div> 
+                </Card>
+            </Cards>
             <Form>
                 <div>
-                    <h2>PROFILE</h2>
+                    <h2>Update</h2>
                     <img src={pict} alt=''/>
                 </div>
                 <form>
@@ -130,39 +211,71 @@ const EditProfil = () => {
                             input='name' 
                             name='First Name' 
                             type='text' 
-                            // placeholder='contoh: Evan Moris' 
                         />
                         <Input 
                             input='name' 
                             name='Last Name' 
                             type='text' 
-                            // placeholder='contoh: Cheahn' 
                         />
                     </div>
                     <Input 
                         input='email' 
                         name='Email' 
                         type='email' 
-                        // placeholder='contoh: evansmoris@gmail.com' 
                     />
                     <div className='row'>
-                        {profilePlace.map((i:any) => (
-                            <div className='inpWrap' key={i.id}>
-                                <label htmlFor={i.input}>{i.name}</label>
-                                <select name={i.input}>
-                                    {i.option.map((i: any) => (
-                                        <option value={i}>{i}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        ))}
+                        <div className='inpWrap'>
+                            <label>City</label>
+                            <Dropdown
+                                options={cities}
+                                border="2px solid #FFE9E9"
+                                backgroundColor='#fff'
+                                fontSize="14px"
+                                width='100%'
+                                height='40px'
+                                value={place}
+                                setValue={setPlace}
+                            />
+                        </div>
+                        <div className='inpWrap'>
+                            <label>State</label>
+                            <Dropdown
+                                options={countries}
+                                border="2px solid #FFE9E9"
+                                fontSize="14px"
+                                width='100%'
+                                height='40px'
+                                value={place}
+                                setValue={setPlace}
+                            />
+                        </div>     
                     </div>
                     <Input input='password' name='Password' type='password' />
                     <Input input='repassword' name='Re-Type Password' type='password' />
-                    <div style={{margin: '44px 0'}}>
-                        <button className='btn-cancel'>Cancel</button>
-                        <button className='btn-save'>Save</button>
+                    <div style={{margin: '44px 0'}} className='row'>
+                        {/* <button className='btn-cancel'>Cancel</button> */}
+                        {/* <button className='btn-save'>Save</button> */}
+                        <BaseButton
+                            text="Cancel"
+                            textColor="#0D6EFD"
+                            color="#FFE9E9"
+                            fontSize="24px"
+                            radius="5px"
+                            height="44px"
+                            width="16%"
+                            outline={true}
+                        />
+                        <BaseButton
+                            text="Save"
+                            textColor="#fff"
+                            color="#127FFF"
+                            fontSize="24px"
+                            radius="5px"
+                            height="44px"
+                            width="16%"
+                        />
                     </div>
+                    
                 </form>
             </Form>
         </Container>

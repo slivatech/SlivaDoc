@@ -157,7 +157,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
                 radius="5px"
                 height="35px"
                 width="179px"
-                outline="false"
+                outline={false}
               />
             </ButtonGrid>
           </DoctorGrid>

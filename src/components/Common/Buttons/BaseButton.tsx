@@ -17,7 +17,7 @@ const Container : any = styled.div<ContainerProps>`
     align-items: center;
     gap:${({ gap })=>gap ? gap : '1rem'};
     cursor: pointer;
-    /* border: ${({ color }) => color?  `1px solid ${color}` : ''}; */
+    border: ${({ color, outline }) => !outline? '' : color?  `1px solid ${color}` : ''};
     background: ${({ outline, color }) => !outline? color? color : '' : 'transparent'};
     border-radius: ${({ radius }) => radius? radius : '30px'};
     height: ${({ height }) => height? height : 'auto'};
@@ -32,7 +32,7 @@ const Container : any = styled.div<ContainerProps>`
 `
 
 interface BaseButtonProps {
-    outline?: string;
+    outline?: boolean;
     color?: string;
     radius?: string;
     textColor?: string;
