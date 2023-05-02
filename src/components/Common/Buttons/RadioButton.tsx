@@ -5,14 +5,21 @@ import styled from "styled-components";
   align-items: center;
   gap: 0.5rem;
   color: #1c1c1c;
-  font-size: 12px;
+  font-size: 10px;
 `;
 
-const RadioButton = ({ value }: { value: string }) => {
+interface RadioProps {
+  value:string;
+  label:string;
+  checked?:boolean;
+  handleChange?:(e:React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const RadioButton:React.FC<RadioProps> = ({ value,label,handleChange,checked }) => {
     return (
       <StyledRadioCategory>
-        <input type="radio" value={value} />
-        <label>{value}</label>
+        <input type="radio" checked={checked} value={value} onChange={handleChange} />
+        <label>{label}</label>
       </StyledRadioCategory>
     );
   };

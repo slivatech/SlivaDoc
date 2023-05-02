@@ -4,6 +4,7 @@ export const SelectContainer = styled.div`
   position: relative;
   margin: 0;
   width: 100%;
+  white-space: nowrap;
 `;
 
 type BorderType = "bottom" | "top";
@@ -12,14 +13,15 @@ interface LabelBtnProps {
   border?: string;
   radius?: string;
   borderType?: BorderType;
+  padding?:string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType }) => `
-  padding: .5rem 1.25rem;
+export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType,padding }) => `
+  padding:${padding ? padding:"0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
   font-size: 12px;
-  font-weight: 500;
+
   background-color: #fff;
   border-radius: ${radius ? radius : ""};
   color: rgba(28, 28, 28, 0.7);
@@ -46,6 +48,7 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 50;
   /* max-height: 40vmax;
   min-width: 10rem; */
   padding: 0.4rem;

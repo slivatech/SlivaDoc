@@ -1,6 +1,5 @@
-import React from "react";
 import { doctors } from "./fakeData";
-import { DoctorResultStyle } from "./ConsultationStyle";
+import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
 
 type DoctorProps = {
@@ -12,13 +11,19 @@ type DoctorProps = {
   isAvailable: boolean;
   reviewPercentage: number;
   reviewsCount: number;
-  price: string;
+  price: number;
 };
 
-const DoctorResult = ({ doctor }: { doctor: DoctorProps }) => {
+const DoctorResult = ({
+  doctor,
+  isDoctorTab,
+}: {
+  doctor: DoctorProps;
+  isDoctorTab: boolean;
+}) => {
   return (
     <DoctorResultStyle>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", justifyContent: "space-between",alignItems:"flex-start" }}>
         <div className="firstChild">
           <img src={doctor.imageSrc} />
           <div>
@@ -37,21 +42,29 @@ const DoctorResult = ({ doctor }: { doctor: DoctorProps }) => {
             </div>
           </div>
         </div>
-        <div className="secondChild">
-          <p>Ulasan Dokter</p>
-          <div className="reviewContainer">
-            <img src="/assets/review.svg" alt="review" />
-            <p>
-              {" "}
-              <span style={{ fontWeight: 700, color: "rgba(4, 29, 253,0.7)" }}>
-                {doctor.reviewPercentage}%
-              </span>{" "}
-              ({doctor.reviewsCount})
-            </p>
-          </div>
+        <div className={`secondChild ${isDoctorTab ? "doctorTab" : null} `}>
+          {isDoctorTab ? (
+            <>
+              <p>Ulasan Dokter</p>
+
+              <div className="reviewContainer">
+                <img src="/assets/review.svg" alt="review" />
+                <p>
+                  {" "}
+                  <span
+                    style={{ fontWeight: 700, color: "rgba(4, 29, 253,0.7)" }}
+                  >
+                    {doctor.reviewPercentage}%
+                  </span>{" "}
+                  ({doctor.reviewsCount})
+                </p>
+              </div>
+            </>
+          ) : null}
+
           <p>Biaya Konsultasi</p>
           <p style={{ color: "#FF0606B2", fontWeight: 700 }}>
-            Rp. {doctor.price}
+            Rp. {doctor.price.toLocaleString()}
           </p>
         </div>
       </div>
@@ -62,13 +75,12 @@ const DoctorResult = ({ doctor }: { doctor: DoctorProps }) => {
           <p>{doctor.isAvailable ? "Tersedia hari ini" : ""}</p>
         </div>
         <BaseButton
-            
           width="113px"
           height="25px"
           radius="5px"
           fontSize="14px"
           color="linear-gradient(0deg,rgba(144, 170, 209, 1) 0%,rgba(82, 150, 229, 1) 100%)"
-          text="Mulai Konsultasi"
+          text={isDoctorTab ? "Buat Janji" : 'Mulai Konsultasi'}
           textColor="white"
         />
       </div>
@@ -76,11 +88,15 @@ const DoctorResult = ({ doctor }: { doctor: DoctorProps }) => {
   );
 };
 
-const DoctorResultsList = () => {
+const DoctorResultsList = ({ isDoctorTab }: { isDoctorTab: boolean }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem",marginTop:"1rem" }}>
       {doctors.map((doctor, i) => (
-        <DoctorResult key={i} doctor={doctor as typeof doctor} />
+        <DoctorResult
+          key={i}
+          doctor={doctor as typeof doctor}
+          isDoctorTab={isDoctorTab}
+        />
       ))}
     </div>
   );

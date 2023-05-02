@@ -9,7 +9,8 @@ import Auth from "./pages/Auth/Auth";
 import DetailKlinik from "./pages/DetailKlinik/DetailKlinik";
 import TablePage from "./pages/Example/TablePage";
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
-import ConsultationComponent from "./components/BookingComponents/ConsultationComponent";
+import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
+import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -42,7 +43,8 @@ const App = () => {
       <DetailKlinik />
       <CustomerListPage />
       <TablePage /> */}
-      <ConsultationComponent />
+      {/* <BookingDoctorPage /> */}
+      <BookingPetHospitalPage />
     </ThemeProvider>
   );
 };

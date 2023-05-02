@@ -22,7 +22,9 @@ export const doctors = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:"350.000"
+    price:350000,
+    location:"Medan",
+    yearsOfExperience:4
 },{
     imageSrc:"/assets/doc.png",
     name:"Drh.Evans Moris",
@@ -32,7 +34,9 @@ export const doctors = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:"350.000"
+    price:350000,
+    location:"Jakarta",
+    yearsOfExperience:5
 },{
     imageSrc:"/assets/doc.png",
     name:"Drh.Evans Moris",
@@ -42,7 +46,9 @@ export const doctors = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:"350.000"
+    price:350000,
+    location:"Bandung",
+    yearsOfExperience:11
 },{
     imageSrc:"/assets/doc.png",
     name:"Drh.Evans Moris",
@@ -52,5 +58,18 @@ export const doctors = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:"350.000"
+    price:350000,
+    location:"Ambon",
+    yearsOfExperience:8
+}];
+
+export const petHospitals = [{
+    imageSrc:"/assets/doc.png",
+    name:"Drh.Evans Moris",
+    role:"Dokter Kucing",
+    venue:"RSH Evans Cemerlang, Jakarta",
+    distance:"1.7km",
+    isAvailable:true,
+    price:350000
+
 }]
