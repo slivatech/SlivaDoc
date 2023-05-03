@@ -1,24 +1,15 @@
 import { doctors } from "./fakeData";
 import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
+import { useAppSelector } from "../../store/hooks";
 
-type DoctorProps = {
-  imageSrc: string;
-  name: string;
-  role: string;
-  venue: string;
-  distance: string;
-  isAvailable: boolean;
-  reviewPercentage: number;
-  reviewsCount: number;
-  price: number;
-};
+
 
 const DoctorResult = ({
   doctor,
   isDoctorTab,
 }: {
-  doctor: DoctorProps;
+  doctor: Doctor;
   isDoctorTab: boolean;
 }) => {
   return (
@@ -89,12 +80,14 @@ const DoctorResult = ({
 };
 
 const DoctorResultsList = ({ isDoctorTab }: { isDoctorTab: boolean }) => {
+  const { doctors, city,yearsOfExperienceRange } = useAppSelector(state => state.filter);
+  console.log(city === "")
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem",marginTop:"1rem" }}>
       {doctors.map((doctor, i) => (
         <DoctorResult
           key={i}
-          doctor={doctor as typeof doctor}
+          doctor={doctor as Doctor}
           isDoctorTab={isDoctorTab}
         />
       ))}

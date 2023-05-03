@@ -13,16 +13,16 @@ export const yearsOfExperience = [
     "Di atas 10 tahun"
 ]
 
-export const doctors = [{
+export const doctors:Doctor[] = [{
     imageSrc:"/assets/doc.png",
     name:"Drh.Evans Moris",
     role:"Dokter Kucing",
-    venue:"RSH Evans Cemerlang, Jakarta",
-    distance:"1.7km",
+    venue:"RSH Evans Cemerlang, Medan",
+    distance:1.7,
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:350000,
+    price:300000,
     location:"Medan",
     yearsOfExperience:4
 },{
@@ -30,7 +30,7 @@ export const doctors = [{
     name:"Drh.Evans Moris",
     role:"Dokter Kucing",
     venue:"RSH Evans Cemerlang, Jakarta",
-    distance:"1.7km",
+    distance:1.7,
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
@@ -39,28 +39,52 @@ export const doctors = [{
     yearsOfExperience:5
 },{
     imageSrc:"/assets/doc.png",
-    name:"Drh.Evans Moris",
+    name:"Drh. Jackson Wang",
     role:"Dokter Kucing",
-    venue:"RSH Evans Cemerlang, Jakarta",
-    distance:"1.7km",
+    venue:"RSH Evans Cemerlang, Bandung",
+    distance:1.7,
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:350000,
+    price:200000,
     location:"Bandung",
     yearsOfExperience:11
 },{
     imageSrc:"/assets/doc.png",
     name:"Drh.Evans Moris",
     role:"Dokter Kucing",
+    venue:"RSH Evans Cemerlang, Ambon",
+    distance:1.7,
+    isAvailable:true,
+    reviewPercentage:100,
+    reviewsCount:20,
+    price:250000,
+    location:"Ambon",
+    yearsOfExperience:8
+},{
+    imageSrc:"/assets/doc.png",
+    name:"Drh.Evans Moris",
+    role:"Dokter Kucing",
     venue:"RSH Evans Cemerlang, Jakarta",
-    distance:"1.7km",
+    distance:1.7,
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
     price:350000,
-    location:"Ambon",
-    yearsOfExperience:8
+    location:"Jakarta",
+    yearsOfExperience:7
+},{
+    imageSrc:"/assets/doc.png",
+    name:"Drh.Evans Moris",
+    role:"Dokter Kucing",
+    venue:"RSH Evans Cemerlang, Jakarta",
+    distance:1.7,
+    isAvailable:true,
+    reviewPercentage:100,
+    reviewsCount:20,
+    price:350000,
+    location:"Jakarta",
+    yearsOfExperience:9
 }];
 
 export const petHospitals = [{

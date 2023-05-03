@@ -11,6 +11,8 @@ import TablePage from "./pages/Example/TablePage";
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -34,8 +36,9 @@ const App = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      {/* <GlobalCss />
+    <Provider store={store}>
+      <ThemeProvider theme={defaultTheme}>
+        {/* <GlobalCss />
       <Auth />
       <HomePage width={dimension.width} />
       <Artikel />
@@ -43,9 +46,10 @@ const App = () => {
       <DetailKlinik />
       <CustomerListPage />
       <TablePage /> */}
-      {/* <BookingDoctorPage /> */}
-      <BookingPetHospitalPage />
-    </ThemeProvider>
+        {/* <BookingDoctorPage /> */}
+        <BookingPetHospitalPage />
+      </ThemeProvider>
+    </Provider>
   );
 };
 

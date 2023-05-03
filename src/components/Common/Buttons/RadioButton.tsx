@@ -12,7 +12,7 @@ interface RadioProps {
   value:string;
   label:string;
   checked?:boolean;
-  handleChange?:(e:React.ChangeEvent<HTMLInputElement>) => void
+  handleChange?:() => void
 }
 
 const RadioButton:React.FC<RadioProps> = ({ value,label,handleChange,checked }) => {

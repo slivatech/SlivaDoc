@@ -6,19 +6,24 @@ import RadioButton from "../Common/Buttons/RadioButton";
 import { PriceInput, SearchWrapper } from "./BookingStyle";
 import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import BaseButton from "../Common/Buttons/BaseButton";
+import { useBookingDoctors } from "../../hooks/useBookingDoctors";
+import { useAppSelector } from "../../store/hooks";
 
 const SidebarBooking = () => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(90000);
-  const [city, setCity] = useState<string>("Medan");
-  const [experience, setExperience] = useState<string>("");
-  const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCity(e.target.value);
-  };
-  const handleExpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setExperience(e.target.value);
-  };
+  // const [city, setCity] = useState<string>("Medan");
+  // const [experience, setExperience] = useState<string>("");
+  // const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setCity(e.target.value);
+  // };
+  // const handleExpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setExperience(e.target.value);
+  // };
+
+  const city = useAppSelector(state=>state.filter.city);
+  const experience = useAppSelector(state=>state.filter.yearsOfExperienceRange);
+  const { handleCityChange,handleYearsOfExperienceChange } = useBookingDoctors();
   const tablet = useMediaQuery("(min-width:1024px)");
 
   return (
@@ -86,7 +91,7 @@ const SidebarBooking = () => {
                 key={i}
                 value={radio}
                 checked={city === radio}
-                handleChange={handleCityChange}
+                handleChange={()=>handleCityChange(radio)}
               />
             ))}
           </CategoryBox>
@@ -106,7 +111,7 @@ const SidebarBooking = () => {
                 key={i}
                 value={radio}
                 checked={radio === experience}
-                handleChange={handleExpChange}
+                handleChange={()=>handleYearsOfExperienceChange(radio)}
               />
             ))}
           </CategoryBox>
