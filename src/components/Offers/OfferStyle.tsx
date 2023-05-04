@@ -17,6 +17,6 @@ export const OfferCarousel = styled.div`
 export const OfferImage = styled.img`
     border-radius: 5px;
     width:100%;
-    max-height:160px;
+    max-height:202px;
     object-fit: cover;
 `

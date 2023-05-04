@@ -27,11 +27,11 @@ const OfferSection: FC = () => {
       spaceBetween: 15,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 15,
     },
     1280: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 15,
     },
   };
@@ -46,22 +46,22 @@ const OfferSection: FC = () => {
       <SwiperWrapper breakPoints={breakPoints}>
         <>
           <SwiperSlide>
-            <OfferImage src="./assets/promo-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/ig-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/promo-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/promo-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/ig-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/promo-banner.png" />
+            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
           </SwiperSlide>
         </>
       </SwiperWrapper>

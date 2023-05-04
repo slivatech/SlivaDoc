@@ -6,6 +6,6 @@ export const StyledH1 = styled.h1`
 `;
 
 export const StyledH3 = styled.h3`
-  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
   font-weight: ${(props) => props.theme.fontWeights.bold};
 `;

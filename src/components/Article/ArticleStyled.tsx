@@ -5,7 +5,7 @@ export const StyledArticle = styled(Container)`
   padding: 2rem 8%;
 
   & > * {
-    margin-top:1rem;
+    margin-top:0.8rem;
   }
 `;
 

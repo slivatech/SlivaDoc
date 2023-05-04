@@ -8,7 +8,7 @@ const DrugSection = () => {
   return (
     <StyledDrug>
       <RowHeader title="Obat dan Vitamin" />
-      <p style={{ margin: "1rem 0", color: "gray", fontSize: "12px" }}>
+      <p style={{ margin: "0.8rem 0", color: "gray", fontSize: "12px" }}>
         Dapatkan informasi seputar kandungan, aturan, petunjuk penggunaan obat
         dan vitamin disini
       </p>

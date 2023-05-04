@@ -9,11 +9,11 @@ import styled from "styled-components";
 
 const ServiceImg = styled.img`
   border-radius: 5px;
-  height: 175px;
+  height: 125px;
   object-fit: cover;
   width: 100%;
   @media (max-width: 768px) {
-    height: 125px;
+    height: 115px;
   }
 
   @media (max-width: 640px) {
@@ -45,8 +45,8 @@ const ServiceSection: FC = () => {
       spaceBetween: 25,
     },
     1280: {
-      slidesPerView: 6,
-      spaceBetween: 30,
+      slidesPerView: 8,
+      spaceBetween: 20,
     },
   };
   return (

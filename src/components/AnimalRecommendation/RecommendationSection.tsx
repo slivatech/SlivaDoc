@@ -6,18 +6,18 @@ import { SVGBox } from "../SVGBox";
 
 const RecommendationSection = () => {
   return (
-    <Container style={{ padding: "2rem 8%" }}>
+    <Container style={{ padding: "2rem 8%", borderRadius: '50%' }}>
       <RowHeader title="Rekomendasi Hewan Terbaik" />
       <p style={{ margin: "1rem 0", color: "gray", fontSize: "12px" }}>
         Dapatkan informasi seputar jenis hewan kesukaan anda disini
       </p>
       <GridRow>
         <SVGBox>
-          <img src="./assets/dog-svg.png" alt="Animal Recomendation" />
+          <img src="./assets/dog.png" alt="Animal Recomendation" />
           <p>Anjing</p>
         </SVGBox>
         <SVGBox>
-          <img src="./assets/cat-svg.png" alt="Animal Recomendation" />
+          <img src="./assets/cat.png" alt="Animal Recomendation" />
           <p>Cat</p>
         </SVGBox>
         <SVGBox>
@@ -36,10 +36,10 @@ const RecommendationSection = () => {
           <img src="./assets/dove-svg.png" alt="Animal Recomendation" />
           <p>Burung</p>
         </SVGBox>
-        <SVGBox>
-          <img src="./assets/fish-svg.png" alt="Animal Recomendation" />
+        {/* <SVGBox>
+          <img src="./assets/fish.png" alt="Animal Recomendation" />
           <p>Ikan</p>
-        </SVGBox>
+        </SVGBox> */}
       </GridRow>
     </Container>
   );

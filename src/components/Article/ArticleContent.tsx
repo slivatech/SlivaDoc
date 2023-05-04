@@ -21,6 +21,8 @@ const ArticleContent = ({ header, subheader }: IContent) => {
       <p style={{ fontSize: "clamp(10px,4vw,12px)", color: "gray" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in
         veritatis eligendi? Cumque nobis inventore ex provident odio porro
+        voluptatem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in
+        veritatis eligendi? Cumque nobis inventore ex provident odio porro
         voluptatem.
       </p>
       <a

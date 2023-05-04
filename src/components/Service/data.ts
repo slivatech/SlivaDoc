@@ -6,34 +6,42 @@ interface IService {
 export const servicesList: IService[] = [
   {
     imageSrc: "./assets/dog.png",
-    title: "Covid 19",
+    title: "Medis Preventif",
   },
   {
     imageSrc: "./assets/vaccine.png",
-    title: "Vaksinasi",
+    title: "Medis Kuratif",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Gigi & mulut",
+    title: "Bedah",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Covid 19",
+    title: "Rawat Inap",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Covid 19",
+    title: "Grooming",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Covid 19",
+    title: "Akupuntur",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Covid 19",
+    title: "House Call",
   },
   {
     imageSrc: "./assets/vet.png",
-    title: "Covid 19",
+    title: "Rongent",
+  },
+  {
+    imageSrc: "./assets/vet.png",
+    title: "Unit Gawat Darurat (UGD)",
+  },
+  {
+    imageSrc: "./assets/vet.png",
+    title: "Ultrasonografi (USG)",
   },
 ];

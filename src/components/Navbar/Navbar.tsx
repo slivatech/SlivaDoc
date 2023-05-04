@@ -15,19 +15,23 @@ const navigation = [
     },
     {
         id: 3,
-        name: 'Info Kesehatan'
+        name: 'Artikel Kesehatan'
     },
     {
         id: 4,
-        name: 'Artikel'
-    },
-    {
-        id: 5,
         name: 'SlivaProteksi'
     },
     {
-        id: 6,
+        id: 5,
         name: 'SlivaShop'
+    },
+    {
+        id: 6,
+        name: 'Animal Events'
+    },
+    {
+        id: 7,
+        name: 'Animal Academies'
     },
 ]
 
@@ -85,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({width}) => {
                                 fontSize="14px"
                                 color="#127fff"
                                 radius="5px"
-                                width='128px'
+                                width='150px'
                                 height='32px'
                                 // onClick={() => {alert('ressssss')}}
                             />

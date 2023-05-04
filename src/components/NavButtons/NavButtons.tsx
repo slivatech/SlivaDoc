@@ -5,7 +5,7 @@ import { Container } from "../Container";
 const card = [
   {
     id: 1,
-    text: 'Chat dengan dokter',
+    text: 'Tanya dokter',
     img: './assets/chat.svg'
   },
   {
@@ -27,11 +27,11 @@ const card = [
 
 const NavButtonsStyled = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.7rem;
   /* justify-content: center; */
   /* margin: 0 auto; */
   /* max-width:90%; */
-  padding: 2rem 12%;
+  padding: 1.7rem 20%;
   /* white-space: nowrap; */
   @media (max-width: 400px) {
     display: grid;
@@ -44,7 +44,7 @@ const NavButtonsStyled = styled.div`
 `;
 
 const NavButton = styled.button(({ theme }) => `
-  padding:10px 20px;
+  padding:18px;
   display:flex;
   flex:1;
 
@@ -52,7 +52,7 @@ const NavButton = styled.button(({ theme }) => `
   font-weight:${theme.fontWeights.normal};
   color:${theme.colors.txtSecondary} ;
   border-radius:5px;
-  font-size:clamp(10px,2vw,16px);
+  font-size:clamp(10px,2vw,15px);
   outline:none;
   border:none;
   cursor:pointer;

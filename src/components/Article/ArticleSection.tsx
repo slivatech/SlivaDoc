@@ -79,7 +79,6 @@ const buttonList: string[] = [
   "Kesehatan Mental",
   "Sehat dan Bugar",
   "Kehamilan",
-  "Terbaru",
   "Kesehatan Kulit",
 ];
 
@@ -109,7 +108,7 @@ const ArticleSection = () => {
               <Article column={true}>
                 <ArticleBanner large={true}>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "50%" }}
                     src="./assets/promo-banner.png"
                     alt="promoBanner"
                   />
@@ -130,7 +129,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{
-                      width: "100%",
+                      width: "auto",
                       height: "100%",
                       objectFit: "cover",
                     }}
@@ -147,7 +146,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{
-                      width: "100%",
+                      width: "auto",
                       height: "100%",
                       objectFit: "cover",
                     }}
@@ -164,7 +163,7 @@ const ArticleSection = () => {
                 <ArticleBanner>
                   <img
                     style={{
-                      width: "100%",
+                      width: "auto",
                       height: "100%",
                       objectFit: "cover",
                     }}
