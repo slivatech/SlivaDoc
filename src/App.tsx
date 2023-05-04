@@ -1,7 +1,7 @@
 import React from 'react'
 // import HomePage from "./pages/HomePage";
-import Artikel from "./pages/PageArtikel/PageArtikel";
-// import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
+// import Artikel from "./pages/PageArtikel/PageArtikel";
+import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
 import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
@@ -37,9 +37,9 @@ const App = () => {
       <GlobalCss />
       {/* <Auth /> */}
       {/* <HomePage width={dimension.width} /> */}
-       <Artikel />
-      {/* <DetailArtikel />
-      <DetailDokter/>
+       {/* <Artikel /> */}
+      <DetailArtikel />
+      {/* <DetailDokter/>
       <DetailLayananKlinik/>
       <TanyaDokter/> */}
       {/* <SlivaProteksi/> */}

@@ -107,7 +107,7 @@ const DetailArtikel: React.FC = () => {
         content={article.content}
         image={article.image}
       />
-      <Title>konsultasi Dokter Terkait</Title>
+      <Title>Rekomendasi Dokter Hewan Terkait</Title>
       <Description>Konsultasi online dengan dokter siaga kami</Description>
       <DoctorContainer>
        <DoctorListContainer>
@@ -123,7 +123,7 @@ const DetailArtikel: React.FC = () => {
         <button>Mulai konsultasi</button>
     </Consult>
     <div >
-        <h3>Baca Artikel Silivadoc</h3>
+        <h3>Baca Artikel Slivadoc</h3>
         <Search />
       </div>
     </DoctorListContainer>
