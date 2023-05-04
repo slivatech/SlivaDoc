@@ -1,6 +1,6 @@
 import React from 'react'
-import HomePage from "./pages/HomePage";
-// import Artikel from "./pages/PageArtikel/PageArtikel";
+// import HomePage from "./pages/HomePage";
+import Artikel from "./pages/PageArtikel/PageArtikel";
 // import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
 import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
@@ -36,9 +36,9 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       {/* <Auth /> */}
-      <HomePage width={dimension.width} />
-      {/* <Artikel />
-      <DetailArtikel />
+      {/* <HomePage width={dimension.width} /> */}
+       <Artikel />
+      {/* <DetailArtikel />
       <DetailDokter/>
       <DetailLayananKlinik/>
       <TanyaDokter/> */}

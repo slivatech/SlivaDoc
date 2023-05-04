@@ -79,6 +79,7 @@ export const Banner = styled.div`
   background-size: cover;
   border-radius: 5px;
   width: 75%;
+  cursor: pointer;
   @media (max-width: 720px) {
     width: 100%;
     height: 147px;
@@ -114,6 +115,7 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 58px;
+  cursor: pointer;
   @media (max-width: 720px) {
     width: 100%;
     margin-left: 0;
@@ -155,6 +157,7 @@ export const Card = styled.div`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   padding: 8px 5px;
+  cursor: pointer;
   @media (max-width: 720px) {
     min-height: 150px;
   }
@@ -166,6 +169,7 @@ export const Card = styled.div`
     padding: 4px 12px;
     color: white;
     font-size: 8px;
+    cursor: pointer;
     @media (max-width: 720px) {
       padding: 4px 5px;
       font-size: 6px;
@@ -226,8 +230,9 @@ export const Button = styled.div`
     background: #eef2f6;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    padding: 10px 17px;
+    padding: 10px 37px;
     border: none;
+    cursor: pointer;
   }
 `;
 export const Search = styled.div`
