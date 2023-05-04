@@ -6,10 +6,8 @@ import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
 // import Auth from './pages/Auth/Auth';
-import DetailDokter from './pages/DetailDokter/DetailDokter';
-// import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
-// import TanyaDokter from './pages/TanyaDokter/TanyaDokter';
-// import SlivaProteksi from './pages/SlivaProteksi/SlivaProteksi';
+// import DetailDokter from './pages/DetailDokter/DetailDokter';
+import DetailLayananKlinik from './pages/DetailLayananKlinik/DetailLayananKlinik';
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -36,13 +34,11 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       {/* <Auth /> */}
-      {/* <HomePage width={dimension.width} /> */}
-       {/* <Artikel /> */}
-      {/* <DetailArtikel /> */}
-      <DetailDokter/>
-      {/* <DetailLayananKlinik/>
-      <TanyaDokter/> */}
-      {/* <SlivaProteksi/> */}
+      {/* <HomePage width={dimension.width} />
+      <Artikel />
+      <DetailArtikel /> */}
+      {/* <DetailDokter/> */}
+      <DetailLayananKlinik/>
     </ThemeProvider>
   );
 };

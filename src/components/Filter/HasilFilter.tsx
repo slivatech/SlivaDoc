@@ -50,7 +50,7 @@ const Spesialis = styled.div`
 const PengalamanPraktik = styled.div`
 flex-wrap: wrap;
   background: #ECE4E4;
-  font-size: 8px;
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;

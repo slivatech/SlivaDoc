@@ -69,9 +69,6 @@ export const  Price = styled.div`
     font-size: 12px;
     line-height: 10px;
     margin-bottom: 3px;
-    @media only screen and (max-width: 768px) {
-    display:none;
-  }
 
   }
 `;
