@@ -4,6 +4,7 @@ import { FeatureContainer, SearchWrapper } from "./BookingStyle";
 import Select from "../Select/Select";
 import BaseButton from "../Common/Buttons/BaseButton";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { useFilterDoctors } from "../../hooks/useFilterDoctors";
 
 const BookingWrapperComponent = ({
   children,
@@ -16,11 +17,12 @@ const BookingWrapperComponent = ({
     "Kepastian Jadwal Booking",
   ];
   const tablet = useMediaQuery("(min-width:1024px)");
+  const { handleSearch } = useFilterDoctors();
   return (
     <>
       <FeatureContainer>
-        {features.map((feature) => (
-          <div>
+        {features.map((feature,i) => (
+          <div key={i}>
             <img src="/assets/circle-check.svg" />
             <p>{feature}</p>
           </div>
@@ -32,7 +34,7 @@ const BookingWrapperComponent = ({
 
         <div style={{ width: "100%" }}>
           <SearchWrapper>
-            <input type="text" placeholder="Dokter Kucing" />
+            <input type="text" placeholder="Dokter Kucing" onChange={(e)=>handleSearch(e.target.value)} />
 
             <BaseButton
               className="btn"

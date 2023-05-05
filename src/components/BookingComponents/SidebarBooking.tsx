@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cities, yearsOfExperience } from "./fakeData";
 import Select from "../Select/Select";
 import { CategoryBox } from "../TabSection/TabSectionStyle";
@@ -6,12 +6,13 @@ import RadioButton from "../Common/Buttons/RadioButton";
 import { PriceInput, SearchWrapper } from "./BookingStyle";
 import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { useBookingDoctors } from "../../hooks/useBookingDoctors";
+import { useFilterDoctors } from "../../hooks/useFilterDoctors";
 import { useAppSelector } from "../../store/hooks";
+import { doctors } from "./fakeData";
 
 const SidebarBooking = () => {
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(90000);
+  const [maxPrice, setMaxPrice] = useState(1000000);
   // const [city, setCity] = useState<string>("Medan");
   // const [experience, setExperience] = useState<string>("");
   // const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,8 +24,9 @@ const SidebarBooking = () => {
 
   const city = useAppSelector(state=>state.filter.city);
   const experience = useAppSelector(state=>state.filter.yearsOfExperienceRange);
-  const { handleCityChange,handleYearsOfExperienceChange } = useBookingDoctors();
+  const { handleCityChange,handleYearsOfExperienceChange } = useFilterDoctors();
   const tablet = useMediaQuery("(min-width:1024px)");
+
 
   return (
     <div style={{ display: "flex", gap: "2rem" }}>
@@ -132,7 +134,7 @@ const SidebarBooking = () => {
                 <input
                   onChange={(e) => setMinPrice(Number(e.target.value))}
                   min={0}
-                  max={90000}
+                  max={1000000}
                   type="number"
                   value={minPrice}
                 />
@@ -143,7 +145,7 @@ const SidebarBooking = () => {
                 <input
                   onChange={(e) => setMaxPrice(Number(e.target.value))}
                   min={0}
-                  max={90000}
+                  max={1000000}
                   type="number"
                   value={maxPrice}
                 />
@@ -152,9 +154,10 @@ const SidebarBooking = () => {
             <MultiRangeSlider
               trackColor="#777777"
               thumbColor="#777777"
-              step={10000}
+              step={100000}
               min={0}
-              max={90000}
+              max={1000000}
+              
               onChange={({ min, max }) => {
                 setMinPrice(min);
                 setMaxPrice(max);

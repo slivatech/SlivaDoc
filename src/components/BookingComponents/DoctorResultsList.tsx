@@ -1,7 +1,8 @@
-import { doctors } from "./fakeData";
 import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { useAppSelector } from "../../store/hooks";
+import { useFilterDoctors } from "../../hooks/useFilterDoctors";
+import { doctors } from "./fakeData";
 
 
 
@@ -80,11 +81,11 @@ const DoctorResult = ({
 };
 
 const DoctorResultsList = ({ isDoctorTab }: { isDoctorTab: boolean }) => {
-  const { doctors, city,yearsOfExperienceRange } = useAppSelector(state => state.filter);
-  console.log(city === "")
+  const { filteredDoctors } = useFilterDoctors();
+  // const { doctors } = useAppSelector(state=>state.filter)
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem",marginTop:"1rem" }}>
-      {doctors.map((doctor, i) => (
+      {filteredDoctors.map((doctor, i) => (
         <DoctorResult
           key={i}
           doctor={doctor as Doctor}
