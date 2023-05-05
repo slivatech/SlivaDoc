@@ -137,9 +137,11 @@ const QuestionHeader = styled.h3`
   align-items: center;
   margin-bottom: 0.5rem;
   cursor: pointer;
+  font-size:16px;
 `;
 
 const Answer = styled.p`
   margin: 0;
+  font-size:12px;
 `;
 export default FAQ;
