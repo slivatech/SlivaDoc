@@ -22,7 +22,7 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
   const [selectedFAQs, setSelectedFAQs] = useState<FAQ[]>([]);
 
-  // State untuk menyimpan status tampilan jawaban pada tiap pertanyaan
+
   const [showAnswers, setShowAnswers] = useState<{ [key: number]: boolean }>({});
 
   const handleQuestionClick = (questionId: number) => {
@@ -33,7 +33,7 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
     }
   };
 
-  // Fungsi untuk membalik status tampilan jawaban pada sebuah pertanyaan
+
   const toggleAnswer = (faqId: number) => {
     setShowAnswers({
       ...showAnswers,
@@ -72,7 +72,7 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
                   </span>
                 )}
               </QuestionHeader>
-              {/* Tampilkan jawaban hanya jika status tampilan jawaban pada pertanyaan tersebut true */}
+           
               {showAnswers[faq.id] && <Answer>{faq.answer}</Answer>}
             </FAQItem>
           ))}
@@ -101,13 +101,13 @@ const QuestionsList = styled.ul`
 
   const QuestionItem = styled.li<{ selected: boolean }>`
   padding: 1rem;
-  background-color: ${({ selected }) => (selected ? "#eee" : "#f5f5f5")};
+  background-color: ${({ selected }) => (selected ? "#eee" : "#fff")};
   color: ${({ selected }) => (selected ? "#333" : "#555")};
   cursor: pointer;
   width: 324px;
   height: 51px;
   transition: all 0.2s ease-in-out;
-  border-left: ${({ selected }) => (selected ? "2px solid #27a6f0;" : "4px solid transparent")};
+  border-left: ${({ selected }) => (selected ? "2px solid #08A1F8;" : "1px solid #62DAE1")};
 
   &:hover {
     background-color: #eee;
@@ -126,8 +126,8 @@ const FAQList = styled.ul`
 
 const FAQItem = styled.li`
   width:620px;
-  padding: 1rem;
-  background-color: #f5f5f5;
+  padding: 0.4rem;
+  background-color: #fff;
   border-radius: 0.25rem;
 `;
 
