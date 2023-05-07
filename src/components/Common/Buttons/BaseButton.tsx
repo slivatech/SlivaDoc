@@ -7,19 +7,22 @@ type ContainerProps = {
     radius?: string;
     height?: string;
     width?: string;
+    shadow?:string;
+    gap?:string;
 }
 
 const Container : any = styled.div<ContainerProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap:${({ gap })=>gap ? gap : '1rem'};
     cursor: pointer;
     /* border: ${({ color }) => color?  `1px solid ${color}` : ''}; */
-    background-color: ${({ outline, color }) => !outline? color? color : '' : 'transparent'};
+    background: ${({ outline, color }) => !outline? color? color : '' : 'transparent'};
     border-radius: ${({ radius }) => radius? radius : '30px'};
     height: ${({ height }) => height? height : 'auto'};
     width: ${({ width }) => width? width : 'auto'};
+    box-shadow: ${({ shadow }) => shadow? shadow : null};
     img{
         /* width: 15px;
         height: 15px; */

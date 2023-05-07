@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: wrap;
   gap: 10px;
+  max-width: 1400px;
   width:100%;
   
   @media only screen and (max-width: 768px) {
@@ -169,12 +170,11 @@ export const DescBanner = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
- display: flex;
-  margin-left: auto;
- align-items: end;
- @media only screen and (max-width: 768px) {
-    width:110px;
-    
+    align-items: center;
+  margin: auto;
+
+  @media (max-width: 767px) {
+    align-items: center;
   }
 `;
 

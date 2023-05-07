@@ -48,7 +48,7 @@ const DropdownLabel:any = styled.div<DropdownLabelProps>`
 
         .flag {
             width: 18px;
-            height: 14px;
+            height: auto;
         }
         img{
             width: 10px;

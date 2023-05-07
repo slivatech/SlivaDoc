@@ -50,7 +50,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({width}) => {
     const [overlay, setOverlay] = useState(false)
-    const [lang, setLang] = useState()
+    const [lang, setLang] = useState('Indonesia')
 
     React.useEffect(() => {
         console.log({width})
@@ -110,7 +110,9 @@ const Navbar: React.FC<NavbarProps> = ({width}) => {
                             border='none'
                             fontSize="15px"
                             icon={
-                                <img src="./assets/indonesia.png" alt="flag" className="flag"/>
+                                lang === 'Indonesia'? 
+                                <img src="./assets/indonesia.png" alt="flag" className="flag"/> :
+                                <img src="./assets/uk.png" alt="flag" className="flag"/>
                             }
                             value={lang}
                             setValue={setLang}

@@ -5,7 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   gap: 14px;
-  max-width: 1400px;
+  padding: 10px 8%;
+  justify-content: center;
+  /* max-width: 1400px; */
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -15,10 +17,9 @@ export const Container = styled.div`
 export const ContainerInformasi = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 100px;
-  margin-right: 0;
-  width: 739px;
-  flex: 1;
+  margin: 15px 0;
+  margin-right:0;
+  /* width:739px; */
   @media only screen and (max-width: 768px) {
     margin: 0;
     margin-top: 50px;
@@ -151,11 +152,11 @@ export const ExperienceDescription = styled.h1`
 export const BookingContainer = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 80px;
-  margin-top: 100px;
+  /* margin: 80px; */
+  margin-top: 15px;
   margin-left: 0;
   margin-bottom: auto;
-  width: 418px;
+  /* width: 418px; */
 
   @media only screen and (max-width: 768px) {
     margin-top: 0;

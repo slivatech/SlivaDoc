@@ -59,55 +59,68 @@ export const  Price = styled.div`
   h3{
     font-style:none;
     color:#F90909;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 15px;
     line-height: 10px;
     margin-bottom: 10px;
   }
   p{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
     margin-bottom: 3px;
 
   }
 `;
 
 export const  LocationContainer = styled.div`
+  
+  border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+ 
+  margin-top:10px;
+  
+`;
+
+export const Location=styled.div`
   display:flex;
   flex-direction:column;
-  border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
-  margin-top:10px;
+
+  div{
+    display:flex;
+  flex-direction:wrap;
+  align-items: center;
+  }
+  img{
+    justify-content:flex-start;
+    width: 15px;
+height: 16px;
+margin-right:6px;
+  }
+  p{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color:#000000;
+    
+  }
   h1{
     font-weight: 700;
     font-size: 20px;
     line-height: 40px;
   }
 `;
-
-export const Location=styled.div`
-   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  img{
-    justify-content:flex-start;
-  }
-  p{
-    ont-weight: 400;
-    font-size: 10px;
-    line-height: 10px;
-    color:#000000;
-    
-  }
-`;
 export const LocationLogo=styled.img`
   margin-left: auto;
+  position: a;
+  top:0;
 `;
 
 export const BookingContainer = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 80px;
   margin-top: 100px;
   margin-left: 0;
   margin-bottom: auto;
@@ -128,9 +141,9 @@ export const ConsultationContainer = styled.div`
 `;
 
 export const HeaderConsultation = styled.h2`
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
-  margin-bottom: 20px;
+ 
 `;
 
 
@@ -172,17 +185,26 @@ export const WatchHead = styled.div`
 `;
 
 export const WatchContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+  flex-direction: wrap;
+  width: 107px;
+height: 24px;;
 
   div {
     display: flex;
-    background: #ece4e4;
-    border-radius: 3px;
-    width: 107px;
-    height: 24px;
+    justify-content: center;
     align-items: center;
-    margin-right: 12px;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #ECE4E4;
+    border-radius: 5px;
+    width: 107px;
+  height: 24px;
+
+    &.selected {
+      background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);;
+      color: white;
+    }
   }
 `;
 
