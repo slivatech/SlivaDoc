@@ -183,3 +183,10 @@ export const data = [
     
   ];
  
+  export const datatabel = [
+    { col1: 'Row 1 Column 1', col2: 'Row 1 Column 2' },
+    { col1: 'Row 2 Column 1', col2: 'Row 2 Column 2' },
+    { col1: 'Row 3 Column 1', col2: 'Row 3 Column 2' },
+    { col1: 'Row 4 Column 1', col2: 'Row 4 Column 2' },
+
+  ];

@@ -3,12 +3,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import { BenefitContainer, Container, FaqContainer, Heading, SectionTop, SliderContainer, SponsorContainer, Title } from "./RegulerStyle";
 import Proteksipic from "../../assets/icon/ProteksiLogo.svg";
 import Benefits from "../../components/Benefits/Benefits";
-import { benefits, data, questions } from "./datas";
+import { benefits, data, datatabel, questions } from "./datas";
 import FaqDropdown from "../../components/FaqDropdown/FaqDropdown";
 import line from "../../assets/icon/line.png";
 import SliderProteksi from "../../components/SliderProteksi/SliderProteksi";
 import BannerContainer from "../../components/BannerContainer/BannerContainer";
 import Sponsorpic from "../../assets/image/sponsor.png"
+import TableProteksi from "../../components/TableProteksi/TableProteksi";
 interface RegulerProps{
     width:number;
 }
@@ -31,6 +32,13 @@ const Reguler:React.FC<RegulerProps> = ({width}) => {
           <Benefits benefits={benefits} columns={2} rows={2}/>
           </div>
           </BenefitContainer>
+          <div style={{marginTop:"103px"}}>
+          <Heading>
+            <Title>Detail Manfaat</Title>
+            <img src={line} alt="line" />
+            </Heading>
+            <TableProteksi head="My Table Header" col1Rows={2} col2Rows={1} data={datatabel}/>
+          </div>
           <div style={{marginTop:"103px"}}>
             <Heading>
             <Title>Keuntungan Lainnya</Title>
