@@ -2,17 +2,30 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Cell, IndeterminateCheckbox, TableV8, createColumnHelper } from '../../components/Common/Tablev8'
 import { article, months } from './data'
 import { Link } from 'react-router-dom'
-import { ImageColumn, Content } from './DashboardArticleStyle'
-import BarChartComponent from '../../components/Chart/BarChart'
+import { ImageColumn, Content, Form } from './DashboardArticleStyle'
 import BarChartVertical from '../../components/Chart/BarChartVertical'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import BaseButton from '../../components/Common/Buttons/BaseButton'
-import Modal from '../../components/Common/Modal/Modal'
 import ModalRight from '../../components/Common/Modal/ModalRight'
+import downloadIcon from '../../assets/icon/Download.svg'
+import Dropdown from '../../components/Common/Dropdown/Dropdown'
+
+const categories = [
+    {
+        value: 'Bulu kucing'
+    },
+    {
+        value: 'Bulu anjing'
+    },
+    {
+        value: 'Bulu harimau'
+    },
+]
 
 const DashboardArtikel = () => {
     const { alertColumn } =  useAlertColumn();
     const [update, setUpdate] = useState<any>(false);
+    const [category, setCategory] = useState('Category')
     const [data, setData] = useState(article);
     const [selectedRow, setSelectedRow] = useState<any>([]);
     const alertRef: any = useRef(null);
@@ -110,10 +123,53 @@ const DashboardArtikel = () => {
                     setIsOpen={setUpdate} 
                     isBackgroundClick={true}
                 >
-                    <div>
-                        <form>
-                            
-                        </form>
+                    <div style={{padding: '1.5rem'}}>
+                        <div style={{marginTop: '7rem', display: 'flex', columnGap:'3rem', marginBottom: '2rem'}}>
+                            <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
+                                <i className="fa-solid fa-chevron-left" style={{color: "#06152b"}}></i>
+                            </button>
+                            <h5>Add a New Article</h5>
+                        </div>
+                    <Form>
+                        <div>
+                            <div className="inpWrap">
+                                <label htmlFor='title'>Title</label>
+                                <input type='text'/>
+                            </div>
+                            <div className="inpWrap">
+                                <label htmlFor='category'>Category</label>
+                                <div style={{backgroundColor: '#F1F4FA', borderRadius: '10px' }}>
+                                    <Dropdown
+                                        options={categories}
+                                        border="none"
+                                        fontSize="14px"
+                                        width='100%'
+                                        height='50px'
+                                        value={category}
+                                        setValue={setCategory}
+                                    />
+                                </div>
+                            </div>
+                            <div className="inpWrap">
+                                <label htmlFor='description'>Descriptions</label>
+                                <textarea name="textarea" rows={4} cols={20}>Write something here</textarea>
+                            </div>
+                        </div>
+
+                        <div className="submit">
+                            <BaseButton
+                                text="Upload"
+                                iconStart={
+                                    <img src={downloadIcon} alt="" width={20} />
+                                }
+                                textColor="#fff"
+                                color="#3A36DB"
+                                fontSize="14px"
+                                radius="10px"
+                                height="44px"
+                            />
+                        </div>
+                </Form>
                     </div>
                 </ModalRight>
             }

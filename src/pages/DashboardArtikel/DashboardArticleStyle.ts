@@ -32,3 +32,34 @@ export const Content = styled.div`
         border-radius: 10px;
     }
 `;
+
+export const Form = styled.div`
+    width: 100%;
+    height: 100%;
+    
+    .inpWrap{
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+            font-weight: 500;
+            font-size: 16px;
+            color: #06152B;
+        }
+
+        input, textarea{
+            outline: none;
+            border: none;
+            background-color: #F1F4FA;
+            border-radius: 5px;
+            padding: 20px 15px;
+        }
+    }
+
+    .submit{
+        margin-top: 3rem;
+    }
+`

@@ -37,6 +37,7 @@ const Overlay = styled.div`
 const ModalContainer = styled.div`
   max-width: 310px;
   width: 100%;
+  height: 100vh;
   background-color: #fff;
   position: absolute;
   right: 0;
