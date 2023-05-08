@@ -8,7 +8,7 @@ margin-top:2em;
 export const ClinicWrapper = styled.ul`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   list-style: none;
   border-bottom: 0.5px solid #1c1c1c6f;
 `;
@@ -44,10 +44,11 @@ export const StyledInfoTab = styled.section`
   p,
   ul {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 22px;
+    font-style: italic;
     color: "#1c1c1c";
-    max-width: 75%;
+    max-width: auto;
     @media (max-width: 768px) {
       max-width: 100%;
     }

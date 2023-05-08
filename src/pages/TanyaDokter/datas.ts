@@ -1,25 +1,25 @@
 import slideimg from "../../assets/image/slidedoctor.png"
 import doctorimg from "../../assets/doctor.png"
+
 export const sliderData = [
   {
-    image: doctorimg,
-    text: 'Dokter akan segera menerima permintaan chat kamu'
-
+    image: slideimg,
+    desc:'Dokter akan segera menerima permintaan chat kamu',
   },
   {
     image: slideimg,
-    text: 'Perawat akan segera menerima permintaan chat kamu'
+    desc:'Perawat akan segera menerima permintaan chat kamu',
   },
   {
-    image: doctorimg,
-    text: 'CS akan segera menerima permintaan chat kamu'
+    image: slideimg,
+    desc:'Admin akan segera menerima permintaan chat kamu',
   },
 ];
 
 export const data = [
   {
   id: 1,
-  nama: 'Dr. A',
+  nama: 'Drh. Evans Moris',
   spesialis:'Dokter umum',
   foto: doctorimg,
   pengalamanPraktik: 3,
@@ -28,7 +28,7 @@ export const data = [
   },
   {
   id: 2,
-  nama: 'Dr. B',
+  nama: 'Drh. Evans Moris',
   spesialis:'Dokter umum',
   foto: doctorimg,
   pengalamanPraktik: 7,
@@ -37,7 +37,7 @@ export const data = [
   },
   {
   id: 3,
-  nama: 'Dr. C',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   spesialis:'Dokter umum',
   pengalamanPraktik: 12,
@@ -46,7 +46,7 @@ export const data = [
   },
   {
   id: 4,
-  nama: 'Dr. D',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   spesialis:'Dokter umum',
   pengalamanPraktik: 2,
@@ -54,7 +54,7 @@ export const data = [
   },
   {
   id: 5,
-  nama: 'Dr. E',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   pengalamanPraktik: 8,
   rating:90,
@@ -63,7 +63,7 @@ export const data = [
   },
   {
   id: 6,
-  nama: 'Dr. F',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   spesialis:'Dokter umum',
   pengalamanPraktik: 15,
@@ -72,7 +72,7 @@ export const data = [
   },
   {
   id: 7,
-  nama: 'Dr. G',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   pengalamanPraktik: 5,
   rating:90,
@@ -81,7 +81,7 @@ export const data = [
   },
   {
   id: 8,
-  nama: 'Dr. H',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   spesialis:'Dokter umum',
   pengalamanPraktik: 10,
@@ -90,7 +90,7 @@ export const data = [
   },
   {
   id: 9,
-  nama: 'Dr. I',
+  nama: 'Drh. Evans Moris',
   foto: doctorimg,
   spesialis:'Dokter umum',
   pengalamanPraktik: 20,

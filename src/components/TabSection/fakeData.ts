@@ -72,7 +72,7 @@ export const serviceAppointments=[
 ]
 export const doctorAppointments=[
     {
-        title:"Dr Evans Moris",
+        title:"Drh. Evans Moris",
         category:"Spesialis kepo apa aja",
         price:25000,
         image:"/assets/doc.png",
@@ -81,7 +81,7 @@ export const doctorAppointments=[
         satisfaction:99,
     },
     {
-        title:"Dr Evans Moris",
+        title:"Drh. Evans Moris",
         category:"Spesialis kepo apa aja",
         price:25000,
         image:"/assets/doc.png",
@@ -90,7 +90,7 @@ export const doctorAppointments=[
         satisfaction:99,
     },
     {
-        title:"Dr Evans Moris",
+        title:"Drh. Evans Moris",
         category:"Spesialis kepo apa aja",
         price:25000,
         image:"/assets/doc.png",
@@ -99,7 +99,7 @@ export const doctorAppointments=[
         satisfaction:99,
     },
     {
-        title:"Dr Evans Moris",
+        title:"Drh. Evans Moris",
         category:"Spesialis kepo apa aja",
         price:25000,
         image:"/assets/doc.png",

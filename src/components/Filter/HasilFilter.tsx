@@ -125,7 +125,6 @@ const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
       {data.length > 0 ? (
         data.map((item) => (
           <Card key={item.id}>
-  
             <Detailcontainer>
             <Foto src={item.foto} alt={item.nama} />
             <DetailProfile>

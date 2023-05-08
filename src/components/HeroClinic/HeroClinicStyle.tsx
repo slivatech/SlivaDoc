@@ -30,5 +30,6 @@ export const StyledHeroClinic = styled.section`
   .locationImg {
     width:20%;
     max-height:140px;
+    cursor: pointer;
   }
 `;

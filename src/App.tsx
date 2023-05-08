@@ -40,11 +40,12 @@ const App = () => {
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
       </Routes>
-      <Artikel width={0} />
+      <DetailKlinik width={0}/>
+      {/* <Artikel width={0} />
       <DetailArtikel width={0} />
       <DetailDokter width={0}/>
       <DetailLayananKlinik width={0}/>
-      <TanyaDokter width={0}/>
+      <TanyaDokter width={0}/> */}
       {/* <PopUpTranksaksi /> */}
     </ThemeProvider>
   );

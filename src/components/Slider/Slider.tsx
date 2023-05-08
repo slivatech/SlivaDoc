@@ -7,7 +7,12 @@ import styled from 'styled-components';
 SwiperCore.use([Autoplay, Pagination]);
 
 interface SliderProps {
-  images: { image: string }[];
+  images: { 
+    desc:string ,
+    image: string ,
+    
+  }[];
+  
 }
 
 const SwiperContainer = styled.div`
@@ -23,8 +28,8 @@ const SwiperWrapper = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   
   h1{
     font-weight: 700;
@@ -39,12 +44,11 @@ const SwiperWrapper = styled.div`
   }
 
   .mySwiper{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 104px;
-  height: 104px;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -110,21 +114,23 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Swiper
           autoplay={{ delay: 3000 }}
           spaceBetween={1}
+          slidesPerView={1}
           centeredSlides={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           onSwiper={(swiper) => updateSwiper(swiper)}
           pagination={false}
           className="mySwiper"
         >
-       
-          {images.map((image, index) => (
+          {images.map((data, index) => (
             <SwiperSlide key={index}>
-              <Image src={image.image} alt={`Slider ${index}`} />
+              <Image src={data.image} alt={`Slider ${index}`} />
+              <h3>{data.desc}</h3>
             </SwiperSlide>
           ))}
+   
           
         </Swiper>
-        <h3>Dokter akan segera menerima permintaan chat kamu</h3>
+        
       </SwiperWrapper>
       <div>
         

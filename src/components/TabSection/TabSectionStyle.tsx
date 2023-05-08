@@ -44,7 +44,7 @@ export const StyledInfoTab = styled.section`
   p,
   ul {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 22px;
     color: "#1c1c1c";

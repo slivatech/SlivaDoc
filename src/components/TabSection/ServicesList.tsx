@@ -3,7 +3,8 @@ import { serviceAppointments } from "./fakeData";
 import styled from "styled-components";
 
 const ServicesListWrapper = styled.div`
-  flex: 0.6;
+  flex: 0.8;
+  font-size: 14px;
   @media (max-width:768px) {
     flex:1;
   }
