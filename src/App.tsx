@@ -22,6 +22,7 @@ import PopUpTranksaksi from "./pages/PopUpTranksaksi/PopUpTranksaksi";
 import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
 import Reguler from "./pages/SlivaProteksi/Reguler";
+import Plus from "./pages/SlivaProteksi/Plus";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -38,6 +39,7 @@ const App = () => {
       {/* <SlivaProteksi width={0}/> */}
       <UnlimitedChat width={0}/>
       <Reguler width={0}/>
+      <Plus width={0}/>
       <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />

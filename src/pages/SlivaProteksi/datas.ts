@@ -151,4 +151,35 @@ export const data = [
     },
 
   ];
+
+  export const benefitsplus = [
+    {
+      image: image1,
+      title: 'Rawat Inap Cashless',
+      description: 'Cashless seluruh biaya rawat jalan Rp100 Juta.',
+    },
+    {
+      image: image1,
+      title:'Rawat Jalan Cashless',
+      description:'Cashless seluruh biaya rawat jalan Rp100 Juta.'
+    },
+    {
+      image: image2,
+      title: 'Unlimited Chat',
+      description: 'Konsultasi ke dokter pribadi dan spesialis gratis dan tanpa batas.',
+    },
+    {
+      image: image3,
+      title: 'Obat Tiba dalam 1 Jam',
+      description: 'Cashless obat-obatan Rp100 Juta dan sampai ke rumah dalam waktu 1 jam.',
+    },
+    
+    {
+      image: image4,
+      title: 'Jaringan Klink Hewan Lengkap',
+      description: 'Lebih dari 1.500 klinik hewan rekanan',
+    },
+
+    
+  ];
  
