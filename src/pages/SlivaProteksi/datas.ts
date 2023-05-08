@@ -1,6 +1,9 @@
 import SliderPic from "../../assets/icon/SliderPic.png"
 import Doctiorpic from "../../assets/icon/Doctorpic.png"
-
+import image1 from "../../assets/icon/image1.png"
+import image2 from "../../assets/icon/image2.png"
+import image3 from "../../assets/icon/image3.png"
+import image4 from "../../assets/icon/image4.png"
 
 export const questions = [
     {
@@ -125,3 +128,27 @@ export const data = [
     },
   ];
   
+  export const benefits = [
+    {
+      image: image1,
+      title: 'Rawat Jalan Cashless',
+      description: 'Cashless seluruh biaya rawat jalan Rp100 Juta.',
+    },
+    {
+      image: image2,
+      title: 'Unlimited Chat',
+      description: 'Konsultasi ke dokter pribadi dan spesialis gratis dan tanpa batas.',
+    },
+    {
+      image: image3,
+      title: 'Obat Tiba dalam 1 Jam',
+      description: 'Cashless obat-obatan Rp100 Juta dan sampai ke rumah dalam waktu 1 jam.',
+    },
+    {
+      image: image4,
+      title: 'Jaringan Klink Hewan Lengkap',
+      description: 'Lebih dari 1.500 klinik hewan rekanan',
+    },
+
+  ];
+ 

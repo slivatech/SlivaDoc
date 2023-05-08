@@ -21,6 +21,7 @@ import {Routes, Route} from 'react-router-dom'
 import PopUpTranksaksi from "./pages/PopUpTranksaksi/PopUpTranksaksi";
 import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
+import Reguler from "./pages/SlivaProteksi/Reguler";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -34,8 +35,9 @@ const App = () => {
       <DetailLayananKlinik width={0}/>
       <TanyaDokter width={0}/>
       <PopUpTranksaksi /> */}
-      <SlivaProteksi width={0}/>
+      {/* <SlivaProteksi width={0}/> */}
       <UnlimitedChat width={0}/>
+      <Reguler width={0}/>
       <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />

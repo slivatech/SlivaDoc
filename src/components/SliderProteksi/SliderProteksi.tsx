@@ -3,11 +3,9 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 
-// Import gambar untuk navigation
 import Next from "../../assets/icon/Next.png";
 import Prev from "../../assets/icon/Prev.png";
 
-// Import Swiper CSS
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
