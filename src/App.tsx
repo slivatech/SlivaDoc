@@ -23,6 +23,7 @@ import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
 import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
+import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -53,6 +54,7 @@ const App = () => {
         <Route path='/profileUpdate' element={<EditProfil />}/>
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
+        <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
       </Routes>
     </ThemeProvider>
   );
