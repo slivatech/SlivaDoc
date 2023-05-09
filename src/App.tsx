@@ -36,7 +36,7 @@ const App = () => {
       <DetailLayananKlinik width={0}/>
       <TanyaDokter width={0}/>
       <PopUpTranksaksi /> */}
-      {/* <SlivaProteksi width={0}/> */}
+      <SlivaProteksi width={0}/>
       <UnlimitedChat width={0}/>
       <Reguler width={0}/>
       <Plus width={0}/>

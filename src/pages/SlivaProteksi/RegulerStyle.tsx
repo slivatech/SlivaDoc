@@ -153,3 +153,35 @@ img{
 height: 153px;
 }
 `;
+
+export const Table = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 794px;
+  margin: auto;
+  text-align: center;
+  margin-top: 37px;
+`;
+
+export const TableHeadCell = styled.th`
+  padding: 8px;
+  background: conic-gradient(from 180deg at 50% 74.49%, rgba(217, 217, 217, 0) 0deg, #B8C3E9 191.25deg, rgba(217, 217, 217, 0) 360deg);
+  border-radius: 10px 10px 0px 0px;
+`;
+
+export const TableRow = styled.tr`
+  &:nth-child(even) {
+    border: 1px solid #8CDDE2;
+    height: 86px;
+  }
+`;
+
+export const TableCell = styled.td<{ isBlue?: boolean }>`
+  border: 1px solid #8CDDE2;
+  padding-left: 33px;
+  height: 86px;
+  width: 391px;
+  text-align: ${({ isBlue }) => (isBlue ? "center" : "left")};
+  color: ${({ isBlue }) => (isBlue ? "#2557D9;" : "inherit")};
+  font-size: ${({ isBlue }) => (isBlue ? "12px" : "16px")};
+`;

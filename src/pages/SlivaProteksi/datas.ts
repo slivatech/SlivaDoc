@@ -183,10 +183,52 @@ export const data = [
     
   ];
  
-  export const datatabel = [
-    { col1: 'Row 1 Column 1', col2: 'Row 1 Column 2' },
-    { col1: 'Row 2 Column 1', col2: 'Row 2 Column 2' },
-    { col1: 'Row 3 Column 1', col2: 'Row 3 Column 2' },
-    { col1: 'Row 4 Column 1', col2: 'Row 4 Column 2' },
 
+ export const datatabel = [
+    {
+      title: 'Manfaat Konsultasi Online',
+      rows: [
+        {
+          column1: 'Konsultasi Dokter Pribadi\n(Termasuk dokter umum dan dokter spesialis)',
+          column2: 'Gratis dan tanpa batas',
+          isBlue: true,
+        },
+        {
+          column1: 'Obat-obatan\n(Tiba dalam 1 jam)',
+          column2: 'Dibayar Cashless',
+          isBlue: true,
+        },
+      ],
+    },
+    {
+      title: 'Manfaat Rawat Jalan',
+      rows: [
+        {
+          column1: 'Biaya Konsultasi\n(Termasuk dokter umum dan dokter spesialis)',
+          column2: 'Dibayar Cashless',
+          isBlue: true,
+        },
+        {
+          column1: 'Biaya Administrasi',
+          column2: '',
+          isBlue: false,
+        },
+        {
+          column1: 'Obat-Obatan',
+          column2: '',
+          isBlue: false,
+        },
+        {
+          column1: 'Pemeriksaan Laboratorium',
+          column2: '',
+          isBlue: false,
+        },
+        {
+          column1: 'Pemeriksaan Lain yang Direkomendasikan Dokter',
+          column2: '',
+          isBlue: false,
+        },
+      ],
+    },
   ];
+  

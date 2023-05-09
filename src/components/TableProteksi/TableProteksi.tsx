@@ -10,67 +10,70 @@ interface TableProps {
 
 const TableContainer = styled.div`
   display: flex;
-  width: 795px;
-  flex-direction: column;
-  table {
-    border-collapse: collapse;
-    .head {
-      background: conic-gradient(from 180deg at 50% 74.49%, rgba(217, 217, 217, 0) 0deg, #B8C3E9 191.25deg, rgba(217, 217, 217, 0) 360deg);
-      border: 1px solid #8CDDE2;
-      border-radius: 10px 10px 0px 0px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 22px;
-    }
-  }
+  width: 100%;
+  flex-direction: row;
 `;
 
-const TableRow = styled.tr``;
+const TableCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 
-const TableCol = styled.td`
-  padding: 8px;
-  text-align: center;
-  background: #FFFFFF;
+`;
+
+
+const TableHead = styled.div`
+  background: conic-gradient(from 180deg at 50% 74.49%, rgba(217, 217, 217, 0) 0deg, #B8C3E9 191.25deg, rgba(217, 217, 217, 0) 360deg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px;
   border: 1px solid #8CDDE2;
-  border-radius: 10px;
+  width:100%;
+`;
+
+const TableRow = styled.tr`
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #8CDDE2;
+  width:391px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TableCell1 = styled.td`
+ display: flex;
+  width: 100%;
+  padding: 10px;
+  border-right: 1px solid #8CDDE2;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TableCell2 = styled.td`
+  width: 100%;
+  padding: 10px;
 `;
 
 const TableProteksi: React.FC<TableProps> = ({ col1Rows, col2Rows, data, head }) => {
-  const totalRows = Math.max(col1Rows, col2Rows);
-
-  const getCellValue = (rowIndex: number, colIndex: number) => {
-    if (colIndex === 0) {
-      if (rowIndex < col1Rows) {
-        return data[rowIndex]?.col1;
-      } else if (rowIndex === col1Rows) {
-        return data[rowIndex - 1]?.col1;
-      }
-    }
-    if (colIndex === 1 && rowIndex < col2Rows) {
-      return data[rowIndex]?.col2;
-    }
-    return '';
-  };
-
   return (
     <TableContainer>
-      <table>
+      <TableCol>
+        <TableHead>{head}</TableHead>
         <tbody>
-          <TableRow>
-            <TableCol className="head" colSpan={2}>
-              {head}
-            </TableCol>
-          </TableRow>
-          {[...Array(totalRows)].map((_, rowIndex) => (
-            <TableRow key={rowIndex}>
-              {[...Array(2)].map((_, colIndex) => (
-                <TableCol key={colIndex}>{getCellValue(rowIndex, colIndex)}</TableCol>
-              ))}
+          {[...Array(col1Rows)].map((_, index) => (
+            <TableRow key={index}>
+              <TableCell1>{data[index]?.col1}</TableCell1>
+              {index === 0 && <TableCell2 rowSpan={col2Rows}>{data[0]?.col2}</TableCell2>}
             </TableRow>
           ))}
         </tbody>
-      </table>
+      </TableCol>
+
     </TableContainer>
   );
 };
