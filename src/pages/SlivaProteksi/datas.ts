@@ -91,7 +91,7 @@ export const data = [
       image: Doctiorpic,
     },
     {
-      name: "Dr. John Doe",
+ 
       specialty: "Cardiologist",
       image: Doctiorpic,
     },

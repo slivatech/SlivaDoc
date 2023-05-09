@@ -24,7 +24,14 @@ interface SliderProps {
 const SliderWrapper = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
+position: relative;
+
+.swiper-slide{
+  width: 92%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 `;
 
 
@@ -71,6 +78,7 @@ line-height: 22px;
 const NavigationWrapper = styled.div`
   position: absolute;
   top: 50%;
+  left:0;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
@@ -124,6 +132,8 @@ const SliderProteksi: React.FC<SliderProps> = ({ data }) => {
   return (
     <SliderWrapper>
       <Swiper
+      className='swiper-slide'
+        autoplay={true}
         spaceBetween={0}
         slidesPerView={3}
         centeredSlides={true} 

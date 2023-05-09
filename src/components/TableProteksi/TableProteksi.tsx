@@ -41,10 +41,14 @@ const TableProteksi: React.FC<TableProps> = ({ col1Rows, col2Rows, data, head })
 
   const getCellValue = (rowIndex: number, colIndex: number) => {
     if (colIndex === 0) {
-      return rowIndex < col1Rows ? data[rowIndex]?.col1 : '';
+      if (rowIndex < col1Rows) {
+        return data[rowIndex]?.col1;
+      } else if (rowIndex === col1Rows) {
+        return data[rowIndex - 1]?.col1;
+      }
     }
-    if (colIndex === 1) {
-      return rowIndex === 0 ? data[0]?.col2 : '';
+    if (colIndex === 1 && rowIndex < col2Rows) {
+      return data[rowIndex]?.col2;
     }
     return '';
   };

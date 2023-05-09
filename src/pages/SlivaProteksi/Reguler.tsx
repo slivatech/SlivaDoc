@@ -37,7 +37,7 @@ const Reguler:React.FC<RegulerProps> = ({width}) => {
             <Title>Detail Manfaat</Title>
             <img src={line} alt="line" />
             </Heading>
-            <TableProteksi head="My Table Header" col1Rows={2} col2Rows={1} data={datatabel}/>
+            <TableProteksi head="My Table Header" col1Rows={4} col2Rows={1} data={datatabel}/>
           </div>
           <div style={{marginTop:"103px"}}>
             <Heading>
