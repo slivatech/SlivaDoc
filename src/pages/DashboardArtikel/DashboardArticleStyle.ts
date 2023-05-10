@@ -59,7 +59,15 @@ export const Form = styled.div`
         }
     }
 
-    .submit{
-        margin-top: 3rem;
-    }
+    // .submit{
+    //     margin-top: 3rem;
+    // }
+`
+
+export const Profile = styled.div`
+    width: 110px;
+    height: 110px;
+    background-color: #F1F4FA;
+    border-radius: 50%;
+    position: relative;
 `

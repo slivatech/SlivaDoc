@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Cell, IndeterminateCheckbox, TableV8, createColumnHelper } from '../../components/Common/Tablev8'
 import { article, months } from './data'
 import { Link } from 'react-router-dom'
-import { ImageColumn, Content, Form } from './DashboardArticleStyle'
+import { ImageColumn, Content, Form, Profile } from './DashboardArticleStyle'
 import BarChartVertical from '../../components/Chart/BarChartVertical'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import BaseButton from '../../components/Common/Buttons/BaseButton'
@@ -124,7 +124,7 @@ const DashboardArtikel = () => {
                     isBackgroundClick={true}
                 >
                     <div style={{padding: '1.5rem'}}>
-                        <div style={{marginTop: '7rem', display: 'flex', columnGap:'3rem', marginBottom: '2rem'}}>
+                        <div style={{display: 'flex', columnGap:'3rem', margin: '2rem 0'}}>
                             <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
                                 <i className="fa-solid fa-chevron-left" style={{color: "#06152b"}}></i>
                             </button>
@@ -132,6 +132,11 @@ const DashboardArtikel = () => {
                         </div>
                     <Form>
                         <div>
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <Profile>
+                                    <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}></i>
+                                </Profile>
+                            </div>
                             <div className="inpWrap">
                                 <label htmlFor='title'>Title</label>
                                 <input type='text'/>
@@ -152,7 +157,7 @@ const DashboardArtikel = () => {
                             </div>
                             <div className="inpWrap">
                                 <label htmlFor='description'>Descriptions</label>
-                                <textarea name="textarea" rows={4} cols={20}>Write something here</textarea>
+                                <textarea name="textarea" rows={4} cols={20} placeholder='Write something here'></textarea>
                             </div>
                         </div>
 

@@ -31,7 +31,7 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5); 
   z-index: 99;
   top: 0;
-  left: 0;
+  right: 0;
 `
 
 const ModalContainer = styled.div`
@@ -39,10 +39,11 @@ const ModalContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #fff;
-  position: absolute;
-  right: 0;
+  float: right;
   padding: 10px;
-  z-index: 100;
+  // position: absolute;
+  // right: 0;
+  // z-index: 100;
 `
 
 export default ModalRight
