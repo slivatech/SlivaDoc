@@ -24,7 +24,7 @@ import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
 import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
 import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
-
+import DashboardDoctorArticle from "./pages/DashboardDoctorArticle/DashboardDoctorArtikel"
 const App = () => {
   const {width} = useWindowDimensions()
 
@@ -36,9 +36,11 @@ const App = () => {
       <DetailDokter width={0}/>
       <DetailLayananKlinik width={0}/>
       <TanyaDokter width={0}/>
-      <PopUpTranksaksi /> */}
-      {/* <SlivaProteksi width={0}/> */}
-      <UnlimitedChat width={0}/>
+      <PopUpTranksaksi />
+      <SlivaProteksi width={0}/>
+      <DashboardArtikel/> */}
+      <DashboardDoctorArticle/>
+      {/* <UnlimitedChat width={0}/>
       <Reguler width={0}/>
       <Plus width={0}/>
       <Routes>
@@ -55,7 +57,7 @@ const App = () => {
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
         <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
-      </Routes>
+      </Routes> */}
     </ThemeProvider>
   );
 };
