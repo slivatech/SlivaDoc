@@ -46,8 +46,8 @@ const App = () => {
       <DetailKlinik />
       <CustomerListPage />
       <TablePage /> */}
-        {/* <BookingDoctorPage /> */}
-        <BookingPetHospitalPage />
+        <BookingDoctorPage />
+        {/* <BookingPetHospitalPage /> */}
       </ThemeProvider>
     </Provider>
   );

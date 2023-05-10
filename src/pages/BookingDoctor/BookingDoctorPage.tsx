@@ -4,32 +4,41 @@ import { TimeDropdownContainer } from "../../components/BookingComponents/Bookin
 import Select from "../../components/Select/Select";
 import DoctorResultsList from "../../components/BookingComponents/DoctorResultsList";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 export const BookingStyle = styled.div`
   padding: 2rem 8%;
   position: relative;
-
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
   h1 {
     font-size: 24px;
   }
-  @media (min-width:1024px) {
-    width:65%;
+  @media (min-width: 1024px) {
     padding: 1rem 4;
   }
-  
-`
-;
+`;
 
 const BookingDoctorPage = () => {
   const tablet = useMediaQuery("(min-width:1024px)");
   return (
-    <BookingStyle>
-      <h1 style={{ fontSize: "24px" }}>Konsultasi Mudah dan Cepat</h1>
-      <BookingWrapperComponent>
-        <div style={{ flex: 1, paddingTop: ".5rem" }}>
-          <h1 style={{ fontSize: "20px", fontWeight: 400 }}>
-            Nikmati Layanan Bersama Dokter Hewan Terbaik
-          </h1>
+    <>
+      <Navbar width={100} />
+      <BookingStyle>
+        <h1 style={{ fontSize: "24px" }}>Konsultasi Mudah dan Cepat</h1>
+        <BookingWrapperComponent>
+          <div
+            style={{
+              flex: 1,
+              paddingTop: "1rem",
+              marginLeft: tablet ? "2rem" : 0,
+            }}
+          >
+            <h1 style={{ fontSize: "20px", fontWeight: 400 }}>
+              Nikmati Layanan Bersama Dokter Hewan Terbaik
+            </h1>
             <TimeDropdownContainer>
               <Select
                 border=" 0.5px solid rgba(153, 146, 146, 0.7)"
@@ -47,7 +56,7 @@ const BookingDoctorPage = () => {
               />
             </TimeDropdownContainer>
 
-          {/* <p style={{ color: "rgba(28, 28, 28, 0.7)", fontWeight: 500 }}>
+            {/* <p style={{ color: "rgba(28, 28, 28, 0.7)", fontWeight: 500 }}>
             Menampilkan{" "}
             <span
               style={{
@@ -59,10 +68,12 @@ const BookingDoctorPage = () => {
             </span>{" "}
             hasil
           </p> */}
-          <DoctorResultsList isDoctorTab={true} />
-        </div>
-      </BookingWrapperComponent>
-    </BookingStyle>
+            <DoctorResultsList isDoctorTab={true} />
+          </div>
+        </BookingWrapperComponent>
+      </BookingStyle>
+      <Footer />
+    </>
   );
 };
 

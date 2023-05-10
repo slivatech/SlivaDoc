@@ -9,6 +9,7 @@ export const Header = styled.div`
     top: 0;
     display: flex;
     flex-direction: column;
+
     /* align-items: center; */
     /* justify-content: center; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -20,7 +21,6 @@ export const TopNav = styled.div`
     justify-content: space-between;
     padding: 15px 8%;
     background: #fff;
-    /* max-width: 1920px; */
 
     @media (max-width: 768px) {
         padding: 15px 5%;

@@ -9,10 +9,11 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import { useFilterDoctors } from "../../hooks/useFilterDoctors";
 import { useAppSelector } from "../../store/hooks";
 import { doctors } from "./fakeData";
-
+import { useDispatch } from "react-redux";
+import { setMinPrice,setMaxPrice } from "../../features/filterSlices/filterSlice";
 const SidebarBooking = () => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000000);
+  // const [minPrice, setMinPrice] = useState(0);
+  // const [maxPrice, setMaxPrice] = useState(1000000);
   // const [city, setCity] = useState<string>("Medan");
   // const [experience, setExperience] = useState<string>("");
   // const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,11 +23,23 @@ const SidebarBooking = () => {
   //   setExperience(e.target.value);
   // };
 
-  const city = useAppSelector(state=>state.filter.city);
-  const experience = useAppSelector(state=>state.filter.yearsOfExperienceRange);
-  const { handleCityChange,handleYearsOfExperienceChange } = useFilterDoctors();
-  const tablet = useMediaQuery("(min-width:1024px)");
+  const dispatch = useDispatch();
 
+
+  const city = useAppSelector((state) => state.filter.city);
+  const experience = useAppSelector(
+    (state) => state.filter.yearsOfExperienceRange
+  );
+  const { max: maxPrice, min: minPrice } = useAppSelector(
+    (state) => state.filter.priceRange
+  );
+
+  const {
+    handleCityChange,
+    handleYearsOfExperienceChange,
+    
+  } = useFilterDoctors();
+  const tablet = useMediaQuery("(min-width:1024px)");
 
   return (
     <div style={{ display: "flex", gap: "2rem" }}>
@@ -53,17 +66,17 @@ const SidebarBooking = () => {
             textColor="white"
           ></BaseButton>
         </SearchWrapper> */}
-                  {tablet ? (
-            <Select
+        {tablet ? (
+          <Select
             padding=".4rem 1rem"
-              label="Seluruh Lokasi"
-              radius="5px 0 0 5px"
-              border="0.5px solid rgba(153, 146, 146, 0.7)"
-              values={["Medan", "Jakarta"]}
-              iconStart={<img src="/assets/location-4.svg" />}
-              iconEnd={<img src="/assets/track.svg" />}
-            />
-          ) : null}
+            label="Seluruh Lokasi"
+            radius="5px 0 0 5px"
+            border="0.5px solid rgba(153, 146, 146, 0.7)"
+            values={["Medan", "Jakarta"]}
+            iconStart={<img src="/assets/location-4.svg" />}
+            iconEnd={<img src="/assets/track.svg" />}
+          />
+        ) : null}
         <div>
           <CategoryBox>
             <Select
@@ -93,7 +106,7 @@ const SidebarBooking = () => {
                 key={i}
                 value={radio}
                 checked={city === radio}
-                handleChange={()=>handleCityChange(radio)}
+                handleChange={() => handleCityChange(radio)}
               />
             ))}
           </CategoryBox>
@@ -113,7 +126,7 @@ const SidebarBooking = () => {
                 key={i}
                 value={radio}
                 checked={radio === experience}
-                handleChange={()=>handleYearsOfExperienceChange(radio)}
+                handleChange={() => handleYearsOfExperienceChange(radio)}
               />
             ))}
           </CategoryBox>
@@ -132,7 +145,7 @@ const SidebarBooking = () => {
               <PriceInput>
                 <span>Rp</span>
                 <input
-                  onChange={(e) => setMinPrice(Number(e.target.value))}
+                  onChange={(e) => dispatch(setMinPrice(Number(e.target.value)))}
                   min={0}
                   max={1000000}
                   type="number"
@@ -143,7 +156,9 @@ const SidebarBooking = () => {
               <PriceInput>
                 <span>Rp</span>
                 <input
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
+                  onChange={(e) =>
+                    dispatch(setMaxPrice(Number(e.target.value)))
+                  }
                   min={0}
                   max={1000000}
                   type="number"
@@ -157,10 +172,9 @@ const SidebarBooking = () => {
               step={100000}
               min={0}
               max={1000000}
-              
               onChange={({ min, max }) => {
-                setMinPrice(min);
-                setMaxPrice(max);
+                dispatch(setMaxPrice(max));
+                dispatch(setMinPrice(min))
               }}
             />
             <div

@@ -46,7 +46,7 @@ const MultiRangeSlider = ({ min, max, onChange,step,trackColor,thumbColor }:Rang
   // Get min and max values when their state changes
   useEffect(() => {
     onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+  }, [minVal, maxVal]);
 
   return (
     <SliderContainer trackColor={trackColor as string} thumbColor={thumbColor as string}>

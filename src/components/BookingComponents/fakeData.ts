@@ -34,7 +34,7 @@ export const doctors:Doctor[] = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:350000,
+    price:500000,
     location:"Jakarta",
     yearsOfExperience:5
 },{
@@ -70,7 +70,7 @@ export const doctors:Doctor[] = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:350000,
+    price:650000,
     location:"Jakarta",
     yearsOfExperience:7
 },{
@@ -82,7 +82,7 @@ export const doctors:Doctor[] = [{
     isAvailable:true,
     reviewPercentage:100,
     reviewsCount:20,
-    price:350000,
+    price:800000,
     location:"Jakarta",
     yearsOfExperience:9
 }];
@@ -94,6 +94,6 @@ export const petHospitals = [{
     venue:"RSH Evans Cemerlang, Jakarta",
     distance:"1.7km",
     isAvailable:true,
-    price:350000
+    price:400000
 
 }]

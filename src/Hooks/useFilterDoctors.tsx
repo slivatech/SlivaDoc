@@ -4,6 +4,8 @@ import {
   setCity,
   setYearsOfExperienceRange,
   setTerm,
+  setMaxPrice,
+  setMinPrice
 } from "../features/filterSlices/filterSlice";
 import { doctors } from "../components/BookingComponents/fakeData";
 import { useAppSelector } from "../store/hooks";
@@ -12,7 +14,7 @@ export const useFilterDoctors = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState<Doctor[]>(doctors);
 
-  const { searchTerm, city, yearsOfExperienceRange } = useAppSelector(
+  const { searchTerm, city, yearsOfExperienceRange,priceRange } = useAppSelector(
     (state) => state.filter
   );
 
@@ -23,10 +25,12 @@ export const useFilterDoctors = () => {
       doctors,
       city,
       yearsOfExperienceRange,
-      searchTerm
+      searchTerm,
+      priceRange.min,
+      priceRange.max
     );
     setFilteredDoctors(filteredValues);
-  }, [city,searchTerm,yearsOfExperienceRange]);
+  }, [city,searchTerm,yearsOfExperienceRange,priceRange]);
   const handleCityChange = (city: string) => {
     console.log(city);
     dispatch(setCity(city));
@@ -40,11 +44,17 @@ export const useFilterDoctors = () => {
     dispatch(setTerm(term));
   };
 
+  // const handlePriceRangeChange = (min: number, max: number) => {
+  //   dispatch(setMinPrice(min));
+  //   dispatch(setMaxPrice(max));
+  // };
   const handleFilter = (
     doctors: Doctor[],
     city: string,
     yearsOfExperienceRange: string,
-    searchText: string
+    searchText: string,
+    minPrice:number,
+    maxPrice:number
   ): Doctor[] => {
     if (city === "" && yearsOfExperienceRange === "" && searchText && "")
       return doctors;
@@ -63,9 +73,12 @@ export const useFilterDoctors = () => {
         searchText === "" ||
         doctor.name.toLowerCase().includes(searchText.toLowerCase()) ||
         doctor.role.toLowerCase().includes(searchText.toLowerCase());
+
       // doctor.company.toLowerCase().includes(searchText.toLowerCase()) ||
       // doctor.email.toLowerCase().includes(searchText.toLowerCase());
-      return cityMatches && yearsOfExperienceMatches && searchMatches;
+      const priceMatches =
+      doctor.price >= minPrice && doctor.price <= maxPrice;
+      return cityMatches && yearsOfExperienceMatches && searchMatches && priceMatches;
     });
   };
 
