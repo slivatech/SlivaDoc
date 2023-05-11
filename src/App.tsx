@@ -19,6 +19,10 @@ import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
 // import PopUpTranksaksi from "./pages/PopUpTranksaksi/PopUpTranksaksi";
+import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
+import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
+import Reguler from "./pages/SlivaProteksi/Reguler";
+import Plus from "./pages/SlivaProteksi/Plus";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -26,6 +30,16 @@ const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
+      {/* <Artikel width={0} />
+      <DetailArtikel width={0} />
+      <DetailDokter width={0}/>
+      <DetailLayananKlinik width={0}/>
+      <TanyaDokter width={0}/>
+      <PopUpTranksaksi /> */}
+      <SlivaProteksi width={0}/>
+      <UnlimitedChat width={0}/>
+      <Reguler width={0}/>
+      <Plus width={0}/>
       <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
