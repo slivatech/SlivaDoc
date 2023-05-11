@@ -1,30 +1,41 @@
-import React, { useState } from "react";
-import useSelect from "../../Hooks/useSelect";
+// import React, { useState,useEffect } from "react";
+import useSelect from "../../hooks/useSelect";
 import { DropdownItem, DropdownStyle, SelectContainer, SelectLabelButton } from "./SelectStyle";
 
 interface ISelect {
   label: string;
-  values: string[];
-  onChange?: (e: React.ChangeEvent) => void;
-  icon?:any;
+  values: any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  iconEnd?:any;
+  iconStart?:any;
   borderType?:"bottom" | "top";
   radius?:string;
+  padding?:string;
   border?:string;
 }
-const Select = ({ label, values, onChange,icon,radius,borderType,border }: ISelect) => {
+const Select = ({ label, values, iconStart,onChange,iconEnd,radius,borderType,border,padding }: ISelect) => {
 
     const { currentValue,handleOpen,open,handleChange } = useSelect();
+
+
+
    return (
     <SelectContainer>
-      <SelectLabelButton onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
+      <SelectLabelButton padding={padding} onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
+        <div style={{display:"flex",alignItems:'center',gap:".5rem"}}>
+          {iconStart}
         <p>{currentValue !== "" ? currentValue : label}</p>
-        {icon}
+
+        </div>
+        {iconEnd}
         
       </SelectLabelButton>
       <DropdownStyle isVisible={open}>
-        {values.map((value, index) => (
+        {values.map((value:any, index:number) => (
           <DropdownItem
-            onClick={() => handleChange(value)}
+            onClick={() => {
+              handleChange(value)
+            }}
             active={value === currentValue}
             key={index}
           >

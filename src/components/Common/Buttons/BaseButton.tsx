@@ -9,12 +9,14 @@ type ContainerProps = {
     width?: string;
     shadow?:string;
     gap?:string;
+    border?:string;
 }
 
 const Container : any = styled.div<ContainerProps>`
     display: flex;
     justify-content: center;
     align-items: center;
+    border:${({ border }) => border ? border:null};
     gap:${({ gap })=>gap ? gap : '1rem'};
     cursor: pointer;
     /* border: ${({ color }) => color?  `1px solid ${color}` : ''}; */
@@ -52,6 +54,7 @@ const BaseButton: React.FC<BaseButtonProps> = ({
     text,
     iconStart,
     iconEnd,
+    border,
     ...rest
 }) => {
     return (
