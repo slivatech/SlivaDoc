@@ -90,7 +90,8 @@ export const Card = styled.div`
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
     padding: 15px;
     @media (max-width: 720px) {
-        min-width: 150px;
+       max-width: 132px;
+        min-height: 49px;
         border-radius: 5px;
         column-gap: 3px;
         padding: 5px;

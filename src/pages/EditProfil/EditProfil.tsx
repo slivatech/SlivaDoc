@@ -98,40 +98,6 @@ const EditProfil:  React.FC<EditProfilProps> = ({width}) => {
             ]
         }
     ]
-    // function Cards (props:ICard) {
-    //    return (
-    //     <Card >
-    //         <div>
-    //             <div className='text'>
-    //                 <img src={props.image}/>
-    //                 <div>
-    //                     <h1>{props.total}</h1>
-    //                     <span>{props.title}</span>
-    //                 </div>
-    //             </div> 
-    //             {props.btn ?  
-    //                 <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
-    //                     {props.btn.map((button: any) =>
-    //                         <BaseButton 
-    //                         text={button.text}
-    //                         iconEnd={
-    //                             <img src={button.icon} alt="" width={12} height={10} />
-    //                         }
-    //                         textColor="#fff"
-    //                         color="#127FFF"
-    //                         fontSize="10px"
-    //                         radius="5px"
-    //                         width="max-content"
-    //                         height="28px"
-    //                         gap="5px"
-    //                     />
-    //                     )}
-    //                 </div>
-    //             : ''}
-    //         </div>
-    //     </Card>
-    //    ) 
-    // }
 
     function Input (props: IProfile) {
         return (
@@ -253,13 +219,11 @@ const EditProfil:  React.FC<EditProfilProps> = ({width}) => {
                     <Input input='password' name='Password' type='password' />
                     <Input input='repassword' name='Re-Type Password' type='password' />
                     <div style={{margin: '44px 0'}} className='row'>
-                        {/* <button className='btn-cancel'>Cancel</button> */}
-                        {/* <button className='btn-save'>Save</button> */}
                         <BaseButton
                             text="Cancel"
                             textColor="#0D6EFD"
                             color="#FFE9E9"
-                            fontSize="24px"
+                            // fontSize="24px"
                             radius="5px"
                             height="44px"
                             width="16%"
@@ -269,7 +233,7 @@ const EditProfil:  React.FC<EditProfilProps> = ({width}) => {
                             text="Save"
                             textColor="#fff"
                             color="#127FFF"
-                            fontSize="24px"
+                            // fontSize="24px"
                             radius="5px"
                             height="44px"
                             width="16%"
