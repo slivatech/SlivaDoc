@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
-import topUp from '../../assets/icon/topUp.svg';
-import tarik from '../../assets/icon/tarik-tunai.svg';
-import { AppContainer, Card, ModalContainer, ModalHeader, ModalContent, ModalButton, ModalCloseButton, Modal, ModalFooter } from './PopUpTranksaksiStyle';
+import React, { useState } from "react";
+import topUp from "../../assets/icon/topUp.svg";
+import tarik from "../../assets/icon/tarik-tunai.svg";
+import {
+  AppContainer,
+  Card,
+  ModalContainer,
+  ModalHeader,
+  ModalContent,
+  ModalButton,
+  ModalCloseButton,
+  Modal,
+  ModalFooter,
+} from "./PopUpTranksaksiStyle";
 import iconMoney from "../../assets/icon/money.svg";
 
 interface ICard {
@@ -12,14 +22,13 @@ interface ICard {
 }
 
 interface IModal {
-    isOpen: boolean;
-    type: string;
-    onClose?: () => void
-  }
-  
+  isOpen: boolean;
+  type: string;
+  onClose?: () => void;
+}
 
 const PopUpTranksaksi: React.FC = () => {
-  const [modal, setModal] = useState<IModal>({isOpen: false, type: ''});
+  const [modal, setModal] = useState<IModal>({ isOpen: false, type: "" });
   const [topUpAmount, setTopUpAmount] = useState<number>(0);
   const [withdrawAmount, setWithdrawAmount] = useState<number>(0);
   const jobAp = [
@@ -27,121 +36,131 @@ const PopUpTranksaksi: React.FC = () => {
       id: 1,
       total: 16,
       title: "Total Transaksi",
-      btn : [
+      btn: [
         {
-          text : "View Detail"
+          text: "View Detail",
         },
-      ]
+      ],
     },
     {
       id: 2,
       total: 59,
       title: "Total Konsultasi",
-      btn : [
+      btn: [
         {
-          text : "View Detail"
+          text: "View Detail",
         },
-      ]
+      ],
     },
     {
       id: 3,
       total: "Rp.2.000.000",
       title: "Saldo",
-      btn : [
+      btn: [
         {
-          text : "TopUp",
-          icon : topUp,
-          onClick: () => setModal({isOpen: true, type: 'topUp'})
+          text: "TopUp",
+          icon: topUp,
+          onClick: () => setModal({ isOpen: true, type: "topUp" }),
         },
         {
-          text : "Tarik Tunai",
-          icon : tarik,
-          onClick: () => setModal({isOpen: true, type: 'tarikTunai'})
-        }
-      ]
-    }
-  ]
+          text: "Tarik Tunai",
+          icon: tarik,
+          onClick: () => setModal({ isOpen: true, type: "tarikTunai" }),
+        },
+      ],
+    },
+  ];
 
-  function Cards (props:ICard) {
+  function Cards(props: ICard) {
     return (
       <Card onClick={() => console.log(props.title)}>
-        <div className='text'>
-          <img src={iconMoney} alt="Money Icon"/>
+        <div className="text">
+          <img src={iconMoney} alt="Money Icon" />
           <div>
             <h1>{props.total}</h1>
             <span>{props.title}</span>
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
-          {props.btn.map((button: any, index: number) =>
-            <button className='btn-card' key={index} onClick={button.onClick}>
+        <div
+          style={{ display: "flex", justifyContent: "flex-end", gap: "8px" }}
+        >
+          {props.btn.map((button: any, index: number) => (
+            <button className="btn-card" key={index} onClick={button.onClick}>
               {button.text}
-              {button.icon ? 
-                <img src={button.icon} alt={button.text}/> : ''
-              }
-            </button> 
-          )}
+              {button.icon ? <img src={button.icon} alt={button.text} /> : ""}
+            </button>
+          ))}
         </div>
       </Card>
-    ) 
+    );
   }
 
   function handleTopUp() {
-
     console.log("Top up with amount: ", topUpAmount);
-    setModal({isOpen: false, type: ''});
+    setModal({ isOpen: false, type: "" });
   }
 
   function handleTarikTunai() {
-
     console.log("Tarik tunai");
-    setModal({isOpen: false, type: ''});
+    setModal({ isOpen: false, type: "" });
   }
   function handleCloseModal() {
-    setModal({isOpen: false, type: ''});
+    setModal({ isOpen: false, type: "" });
   }
 
   return (
     <AppContainer>
-      <div style={{display: 'flex', gap: '33px'}}>
+      <div style={{ display: "flex", gap: "33px" }}>
         {jobAp.map((i: ICard) => (
-          <Cards 
-            id={i.id}
-            total={i.total} 
-            title={i.title} 
-            btn={i.btn}
-          />
+          <Cards id={i.id} total={i.total} title={i.title} btn={i.btn} />
         ))}
       </div>
       {modal.isOpen && (
         <ModalContainer onClick={modal.onClose}>
           <Modal>
             <ModalHeader>
-              {modal.type === 'topUp' ? 'Top Up' : 'Tarik Tunai'}
-              
+              {modal.type === "topUp" ? "Top Up" : "Tarik Tunai"}
             </ModalHeader>
             <ModalContent>
-              {modal.type === 'topUp' ? (
+              {modal.type === "topUp" ? (
                 <>
                   <label>input nominal</label>
-                  <input type="number" value={topUpAmount} onChange={(e) => setTopUpAmount(parseInt(e.target.value))} />
+                  <input
+                    type="number"
+                    value={topUpAmount}
+                    onChange={(e) => setTopUpAmount(parseInt(e.target.value))}
+                  />
                 </>
               ) : (
                 <>
                   <label>input nominal</label>
-                  <input type="number" value={withdrawAmount} onChange={(e) => setWithdrawAmount(parseInt(e.target.value))} />
+                  <input
+                    type="number"
+                    value={withdrawAmount}
+                    onChange={(e) =>
+                      setWithdrawAmount(parseInt(e.target.value))
+                    }
+                  />
                 </>
               )}
             </ModalContent>
             <ModalFooter>
-            <ModalCloseButton onClick={handleCloseModal}>Batalkan</ModalCloseButton>
-              <ModalButton onClick={modal.type === 'topUp' ? handleTopUp : handleTarikTunai}>{modal.type === 'topUp' ? 'Bayar' : 'Lanjut'}</ModalButton>
+              <ModalCloseButton onClick={handleCloseModal}>
+                Batalkan
+              </ModalCloseButton>
+              <ModalButton
+                onClick={
+                  modal.type === "topUp" ? handleTopUp : handleTarikTunai
+                }
+              >
+                {modal.type === "topUp" ? "Bayar" : "Lanjut"}
+              </ModalButton>
             </ModalFooter>
           </Modal>
         </ModalContainer>
       )}
     </AppContainer>
   );
-}
+};
 
 export default PopUpTranksaksi;

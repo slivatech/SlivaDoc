@@ -1,15 +1,22 @@
-import  { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { SliderContainer, SliderStyle } from "./MultiRangeSliderStyle";
 interface RangeProps {
-    min:number;
-    step:number;
-    max:number;
-    trackColor?:string;
-    thumbColor?:string;
-    onChange:(value:{ min:number,max:number }) => void;
+  min: number;
+  step: number;
+  max: number;
+  trackColor?: string;
+  thumbColor?: string;
+  onChange: (value: { min: number; max: number }) => void;
 }
 
-const MultiRangeSlider = ({ min, max, onChange,step,trackColor,thumbColor }:RangeProps) => {
+const MultiRangeSlider = ({
+  min,
+  max,
+  onChange,
+  step,
+  trackColor,
+  thumbColor,
+}: RangeProps) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -18,7 +25,7 @@ const MultiRangeSlider = ({ min, max, onChange,step,trackColor,thumbColor }:Rang
 
   // Convert to percentage
   const getPercent = useCallback(
-    (value:number) => Math.round(((value - min) / (max - min)) * 100),
+    (value: number) => Math.round(((value - min) / (max - min)) * 100),
     [min, max]
   );
 
@@ -49,13 +56,15 @@ const MultiRangeSlider = ({ min, max, onChange,step,trackColor,thumbColor }:Rang
   }, [minVal, maxVal]);
 
   return (
-    <SliderContainer trackColor={trackColor as string} thumbColor={thumbColor as string}>
+    <SliderContainer
+      trackColor={trackColor as string}
+      thumbColor={thumbColor as string}
+    >
       <input
         type="range"
         min={min}
         max={max}
         step={step}
-
         value={minVal}
         onChange={(event) => {
           const value = Math.min(Number(event.target.value), maxVal - 1);
@@ -82,12 +91,9 @@ const MultiRangeSlider = ({ min, max, onChange,step,trackColor,thumbColor }:Rang
       <SliderStyle>
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
-
       </SliderStyle>
     </SliderContainer>
   );
 };
-
-
 
 export default MultiRangeSlider;

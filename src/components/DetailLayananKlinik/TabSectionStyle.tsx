@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container } from "../Container";
 
 export const StyledClinicNav = styled(Container)`
-margin-top:2em;
+  margin-top: 2em;
 `;
 
 export const ClinicWrapper = styled.ul`
@@ -57,4 +57,3 @@ export const StyledInfoTab = styled.section`
     padding-left: 1rem;
   }
 `;
-

@@ -1,4 +1,3 @@
-// import img from "../../assets/doctor.png";
 import morning from "../../assets/icon/morning.png";
 import sun from "../../assets/icon/sun.png";
 import night from "../../assets/icon/night.png";

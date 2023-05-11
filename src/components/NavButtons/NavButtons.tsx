@@ -5,25 +5,25 @@ import { Container } from "../Container";
 const card = [
   {
     id: 1,
-    text: 'Tanya dokter',
-    img: './assets/chat.svg'
+    text: "Tanya dokter",
+    img: "./assets/chat.svg",
   },
   {
     id: 2,
-    text: 'Cari Dokter',
-    img: './assets/search.svg'
+    text: "Cari Dokter",
+    img: "./assets/search.svg",
   },
   {
     id: 3,
-    text: 'Sliva Proteksi',
-    img: './assets/protection.svg'
+    text: "Sliva Proteksi",
+    img: "./assets/protection.svg",
   },
   {
     id: 4,
-    text: 'SlivaShop',
-    img: './assets/shop.svg'
+    text: "SlivaShop",
+    img: "./assets/shop.svg",
   },
-]
+];
 
 const NavButtonsStyled = styled.div`
   display: flex;
@@ -43,7 +43,8 @@ const NavButtonsStyled = styled.div`
   }
 `;
 
-const NavButton = styled.button(({ theme }) => `
+const NavButton = styled.button(
+  ({ theme }) => `
   padding:18px;
   display:flex;
   flex:1;

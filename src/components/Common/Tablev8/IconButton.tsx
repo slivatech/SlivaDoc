@@ -1,7 +1,7 @@
 // Permutations: Edit icon, Logout icon, AlertBell icon with badge IconButton, Close icon, Delete icon, Sorting arrows, etc.
-import React from 'react';
-import { BaseButtonProps, StyledBaseButton } from './BaseButton';
-import Icon from './Icon';
+import React from "react";
+import { BaseButtonProps, StyledBaseButton } from "./BaseButton";
+import Icon from "./Icon";
 
 export interface IconButtonProps extends BaseButtonProps {
   /**
@@ -24,35 +24,40 @@ export interface IconButtonProps extends BaseButtonProps {
    * An onClick function for the IconButton.
    */
   onClick?: (e: any) => any;
-};
+}
 
-const IconButton: React.FC<IconButtonProps> = React.forwardRef(({
-  src = '',
-  alt = '',
-  height = 'auto',
-  width = 'auto',
-  onClick = () => { },
-  ...rest
-}: IconButtonProps, ref) => {
-  const iconProps = {
-    src,
-    alt,
-    height,
-    width,
-  };
+const IconButton: React.FC<IconButtonProps> = React.forwardRef(
+  (
+    {
+      src = "",
+      alt = "",
+      height = "auto",
+      width = "auto",
+      onClick = () => {},
+      ...rest
+    }: IconButtonProps,
+    ref
+  ) => {
+    const iconProps = {
+      src,
+      alt,
+      height,
+      width,
+    };
 
-  return (
-    <StyledBaseButton
-      {...rest}
-      cornerCurvature={false}
-      color="transparent"
-      borderColor="transparent"
-      onClick={onClick}
-      refs={ref}
-    >
-      <Icon {...iconProps} />
-    </StyledBaseButton>
-  );
-});
+    return (
+      <StyledBaseButton
+        {...rest}
+        cornerCurvature={false}
+        color="transparent"
+        borderColor="transparent"
+        onClick={onClick}
+        refs={ref}
+      >
+        <Icon {...iconProps} />
+      </StyledBaseButton>
+    );
+  }
+);
 
 export default IconButton;

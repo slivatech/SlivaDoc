@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import banner from "../../assets/image/Banner-artikel.svg";
 
-
 export const Container = styled.div`
   width: 100%;
   max-width: 1400px;
@@ -273,7 +272,7 @@ export const Search = styled.div`
     padding: 10px;
     border: none;
     outline: none;
-    border-radius: 5px  0 5px 0;
+    border-radius: 5px 0 5px 0;
   }
 
   .btn-all {

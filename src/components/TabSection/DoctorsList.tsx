@@ -4,7 +4,14 @@ import { doctorAppointments } from "./fakeData";
 
 const DoctorsList = () => {
   return (
-    <div style={{display:"flex",flexDirection:"column",gap:"1rem",marginTop:"1rem"}}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        marginTop: "1rem",
+      }}
+    >
       {doctorAppointments.map((appointment, i) => (
         <AppointmentBox isDoctorAppoinment={true} key={i} {...appointment} />
       ))}

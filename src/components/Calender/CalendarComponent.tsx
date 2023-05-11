@@ -57,12 +57,10 @@ const IconWrapper = styled.div`
   margin-right: 14px;
 `;
 
-const CalendarComponent: React.FC<DatePickerProps> = ({
-  onClickIcon,
-}) => {
+const CalendarComponent: React.FC<DatePickerProps> = ({ onClickIcon }) => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const minDate = new Date(); 
+  const minDate = new Date();
 
   const handleTileClick = (date: Date) => {
     setSelectedDate(date);
@@ -84,7 +82,7 @@ const CalendarComponent: React.FC<DatePickerProps> = ({
       year: "numeric",
     };
     return new Intl.DateTimeFormat("id-ID", options).format(date);
-  }
+  };
 
   return (
     <Wrapper>
@@ -93,10 +91,7 @@ const CalendarComponent: React.FC<DatePickerProps> = ({
       </IconWrapper>
       {showCalendar && (
         <CalendarWrapper>
-          <Calendar
-            minDate={minDate}
-            onClickDay={handleTileClick}
-          />
+          <Calendar minDate={minDate} onClickDay={handleTileClick} />
         </CalendarWrapper>
       )}
       {selectedDate && (
@@ -110,4 +105,4 @@ const CalendarComponent: React.FC<DatePickerProps> = ({
   );
 };
 
-export default CalendarComponent
+export default CalendarComponent;

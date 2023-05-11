@@ -31,13 +31,13 @@ interface DetailLayananKlinikProps {
   width: number;
 }
 
-const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
+const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({ width }) => {
   const [selectedSchedule, setSelectedSchedule] = useState("");
 
   const handleScheduleClick = (schedule: string) => {
     setSelectedSchedule(schedule);
   };
-  
+
   return (
     <>
       <Navbar width={width} />
@@ -51,12 +51,11 @@ const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
               <h3>Rp.25.000</h3>
             </Price>
             <LocationContainer>
-              
-             <Location>
-             <h1>Klinik Hewan Indonesia</h1>
-             <div>
-                <img src={location} alt="location" />
-                <p>4.7 Km</p>
+              <Location>
+                <h1>Klinik Hewan Indonesia</h1>
+                <div>
+                  <img src={location} alt="location" />
+                  <p>4.7 Km</p>
                 </div>
               </Location>
               <LocationLogo src={locimage} />
@@ -83,7 +82,9 @@ const DetailLayananKlinik: React.FC<DetailLayananKlinikProps> = ({width}) => {
                       <div
                         key={index}
                         onClick={() => handleScheduleClick(schedule)}
-                        className={selectedSchedule === schedule ? "selected" : ""}
+                        className={
+                          selectedSchedule === schedule ? "selected" : ""
+                        }
                       >
                         {schedule}
                       </div>

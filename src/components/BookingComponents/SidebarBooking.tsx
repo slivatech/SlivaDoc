@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { cities, yearsOfExperience } from "./fakeData";
 import Select from "../Select/Select";
 import { CategoryBox } from "../TabSection/TabSectionStyle";
 import RadioButton from "../Common/Buttons/RadioButton";
-import { PriceInput, SearchWrapper } from "./BookingStyle";
+import { PriceInput } from "./BookingStyle";
 import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { useFilterDoctors } from "../../hooks/useFilterDoctors";
 import { useAppSelector } from "../../store/hooks";
-import { doctors } from "./fakeData";
+// import { doctors } from "./fakeData";
 import { useDispatch } from "react-redux";
 import { setMinPrice,setMaxPrice } from "../../features/filterSlices/filterSlice";
 const SidebarBooking = () => {
@@ -56,7 +56,7 @@ const SidebarBooking = () => {
             />
           ) : null}
 
-          <input type="text" placeholder="Dokter Kucing" />
+          <input type="text" placeholder="Cari Dokter Spesialis di SlivaDoc" />
 
           <BaseButton
             className="btn"
@@ -73,8 +73,8 @@ const SidebarBooking = () => {
             radius="5px 0 0 5px"
             border="0.5px solid rgba(153, 146, 146, 0.7)"
             values={["Medan", "Jakarta"]}
-            iconStart={<img src="/assets/location-4.svg" />}
-            iconEnd={<img src="/assets/track.svg" />}
+            iconStart={<img src="/assets/location-4.svg" alt="location"/>}
+            iconEnd={<img src="/assets/track.svg" alt="track"/>}
           />
         ) : null}
         <div>
@@ -85,7 +85,7 @@ const SidebarBooking = () => {
               padding=" 0"
               borderType="bottom"
               values={cities}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
             />
             <div
               style={{
@@ -96,7 +96,7 @@ const SidebarBooking = () => {
                 padding: "0 .3rem",
               }}
             >
-              <img style={{ width: "16px" }} src="/assets/my-location.svg" />
+              <img style={{ width: "16px" }} src="/assets/my-location.svg" alt="location"/>
               <label>Gunakan Lokasi Saya</label>
             </div>
 
@@ -117,7 +117,7 @@ const SidebarBooking = () => {
               borderType="bottom"
               padding="0"
               values={yearsOfExperience}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
             />
 
             {yearsOfExperience.map((radio, i) => (
@@ -137,7 +137,7 @@ const SidebarBooking = () => {
               padding="0"
               borderType="bottom"
               values={[10000, 20000, 50000, 90000]}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
             />
             <div
               style={{ display: "flex", gap: ".5rem", alignItems: "center" }}

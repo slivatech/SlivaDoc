@@ -44,7 +44,7 @@ const DoctorListItem = styled.div`
 
 const DoctorImage = styled.img`
   width: 37px;
-height: 37px;
+  height: 37px;
   border-radius: 50%;
 `;
 
@@ -54,11 +54,10 @@ const DoctorDetails = styled.div`
   margin-left: 1rem;
 `;
 
-
 const DoctorSpecialty = styled.span`
   font-weight: 500;
-font-size: 16px;
-line-height: 22px;
+  font-size: 16px;
+  line-height: 22px;
   text-align: center;
 `;
 

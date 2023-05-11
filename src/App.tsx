@@ -9,13 +9,13 @@ import { defaultTheme } from "./styles/Theme";
 // import DetailKlinik from "./pages/DetailKlinik/DetailKlinik";
 // import TablePage from "./pages/Example/TablePage";
 // import CustomerListPage from "./pages/CustomerList/CustomerListPage";
-import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
-// import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
+// import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
+import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 import store from "./store/store";
 import { Provider } from "react-redux";
 
 const App = () => {
-  const {width} = useWindowDimensions()
+  // const {width} = useWindowDimensions()
 
   return (
     <Provider store={store}>
@@ -28,8 +28,8 @@ const App = () => {
       <DetailKlinik />
       <CustomerListPage />
       <TablePage /> */}
-        <BookingDoctorPage />
-        {/* <BookingPetHospitalPage /> */}
+        {/* <BookingDoctorPage /> */}
+        <BookingPetHospitalPage />
       </ThemeProvider>
     </Provider>
   );

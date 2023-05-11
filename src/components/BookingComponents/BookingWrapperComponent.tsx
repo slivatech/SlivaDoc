@@ -1,7 +1,7 @@
 import React from "react";
 import SidebarBooking from "./SidebarBooking";
 import { FeatureContainer, SearchWrapper } from "./BookingStyle";
-import Select from "../Select/Select";
+// import Select from "../Select/Select";
 import BaseButton from "../Common/Buttons/BaseButton";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { useFilterDoctors } from "../../hooks/useFilterDoctors";
@@ -21,9 +21,9 @@ const BookingWrapperComponent = ({
   return (
     <>
       <FeatureContainer>
-        {features.map((feature,i) => (
+        {features.map((feature, i) => (
           <div key={i}>
-            <img src="/assets/circle-check.svg" />
+            <img src="/assets/circle-check.svg" alt="circle-check" />
             <p>{feature}</p>
           </div>
         ))}
@@ -34,7 +34,11 @@ const BookingWrapperComponent = ({
 
         <div style={{ width: "100%" }}>
           <SearchWrapper>
-            <input type="text" placeholder="Dokter Kucing" onChange={(e)=>handleSearch(e.target.value)} />
+            <input
+              type="text"
+              placeholder="Cari Dokter Spesialis di SlivaDoc"
+              onChange={(e) => handleSearch(e.target.value)}
+            />
 
             <BaseButton
               className="btn"

@@ -18,7 +18,7 @@ export const ContainerInformasi = styled.div`
   background: #ffff;
   border-radius: 5px;
   margin: 15px 0;
-  margin-right:0;
+  margin-right: 0;
   /* width:739px; */
   @media only screen and (max-width: 768px) {
     margin: 0;
@@ -93,7 +93,7 @@ export const DoctorAbout = styled.p`
     flex-direction: row;
     align-items: center;
     margin-right: 10px;
-    padding: 10px 10px;  
+    padding: 10px 10px;
     width: 80px;
     height: 19px;
     background: #ece4e4;

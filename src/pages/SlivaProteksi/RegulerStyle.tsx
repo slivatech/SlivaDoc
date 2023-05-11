@@ -115,23 +115,23 @@ export const FaqContainer = styled.div`
 `;
 
 export const SliderContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-// align-text: center;
-margin: auto;
-background: conic-gradient(
-  from 180deg at 50% 66.23%,
-  rgba(92, 132, 237, 0) 0deg,
-  #b8c3e9 183.57deg,
-  rgba(92, 132, 237, 0) 360deg
-);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 10px;
-padding: 40px;
-width: 976px;
-height: 338px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // align-text: center;
+  margin: auto;
+  background: conic-gradient(
+    from 180deg at 50% 66.23%,
+    rgba(92, 132, 237, 0) 0deg,
+    #b8c3e9 183.57deg,
+    rgba(92, 132, 237, 0) 360deg
+  );
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  padding: 40px;
+  width: 976px;
+  height: 338px;
 `;
 
 export const SponsorContainer = styled.div`

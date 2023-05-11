@@ -22,17 +22,19 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
   const [selectedFAQs, setSelectedFAQs] = useState<FAQ[]>([]);
 
-
-  const [showAnswers, setShowAnswers] = useState<{ [key: number]: boolean }>({});
+  const [showAnswers, setShowAnswers] = useState<{ [key: number]: boolean }>(
+    {}
+  );
 
   const handleQuestionClick = (questionId: number) => {
-    const selectedQuestion = questions.find((question) => question.id === questionId);
+    const selectedQuestion = questions.find(
+      (question) => question.id === questionId
+    );
     if (selectedQuestion) {
       setSelectedQuestion(selectedQuestion.id);
       setSelectedFAQs(selectedQuestion.faqs);
     }
   };
-
 
   const toggleAnswer = (faqId: number) => {
     setShowAnswers({
@@ -72,7 +74,7 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
                   </span>
                 )}
               </QuestionHeader>
-           
+
               {showAnswers[faq.id] && <Answer>{faq.answer}</Answer>}
             </FAQItem>
           ))}
@@ -98,8 +100,7 @@ const QuestionsList = styled.ul`
   padding: 0;
 `;
 
-
-  const QuestionItem = styled.li<{ selected: boolean }>`
+const QuestionItem = styled.li<{ selected: boolean }>`
   padding: 1rem;
   background-color: ${({ selected }) => (selected ? "#eee" : "#fff")};
   color: ${({ selected }) => (selected ? "#333" : "#555")};
@@ -107,7 +108,8 @@ const QuestionsList = styled.ul`
   width: 324px;
   height: 51px;
   transition: all 0.2s ease-in-out;
-  border-left: ${({ selected }) => (selected ? "2px solid #08A1F8;" : "1px solid #62DAE1")};
+  border-left: ${({ selected }) =>
+    selected ? "2px solid #08A1F8;" : "1px solid #62DAE1"};
 
   &:hover {
     background-color: #eee;
@@ -125,7 +127,7 @@ const FAQList = styled.ul`
 `;
 
 const FAQItem = styled.li`
-  width:620px;
+  width: 620px;
   padding: 0.4rem;
   background-color: #fff;
   border-radius: 0.25rem;
@@ -137,11 +139,11 @@ const QuestionHeader = styled.h3`
   align-items: center;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  font-size:16px;
+  font-size: 16px;
 `;
 
 const Answer = styled.p`
   margin: 0;
-  font-size:12px;
+  font-size: 12px;
 `;
 export default FAQ;

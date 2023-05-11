@@ -1,10 +1,8 @@
 import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
-import { useAppSelector } from "../../store/hooks";
+// import { useAppSelector } from "../../store/hooks";
 import { useFilterDoctors } from "../../hooks/useFilterDoctors";
-import { doctors } from "./fakeData";
-
-
+// import { doctors } from "./fakeData";
 
 const DoctorResult = ({
   doctor,
@@ -15,21 +13,27 @@ const DoctorResult = ({
 }) => {
   return (
     <DoctorResultStyle>
-      <div style={{ display: "flex", justifyContent: "space-between",alignItems:"flex-start" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+        }}
+      >
         <div className="firstChild">
-          <img src={doctor.imageSrc} />
+          <img src={doctor.imageSrc} alt="doctor" />
           <div>
             <h2>{doctor.name}</h2>
             <div className="span">
-              <img src="/assets/stethoscope.svg" />
+              <img src="/assets/stethoscope.svg" alt="stethoscope" />
               <p>{doctor.role}</p>
             </div>
             <div className="span">
-              <img src="/assets/hospital.svg" />
+              <img src="/assets/hospital.svg" alt="hospital" />
               <p>{doctor.venue}</p>
             </div>
             <div className="span">
-              <img src="/assets/location.svg" />
+              <img src="/assets/location.svg" alt="location" />
               <p className=" location">{doctor.distance}</p>
             </div>
           </div>
@@ -63,7 +67,7 @@ const DoctorResult = ({
 
       <div className="scheduleContainer">
         <div className="span">
-          <img src="/assets/calendar.svg" />
+          <img src="/assets/calendar.svg" alt="calendar" />
           <p>{doctor.isAvailable ? "Tersedia hari ini" : ""}</p>
         </div>
         <BaseButton
@@ -72,7 +76,7 @@ const DoctorResult = ({
           radius="5px"
           fontSize="14px"
           color="linear-gradient(0deg,rgba(144, 170, 209, 1) 0%,rgba(82, 150, 229, 1) 100%)"
-          text={isDoctorTab ? "Buat Janji" : 'Mulai Konsultasi'}
+          text={isDoctorTab ? "Buat Janji" : "Mulai Konsultasi"}
           textColor="white"
         />
       </div>
@@ -84,7 +88,14 @@ const DoctorResultsList = ({ isDoctorTab }: { isDoctorTab: boolean }) => {
   const { filteredDoctors } = useFilterDoctors();
   // const { doctors } = useAppSelector(state=>state.filter)
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem",marginTop:"1rem" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        marginTop: "1rem",
+      }}
+    >
       {filteredDoctors.map((doctor, i) => (
         <DoctorResult
           key={i}

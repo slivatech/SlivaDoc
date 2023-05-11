@@ -86,22 +86,22 @@ const article = [
   {
     img: "./assets/allergic.png",
     alt: "allergic",
-    header: 'Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda',
-    subHeader: 'Makanan sehat'
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
   },
   {
     img: "./assets/allergic-2.png",
     alt: "allergic-2",
-    header: 'Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda',
-    subHeader: 'Makanan sehat'
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
   },
   {
     img: "./assets/allergic-3.png",
     alt: "allergic-3",
-    header: 'Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda',
-    subHeader: 'Makanan sehat'
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
   },
-]
+];
 
 const ArticleSection = () => {
   return (
@@ -110,7 +110,7 @@ const ArticleSection = () => {
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
         {buttonList.map((button, i) => (
-            <Button text={button} key={i} active={false} />
+          <Button text={button} key={i} active={false} />
         ))}
       </GroupButtons>
       <ArticleLayout>

@@ -1,76 +1,74 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const AppContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-@media (max-width: 767px) {
-        width:auto;
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  @media (max-width: 767px) {
+    width: auto;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
-
 export const Card = styled.div`
-    background: #FCF6F6;
-    border-radius: 10.5635px;
-    min-width: 292.61px;
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    padding: 13px 17px 15px 25px;
-    
-    .text {
-        display: flex;
-        align-items: center;
-        column-gap: 15px;
-        color: #06152B;
-        margin-bottom: 12px;
-        
-        h1 {
-            font-weight: 700;
-            font-size: 24.0637px;
-            opacity: 0.7;
-        }
-        
-        span {
-            font-weight: 400;
-            font-size: 15.0213px;
-            opacity: 0.7;
-        }
+  background: #fcf6f6;
+  border-radius: 10.5635px;
+  min-width: 292.61px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 13px 17px 15px 25px;
+
+  .text {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    color: #06152b;
+    margin-bottom: 12px;
+
+    h1 {
+      font-weight: 700;
+      font-size: 24.0637px;
+      opacity: 0.7;
     }
-    
+
+    span {
+      font-weight: 400;
+      font-size: 15.0213px;
+      opacity: 0.7;
+    }
+  }
+
+  img {
+    width: 63.38px;
+  }
+
+  button {
+    background: #127fff;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-weight: 400;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .btn-card {
+    padding: 8px 16px;
+    line-height: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
     img {
-        width: 63.38px;
+      width: 12px;
+      margin-left: 3px;
     }
-
-    button {
-        background: #127FFF;
-        border-radius: 5px;
-        color: #FFF;
-        border: none;
-        font-weight: 400;
-        font-size: 10px;
-        cursor: pointer;
-    }
-
-    .btn-card {
-        padding: 8px 16px;
-        line-height: 12px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 3px;
-
-        img {
-            width: 12px;
-            margin-left: 3px;
-        }
-    }
-
+  }
 `;
 
 export const ModalContainer = styled.div`
@@ -90,18 +88,18 @@ export const ModalHeader = styled.div`
   display: flex;
   padding: 16px;
   border-bottom: 1px solid #ddd;
-  color:#06152B;
+  color: #06152b;
   font-weight: 700;
-font-size: 22.78px;
-line-height: 30px;
-margin-bottom: 50px;;
+  font-size: 22.78px;
+  line-height: 30px;
+  margin-bottom: 50px;
 `;
 
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  
-  label{
+
+  label {
     color: #000000;
     display: flex;
 
@@ -112,16 +110,15 @@ export const ModalContent = styled.div`
     justify-content: center;
     font-size: 14.22px;
     align-items: center;
-    margin-bottom:18px ;
-    
+    margin-bottom: 18px;
   }
-  input{
+  input {
     background: #99b2c675;
     border-radius: 10px;
     width: 406px;
     height: 42px;
     border: none;
-    padding:15px;
+    padding: 15px;
   }
 `;
 
@@ -133,7 +130,7 @@ export const ModalActions = styled.div`
 `;
 
 export const ModalButton = styled.button`
-  background-color:#3A36DB;
+  background-color: #3a36db;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -151,16 +148,16 @@ export const Modal = styled.div`
   border-radius: 8px;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
   width: 466px;
-height: 317px;
+  height: 317px;
   margin: 0 auto;
   padding: 24px;
   position: relative;
 `;
 
 export const ModalCloseButton = styled.button`
-  border: 1px ;
-border-radius: 10px;
-color: #3A36DB;
+  border: 1px;
+  border-radius: 10px;
+  color: #3a36db;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -168,13 +165,13 @@ color: #3A36DB;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: linear-gradient(180deg, #DCE3EB 0%, #E3E8EF 100%);
+    background: linear-gradient(180deg, #dce3eb 0%, #e3e8ef 100%);
   }
 `;
 
 export const ModalFooter = styled.div`
-display: flex;
-justify-content: flex-end;
-margin-top: 24px;
-gap: 16px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  gap: 16px;
 `;

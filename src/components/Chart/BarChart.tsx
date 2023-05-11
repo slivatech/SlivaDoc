@@ -13,27 +13,26 @@ const TooltipStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
 
   img {
     position: absolute;
-    bottom:-4px;
-    left:35%;
+    bottom: -4px;
+    left: 35%;
   }
 `;
-const BarContainer = styled.div`
-`;
+const BarContainer = styled.div``;
 
-const TooltipArrow = styled.img`
-  
-`
+// const TooltipArrow = styled.img`
+
+// `
 
 const CustomTooltip = ({ payload, active }: any) => {
   if (active) {
     return (
       <TooltipStyle>
         <p>{`${payload[0].value}`}</p>
-        <img src="/assets/arow.svg" />
+        <img src="/assets/arow.svg" alt="arow" />
       </TooltipStyle>
     );
   }
@@ -113,7 +112,7 @@ const BarChartComponent = () => {
           wrapperStyle={{ outline: "none" }}
           content={<CustomTooltip />}
           cursor={false}
-          position={{ x: barGraphData.x - 18, y: barGraphData.y -25 }}
+          position={{ x: barGraphData.x - 18, y: barGraphData.y - 25 }}
         />
         <XAxis dataKey="name" strokeWidth={0} />
       </BarChart>

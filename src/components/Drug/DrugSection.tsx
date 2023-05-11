@@ -35,7 +35,7 @@ const medicine = [
     img: "./assets/fever.png",
     text: "Demam",
   },
-]
+];
 
 const DrugSection = () => {
   return (

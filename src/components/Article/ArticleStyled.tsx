@@ -5,7 +5,7 @@ export const StyledArticle = styled(Container)`
   padding: 2rem 8%;
 
   & > * {
-    margin-top:0.8rem;
+    margin-top: 0.8rem;
   }
 `;
 
@@ -59,11 +59,11 @@ export const BannerSection = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
-  &>img {
-    margin-top:1rem;
+  & > img {
+    margin-top: 1rem;
   }
-  height:100%;
-  max-width:500px;
+  height: 100%;
+  max-width: 500px;
 `;
 
 export const BannerAds = styled.img`
