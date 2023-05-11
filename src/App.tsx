@@ -13,6 +13,7 @@ import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 import store from "./store/store";
 import { Provider } from "react-redux";
+import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 
 const App = () => {
   const [dimension, setDimension] = React.useState({
@@ -46,8 +47,9 @@ const App = () => {
       <DetailKlinik />
       <CustomerListPage />
       <TablePage /> */}
-        <BookingDoctorPage />
+        {/* <BookingDoctorPage /> */}
         {/* <BookingPetHospitalPage /> */}
+        <ScheduleListPage />
       </ThemeProvider>
     </Provider>
   );
