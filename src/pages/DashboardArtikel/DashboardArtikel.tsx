@@ -242,7 +242,7 @@ export const useAlertColumn = () => {
             ),
         }),
         table.accessor("title", {
-            size: 250,
+            size: 270,
             id: "titlte",
             header: "Title",
             cell: (props: any) => (
@@ -250,7 +250,7 @@ export const useAlertColumn = () => {
             ),
         }),
         table.accessor("category", {
-            size: 150,
+            size: 170,
             id: "category",
             enableSorting:false,
             header: "Category",
@@ -259,12 +259,12 @@ export const useAlertColumn = () => {
             ),
         }),
         table.accessor("description", {
-            size: 200,
+            size: 150,
             id: "description",
             enableSorting:false,
             header: "Description",
             cell: (props: any) => (
-                <p>{props.row.original.description}</p>
+                <p style={{textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{props.row.original.description}</p>
             ),
         }),
         table.accessor("image", {

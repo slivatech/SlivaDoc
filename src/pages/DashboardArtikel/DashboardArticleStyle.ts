@@ -20,6 +20,7 @@ export const Content = styled.div`
     }
 
     .table {
+        width: auto;
         min-height: 100%;
         background-color: #fff;
         border-radius: 10px;
