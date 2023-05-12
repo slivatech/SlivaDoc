@@ -10,9 +10,10 @@ import { defaultTheme } from "./styles/Theme";
 // import TablePage from "./pages/Example/TablePage";
 // import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 // import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
-import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
+// import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 import store from "./store/store";
 import { Provider } from "react-redux";
+import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 
 const App = () => {
   // const {width} = useWindowDimensions()
@@ -29,7 +30,8 @@ const App = () => {
       <CustomerListPage />
       <TablePage /> */}
         {/* <BookingDoctorPage /> */}
-        <BookingPetHospitalPage />
+        {/* <BookingPetHospitalPage /> */}
+        <ScheduleListPage />
       </ThemeProvider>
     </Provider>
   );
