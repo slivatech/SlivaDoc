@@ -23,81 +23,32 @@ interface IProfile {
     placeholder?: string;
 }
 
-interface ICard {
-    total: any;
-    title: string;
-    btn?: any;
-    image: string
-}
+const countries = [
+    {
+        value: 'Indonesia'
+    },
+    {
+        value: 'India'
+    },
+    {
+        value: 'Italy'
+    },
+]
+const cities = [
+    {
+        value: 'Semarang'
+    },
+    {
+        value: 'Surabaya'
+    },
+    {
+        value: 'Surakarta'
+    },
+]
+
 const EditProfil:  React.FC<EditProfilProps> = ({width}) => {
     const [place, setPlace] = useState('select one')
 
-    const profilePlace = [
-        {
-            id: 1,
-            place: ['Semarang', 'Surabaya', 'Surakarta'] 
-        },
-        {
-            id: 2,
-            place: ['Indonesia', 'India', 'Italy']
-            
-        },
-    ]
-
-    const countries = [
-        {
-            value: 'Indonesia'
-        },
-        {
-            value: 'India'
-        },
-        {
-            value: 'Italy'
-        },
-    ]
-    const cities = [
-        {
-            value: 'Semarang'
-        },
-        {
-            value: 'Surabaya'
-        },
-        {
-            value: 'Surakarta'
-        },
-    ]
-
-    const jobAp = [
-        {
-            id: 1,
-            total: 16,
-            title: "Total Transaksi",
-            image: payment,
-            
-        },
-        {
-            id: 2,
-            total: 59,
-            title: "Total Konsultasi",
-            image: consult,
-        },
-        {
-            id: 3,
-            total: "Rp.2.000.000",
-            title: "Saldo",
-            image: wallet,
-            btn : [
-                {
-                    text : "TopUp",
-                    icon : topUp
-                },
-                {
-                    text : "Tarik Tunai",
-                    icon : tarik
-                }
-            ]
-        }
-    ]
 
     function Input (props: IProfile) {
         return (
