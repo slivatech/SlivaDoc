@@ -138,7 +138,7 @@ const DashboardDoctorArticel = () => {
                 >
                     <div style={{padding: '1.5rem'}}>
                         <div style={{marginTop: '7rem', display: 'flex', columnGap:'3rem', marginBottom: '2rem'}}>
-                            <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
+                        <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
                                 <i className="fa-solid fa-chevron-left" style={{color: "#06152b"}}></i>
                             </button>
                             <h5>Add a New Article</h5>
