@@ -49,3 +49,21 @@ export const months = [
       total: 32,
     },
 ];
+
+export const analytics = [
+  { 
+    name: 'Total Article', 
+    value: 124, 
+    fill: '#3A36DB' 
+  },
+  { 
+    name: 'Draft', 
+    value: 30, 
+    fill: '#FF69B4' 
+  },
+  { 
+    name: 'Total Visit', 
+    value: 60, 
+    fill: '#03A89E' 
+  },
+];

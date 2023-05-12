@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Cell, IndeterminateCheckbox, TableV8, createColumnHelper } from '../../components/Common/Tablev8'
-import { article, months } from './data'
+import { article, months, analytics } from './data'
 import { Link } from 'react-router-dom'
-import { ImageColumn, Content, Form, Profile } from './DashboardArticleStyle'
+import { ImageColumn, Content, Form, Profile, Chart } from './DashboardArticleStyle'
 import BarChartVertical from '../../components/Chart/BarChartVertical'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import BaseButton from '../../components/Common/Buttons/BaseButton'
@@ -10,6 +10,7 @@ import ModalRight from '../../components/Common/Modal/ModalRight'
 import downloadIcon from '../../assets/icon/Download.svg'
 import Dropdown from '../../components/Common/Dropdown/Dropdown'
 import TabGroup, { TTab } from './TabGroup'
+import PieChartComp from '../../components/Chart/PieChart'
 
 const categories = [
     {
@@ -22,7 +23,6 @@ const categories = [
         value: 'Bulu harimau'
     },
 ]
-
 
 const types:TTab[] = [
     {   id: 1,
@@ -114,6 +114,7 @@ const DashboardArtikel = () => {
                 />
             </div>
         {
+            //section modal update article
             update &&
             <ModalRight
                 open={update} 
@@ -174,10 +175,11 @@ const DashboardArtikel = () => {
                     </Form>
                 </div>
             </ModalRight>
+            // end of section modal update article
         }
         </div>
         {
-            // section upload
+            // section upload tab
             tab === types[0].id && (
             <Content>
                 <div className='table'>
@@ -208,8 +210,8 @@ const DashboardArtikel = () => {
                         />
                     </div>
                 </div>
-                <div className='chart'>
-                    <div style={{padding: '30px'}}>
+                <Chart>
+                    <div className='bar-chart'>
                         <h5 style={{marginBottom: "30px"}}>Article Add by Month</h5>
                         <BarChartVertical
                             data={months}
@@ -217,11 +219,23 @@ const DashboardArtikel = () => {
                             right='total'
                         />
                     </div>
-                </div>
+                    <div className='pie-chart'>
+                        <h5 style={{marginBottom: "30px"}}>Article Analytics</h5>
+                        <PieChartComp
+                            data={analytics}
+                            width={'100%'}
+                            height={300}
+                            innerRadius={50}
+                            outerRadius={100}
+                        />
+                    </div>
+                </Chart>
             </Content>
-        )}
+            )
+            // end of section upload tab
+        }
         {
-            // section draft
+            // section draft tab
             tab === types[1].id && (
             <Content>
                 <div className='table'>
@@ -252,8 +266,8 @@ const DashboardArtikel = () => {
                         />
                     </div>
                 </div>
-                <div className='chart'>
-                    <div style={{padding: '30px'}}>
+                <Chart>
+                    <div className='bar-chart'>
                         <h5 style={{marginBottom: "30px"}}>Article Add by Month</h5>
                         <BarChartVertical
                             data={months}
@@ -261,10 +275,11 @@ const DashboardArtikel = () => {
                             right='total'
                         />
                     </div>
-                </div>
+                </Chart>
             </Content>
-        )}
-        
+            )
+            // end of section draft tab
+        } 
     </Container>
   )
 }
