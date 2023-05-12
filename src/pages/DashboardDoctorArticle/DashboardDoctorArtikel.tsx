@@ -29,6 +29,11 @@ const datas = [
   ];
   
 const DashboardDoctorArticel = () => {
+    const [section, setSection] = useState('upload');
+
+    const handleSectionChange = (newSection: React.SetStateAction<string>) => {
+      setSection(newSection);
+    }
     const { alertColumn } =  useAlertColumn();
     const [update, setUpdate] = useState<any>(false);
     const [category, setCategory] = useState('Category')
@@ -87,26 +92,28 @@ const DashboardDoctorArticel = () => {
     <Container style={{ background: 'rgba(153, 178, 198, 0.2)'}}>
         <h2 style={{ fontWeight: 700, fontSize: '26px' }}>Article</h2>
         <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', margin: '30px 0 34px'}}>
-            <div style={{display: 'flex'}}>
-                <BaseButton
-                    text="Upload"
-                    textColor="#fff"
-                    color="#3A36DB"
-                    fontSize="14px"
-                    radius="10px"
-                    height="44px"
-                    width="100px"
-                />
-                <BaseButton
-                    text="Draft"
-                    textColor="#06152B"
-                    color="#FFF"
-                    fontSize="14px"
-                    radius="10px"
-                    height="44px"
-                    width="100px"
-                />
-            </div>
+           <div style={{display:'flex'}}>
+        <BaseButton
+          text="Upload"
+          textColor={section === 'upload' ? "#FFFF" : "#06152B"}
+          color={section === 'upload' ? "#3A36DB" : "#FFFF"}
+          fontSize="14px"
+          radius="10px"
+          height="44px"
+          width="100px"
+          onClick={() => handleSectionChange('upload')}
+        />
+        <BaseButton
+          text="Draft"
+          textColor={section === 'draft' ? "#FFFF" : "#06152B"}
+          color={section === 'draft' ? "#3A36DB" : "#FFFF"}
+          fontSize="14px"
+          radius="10px"
+          height="44px"
+          width="100px"
+          onClick={() => handleSectionChange('draft')}
+        />
+      </div>
             <div>
                 <BaseButton
                     text="Upload"
@@ -180,7 +187,8 @@ const DashboardDoctorArticel = () => {
                 </ModalRight>
             }
         </div>
-        
+        {section === 'upload' && (
+        // section for upload
         <Content>
             <div className='table'>
                 <div style={{display: 'flex', justifyContent: 'space-between', padding: '30px 28px'}}>
@@ -237,6 +245,67 @@ const DashboardDoctorArticel = () => {
          </Chart>
         </Content>
        
+      )}
+       {section === 'draft' && (
+        // section for draft
+        <Content>
+            <div className='table'>
+                <div style={{display: 'flex', justifyContent: 'space-between', padding: '30px 28px'}}>
+                    <h5>List Article</h5>
+                    <Link to='/' style={{fontSize: '12px', textDecoration: 'none'}}>See more</Link>
+                </div>
+                <div style={{width:'100%', padding: '0 28px 30px'}}>
+                    <TableV8 
+                        data={data}
+                        ref={alertRef}
+                        //   paginationStyle='firstlast'
+                        columns={alertColumn}  
+                        pagination={pagination}
+                        setPagination={setPagination}
+                        pageCount={pageCount}
+                        paddingStyle={{
+                            td: "0.1rem 0.2rem 0rem",
+                            th: "0 0.5rem 0.1rem",
+                            tr: "0.5rem 0",
+                        }}
+                        onCheckRow={handleCheckRow}
+                        onRowClick={toDetail}
+                        enableSorting={true}
+                        stickyHeader={true}
+                        // stickyFromTop={0} 
+                        noDataLabel={''}                       
+                    />
+                </div>
+            </div>
+            
+            <Chart>
+            <div className='chart'>
+                <div style={{padding: '30px'}}>
+                    <h5 style={{marginBottom: "30px"}}>Article Add by Month</h5>
+                    <BarChartVertical
+                        data={months}
+                        left="name"
+                        right='total'
+                    />
+                </div>
+            </div>
+            <div className='pie-chart'>
+          
+            <h5 >Article Analytics</h5>
+        <PieChartComp
+             data={datas}
+             width={400}
+             height={400}
+             innerRadius={50}
+             outerRadius={100}
+             />
+    
+            </div>
+         </Chart>
+        </Content>
+       
+      )}
+        
     </Container>
   )
 }

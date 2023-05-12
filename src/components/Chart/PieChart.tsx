@@ -97,6 +97,7 @@ return (
   dataKey="value"
   cornerRadius={10}
   paddingAngle={0}
+
 />
 <Legend layout="horizontal" verticalAlign="bottom" align="center" />
 </PieChart>

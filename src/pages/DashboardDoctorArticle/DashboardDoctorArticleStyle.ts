@@ -59,7 +59,10 @@ export const Content = styled.div`
         border-radius: 10px;
     }
     
-    
+    @media (max-width: 720px) {
+
+flex-direction: column;
+  }
 `;
 export const Chart =styled.div`
 display: flex;
