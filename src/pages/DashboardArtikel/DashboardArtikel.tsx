@@ -9,6 +9,7 @@ import BaseButton from '../../components/Common/Buttons/BaseButton'
 import ModalRight from '../../components/Common/Modal/ModalRight'
 import downloadIcon from '../../assets/icon/Download.svg'
 import Dropdown from '../../components/Common/Dropdown/Dropdown'
+import TabGroup from './TabGroup'
 
 const categories = [
     {
@@ -22,10 +23,13 @@ const categories = [
     },
 ]
 
+const types = ['Upload', 'Draft']
+
 const DashboardArtikel = () => {
     const { alertColumn } =  useAlertColumn();
     const [update, setUpdate] = useState<any>(false);
-    const [category, setCategory] = useState('Category')
+    const [category, setCategory] = useState('Category');
+    const [tab, setTab] = useState(types[0]);
     const [data, setData] = useState(article);
     const [selectedRow, setSelectedRow] = useState<any>([]);
     const alertRef: any = useRef(null);
@@ -100,6 +104,15 @@ const DashboardArtikel = () => {
                     height="44px"
                     width="100px"
                 />
+                {/* <TabGroup
+                    types={types}
+                    active={tab}
+                    setActive={setTab}
+                >
+                    <div>
+                        <p>halooooo</p>
+                    </div>
+                </TabGroup> */}
             </div>
             <div>
                 <BaseButton
@@ -116,20 +129,61 @@ const DashboardArtikel = () => {
                     onClick={ () => setUpdate(true)}
                 />
             </div>
-            {
-                update &&
-                <ModalRight
-                    open={update} 
-                    setIsOpen={setUpdate} 
-                    isBackgroundClick={true}
-                >
-                    <div style={{padding: '1.5rem'}}>
-                        <div style={{display: 'flex', columnGap:'3rem', margin: '2rem 0'}}>
-                            <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
-                                <i className="fa-solid fa-chevron-left" style={{color: "#06152b"}}></i>
-                            </button>
-                            <h5>Add a New Article</h5>
-                        </div>
+        </div>
+        <Content>
+            <div className='table'>
+                <div style={{display: 'flex', justifyContent: 'space-between', padding: '30px 28px'}}>
+                    <h5>List Article</h5>
+                    <Link to='/' style={{fontSize: '12px', textDecoration: 'none'}}>See more</Link>
+                </div>
+                <div style={{width:'100%', padding: '0 28px 30px'}}>
+                    <TableV8 
+                        data={data}
+                        ref={alertRef}
+                        //   paginationStyle='firstlast'
+                        columns={alertColumn}  
+                        pagination={pagination}
+                        setPagination={setPagination}
+                        pageCount={pageCount}
+                        paddingStyle={{
+                            td: "0.1rem 0.2rem 0rem",
+                            th: "0 0.5rem 0.1rem",
+                            tr: "0.5rem 0",
+                        }}
+                        onCheckRow={handleCheckRow}
+                        onRowClick={toDetail}
+                        enableSorting={true}
+                        stickyHeader={true}
+                        // stickyFromTop={0} 
+                        noDataLabel={''}                       
+                    />
+                </div>
+            </div>
+            <div className='chart'>
+                <div style={{padding: '30px'}}>
+                    <h5 style={{marginBottom: "30px"}}>Article Add by Month</h5>
+                    <BarChartVertical
+                        data={months}
+                        left="name"
+                        right='total'
+                    />
+                </div>
+            </div>
+        </Content>
+        {
+            update &&
+            <ModalRight
+                open={update} 
+                setIsOpen={setUpdate} 
+                isBackgroundClick={true}
+            >
+                <div style={{padding: '1.5rem'}}>
+                    <div style={{display: 'flex', columnGap:'3rem', margin: '2rem 0'}}>
+                        <button style={{border: 'none', background: 'transparent', cursor: 'pointer'}} onClick={ () => setUpdate(false)}>
+                            <i className="fa-solid fa-chevron-left" style={{color: "#06152b"}}></i>
+                        </button>
+                        <h5>Add a New Article</h5>
+                    </div>
                     <Form>
                         <div>
                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -174,52 +228,10 @@ const DashboardArtikel = () => {
                                 height="44px"
                             />
                         </div>
-                </Form>
-                    </div>
-                </ModalRight>
-            }
-        </div>
-        <Content>
-            <div className='table'>
-                <div style={{display: 'flex', justifyContent: 'space-between', padding: '30px 28px'}}>
-                    <h5>List Article</h5>
-                    <Link to='/' style={{fontSize: '12px', textDecoration: 'none'}}>See more</Link>
+                    </Form>
                 </div>
-                <div style={{width:'100%', padding: '0 28px 30px'}}>
-                    <TableV8 
-                        data={data}
-                        ref={alertRef}
-                        //   paginationStyle='firstlast'
-                        columns={alertColumn}  
-                        pagination={pagination}
-                        setPagination={setPagination}
-                        pageCount={pageCount}
-                        paddingStyle={{
-                            td: "0.1rem 0.2rem 0rem",
-                            th: "0 0.5rem 0.1rem",
-                            tr: "0.5rem 0",
-                        }}
-                        onCheckRow={handleCheckRow}
-                        onRowClick={toDetail}
-                        enableSorting={true}
-                        stickyHeader={true}
-                        // stickyFromTop={0} 
-                        noDataLabel={''}                       
-                    />
-                </div>
-            </div>
-            <div className='chart'>
-                <div style={{padding: '30px'}}>
-                    <h5 style={{marginBottom: "30px"}}>Article Add by Month</h5>
-                    <BarChartVertical
-                        data={months}
-                        left="name"
-                        right='total'
-                    />
-                </div>
-            </div>
-        </Content>
-        
+            </ModalRight>
+        }
     </Container>
   )
 }
