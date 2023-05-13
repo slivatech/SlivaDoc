@@ -46,22 +46,22 @@ const OfferSection: FC = () => {
       <SwiperWrapper breakPoints={breakPoints}>
         <>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/Partnership.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/VIP-Service.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/Reseller-SlivaShop.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/Layanan-Dokter.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/Discount-SlivaShop.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferImage src="./assets/BERMITRA DENGAN KAMI!.png" />
+            <OfferImage src="./assets/Investasikan SlivaDoc.png" />
           </SwiperSlide>
         </>
       </SwiperWrapper>

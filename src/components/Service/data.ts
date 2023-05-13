@@ -5,43 +5,43 @@ interface IService {
 
 export const servicesList: IService[] = [
   {
-    imageSrc: "./assets/dog.png",
+    imageSrc: "./assets/medis-preventif.png",
     title: "Medis Preventif",
   },
   {
-    imageSrc: "./assets/vaccine.png",
+    imageSrc: "./assets/medis-kuratif.png",
     title: "Medis Kuratif",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/bedah.png",
     title: "Bedah",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/rawat-inap.png",
     title: "Rawat Inap",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/grooming.png",
     title: "Grooming",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/akupuntur.png",
     title: "Akupuntur",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/housecall.png",
     title: "House Call",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/rontgen.png",
     title: "Rongent",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/ugd.png",
     title: "Unit Gawat Darurat (UGD)",
   },
   {
-    imageSrc: "./assets/vet.png",
+    imageSrc: "./assets/usg.png",
     title: "Ultrasonografi (USG)",
   },
 ];
