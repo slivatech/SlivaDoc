@@ -26,28 +26,46 @@ export const article = [
 ];
 
 export const months = [
-  {
-    name: "Jan",
-    total: 23,
+    {
+      name: "Jan",
+      total: 23,
+    },
+    {
+      name: "Feb",
+      total: 15,
+    },
+    {
+      name: "Mar",
+      total: 30,
+    },
+    {
+      name: "Apr",
+      total: 22,
+    },
+    {
+      name: "May",
+      total: 10,
+    },
+    {
+      name: "Jun",
+      total: 32,
+    },
+];
+
+export const analytics = [
+  { 
+    name: 'Total Article', 
+    value: 124, 
+    fill: '#3A36DB' 
   },
-  {
-    name: "Feb",
-    total: 15,
+  { 
+    name: 'Draft', 
+    value: 30, 
+    fill: '#FF69B4' 
   },
-  {
-    name: "Mar",
-    total: 30,
-  },
-  {
-    name: "Apr",
-    total: 22,
-  },
-  {
-    name: "May",
-    total: 10,
-  },
-  {
-    name: "Jun",
-    total: 32,
+  { 
+    name: 'Total Visit', 
+    value: 60, 
+    fill: '#03A89E' 
   },
 ];

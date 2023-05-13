@@ -11,6 +11,9 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   column-gap: 1rem;
+    @media (max-width: 720px) {
+        flex-direction: column;
+    }
 
   h5 {
     font-weight: 500;
@@ -19,19 +22,33 @@ export const Content = styled.div`
     opacity: 0.7;
   }
 
-  .table {
-    width: auto;
-    min-height: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-  }
+    .table {
+        // width: auto;
+        min-height: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        flex-basis: 70%;
+    }
+`;
 
-  .chart {
-    width: 30%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-  }
+export const Chart =styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+
+        .bar-chart {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 30px;
+        }
+        .pie-chart{
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 30px;
+        }
 `;
 
 export const Form = styled.div`
