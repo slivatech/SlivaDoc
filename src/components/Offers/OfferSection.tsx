@@ -58,7 +58,7 @@ const OfferSection: FC = () => {
             <OfferImage src="./assets/Layanan-Dokter.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <OfferiImage src="./assets/Discount-SlivaShop.png" />
+            <OfferImage src="./assets/Discount-SlivaShop.png" />
           </SwiperSlide>
           <SwiperSlide>
             <OfferImage src="./assets/Investasikan SlivaDoc.png" />
