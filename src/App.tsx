@@ -18,7 +18,7 @@ import TanyaDokter from "./pages/TanyaDokter/TanyaDokter";
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
-import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
+// import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
 
 const App = () => {
@@ -40,7 +40,7 @@ const App = () => {
         {/* <Route path='/profileUpdate' element={<EditProfil />}/> */}
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
-        <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
+        {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
         <Route path='/tabs' element={<TabGroup />}/>
       </Routes>
     </ThemeProvider>
