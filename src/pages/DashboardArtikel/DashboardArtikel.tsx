@@ -129,7 +129,7 @@ const DashboardArtikel = () => {
                         <h5>Add a New Article</h5>
                     </div>
                     <Form>
-                        <div>
+                        <div> 
                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <Profile>
                                     <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}></i>
