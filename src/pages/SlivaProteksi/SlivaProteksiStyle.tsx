@@ -28,6 +28,7 @@ export const PaketContainer=styled.div`
     display:flex;
     justify-content: center;
 margin-top:3.75rem;
+
 `;
 
 export const Section=styled.div`
@@ -72,22 +73,25 @@ margin-top: 5.125rem;
 export const SectionRegister=styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-bottom:50px;
+
     justify-content: center;
     align-items: center;
+    margin:0;
+
+
     div{
         margin-top: 59px;
         display:flex;
         flex-direction: column;
         align-items: center;
-        margin-right:2.875rem;
         height:15.525rem;
+       
         h3{
             display: flex;
             justify-content: center;
             align-items: center;
             width: 48px;
-            height: 47px;
+            height: 60px;
             font-weight: 700;
             font-size: 14px;
             line-height: 22px;
@@ -95,10 +99,17 @@ export const SectionRegister=styled.div`
             background: linear-gradient(180deg, #C9F3F5 100%, rgba(236, 228, 228, 0) 100%);
             border-radius: 50%;
         }
+        
+        div{
+            height: 100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
         h1{
             color: #1C1C1C;
             text-align: center;
-            margin-top: 20px;
+   
             font-style: normal;
             font-weight: 700;
             font-size: 20px;
@@ -127,7 +138,21 @@ export const SectionRegister=styled.div`
             box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.25);
             border-radius: 5px;
         }
+       
+
     }
+    @media only screen and (max-width: 768px) {
+            width: 100%;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            gap:1;
+            height: 10rem;
+            
+                
+                }
+    }
+
 `;
 
 export const FAQContainer=styled.div`

@@ -4,6 +4,169 @@ import image1 from "../../assets/icon/image1.png"
 import image2 from "../../assets/icon/image2.png"
 import image3 from "../../assets/icon/image3.png"
 import image4 from "../../assets/icon/image4.png"
+import truepic from "../../assets/icon/true.png";
+import falsepic from "../../assets/icon/false.png";
+import protectpic from "../../assets/icon/ProteksiLogo.svg";
+export const questionsFaq = [
+  {
+    id: 1,
+    question: "Manfaat SlivaProteksi",
+    faqs: [
+      {
+        id: 1,
+        questionId: 1,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "Lorem ? ",
+      },
+      {
+        id: 2,
+        questionId: 1,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "manfaat?",
+      },
+      {
+        id: 3,
+        questionId: 1,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "What are the benefits?",
+      },
+    ],
+  },
+  {
+    id: 2,
+    question: "Keanggotaan SlivaProteksi",
+    faqs: [
+      {
+        id: 4,
+        questionId: 2,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "lorem?",
+      },
+      {
+        id: 5,
+        questionId: 2,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "lorem?",
+      },
+    ],
+  },
+  {
+    id: 3,
+    question: "Biaya SlivaProteksi",
+    faqs: [
+      {
+        id: 6,
+        questionId: 3,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "lorem?",
+      },
+      {
+        id: 7,
+        questionId: 3,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "What is ?",
+      },
+    ],
+  },
+  {
+    id: 4,
+    question: "Chat SlivaProteksi",
+    faqs: [
+      {
+        id: 8,
+        questionId: 4,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "Wlorem ipsum?",
+      },
+      {
+        id: 9,
+        questionId: 4,
+        answer: "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        questions: "What is ?",
+      },
+    ],
+  },
+  
+];
+
+
+export const packages = [
+  {
+    paket: "Chat Dokter",
+    chat: truepic,
+    drugs: falsepic,
+    lab:falsepic,
+    outpatient:falsepic,
+    inpatient:falsepic,
+  },
+  {
+    paket: 'Register',
+    chat: truepic,
+    drugs: truepic,
+    lab:truepic,
+    outpatient:truepic,
+    inpatient:falsepic,
+  },
+  {
+    paket: 'Plus',
+    chat: truepic,
+    drugs: truepic,
+    lab:truepic,
+    outpatient:truepic,
+    inpatient:truepic,
+  },
+];
+
+export const cardData = [
+  {
+    logo: protectpic,
+    packageType: "Chat Dokter",
+    description: "Unlimited chat dokter specialis 24 jam setiap hari",
+    pricePerMonth: 50000,
+    backgroundColor:
+      "linear-gradient(180deg, #B4B7B7 0%, rgba(234, 243, 245, 0) 100%)",
+  },
+  {
+    logo: protectpic,
+    packageType: "Reguler",
+    description: "100 juta per tahun cashless biaya rawat jalan & obat-obatan",
+    pricePerMonth: 150000,
+    backgroundColor:
+      "linear-gradient(180deg, #D9D9D9 0%, rgba(234, 243, 245, 0) 100%);",
+  },
+  {
+    logo: protectpic,
+    packageType: "plus",
+    description: "100 juta per tahun cashless biaya rawat inap & obat-obatan",
+    pricePerMonth: 250000,
+    backgroundColor:
+      "linear-gradient(180deg, #AAE6EA 0%, rgba(234, 243, 245, 0) 100%);",
+  },
+];
+export const sectionRegister = [
+  {
+    number: 1,
+    title: "Pilih Paket Asuransi",
+    description: "Pilih Paket dan Periode berlangganan sesuai kebutuhan Anda."
+  },
+  {
+    number: 2,
+    title: "Isi Detail Diri",
+    description: "Isi form registrasi diri seperti nama, alamat, nomor telpon dan lainnya."
+  },
+  {
+    number: 3,
+    title: "Lakukan Pembayaran",
+    description: "Pilih metode pembayaran sesuai kebutuhan Anda."
+  },
+  {
+    number: 4,
+    title: "Member SlivaProteksi Aktif!",
+    description: "Anda berhasil menjadi member dan bisa manfaatkan semua kelebihannya.",
+    note: "Khusus SlivaProteksi Reguler dan SlivaProteksi Plus membutuhkan waktu 1-3 hari kerja"
+  }
+];
+
 
 export const questions = [
     {

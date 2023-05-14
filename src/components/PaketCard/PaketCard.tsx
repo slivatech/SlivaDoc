@@ -22,6 +22,10 @@ height: 262px;
       : 'linear-gradient(180deg, #B4B7B7 0%, rgba(234, 243, 245, 0) 100%)'};
   border-radius: 5px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+  }
 `;
 
 const Logo = styled.img`

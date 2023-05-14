@@ -67,7 +67,7 @@ const Reguler:React.FC<RegulerProps> = ({width}) => {
           </SectionTop>
           <BenefitContainer>
           <h1>Pilihan Dokter Hewan Terlengkap</h1>
-          <div style={{width:"655px"}}>
+          <div>
           <Benefits benefits={benefits} columns={2} rows={2}/>
           </div>
           </BenefitContainer>

@@ -27,10 +27,14 @@ const DoctorList: React.FC<Props> = ({ doctors }) => {
 
 const DoctorListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -38,13 +42,12 @@ const DoctorListContainer = styled.div`
 const DoctorListItem = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 136px;
   cursor: pointer;
 `;
 
 const DoctorImage = styled.img`
   width: 37px;
-height: 37px;
+  height: 37px;
   border-radius: 50%;
 `;
 
@@ -54,11 +57,10 @@ const DoctorDetails = styled.div`
   margin-left: 1rem;
 `;
 
-
 const DoctorSpecialty = styled.span`
   font-weight: 500;
-font-size: 16px;
-line-height: 22px;
+  font-size: 16px;
+  line-height: 22px;
   text-align: center;
 `;
 

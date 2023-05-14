@@ -23,6 +23,11 @@ flex-direction: column;
   padding: 20px;
   width: 1116px;
   height: 521px;
+  @media only screen and (max-width: 768px) {
+    width:100%;
+  
+
+  }
   
 `;
 

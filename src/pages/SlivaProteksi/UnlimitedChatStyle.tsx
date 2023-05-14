@@ -58,6 +58,18 @@ height: 30px;
     margin-top:24px;
     cursor:pointer;
  }
+ @media only screen and (max-width: 768px) {
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    h1{
+        width:100%;
+        text-align: center;
+    }
+   
+ }
 `;
 
 export const DocterContainer= styled.div`
@@ -70,17 +82,33 @@ padding-top: 56px;
 padding-bottom:24px;
 padding-right:158px;
       display: flex;
+      gap:6rem;
     flex-wrap: wrap;
     justify-content: center;
     background: #EDEFF4;
 box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 h1{
+    
     width:252px;
     font-weight: 700;
 font-size: 24px;
 line-height: 36px;
 color: #1C1C1C;
+}
+@media only screen and (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    gap:0;
+    padding:30px;      
+    margin:auto;
+    margin-top: 50px;
+    height: auto;
+
+    h1{
+        width: 100%;
+        text-align: center;
+    }
 }
 `;
 
@@ -102,6 +130,7 @@ img{
 height: 3px;
 
 }
+
 `;
 
 export const SliderContainer=styled.div`
@@ -116,6 +145,10 @@ export const SliderContainer=styled.div`
     padding:26px;
     width: 1096px;
 height: 378px;
+@media only screen and (max-width: 768px) {
+    width: 100%;
+    height:100%;
+}
 `;
 
 export const FaqContainer =styled.div`
@@ -123,4 +156,10 @@ export const FaqContainer =styled.div`
     justify-content: center;
     width:924px;
     margin: auto;
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin:auto 5px;
+
+}
+
 `;

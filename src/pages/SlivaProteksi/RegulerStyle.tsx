@@ -30,7 +30,7 @@ font-size: 8px;
 line-height: 10px;
 text-align: center;
 color:#ffff;
-background: linear-gradient(180deg, rgba(111, 158, 214, 0.4) 0%, #90AAD1 100%);
+background: linear-gradient(180deg, #69717B 0%, #90AAD1 100%);
 border-radius: 5px;
  }
  h1{
@@ -58,6 +58,18 @@ height: 30px;
     margin-top:24px;
     cursor:pointer;
  }
+ @media only screen and (max-width: 768px) {
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    h1{
+        width:100%;
+        text-align: center;
+    }
+   
+ }
 `;
 
 export const BenefitContainer =styled.div`
@@ -77,10 +89,21 @@ font-size: 24px;
 line-height: 36px;
 color: #1C1C1C;
 
-
-
+}
+@media only screen and (max-width: 768px) {
+    padding: 0;
+    h1{
+        display: none;
+        
+    }
 }
 
+@media only screen and (max-width: 768px) {
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+   
+}
 `;
 export const Heading=styled.h1`
    display:flex;
@@ -114,6 +137,11 @@ export const FaqContainer =styled.div`
     justify-content: center;
     width:924px;
     margin: auto;
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin:auto 5px;
+
+}
 `;
 
 export const SliderContainer=styled.div`
@@ -128,6 +156,10 @@ export const SliderContainer=styled.div`
     padding:26px;
     width: 1096px;
 height: 378px;
+@media only screen and (max-width: 768px) {
+    width: 100%;
+    height:100%;
+}
 `;
 
 export const SponsorContainer =styled.div`
@@ -151,6 +183,20 @@ span{
 img{
     width: 656px;
 height: 153px;
+}
+@media only screen and (max-width: 768px) {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    h1{
+        width: 100%;
+        margin: auto;
+        margin-right: 280px;
+        margin-bottom:40px;
+    }
 }
 `;
 

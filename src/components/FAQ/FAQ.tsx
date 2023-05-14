@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 interface Question {
@@ -24,7 +24,15 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
 
 
   const [showAnswers, setShowAnswers] = useState<{ [key: number]: boolean }>({});
-
+  useEffect(() => {
+    if (questions.length > 0) {
+      const firstQuestion = questions[0];
+      setSelectedQuestion(firstQuestion.id);
+      setSelectedFAQs(firstQuestion.faqs);
+      setShowAnswers({ [firstQuestion.faqs[0].id]: true });
+    }
+  }, [questions]);
+  
   const handleQuestionClick = (questionId: number) => {
     const selectedQuestion = questions.find((question) => question.id === questionId);
     if (selectedQuestion) {
@@ -58,24 +66,23 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
       </QuestionsContainer>
       <FAQsContainer>
         <FAQList>
-          {selectedFAQs.map((faq) => (
-            <FAQItem key={faq.id}>
-              <QuestionHeader onClick={() => toggleAnswer(faq.id)}>
-                {faq.questions}{" "}
-                {showAnswers[faq.id] ? (
-                  <span role="img" aria-label="Hide Answer">
-                    -
-                  </span>
-                ) : (
-                  <span role="img" aria-label="Show Answer">
-                    +
-                  </span>
-                )}
-              </QuestionHeader>
-           
-              {showAnswers[faq.id] && <Answer>{faq.answer}</Answer>}
-            </FAQItem>
-          ))}
+        {selectedFAQs.map((faq) => (
+  <FAQItem key={faq.id}>
+    <QuestionHeader onClick={() => toggleAnswer(faq.id)}>
+      {faq.questions}{" "}
+      {showAnswers[faq.id] ? (
+        <span role="img" aria-label="Hide Answer">
+          -
+        </span>
+      ) : (
+        <span role="img" aria-label="Show Answer">
+          +
+        </span>
+      )}
+    </QuestionHeader>
+    {showAnswers[faq.id] && <Answer>{faq.answer}</Answer>}
+  </FAQItem>
+))}
         </FAQList>
       </FAQsContainer>
     </Container>
@@ -101,17 +108,17 @@ const QuestionsList = styled.ul`
 
   const QuestionItem = styled.li<{ selected: boolean }>`
   padding: 1rem;
-  background-color: ${({ selected }) => (selected ? "#eee" : "#fff")};
-  color: ${({ selected }) => (selected ? "#333" : "#555")};
+  background-color: #fff;
+  color: ${({ selected }) => (selected ? "#505050" : "#B7B3B3")};
   cursor: pointer;
   width: 324px;
   height: 51px;
   transition: all 0.2s ease-in-out;
   border-left: ${({ selected }) => (selected ? "2px solid #08A1F8;" : "1px solid #62DAE1")};
 
-  &:hover {
-    background-color: #eee;
-  }
+  font-weight: 700;
+font-size: 20px;
+line-height: 22px;
 `;
 
 const FAQsContainer = styled.div`
@@ -129,6 +136,8 @@ const FAQItem = styled.li`
   padding: 0.4rem;
   background-color: #fff;
   border-radius: 0.25rem;
+  font-weight: 700;
+
 `;
 
 const QuestionHeader = styled.h3`
@@ -137,11 +146,18 @@ const QuestionHeader = styled.h3`
   align-items: center;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  font-size:16px;
+  font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+color: #505050;
+
 `;
 
 const Answer = styled.p`
   margin: 0;
-  font-size:12px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
 `;
 export default FAQ;

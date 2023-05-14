@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
@@ -24,17 +24,19 @@ interface SliderProps {
 const SliderWrapper = styled.div`
   width: 100%;
   height: 100%;
-position: relative;
+  position: relative;
 
-.swiper-slide{
-  width: 92%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
+  .swiper-slide {
+    width: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
 `;
-
-
 
 const CardSlide = styled.div`
   display: flex;
@@ -43,7 +45,7 @@ const CardSlide = styled.div`
   justify-content: center;
   text-align: center;
   background: linear-gradient(0deg, #FFFEFE, #FFFEFE), linear-gradient(0deg, #FFFEFE, #FFFEFE), #FFFEFE;
-border-radius: 10px;
+  border-radius: 10px;
   width: 249px;
   height: 252px;
 `;
@@ -62,23 +64,25 @@ const Image = styled.img`
 `;
 
 const DescWrapper = styled.div`
-padding: 10px;
-p{
-  font-weight: 400;
-font-size: 10px;
-line-height: 20px;
-}
-h1{
-  font-weight: 700;
-font-size: 16px;
-line-height: 22px;
-}
+  padding: 10px;
+
+  p {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 
 const NavigationWrapper = styled.div`
   position: absolute;
   top: 50%;
-  left:0;
+  left: 0;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
@@ -113,7 +117,7 @@ const PaginationWrapper = styled.div`
     margin: 0 8px;
     border-radius: 50%;
     background: linear-gradient(180deg, #C8D5E4 0%, #90AAD1 100%);
-border-radius: 10px;
+    border-radius: 10px;
   }
 
   .swiper-pagination-bullet-active {
@@ -122,21 +126,34 @@ border-radius: 10px;
     border-radius: 10px;
   }
 `;
-
 const SliderProteksi: React.FC<SliderProps> = ({ data }) => {
   const [swiperIndex, setSwiperIndex] = useState<number>(0);
+  const [slidesPerView, setSlidesPerView] = useState(3);
 
   const handleSlideChange = (swiper: { activeIndex: number }) => {
     setSwiperIndex(swiper.activeIndex);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth <= 768 ? 1 : 3);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <SliderWrapper>
       <Swiper
-      className='swiper-slide'
+        className='swiper-slide'
         autoplay={true}
         spaceBetween={0}
-        slidesPerView={3}
-        centeredSlides={true} 
+        slidesPerView={slidesPerView}
+        centeredSlides={true}
         loop={true}
         navigation={{
           prevEl: ".slider-prev",
@@ -145,7 +162,6 @@ const SliderProteksi: React.FC<SliderProps> = ({ data }) => {
         pagination={{
           el: ".swiper-pagination",
           clickable: true,
-          
         }}
         onSlideChange={handleSlideChange}
       >
@@ -163,11 +179,13 @@ const SliderProteksi: React.FC<SliderProps> = ({ data }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <NavigationWrapper>
-        <NavigationPrev className="slider-prev" src={Prev} />
-        <NavigationNext className="slider-next" src={Next} />
-      </NavigationWrapper>
-      <PaginationWrapper >
+      {slidesPerView > 1 && (
+        <NavigationWrapper>
+          <NavigationPrev className="slider-prev" src={Prev} />
+          <NavigationNext className="slider-next" src={Next} />
+        </NavigationWrapper>
+      )}
+      <PaginationWrapper>
         <div className="swiper-pagination"></div>
       </PaginationWrapper>
     </SliderWrapper>
