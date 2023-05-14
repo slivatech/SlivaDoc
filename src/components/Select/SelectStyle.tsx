@@ -14,15 +14,16 @@ interface LabelBtnProps {
   radius?: string;
   borderType?: BorderType;
   padding?:string;
+  background?:string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType,padding }) => `
+export const SelectLabelButton = styled.button<LabelBtnProps>(({background, border, radius, borderType,padding }) => `
   padding:${padding ? padding:"0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
   font-size: 12px;
 
-  background-color: #fff;
+  background-color: ${background ? background : "#fff"};
   border-radius: ${radius ? radius : ""};
   color: rgba(28, 28, 28, 0.7);
   display:flex;

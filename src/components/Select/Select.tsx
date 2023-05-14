@@ -1,40 +1,73 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import useSelect from "../../hooks/useSelect";
-import { DropdownItem, DropdownStyle, SelectContainer, SelectLabelButton } from "./SelectStyle";
+import {
+  DropdownItem,
+  DropdownStyle,
+  SelectContainer,
+  SelectLabelButton,
+} from "./SelectStyle";
+import useClickOutside from "../../hooks/useClickOutside";
 
 interface ISelect {
   label: string;
   values: any;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  iconEnd?:any;
-  iconStart?:any;
-  borderType?:"bottom" | "top";
-  radius?:string;
-  padding?:string;
-  border?:string;
+  iconEnd?: any;
+  iconStart?: any;
+  borderType?: "bottom" | "top";
+  radius?: string;
+  padding?: string;
+  border?: string;
+  background?: string;
+  defaultValue?: string;
 }
-const Select = ({ label, values, iconStart,onChange,iconEnd,radius,borderType,border,padding }: ISelect) => {
+const Select = ({
+  label,
+  values,
+  iconStart,
+  onChange,
+  iconEnd,
+  radius,
+  borderType,
+  border,
+  padding,
+  background,
+  defaultValue,
+}: ISelect) => {
+  const { currentValue, handleOpen, open, handleChange, handleClose } =
+    useSelect();
 
-    const { currentValue,handleOpen,open,handleChange } = useSelect();
+  const ref = useClickOutside<HTMLDivElement>(() => {
+    handleClose();
+  });
 
-
-
-   return (
-    <SelectContainer>
-      <SelectLabelButton padding={padding} onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
-        <div style={{display:"flex",alignItems:'center',gap:".5rem"}}>
+  return (
+    <SelectContainer onClick={(e) => e.preventDefault()} ref={ref}>
+      <SelectLabelButton
+        padding={padding}
+        onClick={handleOpen}
+        background={background}
+        borderType={borderType}
+        radius={radius}
+        border={border}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
           {iconStart}
-        <p>{currentValue !== "" ? currentValue : label}</p>
-
+          <p>
+            {currentValue !== ""
+              ? currentValue
+              : defaultValue
+              ? defaultValue
+              : label}
+          </p>
         </div>
         {iconEnd}
-        
       </SelectLabelButton>
       <DropdownStyle isVisible={open}>
-        {values.map((value:any, index:number) => (
+        {values.map((value: any, index: number) => (
           <DropdownItem
             onClick={() => {
-              handleChange(value)
+              handleChange(value);
             }}
             active={value === currentValue}
             key={index}
