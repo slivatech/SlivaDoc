@@ -4,6 +4,8 @@ export const SelectContainer = styled.div`
   position: relative;
   margin: 0;
   width: 100%;
+  height:100%;
+
   white-space: nowrap;
 `;
 
@@ -13,23 +15,24 @@ interface LabelBtnProps {
   border?: string;
   radius?: string;
   borderType?: BorderType;
-  padding?: string;
+  padding?:string;
+  background?:string;
+  height?:string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(
-  ({ border, radius, borderType, padding }) => `
-  padding:${padding ? padding : "0.5rem 1.25rem"};
+export const SelectLabelButton = styled.button<LabelBtnProps>(({height, border, radius, borderType,padding,background }) => `
+  padding:${padding ? padding:"0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
   font-size: 12px;
-
-  background-color: #fff;
+  background-color: ${background ? background : "#fff"};
   border-radius: ${radius ? radius : ""};
   color: rgba(28, 28, 28, 0.7);
   display:flex;
   align-items: center;
   justify-content: space-between;
   border:${borderType ? "none" : border};
+  height:${height || "auto"};
   cursor: pointer;
   /* transition: 0.3s ease; */
   /* &:hover {

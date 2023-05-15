@@ -167,5 +167,4 @@ export const GunakanLokasi = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-size: 10px;
-  padding: 0 0.3rem;
 `;

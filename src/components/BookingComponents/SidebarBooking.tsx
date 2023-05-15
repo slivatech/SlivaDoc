@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { cities, yearsOfExperience } from "./fakeData";
 import Select from "../Select/Select";
 import { CategoryBox } from "../TabSection/TabSectionStyle";
@@ -8,9 +8,12 @@ import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
 import { useAppSelector } from "../../store/hooks";
-// import { doctors } from "./fakeData";
+import { doctors } from "./fakeData";
 import { useDispatch } from "react-redux";
-import { setMinPrice,setMaxPrice } from "../../features/filterSlices/filterSlice";
+import {
+  setMinPrice,
+  setMaxPrice,
+} from "../../features/filterSlices/filterSlice";
 const SidebarBooking = () => {
   // const [minPrice, setMinPrice] = useState(0);
   // const [maxPrice, setMaxPrice] = useState(1000000);
@@ -25,7 +28,6 @@ const SidebarBooking = () => {
 
   const dispatch = useDispatch();
 
-
   const city = useAppSelector((state) => state.filter.city);
   const experience = useAppSelector(
     (state) => state.filter.yearsOfExperienceRange
@@ -34,12 +36,9 @@ const SidebarBooking = () => {
     (state) => state.filter.priceRange
   );
 
-  const {
-    handleCityChange,
-    handleYearsOfExperienceChange,
-    
-  } = useFilterDoctors();
-    const handleMinPrice = (min:string) => {
+  const { handleCityChange, handleYearsOfExperienceChange } =
+    useFilterDoctors();
+  const handleMinPrice = (min: string) => {
     dispatch(setMinPrice(Number(min)));
   };
   const tablet = useMediaQuery("(min-width:1024px)");
@@ -59,7 +58,7 @@ const SidebarBooking = () => {
             />
           ) : null}
 
-          <input type="text" placeholder="Cari Dokter Spesialis di SlivaDoc" />
+          <input type="text" placeholder="Dokter Kucing" />
 
           <BaseButton
             className="btn"
@@ -70,16 +69,19 @@ const SidebarBooking = () => {
           ></BaseButton>
         </SearchWrapper> */}
         {tablet ? (
-          <Select
-            padding=".4rem 1rem"
-            label="Seluruh Lokasi"
-            onChange={()=>null}
-            radius="5px 0 0 5px"
-            border="0.5px solid rgba(153, 146, 146, 0.7)"
-            values={["Medan", "Jakarta"]}
-            iconStart={<img src="/assets/location-4.svg" alt="location"/>}
-            iconEnd={<img src="/assets/track.svg" alt="track"/>}
-          />
+          <div style={{ height: "40px" }}>
+            <Select
+              padding=".4rem 1rem"
+              label="Seluruh Lokasi"
+              onChange={() => null}
+              radius="5px 0 0 5px"
+              border="0.5px solid rgba(153, 146, 146, 0.7)"
+              values={["Medan", "Jakarta"]}
+              iconStart={<img src="/assets/location-4.svg" />}
+              iconEnd={<img src="/assets/track.svg" />}
+              height="40px"
+            />
+          </div>
         ) : null}
         <div>
           <CategoryBox>
@@ -90,11 +92,12 @@ const SidebarBooking = () => {
               borderType="bottom"
               values={cities}
               onChange={handleCityChange}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
+              iconEnd={
+                <img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown" />
+              }
             />
-            <GunakanLokasi
-            >
-              <img style={{ width: "16px" }} src="/assets/my-location.svg" alt="location"/>
+            <GunakanLokasi>
+              <img style={{ width: "16px" }} src="/assets/my-location.svg" />
               <label>Gunakan Lokasi Saya</label>
             </GunakanLokasi>
 
@@ -116,7 +119,7 @@ const SidebarBooking = () => {
               borderType="bottom"
               padding="0"
               values={yearsOfExperience}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
+              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
             />
 
             {yearsOfExperience.map((radio, i) => (
@@ -137,7 +140,9 @@ const SidebarBooking = () => {
               borderType="bottom"
               onChange={handleMinPrice}
               values={new Array(10).fill(0).map((_, i) => (i + 1) * 100000)}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
+              iconEnd={
+                <img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown" />
+              }
             />
             <div
               style={{ display: "flex", gap: ".5rem", alignItems: "center" }}
@@ -145,7 +150,9 @@ const SidebarBooking = () => {
               <PriceInput>
                 <span>Rp</span>
                 <input
-                  onChange={(e) => dispatch(setMinPrice(Number(e.target.value)))}
+                  onChange={(e) =>
+                    dispatch(setMinPrice(Number(e.target.value)))
+                  }
                   min={0}
                   max={1000000}
                   type="number"
@@ -174,7 +181,7 @@ const SidebarBooking = () => {
               max={1000000}
               onChange={({ min, max }) => {
                 dispatch(setMaxPrice(max));
-                dispatch(setMinPrice(min))
+                dispatch(setMinPrice(min));
               }}
             />
             <div
