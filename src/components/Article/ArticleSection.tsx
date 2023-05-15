@@ -79,8 +79,28 @@ const buttonList: string[] = [
   "Kesehatan Mental",
   "Sehat dan Bugar",
   "Kehamilan",
-  "Terbaru",
   "Kesehatan Kulit",
+];
+
+const article = [
+  {
+    img: "./assets/allergic.png",
+    alt: "allergic",
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
+  },
+  {
+    img: "./assets/allergic-2.png",
+    alt: "allergic-2",
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
+  },
+  {
+    img: "./assets/allergic-3.png",
+    alt: "allergic-3",
+    header: "Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda",
+    subHeader: "Makanan sehat",
+  },
 ];
 
 const ArticleSection = () => {
@@ -90,7 +110,7 @@ const ArticleSection = () => {
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
         {buttonList.map((button, i) => (
-            <Button text={button} key={i} active={false} />
+          <Button text={button} key={i} active={false} />
         ))}
       </GroupButtons>
       <ArticleLayout>
@@ -109,7 +129,7 @@ const ArticleSection = () => {
               <Article column={true}>
                 <ArticleBanner large={true}>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "50%" }}
                     src="./assets/promo-banner.png"
                     alt="promoBanner"
                   />
@@ -126,57 +146,25 @@ const ArticleSection = () => {
           </MainArticleWrapper>
           <SecondaryArticleWrapper>
             <ListArticleContainer>
-              <Article>
-                <ArticleBanner>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    src="./assets/allergic.png"
-                    alt="allertgic"
+              {article?.map((data, idx) => (
+                <Article>
+                  <ArticleBanner>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={data.img}
+                      alt={data.alt}
+                    />
+                  </ArticleBanner>
+                  <ArticleContent
+                    subheader={data.subHeader}
+                    header={data?.header}
                   />
-                </ArticleBanner>
-                <ArticleContent
-                  subheader="Makanan sehat"
-                  header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
-                />
-              </Article>
-              <Article>
-                <ArticleBanner>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    src="./assets/allergic-2.png"
-                    alt="allergic-2"
-                  />
-                </ArticleBanner>
-                <ArticleContent
-                  subheader="Makanan sehat"
-                  header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
-                />
-              </Article>
-              <Article>
-                <ArticleBanner>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    src="./assets/allergic-3.png"
-                    alt="allergic-3"
-                  />
-                </ArticleBanner>
-                <ArticleContent
-                  subheader="Makanan sehat"
-                  header="Jenis Makanan 4 Sehat 5 Sempurna bagi Hewan Kesayangan Anda"
-                />
-              </Article>
+                </Article>
+              ))}
             </ListArticleContainer>
             <BannerSection>
               <BannerAds src="./assets/petshop.png" />

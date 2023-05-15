@@ -29,26 +29,7 @@ const Select = ({
   border,
   padding,
 }: ISelect) => {
-  const [currentValue, setCurrentValue] = useState<string>("");
-  const [open, setOpen] = useState<boolean>(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleValueChange = (value: string) => {
-    setCurrentValue(value);
-  };
-  const handleChange = (value: string) => {
-    handleValueChange(value);
-    onChange(value);
-    // call method, if it exists
-    // if (onChange) onChange(value);
-    // close, after all tasks are finished
-    handleClose();
-  };
+  const { currentValue, handleOpen, open, handleChange } = useSelect();
 
   return (
     <SelectContainer>
@@ -61,6 +42,7 @@ const Select = ({
       >
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
           {iconStart}
+          <p>{currentValue !== "" ? currentValue : label}</p>
           <p>{currentValue !== "" ? currentValue : label}</p>
         </div>
         {iconEnd}

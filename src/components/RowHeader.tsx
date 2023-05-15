@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { StyledH3 } from "./FontStyle/Font";
 
 const StyledHref = styled.a`
-  font-weight: 500;
+  font-weight: 400;
   padding: 8px 16px;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   color: #454467;
   background-color: #e7ebf0;

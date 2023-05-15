@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import {
-  Cell,
   TableV8,
   createColumnHelper,
 } from "../../components/Common/Tablev8";
@@ -19,8 +18,8 @@ const CustomerListPage = () => {
   const [data, setData] = useState(customers);
   const [selectedRow, setSelectedRow] = useState<any>([]);
   const alertRef: any = useRef(null);
-  const itemPerPage = 10;
-  const detailItemPerPage = 1;
+  const itemPerPage = 5;
+  // const detailItemPerPage = 1;
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(
     Math.ceil(customers.length / itemPerPage)
@@ -64,7 +63,8 @@ const CustomerListPage = () => {
 
   useEffect(() => {
     console.log({ selectedRow });
-  }, [selectedRow]);
+    console.log(data?.length)
+  }, [data?.length, selectedRow]);
   return (
     <div
       style={{
@@ -73,6 +73,7 @@ const CustomerListPage = () => {
         background: "#f1f4fa",
         display: "flex",
         justifyContent: "center",
+        padding: '2rem'
       }}
     >
       <CustomerListStyle isSidebarOpen={isSidebarOpen}>
@@ -127,6 +128,7 @@ export const useAlertColumn = () => {
                 borderRadius: "50px",
                 objectFit: "cover",
               }}
+              alt=""
             />
             <p
               style={{ color: "#06152B", cursor: "pointer" }}

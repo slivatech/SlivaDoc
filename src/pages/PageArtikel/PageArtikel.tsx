@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import img from "../../assets/image/img-artikel.svg";
+import Live from "../../assets/icon/live.png";
 import {
   Banner,
   Button,
@@ -15,6 +16,9 @@ import {
   Search,
   Top,
 } from "./PageArtikelStyle";
+import { ListWrap } from "../DetailArtikel/DetailArtikelStyle";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 interface IListArticle {
   id: number;
@@ -55,9 +59,14 @@ const ListArticle = [
   },
 ];
 
-const PageArtikel = () => {
+interface PageArtikelProps {
+  width: number;
+}
+
+const PageArtikel: React.FC<PageArtikelProps> = ({ width }) => {
   return (
     <>
+      <Navbar width={width} />
       <Container>
         <Search>
           <form>
@@ -83,10 +92,11 @@ const PageArtikel = () => {
                 <Row className="item">
                   <ListImage src={i.image} />
                   <ListInfo>
-                    <h2>{i.title}</h2>
-                    <span>
-                      <a href="#">{i.category}</a>
-                    </span>
+                    <h2 style={{ marginBottom: "5px" }}>{i.title}</h2>
+                    <ListWrap to={""}>
+                      <img src={Live} alt="live" />
+                      <div>{i.category}</div>
+                    </ListWrap>
                   </ListInfo>
                 </Row>
               ))}
@@ -124,6 +134,7 @@ const PageArtikel = () => {
           </Button>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

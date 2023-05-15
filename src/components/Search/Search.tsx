@@ -3,7 +3,9 @@ import styled from "styled-components";
 import SearchInput from "./SearchStyle";
 
 const StyledForm = styled.form`
-  max-width: 750px;
+  max-width: 1000px;
+  width: max-content;
+  /* background-color: red; */
   white-space: nowrap;
   display: flex;
   @media (max-width: 768px) {
@@ -17,12 +19,13 @@ const SearchButton = styled.button`
   padding: 8px 24px;
   border-radius: 0px 4px 4px 0px;
   border: none;
+  cursor: pointer;
 `;
 
 const Search: FC = () => {
   return (
     <StyledForm>
-      <SearchInput placeholder="Cari di silvadoc" />
+      <SearchInput placeholder="Cari Dokter Spesialis dan Tindakan Medis" />
 
       <SearchButton>Search</SearchButton>
     </StyledForm>

@@ -13,11 +13,12 @@ interface LabelBtnProps {
   border?: string;
   radius?: string;
   borderType?: BorderType;
-  padding?:string;
+  padding?: string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType,padding }) => `
-  padding:${padding ? padding:"0.5rem 1.25rem"};
+export const SelectLabelButton = styled.button<LabelBtnProps>(
+  ({ border, radius, borderType, padding }) => `
+  padding:${padding ? padding : "0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
   font-size: 12px;
@@ -34,11 +35,14 @@ export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius,
   /* &:hover {
     background-color: #eee;
   } */
-  ${borderType === "bottom" ? css`
-    border-bottom:1px solid black;
-    /* border:none; */
-    
-  `:null}
+  ${
+    borderType === "bottom"
+      ? css`
+          border-bottom: 1px solid black;
+          /* border:none; */
+        `
+      : null
+  }
 
 `
 );

@@ -4,7 +4,7 @@ import React from "react";
 import ArticlePage from "../../components/DetailArtikel/ArtikelContent";
 import banner from "../../assets/banner.png";
 import DoctorListItem from "../../components/DetailArtikel/DoctorListItem";
-import Live from '../../assets/icon/live.png'
+import Live from "../../assets/icon/live.png";
 import {
   Consult,
   Container,
@@ -26,6 +26,8 @@ import doctor from "../../assets/doctor.png";
 import img from "../../assets/artikelterkait.png";
 import imgconsult from "../../assets/consult.png";
 import Search from "../../components/Search/Search";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 interface Doctor {
   id: number;
@@ -85,7 +87,11 @@ const ListArticle = [
   },
 ];
 
-const DetailArtikel: React.FC = () => {
+interface DetailArtikelProps {
+  width: number;
+}
+
+const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
   const article = {
     title: "Ini 4 Cara Ampuh Mengatasi Kolitis pada Orang Dewasa",
     author: "dr. Fadhli",
@@ -98,80 +104,83 @@ const DetailArtikel: React.FC = () => {
   };
 
   return (
-    <Container>
-      <ArticlePage
-        title={article.title}
-        author={article.author}
-        date={article.date}
-        coreContent={article.coreContent}
-        content={article.content}
-        image={article.image}
-      />
-      <Title>konsultasi Dokter Terkait</Title>
-      <Description>Konsultasi online dengan dokter siaga kami</Description>
-      <DoctorContainer>
-       <DoctorListContainer>
-      {doctors.map(doctor => (
-        <DoctorListItem key={doctor.id} doctor={doctor} />
-      ))}
-      <Consult>
-      <img src={imgconsult} alt="consult" />
-      <div>
-        <h3>Konsultasi Instan</h3>
-      <p>Tanya dokter untuk buat resep.</p>
-      </div>
-        <button>Mulai konsultasi</button>
-    </Consult>
-    <div >
-        <h3>Baca Artikel Silivadoc</h3>
-        <Search />
-      </div>
-    </DoctorListContainer>
-    <div>
-     <Sidebar>
-      <SidebarTitle>Kategori</SidebarTitle>
-      <SidebarTitle>
-        <ListWrap to={''}>
-          <img src={Live} alt="live" />
-          <div>Radang Usus</div>
-        </ListWrap>
-      </SidebarTitle>
-      <SidebarTitle>Topik Terkini</SidebarTitle>
-      <SidebarTitle>
-      <SidebarListItem>
-          <a href='#'> Radang Usus</a>
-        </SidebarListItem>
-        <SidebarListItem>
-          <a href='#'> Radang Usus</a>
-        </SidebarListItem>
-        <SidebarListItem>
-          <a href='#'> Radang Usus</a>
-        </SidebarListItem>
-        <SidebarListItem>
-          <a href='#'> Radang Usus</a>
-        </SidebarListItem>
-      </SidebarTitle>
-      </Sidebar>
-      <Top>
-      <List>
-        <h4>Artikel Terkait</h4>
-        {ListArticle.map((i: IListArticle) => (
-        <Row className='item'>
-          <ListImage src={i.image} />
-          <ListInfo>
-            <h2>{i.title}</h2>
-            <span>
-              <a href="#">{i.category}</a>
-            </span>
-          </ListInfo>
-        </Row>
-      ))}
-            </List>
-          </Top>
-        </div>
-      </DoctorContainer>
-      
-    </Container>
+    <>
+      <Navbar width={width} />
+      <Container>
+        <ArticlePage
+          title={article.title}
+          author={article.author}
+          date={article.date}
+          coreContent={article.coreContent}
+          content={article.content}
+          image={article.image}
+        />
+        <Title>konsultasi Dokter Terkait</Title>
+        <Description>Konsultasi online dengan dokter siaga kami</Description>
+        <DoctorContainer>
+          <DoctorListContainer>
+            {doctors.map((doctor) => (
+              <DoctorListItem key={doctor.id} doctor={doctor} />
+            ))}
+            <Consult>
+              <img src={imgconsult} alt="consult" />
+              <div>
+                <h3>Konsultasi Instan</h3>
+                <p>Tanya dokter untuk buat resep.</p>
+              </div>
+              <button>Mulai konsultasi</button>
+            </Consult>
+            <div>
+              <h3>Baca Artikel Slivadoc</h3>
+              <Search />
+            </div>
+          </DoctorListContainer>
+          <div>
+            <Sidebar>
+              <SidebarTitle>Kategori</SidebarTitle>
+              <SidebarTitle>
+                <ListWrap to={""}>
+                  <img src={Live} alt="live" />
+                  <div>Radang Usus</div>
+                </ListWrap>
+              </SidebarTitle>
+              <SidebarTitle>Topik Terkini</SidebarTitle>
+              <SidebarTitle>
+                <SidebarListItem>
+                  <a href="#"> Radang Usus</a>
+                </SidebarListItem>
+                <SidebarListItem>
+                  <a href="#"> Radang Usus</a>
+                </SidebarListItem>
+                <SidebarListItem>
+                  <a href="#"> Radang Usus</a>
+                </SidebarListItem>
+                <SidebarListItem>
+                  <a href="#"> Radang Usus</a>
+                </SidebarListItem>
+              </SidebarTitle>
+            </Sidebar>
+            <Top>
+              <List>
+                <h4>Artikel Terkait</h4>
+                {ListArticle.map((i: IListArticle) => (
+                  <Row className="item">
+                    <ListImage src={i.image} />
+                    <ListInfo>
+                      <h2>{i.title}</h2>
+                      <span>
+                        <a href="#">{i.category}</a>
+                      </span>
+                    </ListInfo>
+                  </Row>
+                ))}
+              </List>
+            </Top>
+          </div>
+        </DoctorContainer>
+      </Container>
+      <Footer />
+    </>
   );
 };
 

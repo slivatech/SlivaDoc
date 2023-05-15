@@ -5,33 +5,33 @@ import { Container } from "../Container";
 const card = [
   {
     id: 1,
-    text: 'Chat dengan dokter',
-    img: './assets/chat.svg'
+    text: "Tanya dokter",
+    img: "./assets/chat.svg",
   },
   {
     id: 2,
-    text: 'Cari Dokter',
-    img: './assets/search.svg'
+    text: "Cari Dokter",
+    img: "./assets/search.svg",
   },
   {
     id: 3,
-    text: 'Sliva Proteksi',
-    img: './assets/protection.svg'
+    text: "Sliva Proteksi",
+    img: "./assets/protection.svg",
   },
   {
     id: 4,
-    text: 'SlivaShop',
-    img: './assets/shop.svg'
+    text: "SlivaShop",
+    img: "./assets/shop.svg",
   },
-]
+];
 
 const NavButtonsStyled = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.7rem;
   /* justify-content: center; */
   /* margin: 0 auto; */
   /* max-width:90%; */
-  padding: 2rem 12%;
+  padding: 1.7rem 20%;
   /* white-space: nowrap; */
   @media (max-width: 400px) {
     display: grid;
@@ -43,8 +43,9 @@ const NavButtonsStyled = styled.div`
   }
 `;
 
-const NavButton = styled.button(({ theme }) => `
-  padding:10px 20px;
+const NavButton = styled.button(
+  ({ theme }) => `
+  padding:18px;
   display:flex;
   flex:1;
 
@@ -52,7 +53,7 @@ const NavButton = styled.button(({ theme }) => `
   font-weight:${theme.fontWeights.normal};
   color:${theme.colors.txtSecondary} ;
   border-radius:5px;
-  font-size:clamp(10px,2vw,16px);
+  font-size:clamp(10px,2vw,15px);
   outline:none;
   border:none;
   cursor:pointer;
