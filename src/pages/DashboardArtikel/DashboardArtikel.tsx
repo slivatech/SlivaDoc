@@ -37,7 +37,7 @@ interface FormDataType {
     title:string, 
     category: string, 
     description: string,
-    picture: string,
+    imageURLs?: string,
 }
 
 
@@ -46,16 +46,17 @@ const DashboardArtikel = ({}) => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState('Category');
-    const [picture, setPicture] = useState<any>(null);
+    // const [picture, setPicture] = useState<any>(null);
+    const [images, setImages] = useState<any>([]) ;
+    const [imageURLs, setImageURLs] = useState<any>([]);
     let formData : FormDataType = {
         title,
         category,
         description,
-        picture,
+        imageURLs,
     }
     const [update, setUpdate] = useState<any>(false);
-    const uploadedImage = useRef<any>(null);
-    const imageUploader = useRef<any>(null);
+    
     // ==========
     // state tabs
     const [tab, setTab] = useState(types[0].id);
@@ -103,23 +104,20 @@ const DashboardArtikel = ({}) => {
         setTitle('');
         setDescription('');
         setCategory('Category');
-        setPicture(null);
+        setImages([]);
+        setImageURLs([])
     };
 
-    const handleImageUpload = (e: any) => {
-        const [file] = e.target.files;
-        if (file) {
-          const reader = new FileReader();
-          const { current } = uploadedImage;
-          current.file = file;
-          reader.onload = e => {
-            current.src = e.target!.result;
-          };
-          reader.readAsDataURL(file);
-          setPicture(URL.createObjectURL(file));
-        }
-        
-    };
+    useEffect (() => {
+        if (images.length < 1) return;
+        const newImageUrls:any = [];
+        images.forEach((image:any) => newImageUrls.push(URL.createObjectURL(image))); 
+        setImageURLs(newImageUrls);
+    }, [images]);
+
+    function onImageChange (e:any) {
+        setImages([...e.target.files])
+    }
 
     useEffect(() => {
         setPage(pageIndex + 1);
@@ -180,31 +178,31 @@ const DashboardArtikel = ({}) => {
                     </div>
                     <Form onSubmit={handleSubmit}>
                         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '30px'}}>
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleImageUpload}
-                                    ref={imageUploader}
-                                    style={{
-                                    display: "none"
-                                    }}
-                                />
-                            <Profile onClick={() => imageUploader.current.click()}>
-                                <img
-                                    ref={uploadedImage}
-                                    src={picture}
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        position: "absolute",
-                                        zIndex: 10,
-                                        objectFit: 'cover',
-                                        border: 'none',
-                                        borderRadius: '5px'
-                                    }} 
-                                />
-                                <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1}}></i>
-                            </Profile>
+                                <input 
+                                    type="file" multiple 
+                                    accept="image/*" 
+                                    id='image'
+                                    onChange={onImageChange} 
+                                    style={{display: 'none'}}
+                                /> 
+                                <label htmlFor='image'>
+                                    <Profile>
+                                        <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1}}></i>
+                                        { imageURLs.map((imageSrc:any) => (
+                                            <img src={imageSrc}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                    position: "absolute",
+                                                    zIndex: 10,
+                                                    objectFit: 'cover',
+                                                    border: 'none',
+                                                    borderRadius: '5px'
+                                                }} 
+                                            />
+                                        )) }
+                                    </Profile>
+                                </label>
                         </div>
                         <div>
                             <div className="inpWrap">
