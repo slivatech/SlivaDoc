@@ -17,6 +17,7 @@ interface ISelect {
   radius?: string;
   padding?: string;
   border?: string;
+  background?:string;
   defaultValue?:string
 }
 const Select = ({
@@ -28,6 +29,7 @@ const Select = ({
   radius,
   borderType,
   defaultValue,
+  background,
   border,
   padding,
 }: ISelect) => {
@@ -56,9 +58,14 @@ const Select = ({
     <SelectContainer>
       <SelectLabelButton
         padding={padding}
-        onClick={handleOpen}
+        onClick={(e)=>{
+          handleOpen();
+          e.preventDefault();
+        }
+        }
         borderType={borderType}
         radius={radius}
+        background={background}
         border={border}
       >
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>

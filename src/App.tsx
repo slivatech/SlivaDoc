@@ -22,6 +22,7 @@ import { Routes, Route } from "react-router-dom";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -30,8 +31,9 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <Provider store={store}>
         <GlobalCss />
-        <Routes>
-          <Route path="/" element={<HomePage width={width} />} />
+        <ScheduleListPage />
+        {/* <Routes> */}
+          {/* <Route path="/" element={<HomePage width={width} />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/articles" element={<Artikel width={width} />} />
           <Route path="/article" element={<DetailArtikel width={width} />} />
@@ -41,14 +43,14 @@ const App = () => {
           <Route
             path="/clinicService"
             element={<DetailLayananKlinik width={width} />}
-          />
-          <Route path="/doctor" element={<DetailDokter width={width} />} />
+          /> */}
+          {/* <Route path="/doctor" element={<DetailDokter width={width} />} /> */}
           {/* <Route path='/profileUpdate' element={<EditProfil />}/> */}
-          <Route path="/invoice" element={<Invoice />} />
-          <Route path="/customers" element={<CustomerListPage />} />
+          {/* <Route path="/invoice" element={<Invoice />} />
+          <Route path="/customers" element={<CustomerListPage />} /> */}
           {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
-          <Route path="/tabs" element={<TabGroup />} />
-        </Routes>
+          {/* <Route path="/tabs" element={<TabGroup />} /> */}
+        {/* </Routes> */}
       </Provider>
     </ThemeProvider>
   );

@@ -7,6 +7,7 @@ import {
   StyledCalendar,
 } from "./ScheduleListStyle";
 import useClickOutside from "../../Hooks/useClickOutside";
+import useSelect from "../../Hooks/useSelect";
 import { schedules } from "./fakeData";
 import TimePicker from "react-time-picker";
 import { Value } from "react-time-picker/dist/cjs/shared/types";
@@ -49,8 +50,6 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
   const timeRef = useClickOutside<HTMLDivElement>(() => {
     setOpenTimePicker(false);
   });
-
-
 
   return (
     <Overlay>
@@ -121,10 +120,10 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                 <Select
                   radius="10px"
                   border="none"
+                  background="#f1f4fa"
                   onChange={()=>null}
-                  // background="#f1f4fa"
                   label="Choose Location"
-                  defaultValue={singleSchedule!.location as string}
+                  defaultValue={singleSchedule?.location}
                   iconEnd={<img src="/assets/arrow_dropdown2.svg" />}
                   values={["Online", "Clinic"]}
                   iconStart={<img src="/assets/location-schedule.svg" />}
@@ -139,6 +138,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
             color="#3A36DB"
             textColor="white"
             text="Save Sliva Ads"
+            height="50px"
           ></BaseButton>
         </form>
       </AddNewScheduleSidebar>

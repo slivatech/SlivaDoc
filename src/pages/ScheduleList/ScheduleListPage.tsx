@@ -328,6 +328,7 @@ export const useAlertColumn = (handleOpenForm:(id?:string)=>void,handleOpenModal
         id: "price",
         enableSorting: true,
         header: "Price",
+        align:"center",
         cell: (props: any) => (
           <p className="column">
             Rp.{(props.row.original.price as number).toLocaleString()}
