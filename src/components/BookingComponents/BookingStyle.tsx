@@ -19,17 +19,15 @@ export const FeatureContainer = styled.div`
     column-gap: 0.5rem;
     align-items: center;
     img {
-        width: 20px;
+      width: 20px;
       height: 20px;
-      }
+    }
     @media (max-width: 540px) {
       column-gap: 0.25rem;
       img {
-      width: 11px;
-      height: 11px;
-    }
-
-   
+        width: 11px;
+        height: 11px;
+      }
     }
   }
   p {
@@ -41,21 +39,22 @@ export const FeatureContainer = styled.div`
   }
 `;
 
-export const SearchWrapper = styled.div `display: flex;
+export const SearchWrapper = styled.div`
+  display: flex;
   /* position:absolute; */
-  width:100%;
-  flex:1;
-  margin:0 auto;
+  width: 100%;
+  flex: 1;
+  margin: 0 auto;
 
   input {
     outline: none;
     padding: 0 1rem;
-    flex:0.8
+    flex: 0.8;
   }
   .btn {
-    flex:.2;
-  }`
-
+    flex: 0.2;
+  }
+`;
 
 export const TimeDropdownContainer = styled.div`
   display: flex;
@@ -67,8 +66,8 @@ export const TimeDropdownContainer = styled.div`
 `;
 export const DoctorResultStyle = styled.div`
   padding: 1rem;
-  @media(max-width:1024px) {
-    border:none;
+  @media (max-width: 1024px) {
+    border: none;
   }
   border: 1px rgba(153, 146, 146, 0.7) solid;
   border-radius: 5px;

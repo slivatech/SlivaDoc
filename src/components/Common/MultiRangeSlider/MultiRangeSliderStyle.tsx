@@ -9,7 +9,7 @@ export const SliderContainer = styled.div<{
   trackColor?: string;
   thumbColor?: string;
 }>(
-({ trackColor, thumbColor }) => `
+  ({ trackColor, thumbColor }) => `
 position: relative;
   .slider__track,
   .slider__range,

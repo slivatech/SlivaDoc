@@ -17,7 +17,7 @@ interface LabelBtnProps {
   background?:string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(({background, border, radius, borderType,padding }) => `
+export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType,padding,background }) => `
   padding:${padding ? padding:"0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
@@ -35,11 +35,14 @@ export const SelectLabelButton = styled.button<LabelBtnProps>(({background, bord
   /* &:hover {
     background-color: #eee;
   } */
-  ${borderType === "bottom" ? css`
-    border-bottom:1px solid black;
-    /* border:none; */
-    
-  `:null}
+  ${
+    borderType === "bottom"
+      ? css`
+          border-bottom: 1px solid black;
+          /* border:none; */
+        `
+      : null
+  }
 
 `
 );

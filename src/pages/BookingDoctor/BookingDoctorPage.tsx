@@ -3,7 +3,7 @@ import BookingWrapperComponent from "../../components/BookingComponents/BookingW
 import { TimeDropdownContainer } from "../../components/BookingComponents/BookingStyle";
 import Select from "../../components/Select/Select";
 import DoctorResultsList from "../../components/BookingComponents/DoctorResultsList";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -43,31 +43,18 @@ const BookingDoctorPage = () => {
               <Select
                 border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                 label="Pilih Hari"
-                values={["Senin", "Selasa", "Rabu", "Kamis", "Jumat"]}
+                values={["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]}
                 radius="5px"
-                iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
               />
               <Select
                 border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                 label="Pilih Jam"
-                values={["08.00 - 09.00", "14.00 - 15.00", "20.00 - 21.00"]}
+                values={["08.00 - 11.59", "12.00 - 14.59","15.00 - 17.59", "18.00 - 21.00"]}
                 radius="5px"
-                iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow"/>}
               />
             </TimeDropdownContainer>
-
-            {/* <p style={{ color: "rgba(28, 28, 28, 0.7)", fontWeight: 500 }}>
-            Menampilkan{" "}
-            <span
-              style={{
-                fontWeight: 700,
-                color: "rgba(59, 32, 232, 0.7) 32, 232)",
-              }}
-            >
-              150
-            </span>{" "}
-            hasil
-          </p> */}
             <DoctorResultsList isDoctorTab={true} />
           </div>
         </BookingWrapperComponent>

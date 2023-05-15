@@ -33,26 +33,24 @@ const DoctorImage = styled.img`
   border-radius: 5px;
 
   @media (max-width: 1024px) {
-   
     margin-bottom: 20px;
   }
-  
 `;
 
 const DoctorInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   button {
     cursor: pointer;
-    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
     color: #ffff;
     border-radius: 5px;
     padding: 10px 17px;
     border: none;
     align-self: flex-end;
     margin-top: 20px;
-    margin-left:400px;
+    margin-left: 400px;
   }
 
   @media (max-width: 1024px) {
@@ -72,7 +70,6 @@ const DoctorInfo = styled.div`
     }
   }
 `;
-
 
 const DoctorName = styled.span`
   font-size: 14px;
@@ -106,7 +103,6 @@ const DoctorPrice = styled.span`
     text-align: left;
   }
 `;
-
 
 const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
   const { name, specialty, price, image } = doctor;

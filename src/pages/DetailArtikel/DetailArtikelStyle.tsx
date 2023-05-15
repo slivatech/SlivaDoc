@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 export const Container = styled.div`
   width: 100%;
   max-width: 1400px;
@@ -10,18 +9,16 @@ export const ArticleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 15px;
-  margin: 100px;
+  margin: 30px 100px;
   max-width: 1280px;
   @media (max-width: 700px) {
     margin: 20px;
-    
   }
-
 `;
 export const Article = styled.div`
-   margin-right:160px;
-   flex: 2;
-   @media (max-width: 700px) {
+  margin-right: 30px;
+  flex: 2;
+  @media (max-width: 700px) {
     margin: 0;
   }
 `;
@@ -31,15 +28,13 @@ export const ArticleTitle = styled.h1`
   margin-bottom: 20px;
 `;
 
-
 export const ArticleAuthor = styled.p`
   text-align: left;
   font-size: 0.75rem;
   margin-bottom: 5px;
-  a{
-    color:#F91E1E;
+  a {
+    color: #f91e1e;
   }
-
 `;
 
 export const ArticleDate = styled.p`
@@ -52,13 +47,14 @@ export const ArticleImage = styled.img`
   margin-top: 20px;
 `;
 export const CoreArticleContent = styled.div`
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   text-align: left;
   font-style: italic;
 `;
 export const ArticleContent = styled.div`
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 520;
   line-height: 1.5;
   text-align: left;
   margin-top: 19px;
@@ -76,10 +72,10 @@ export const DoctorContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-margin-left:100px;
-  font-size: 20px;
+  margin-left: 100px;
+  font-size: 23px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 32px;
   letter-spacing: 0px;
   @media (max-width: 700px) {
     font-size: 18px;
@@ -90,7 +86,7 @@ margin-left:100px;
 
 export const Description = styled.div`
   font-size: 14px;
-  margin-left:100px;
+  margin-left: 100px;
   letter-spacing: 0px;
   color: rgba(28, 28, 28, 0.7);
   @media (max-width: 700px) {
@@ -103,35 +99,42 @@ export const DoctorListContainer = styled.div`
   border-top: 2px grey;
   flex: 4;
   justify-content: left;
-  
+
   @media (max-width: 700px) {
     width: 100%;
     margin-left: 0;
     text-align: left;
-    align-items:left;
+    align-items: left;
   }
 `;
- 
+
 export const Consult = styled.div`
-  margin-top: 26px;
+  margin-top: 24px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 40px 19px;
-  background: linear-gradient(180deg, #E6EAEE 0%, #CFDEF3 100%);
+  padding: 25px 19px;
+  background: linear-gradient(180deg, #e6eaee 0%, #cfdef3 100%);
   border-radius: 10px;
 
+  img {
+    padding-left: 10px;
+    width: 60px;
+  }
+
   h3 {
+    display: flex;
+    justify-content: space-between;
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
     order: 1;
 
     @media screen and (max-width: 768px) {
       font-size: 12px;
       text-align: center;
-      order: 2;
+      order: 3;
       width: 100%;
       margin-bottom: 10px;
     }
@@ -148,10 +151,10 @@ export const Consult = styled.div`
   }
 
   button {
-    background: linear-gradient(180deg, #5296E5 0%, #90AAD1 100%);
+    background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
     color: #ffff;
     border-radius: 5px;
-    padding: 10px 17px;
+    padding: 10px 24px;
     border: none;
     cursor: pointer;
 
@@ -173,7 +176,7 @@ export const Consult = styled.div`
 export const BannerSection = styled.div`
   height: 700px;
   width: 366px;
-  margin-right:0;
+  margin-right: 0;
   border-radius: 5px;
 
   @media (max-width: 720px) {
@@ -191,8 +194,8 @@ export const Sidebar = styled.div`
 `;
 
 export const SidebarTitle = styled.h3`
-  padding-bottom: 1px;
-  font-size: 14px;
+  padding-bottom: 10px;
+  font-size: 16px;
 `;
 
 export const SidebarList = styled.ul`
@@ -230,10 +233,11 @@ export const ListInfo = styled.div`
   }
 `;
 export const ListImage = styled.img`
-  width: 77px;
-  height: 45px;
+  width: 97px;
+  height: 50px;
   object-fit: cover;
   border-radius: 5px;
+  margin: 5px 0;
 `;
 export const List = styled.div`
   width: 100%;
@@ -270,5 +274,6 @@ export const ListWrap = styled(Link)`
   align-items: center;
   gap: 0.7rem;
   text-decoration: none;
-  color: #2C4AE8;
-`
+  color: #2c4ae8;
+  font-size: 14px;
+`;

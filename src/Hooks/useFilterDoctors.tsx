@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import {
   setCity,
   setYearsOfExperienceRange,
-  setTerm,
-  setMaxPrice,
-  setMinPrice
+  setTerm
+  // setMaxPrice,
+  // setMinPrice,
 } from "../features/filterSlices/filterSlice";
 import { doctors } from "../components/BookingComponents/fakeData";
 import { useAppSelector } from "../store/hooks";
@@ -14,9 +14,8 @@ export const useFilterDoctors = () => {
 
   const [filteredDoctors, setFilteredDoctors] = useState<Doctor[]>(doctors);
 
-  const { searchTerm, city, yearsOfExperienceRange,priceRange } = useAppSelector(
-    (state) => state.filter
-  );
+  const { searchTerm, city, yearsOfExperienceRange, priceRange } =
+    useAppSelector((state) => state.filter);
 
   // runs everytime filteredDoctors' values change
 
@@ -30,7 +29,7 @@ export const useFilterDoctors = () => {
       priceRange.max
     );
     setFilteredDoctors(filteredValues);
-  }, [city,searchTerm,yearsOfExperienceRange,priceRange]);
+  }, [city, searchTerm, yearsOfExperienceRange, priceRange]);
   const handleCityChange = (city: string) => {
     console.log(city);
     dispatch(setCity(city));
@@ -53,8 +52,8 @@ export const useFilterDoctors = () => {
     city: string,
     yearsOfExperienceRange: string,
     searchText: string,
-    minPrice:number,
-    maxPrice:number
+    minPrice: number,
+    maxPrice: number
   ): Doctor[] => {
     if (city === "" && yearsOfExperienceRange === "" && searchText && "")
       return doctors;
@@ -76,9 +75,10 @@ export const useFilterDoctors = () => {
 
       // doctor.company.toLowerCase().includes(searchText.toLowerCase()) ||
       // doctor.email.toLowerCase().includes(searchText.toLowerCase());
-      const priceMatches =
-      doctor.price >= minPrice && doctor.price <= maxPrice;
-      return cityMatches && yearsOfExperienceMatches && searchMatches && priceMatches;
+      const priceMatches = doctor.price >= minPrice && doctor.price <= maxPrice;
+      return (
+        cityMatches && yearsOfExperienceMatches && searchMatches && priceMatches
+      );
     });
   };
 

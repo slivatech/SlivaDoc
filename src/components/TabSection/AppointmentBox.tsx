@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { StyledAppointment } from "./TabSectionStyle";
 
@@ -16,7 +16,7 @@ interface AppointmentProps {
 const Badges = styled.div`
   display: flex;
   gap: 0.5rem;
-  @media (max-width:375px) {
+  @media (max-width: 375px) {
     flex-direction: column;
   }
 `;
@@ -46,6 +46,7 @@ const AppointmentBox = ({
                 <img
                   src="/assets/portfolio.svg"
                   style={{ width: "10px", height: "10px" }}
+                  alt=""
                 />
               }
               radius="5px"
@@ -62,6 +63,7 @@ const AppointmentBox = ({
                 <img
                   src="/assets/review.svg"
                   style={{ width: "10px", height: "10px" }}
+                  alt="review"
                 />
               }
               radius="5px"

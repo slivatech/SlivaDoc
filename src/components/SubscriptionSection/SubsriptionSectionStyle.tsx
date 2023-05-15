@@ -13,8 +13,8 @@ export const EmailInput = styled.input`
   border: none;
   border-radius: 5px;
   padding: 8px 16px;
-  width:100%;
-  font-size:clamp(10px,2vw,14px);
+  width: 100%;
+  font-size: clamp(10px, 2vw, 14px);
   &::placeholder {
     color: gray;
   }

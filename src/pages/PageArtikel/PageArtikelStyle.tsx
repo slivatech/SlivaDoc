@@ -4,7 +4,8 @@ import banner from "../../assets/image/Banner-artikel.svg";
 export const Container = styled.div`
   width: 100%;
   max-width: 1400px;
-  padding: 1rem 3rem;
+  /* padding: 1rem 3rem; */
+  padding: 15px 8%;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #fafafa;
@@ -58,6 +59,7 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  cursor: pointer;
 `;
 
 export const Col = styled.div`
@@ -78,6 +80,7 @@ export const Banner = styled.div`
   background-size: cover;
   border-radius: 5px;
   width: 75%;
+  cursor: pointer;
   @media (max-width: 720px) {
     width: 100%;
     height: 147px;
@@ -113,6 +116,7 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 58px;
+  cursor: pointer;
   @media (max-width: 720px) {
     width: 100%;
     margin-left: 0;
@@ -154,6 +158,7 @@ export const Card = styled.div`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   padding: 8px 5px;
+  cursor: pointer;
   @media (max-width: 720px) {
     min-height: 150px;
   }
@@ -165,6 +170,7 @@ export const Card = styled.div`
     padding: 4px 12px;
     color: white;
     font-size: 8px;
+    cursor: pointer;
     @media (max-width: 720px) {
       padding: 4px 5px;
       font-size: 6px;
@@ -225,15 +231,16 @@ export const Button = styled.div`
     background: #eef2f6;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    padding: 10px 17px;
+    padding: 10px 37px;
     border: none;
+    cursor: pointer;
   }
 `;
 export const Search = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #ece4e4;
 
   button {
@@ -253,20 +260,10 @@ export const Search = styled.div`
     }
 
     button {
-<<<<<<< HEAD
-        background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
-        color: white;
-        border: none;
-        @media (max-width : 620px) {
-        width: 100%;
-        margin: 0;
-    }
-=======
       padding: 10px 23px;
       @media (max-width: 720px) {
         padding: 9px 20px;
       }
->>>>>>> Development
     }
   }
 
@@ -274,7 +271,8 @@ export const Search = styled.div`
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    outline: none;
+    border-radius: 5px 0 5px 0;
   }
 
   .btn-all {

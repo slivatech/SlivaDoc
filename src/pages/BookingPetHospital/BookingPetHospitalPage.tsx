@@ -5,11 +5,10 @@ import DoctorResultsList from "../../components/BookingComponents/DoctorResultsL
 import Tabs from "../../components/Common/Tabs/Tabs";
 import Select from "../../components/Select/Select";
 import {
-  SearchWrapper,
   TimeDropdownContainer,
 } from "../../components/BookingComponents/BookingStyle";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import BaseButton from "../../components/Common/Buttons/BaseButton";
+import useMediaQuery from "../../Hooks/useMediaQuery";
+// import BaseButton from "../../components/Common/Buttons/BaseButton";
 import FilterTags from "../../components/BookingComponents/FilterTags";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -44,7 +43,7 @@ const BookingPetHospitalPage = () => {
                     values={["Senin", "Selasa", "Rabu", "Kamis", "Jumat"]}
                     radius="5px"
                     padding=".1rem .5rem"
-                    iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                    iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
                   />
                   <Select
                     border=" 0.5px solid rgba(153, 146, 146, 0.7)"
@@ -52,7 +51,7 @@ const BookingPetHospitalPage = () => {
                     values={["08.00 - 09.00", "14.00 - 15.00", "20.00 - 21.00"]}
                     padding=".1rem .5rem"
                     radius="5px"
-                    iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                    iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
                   />
                 </TimeDropdownContainer>
               </div>
@@ -112,7 +111,7 @@ const BookingPetHospitalPage = () => {
                             ]}
                             radius="5px"
                             padding=".1rem .5rem"
-                            iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                            iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
                           />
                           <Select
                             border=" 0.5px solid rgba(153, 146, 146, 0.7)"
@@ -124,30 +123,11 @@ const BookingPetHospitalPage = () => {
                             ]}
                             padding=".1rem .5rem"
                             radius="5px"
-                            iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+                            iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
                           />
                         </TimeDropdownContainer>
                       </>
                     ) : null}
-
-                    {/* <p
-                      style={{
-                        color: "rgba(28, 28, 28, 0.7)",
-                        fontWeight: 500,
-                        fontSize: tablet ? "12px" : "8px",
-                      }}
-                    >
-                      Menampilkan{" "}
-                      <span
-                        style={{
-                          fontWeight: 700,
-                          color: "rgba(59, 32, 232, 0.7) 32, 232)",
-                        }}
-                      >
-                        150
-                      </span>{" "}
-                      hasil
-                    </p> */}
                     {!tablet ? <FilterTags /> : null}
                     <DoctorResultsList isDoctorTab={true} />
                   </>
