@@ -6,36 +6,38 @@ import {
   Overlay,
   StyledCalendar,
 } from "./ScheduleListStyle";
-import TimePicker from "../../components/Common/TimePicker/TimePicker";
 import useClickOutside from "../../hooks/useClickOutside";
 import useSelect from "../../hooks/useSelect";
 import { schedules } from "./fakeData";
-
+import TimePicker from "react-time-picker";
+import { Value } from "react-time-picker/dist/cjs/shared/types";
+import 'react-time-picker/dist/TimePicker.css';
+import 'react-clock/dist/Clock.css';
+import { LooseValue,Value as DateValue } from "react-calendar/dist/cjs/shared/types";
 interface Props {
   handleClose: () => void;
-  id?:string;
+  id?: string;
 }
-const AddScheduleContainer = ({ handleClose,id }: Props) => {
-  const singleSchedule = schedules.find((schedule)=>schedule.id === id);
-  
+const AddScheduleContainer = ({ handleClose, id }: Props) => {
+  const singleSchedule = schedules.find((schedule) => schedule.id === id);
 
   const date = new Date();
   const today = date.toLocaleDateString();
-  const now = date.getHours() + ":" + date.getMinutes();
 
   const [openCalendar, setOpenCalendar] = useState<boolean>(false);
+
+  const [startDate,setStartDate] = useState<LooseValue>(new Date());
+  const handleStartDate = (dateValue:LooseValue) => {
+    setStartDate(dateValue)
+  }
+
   const [openTimePicker, setOpenTimePicker] = useState<boolean>(false);
-  const [hour, setHour] = useState("09");
-  const [minute, setMinute] = useState("00");
 
-  const handleHourChange = (value: string) => {
-    setHour(value);
-  };
 
-  const handleMinuteChange = (value: string) => {
-    setMinute(value);
-  };
-
+  const [timeValue,setValue] = useState<Value>('10:00');
+  const onChange = (timeValue:Value) => {
+    setValue(timeValue);
+ }
   // const { handleClose: handleSelectLocationClose } = useSelect();
 
   const sidebarRef = useClickOutside<HTMLDivElement>(() => {
@@ -67,7 +69,7 @@ const AddScheduleContainer = ({ handleClose,id }: Props) => {
 
               <div className="input" ref={dateRef}>
                 <div className="btn">
-                  {singleSchedule ? singleSchedule.date : today}  
+                  {singleSchedule ? singleSchedule.date : startDate!.toLocaleString().slice(0,startDate!.toLocaleString().indexOf(","))}
                 </div>
                 <div
                   className="icon"
@@ -76,15 +78,17 @@ const AddScheduleContainer = ({ handleClose,id }: Props) => {
                   <img src="/assets/calendar-schedule.svg" />
                 </div>
                 <div className="dropdown">
-                  {openCalendar ? <StyledCalendar minDate={date} /> : null}
+                  {openCalendar ? <StyledCalendar onChange={handleStartDate} minDate={date} /> : null}
                 </div>
               </div>
             </div>
             <div className="inputWrapper">
               <label htmlFor="">Time</label>
 
-              <div className="input" ref={timeRef}>
-                <div className="btn">{singleSchedule ? singleSchedule.time : now}</div>
+              <div className="input">
+                <div className="btn">
+                  {singleSchedule ? singleSchedule.time : timeValue}
+                </div>
 
                 <div
                   className="icon"
@@ -94,16 +98,9 @@ const AddScheduleContainer = ({ handleClose,id }: Props) => {
                 </div>
               </div>
               {openTimePicker ? (
-                <TimePicker
-                  label="Select a time"
-                  hour={hour}
-                  minute={minute}
-                  onHourChange={handleHourChange}
-                  onMinuteChange={handleMinuteChange}
-                  interval={30}
-                  startHour={8}
-                  endHour={18}
-                />
+                <div ref={timeRef}>
+                  <TimePicker onChange={onChange} value={timeValue} />
+                </div>
               ) : null}
             </div>
             <div className="inputWrapper">
@@ -111,7 +108,10 @@ const AddScheduleContainer = ({ handleClose,id }: Props) => {
 
               <div className="input">
                 <span className="currency">Rp. </span>
-                <input type="number" defaultValue={singleSchedule ? singleSchedule.price : 0}/>
+                <input
+                  type="number"
+                  defaultValue={singleSchedule ? singleSchedule.price : 0}
+                />
               </div>
             </div>
             <div className="inputWrapper">
