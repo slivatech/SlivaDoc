@@ -19,7 +19,6 @@ import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
 import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
-import TabGroup from "./pages/DashboardArtikel/TabGroup";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -28,7 +27,7 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalCss />
       <Routes>
-        <Route path='/' element={<HomePage width={width}/>} />
+        {/* <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
         <Route path='/articles' element={<Artikel width={width}/>}/>
         <Route path='/article' element={<DetailArtikel width={width}/>}/>
@@ -39,9 +38,8 @@ const App = () => {
         <Route path='/doctor' element={<DetailDokter width={width} />}/>
         <Route path='/profileUpdate' element={<EditProfil />}/>
         <Route path='/invoice' element={<Invoice />}/>
-        <Route path='/customers' element={<CustomerListPage />}/>
+        <Route path='/customers' element={<CustomerListPage />}/> */}
         <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
-        <Route path='/tabs' element={<TabGroup />}/>
       </Routes>
     </ThemeProvider>
   );

@@ -51,9 +51,11 @@ export const Chart =styled.div`
         }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     
     .inpWrap{
         width: 100%;
@@ -77,15 +79,12 @@ export const Form = styled.div`
         }
     }
 
-    // .submit{
-    //     margin-top: 3rem;
-    // }
 `
 
 export const Profile = styled.div`
-    width: 110px;
-    height: 110px;
-    background-color: #F1F4FA;
-    border-radius: 50%;
+    width: 178px;
+    height: 71px;
+    background-color: #EBDEDE;
+    border-radius: 5px;
     position: relative;
 `

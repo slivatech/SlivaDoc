@@ -33,11 +33,35 @@ const types:TTab[] = [
     },
 ];
 
-const DashboardArtikel = () => {
-    const { alertColumn } =  useAlertColumn();
-    const [update, setUpdate] = useState<any>(false);
+interface FormDataType {
+    title:string, 
+    category: string, 
+    description: string,
+    picture: string,
+}
+
+
+const DashboardArtikel = ({}) => {
+    // state form
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
     const [category, setCategory] = useState('Category');
+    const [picture, setPicture] = useState<any>(null);
+    let formData : FormDataType = {
+        title,
+        category,
+        description,
+        picture,
+    }
+    const [update, setUpdate] = useState<any>(false);
+    const uploadedImage = useRef<any>(null);
+    const imageUploader = useRef<any>(null);
+    // ==========
+    // state tabs
     const [tab, setTab] = useState(types[0].id);
+    // ==========
+    // state table
+    const { alertColumn } =  useAlertColumn();
     const [data, setData] = useState(article);
     const [selectedRow, setSelectedRow] = useState<any>([]);
     const alertRef: any = useRef(null);
@@ -70,6 +94,32 @@ const DashboardArtikel = () => {
 
         setSelectedRow([...temp]);
     }, []);
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.log(formData);
+        
+        // Reset the form fields
+        setTitle('');
+        setDescription('');
+        setCategory('Category');
+        setPicture(null);
+    };
+
+    const handleImageUpload = (e: any) => {
+        const [file] = e.target.files;
+        if (file) {
+          const reader = new FileReader();
+          const { current } = uploadedImage;
+          current.file = file;
+          reader.onload = e => {
+            current.src = e.target!.result;
+          };
+          reader.readAsDataURL(file);
+          setPicture(URL.createObjectURL(file));
+        }
+        
+    };
 
     useEffect(() => {
         setPage(pageIndex + 1);
@@ -128,16 +178,38 @@ const DashboardArtikel = () => {
                         </button>
                         <h5>Add a New Article</h5>
                     </div>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
+                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '30px'}}>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageUpload}
+                                    ref={imageUploader}
+                                    style={{
+                                    display: "none"
+                                    }}
+                                />
+                            <Profile onClick={() => imageUploader.current.click()}>
+                                <img
+                                    ref={uploadedImage}
+                                    src={picture}
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        position: "absolute",
+                                        zIndex: 10,
+                                        objectFit: 'cover',
+                                        border: 'none',
+                                        borderRadius: '5px'
+                                    }} 
+                                />
+                                <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1}}></i>
+                            </Profile>
+                        </div>
                         <div>
-                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                <Profile>
-                                    <i className="fa-solid fa-camera" style={{color: '#06152b', opacity: 0.7, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}></i>
-                                </Profile>
-                            </div>
                             <div className="inpWrap">
                                 <label htmlFor='title'>Title</label>
-                                <input type='text'/>
+                                <input type='text' name='title' value={title} onChange={(e)=> setTitle(e.target.value)}/>
                             </div>
                             <div className="inpWrap">
                                 <label htmlFor='category'>Category</label>
@@ -155,7 +227,7 @@ const DashboardArtikel = () => {
                             </div>
                             <div className="inpWrap">
                                 <label htmlFor='description'>Descriptions</label>
-                                <textarea name="textarea" rows={4} cols={20} placeholder='Write something here'></textarea>
+                                <textarea name="description" rows={4} cols={20} placeholder='Write something here' value={description} onChange={(e)=> setDescription(e.target.value)}></textarea>
                             </div>
                         </div>
 
@@ -170,6 +242,7 @@ const DashboardArtikel = () => {
                                 fontSize="14px"
                                 radius="10px"
                                 height="44px"
+                                onClick={handleSubmit}
                             />
                         </div>
                     </Form>
