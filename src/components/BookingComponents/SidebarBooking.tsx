@@ -3,7 +3,7 @@ import { cities, yearsOfExperience } from "./fakeData";
 import Select from "../Select/Select";
 import { CategoryBox } from "../TabSection/TabSectionStyle";
 import RadioButton from "../Common/Buttons/RadioButton";
-import { PriceInput, SearchWrapper } from "./BookingStyle";
+import { GunakanLokasi, PriceInput, SearchWrapper } from "./BookingStyle";
 import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { useFilterDoctors } from "../../hooks/useFilterDoctors";
@@ -39,6 +39,9 @@ const SidebarBooking = () => {
     handleYearsOfExperienceChange,
     
   } = useFilterDoctors();
+    const handleMinPrice = (min:string) => {
+    dispatch(setMinPrice(Number(min)));
+  };
   const tablet = useMediaQuery("(min-width:1024px)");
 
   return (
@@ -70,6 +73,7 @@ const SidebarBooking = () => {
           <Select
             padding=".4rem 1rem"
             label="Seluruh Lokasi"
+            onChange={()=>null}
             radius="5px 0 0 5px"
             border="0.5px solid rgba(153, 146, 146, 0.7)"
             values={["Medan", "Jakarta"]}
@@ -85,20 +89,14 @@ const SidebarBooking = () => {
               padding=" 0"
               borderType="bottom"
               values={cities}
+              onChange={handleCityChange}
               iconEnd={<img src="/assets/arrow_dropdown.svg" />}
             />
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: ".5rem",
-                fontSize: "10px",
-                padding: "0 .3rem",
-              }}
+            <GunakanLokasi
             >
               <img style={{ width: "16px" }} src="/assets/my-location.svg" />
               <label>Gunakan Lokasi Saya</label>
-            </div>
+            </GunakanLokasi>
 
             {cities.map((radio, i) => (
               <RadioButton
@@ -112,6 +110,7 @@ const SidebarBooking = () => {
           </CategoryBox>
           <CategoryBox>
             <Select
+              onChange={handleYearsOfExperienceChange}
               border=" 0.5px solid rgba(153, 146, 146, 0.7)"
               label="Pengalaman praktik"
               borderType="bottom"
@@ -136,7 +135,8 @@ const SidebarBooking = () => {
               label="Harga"
               padding="0"
               borderType="bottom"
-              values={[10000, 20000, 50000, 90000]}
+              onChange={handleMinPrice}
+              values={new Array(10).fill(0).map((_, i) => (i + 1) * 100000)}
               iconEnd={<img src="/assets/arrow_dropdown.svg" />}
             />
             <div
