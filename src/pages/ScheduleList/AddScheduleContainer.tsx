@@ -6,8 +6,7 @@ import {
   Overlay,
   StyledCalendar,
 } from "./ScheduleListStyle";
-import useClickOutside from "../../hooks/useClickOutside";
-import useSelect from "../../hooks/useSelect";
+import useClickOutside from "../../Hooks/useClickOutside";
 import { schedules } from "./fakeData";
 import TimePicker from "react-time-picker";
 import { Value } from "react-time-picker/dist/cjs/shared/types";
@@ -50,6 +49,8 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
   const timeRef = useClickOutside<HTMLDivElement>(() => {
     setOpenTimePicker(false);
   });
+
+
 
   return (
     <Overlay>
@@ -120,9 +121,10 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                 <Select
                   radius="10px"
                   border="none"
-                  background="#f1f4fa"
+                  onChange={()=>null}
+                  // background="#f1f4fa"
                   label="Choose Location"
-                  defaultValue={singleSchedule?.location}
+                  defaultValue={singleSchedule!.location as string}
                   iconEnd={<img src="/assets/arrow_dropdown2.svg" />}
                   values={["Online", "Clinic"]}
                   iconStart={<img src="/assets/location-schedule.svg" />}

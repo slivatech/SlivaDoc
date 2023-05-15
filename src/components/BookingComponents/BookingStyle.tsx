@@ -161,3 +161,11 @@ export const PriceInput = styled.div`
     margin-left: 0.5rem;
   }
 `;
+
+export const GunakanLokasi = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 10px;
+  padding: 0 0.3rem;
+`;

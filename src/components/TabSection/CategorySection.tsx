@@ -22,6 +22,7 @@ const CategorySection = () => {
       {categories?.map((category, i) => (
         <CategoryBox key={i}>
           <Select
+            onChange={() => null}
             border=" 0.5px solid rgba(153, 146, 146, 0.7)"
             label={category.mainValue}
             borderType="bottom"

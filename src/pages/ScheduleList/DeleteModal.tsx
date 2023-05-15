@@ -1,5 +1,5 @@
 import BaseButton from "../../components/Common/Buttons/BaseButton";
-import useClickOutside from "../../hooks/useClickOutside";
+import useClickOutside from "../../Hooks/useClickOutside";
 import { DeleteModalStyle, ModalButtons, Overlay } from "./ScheduleListStyle";
 
 const DeleteModal = ({ handleClose }:{ handleClose:()=>void }) => {
