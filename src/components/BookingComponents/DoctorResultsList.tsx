@@ -1,8 +1,7 @@
 import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { useAppSelector } from "../../store/hooks";
-import { useFilterDoctors } from "../../hooks/useFilterDoctors";
-import { doctors } from "./fakeData";
+import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
 
 
 
