@@ -156,7 +156,6 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
             color="#3A36DB"
             textColor="white"
             text="Save Sliva Ads"
-            height="50px"
           ></BaseButton>
         </form>
       </AddNewScheduleSidebar>
