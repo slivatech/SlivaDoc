@@ -12,8 +12,10 @@ interface ISelect {
   radius?:string;
   padding?:string;
   border?:string;
+  background?:string;
+  defaultValue?:string;
 }
-const Select = ({ label, values, iconStart,onChange,iconEnd,radius,borderType,border,padding }: ISelect) => {
+const Select = ({background,defaultValue, label, values, iconStart,onChange,iconEnd,radius,borderType,border,padding }: ISelect) => {
 
     const { currentValue,handleOpen,open,handleChange } = useSelect();
 
@@ -21,10 +23,13 @@ const Select = ({ label, values, iconStart,onChange,iconEnd,radius,borderType,bo
 
    return (
     <SelectContainer>
-      <SelectLabelButton padding={padding} onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
+      <SelectLabelButton  background={background} padding={padding} onClick={(e)=>{
+        handleOpen();
+        e.preventDefault()
+      }} borderType={borderType} radius={radius} border={border}>
         <div style={{display:"flex",alignItems:'center',gap:".5rem"}}>
           {iconStart}
-        <p>{currentValue !== "" ? currentValue : label}</p>
+        <p>{currentValue !== "" ? currentValue : defaultValue ? defaultValue : label}</p>
 
         </div>
         {iconEnd}

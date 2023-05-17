@@ -89,9 +89,13 @@ export const AddNewScheduleSidebar = styled.div`
   right: 0;
   bottom: 0;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
   .header {
     display: flex;
     gap: 2rem;
@@ -326,6 +330,5 @@ export const ModalButtons = styled.div`
   margin-top: 1rem;
   div {
     font-weight: 400;
-
   }
 `;
