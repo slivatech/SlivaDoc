@@ -138,6 +138,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                   radius="10px"
                   border="none"
                   background="#f1f4fa"
+                  onChange={()=>null}
                   label="Choose Location"
                   defaultValue={singleSchedule?.location}
                   iconEnd={<img src="/assets/arrow_dropdown2.svg" />}
@@ -155,6 +156,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
             color="#3A36DB"
             textColor="white"
             text="Save Sliva Ads"
+            height="50px"
           ></BaseButton>
         </form>
       </AddNewScheduleSidebar>

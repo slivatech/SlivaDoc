@@ -20,8 +20,8 @@ import Invoice from "./pages/InvoiceList/Invoice";
 import { Routes, Route } from "react-router-dom";
 // import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
-import { Provider } from "react-redux";
 import store from "./store/store";
+import { Provider } from "react-redux";
 import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 
 const App = () => {
