@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import img from "../../assets/image/img-artikel.svg";
-import Live from '../../assets/icon/live.png';
+import Live from "../../assets/icon/live.png";
 import {
   Banner,
   Button,
@@ -63,7 +63,7 @@ interface PageArtikelProps {
   width: number;
 }
 
-const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
+const PageArtikel: React.FC<PageArtikelProps> = ({ width }) => {
   return (
     <>
       <Navbar width={width} />
@@ -92,8 +92,8 @@ const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
                 <Row className="item">
                   <ListImage src={i.image} />
                   <ListInfo>
-                    <h2 style={{marginBottom: '5px'}}>{i.title}</h2>
-                    <ListWrap to={''}>
+                    <h2 style={{ marginBottom: "5px" }}>{i.title}</h2>
+                    <ListWrap to={""}>
                       <img src={Live} alt="live" />
                       <div>{i.category}</div>
                     </ListWrap>

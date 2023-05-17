@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import ReactCalendar from 'react-calendar';
+import React from "react";
+import styled from "styled-components";
+import ReactCalendar from "react-calendar";
 
 interface CalendarProps {
   /**
@@ -35,14 +35,14 @@ interface CalendarProps {
 
 type StyledCalendarProps = {
   width?: string;
-}
+};
 
-const StyledCalendar:any = styled(ReactCalendar)<StyledCalendarProps>`
+const StyledCalendar: any = styled(ReactCalendar)<StyledCalendarProps>`
   &.react-calendar {
-    width: ${({width}) => width || '200px'};
+    width: ${({ width }) => width || "200px"};
     max-width: 100%;
-    background: #FFFFFF;
-    font-feature-settings: 'liga', 'kern';
+    background: #ffffff;
+    font-feature-settings: "liga", "kern";
     line-height: 0em;
   }
   .react-calendar--doubleView {
@@ -73,13 +73,13 @@ const StyledCalendar:any = styled(ReactCalendar)<StyledCalendarProps>`
     cursor: pointer;
   }
   .react-calendar__navigation {
-    background-color: #F0F0F0;
-    color: #4A4A4A;
+    background-color: #f0f0f0;
+    color: #4a4a4a;
   }
   .react-calendar__navigation button {
     min-width: 22px;
     background: none;
-    color: #4A4A4A;
+    color: #4a4a4a;
     font-size: 1.5em;
   }
   .react-calendar__navigation button:nth-child(3) {
@@ -87,11 +87,11 @@ const StyledCalendar:any = styled(ReactCalendar)<StyledCalendarProps>`
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
   }
   .react-calendar__navigation button[disabled] {
-    background-color: #F0F0F0;
-    color: #CCCCCC;
+    background-color: #f0f0f0;
+    color: #cccccc;
   }
   .react-calendar__month-view__weekdays {
     text-align: center;
@@ -99,7 +99,7 @@ const StyledCalendar:any = styled(ReactCalendar)<StyledCalendarProps>`
     /* font-weight: bold; */
     font-size: 0.55em;
     padding: 1.2em 0;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
   }
   .react-calendar__month-view__weekdays__weekday {
     padding: 0.5em;
@@ -131,11 +131,11 @@ const StyledCalendar:any = styled(ReactCalendar)<StyledCalendarProps>`
     max-width: 100%;
     text-align: center;
     padding: 0.4em 0.6em;
-    background-color: #F0F0F0;
-    border: 1px solid #F6F6F6 !important;
+    background-color: #f0f0f0;
+    border: 1px solid #f6f6f6 !important;
   }
   .react-calendar__tile:disabled {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     /* color: #333333; */
   }
   .react-calendar__tile:enabled:hover,
@@ -175,7 +175,7 @@ const Calendar: React.FC<CalendarProps> = ({
   value,
   defaultValue,
   onChange,
-  width
+  width,
 }) => {
   return (
     <StyledCalendar

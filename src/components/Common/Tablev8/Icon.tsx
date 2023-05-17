@@ -1,8 +1,8 @@
 // Permutations: SecureLock icon, MagnifyingGlass icon, ShowMore icon, ShowLess icon, Dropdown icon, AlertBell icon, LoginOCBC logo, LoadingOCBC logo, SubheaderOCBC logo, Refinitiv logo, etc.
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-export interface IconProps extends React.ComponentProps<'img'> {
+export interface IconProps extends React.ComponentProps<"img"> {
   /**
    * The path to the image.
    */
@@ -19,25 +19,21 @@ export interface IconProps extends React.ComponentProps<'img'> {
    * Width of the Icon.
    */
   width?: string;
-};
+}
 
-const StyledIconImg = styled(({
-  src,
-  alt,
-  height,
-  width,
-  ...rest
-}) => <img {...rest} src={src} alt={alt} />)`
+const StyledIconImg = styled(({ src, alt, height, width, ...rest }) => (
+  <img {...rest} src={src} alt={alt} />
+))`
   height: ${({ height }) => height};
   width: ${({ width }) => width};
   vertical-align: middle;
 `;
 
 const Icon: React.FC<IconProps> = ({
-  src = '',
-  alt = '',
-  height = 'auto',
-  width = 'auto',
+  src = "",
+  alt = "",
+  height = "auto",
+  width = "auto",
   ...rest
 }) => {
   const iconProps = {
@@ -47,9 +43,7 @@ const Icon: React.FC<IconProps> = ({
     width,
   };
 
-  return (
-    <StyledIconImg {...rest} {...iconProps} />
-  );
+  return <StyledIconImg {...rest} {...iconProps} />;
 };
 
 export default Icon;

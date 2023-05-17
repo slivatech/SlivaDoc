@@ -1,25 +1,37 @@
-import React, { useMemo, useRef, useState } from 'react';
-import { useDrop, useDrag } from 'react-dnd';
-import { flexRender } from '@tanstack/react-table';
-import update from 'immutability-helper';
-import styled from 'styled-components';
+import React, { useMemo, useRef, useState } from "react";
+import { useDrop, useDrag } from "react-dnd";
+import { flexRender } from "@tanstack/react-table";
+import update from "immutability-helper";
+import styled from "styled-components";
 
-const DND_HEADER_COL = 'col';
+const DND_HEADER_COL = "col";
 
 const StyledTh = styled.div`
   cursor: move;
   box-sizing: border-box;
   width: calc(100% - 10px);
 `;
-const DraggableHeader = ({ header, column, index, reorder, setColumnOrder, headerDraggingStyle, textAlign }: {
-  header: any, column: any, index: any, reorder: any, setColumnOrder: any,
+const DraggableHeader = ({
+  header,
+  column,
+  index,
+  reorder,
+  setColumnOrder,
+  headerDraggingStyle,
+  textAlign,
+}: {
+  header: any;
+  column: any;
+  index: any;
+  reorder: any;
+  setColumnOrder: any;
   headerDraggingStyle: {
-    activeBackgroundColor?: string,
-    activeBorder?: string,
-    canDropBackgroundColor?: string,
-    canDropBorder?: string,
-  },
-  textAlign: 'left' | 'right' | 'center'
+    activeBackgroundColor?: string;
+    activeBorder?: string;
+    canDropBackgroundColor?: string;
+    canDropBorder?: string;
+  };
+  textAlign: "left" | "right" | "center";
 }) => {
   const ref: any = useRef();
   const dropRef: any = useRef();
@@ -39,13 +51,12 @@ const DraggableHeader = ({ header, column, index, reorder, setColumnOrder, heade
       setCurrentColumnsOrder(updatedColumns);
       setColumnOrder(updatedColumns);
     }
-
-  }
+  };
 
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: DND_HEADER_COL,
     drop: (item) => {
-      reorder(item, index)
+      reorder(item, index);
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
@@ -67,7 +78,7 @@ const DraggableHeader = ({ header, column, index, reorder, setColumnOrder, heade
 
     //   item.index = hoverIndex
     // },
-  })
+  });
 
   const [{ isDragging }, drag, preview] = useDrag({
     type: DND_HEADER_COL,
@@ -76,15 +87,15 @@ const DraggableHeader = ({ header, column, index, reorder, setColumnOrder, heade
         id,
         index,
         // header: Header,
-      }
+      };
     },
-    collect: monitor => ({
+    collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
     options: {
-      dropEffect: 'copy'
-    }
-  })
+      dropEffect: "copy",
+    },
+  });
 
   // useEffect(() => {
   //   if (isDragging && allColumns) {
@@ -96,28 +107,38 @@ const DraggableHeader = ({ header, column, index, reorder, setColumnOrder, heade
   // }, [preview])
 
   const isActive = isOver && canDrop;
-  let backgroundColor = '';
-  let border = '';
+  let backgroundColor = "";
+  let border = "";
   if (isActive) {
-    backgroundColor = headerDraggingStyle?.activeBackgroundColor || '#D6EBFF';
-    border = `dashed 1px ${headerDraggingStyle?.activeBorder || '#0085ff'}`;
+    backgroundColor = headerDraggingStyle?.activeBackgroundColor || "#D6EBFF";
+    border = `dashed 1px ${headerDraggingStyle?.activeBorder || "#0085ff"}`;
   } else if (canDrop) {
-    backgroundColor = headerDraggingStyle?.canDropBackgroundColor || '#FFFFFF';
-    border = `dashed 1px ${headerDraggingStyle?.canDropBorder || '#0085ff'}`;
+    backgroundColor = headerDraggingStyle?.canDropBackgroundColor || "#FFFFFF";
+    border = `dashed 1px ${headerDraggingStyle?.canDropBorder || "#0085ff"}`;
   }
 
   preview(ref);
   drag(drop(ref));
 
-  const memoizedColumn = useMemo(() => flexRender(header.column.columnDef.header, header.getContext()), [header])
+  const memoizedColumn = useMemo(
+    () => flexRender(header.column.columnDef.header, header.getContext()),
+    [header]
+  );
 
   return (
-    <StyledTh ref={ref} style={{ cursor: 'e-resize', backgroundColor, border, opacity: isDragging ? 0 : 1, textAlign }}>
-      <div ref={dropRef}>
-        {memoizedColumn}
-      </div>
+    <StyledTh
+      ref={ref}
+      style={{
+        cursor: "e-resize",
+        backgroundColor,
+        border,
+        opacity: isDragging ? 0 : 1,
+        textAlign,
+      }}
+    >
+      <div ref={dropRef}>{memoizedColumn}</div>
     </StyledTh>
-  )
-}
+  );
+};
 
-export default React.memo(DraggableHeader)
+export default React.memo(DraggableHeader);

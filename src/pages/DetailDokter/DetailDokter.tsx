@@ -38,7 +38,7 @@ interface DetailDokterProps {
   width: number;
 }
 
-const DetailDokter: React.FC<DetailDokterProps> = ({width}) => {
+const DetailDokter: React.FC<DetailDokterProps> = ({ width }) => {
   const [type, setType] = useState();
 
   return (

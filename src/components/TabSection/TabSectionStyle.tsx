@@ -44,7 +44,7 @@ export const StyledInfoTab = styled.section`
   p,
   ul {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 22px;
     color: "#1c1c1c";
@@ -92,38 +92,33 @@ export const CategoryBox = styled.div`
     grid-template-areas: "select";
     align-items: center;
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
     select,
     &::after {
       grid-area: select;
     }
-    select{
+    select {
       outline: none;
-      border:none;
-      appearance:none;
-      position:relative;
-      padding-bottom: .5rem;
-
+      border: none;
+      appearance: none;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
     .dropdown-arrow {
-        position:absolute;
-        right:15px;
-        top:0px;
-       
-      }
+      position: absolute;
+      right: 15px;
+      top: 0px;
+    }
 
+    width: 100%;
 
-    width:100%;
-
-    border-bottom:1px solid gray; 
+    border-bottom: 1px solid gray;
     padding: 0.25em 0.5em;
 
     font-size: 1.25rem;
     cursor: pointer;
     line-height: 1.1;
 
-   
-  
     // Custom arrow
     /* &::after {
       content: "";

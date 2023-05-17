@@ -1,4 +1,4 @@
-import useMediaQuery from "../../Hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import Select from "../Select/Select";
 import CategorySection from "./CategorySection";
 import DoctorsList from "./DoctorsList";
@@ -73,7 +73,7 @@ const ServiceTab = () => {
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"
-          icon={
+          iconEnd={
             <span
               style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
             >
@@ -102,7 +102,7 @@ const DoctorTab = () => {
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"
-          icon={
+          iconEnd={
             <span
               style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
             >

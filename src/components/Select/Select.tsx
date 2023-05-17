@@ -1,30 +1,56 @@
-import React, { useState } from "react";
-import useSelect from "../../Hooks/useSelect";
-import { DropdownItem, DropdownStyle, SelectContainer, SelectLabelButton } from "./SelectStyle";
+import useSelect from "../../hooks/useSelect";
+import {
+  DropdownItem,
+  DropdownStyle,
+  SelectContainer,
+  SelectLabelButton,
+} from "./SelectStyle";
 
 interface ISelect {
   label: string;
-  values: string[];
-  onChange?: (e: React.ChangeEvent) => void;
-  icon?:any;
-  borderType?:"bottom" | "top";
-  radius?:string;
-  border?:string;
+  values: any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  iconEnd?: any;
+  iconStart?: any;
+  borderType?: "bottom" | "top";
+  radius?: string;
+  padding?: string;
+  border?: string;
 }
-const Select = ({ label, values, onChange,icon,radius,borderType,border }: ISelect) => {
+const Select = ({
+  label,
+  values,
+  iconStart,
+  onChange,
+  iconEnd,
+  radius,
+  borderType,
+  border,
+  padding,
+}: ISelect) => {
+  const { currentValue, handleOpen, open, handleChange } = useSelect();
 
-    const { currentValue,handleOpen,open,handleChange } = useSelect();
-   return (
+  return (
     <SelectContainer>
-      <SelectLabelButton onClick={handleOpen} borderType={borderType} radius={radius} border={border}>
-        <p>{currentValue !== "" ? currentValue : label}</p>
-        {icon}
-        
+      <SelectLabelButton
+        padding={padding}
+        onClick={handleOpen}
+        borderType={borderType}
+        radius={radius}
+        border={border}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+          {iconStart}
+          <p>{currentValue !== "" ? currentValue : label}</p>
+        </div>
+        {iconEnd}
       </SelectLabelButton>
       <DropdownStyle isVisible={open}>
-        {values.map((value, index) => (
+        {values.map((value: any, index: number) => (
           <DropdownItem
-            onClick={() => handleChange(value)}
+            onClick={() => {
+              handleChange(value);
+            }}
             active={value === currentValue}
             key={index}
           >

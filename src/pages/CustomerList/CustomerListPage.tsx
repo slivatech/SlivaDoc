@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import {
-  Cell,
   TableV8,
   createColumnHelper,
 } from "../../components/Common/Tablev8";
@@ -20,7 +19,7 @@ const CustomerListPage = () => {
   const [selectedRow, setSelectedRow] = useState<any>([]);
   const alertRef: any = useRef(null);
   const itemPerPage = 5;
-  const detailItemPerPage = 1;
+  // const detailItemPerPage = 1;
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(
     Math.ceil(customers.length / itemPerPage)

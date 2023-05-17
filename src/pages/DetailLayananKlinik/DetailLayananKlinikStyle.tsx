@@ -5,8 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   gap: 14px;
-  padding: 10px 8%;
-  /* max-width: 1400px; */
+  max-width: 1400px;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -18,9 +17,9 @@ export const Container = styled.div`
 export const ContainerInformasi = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 15px 0;
+  margin: 100px;
   margin-right: 0;
-  /* width:739px; */
+  width: 739px;
   @media only screen and (max-width: 768px) {
     margin: 0;
     margin-top: 50px;
@@ -52,63 +51,74 @@ export const Price = styled.div`
   margin-top: 45px;
   h1 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 40px;
   }
   h3 {
     font-style: none;
     color: #f90909;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 15px;
     line-height: 10px;
     margin-bottom: 10px;
   }
   p {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
     margin-bottom: 3px;
-    @media only screen and (max-width: 768px) {
-      display: none;
-    }
   }
 `;
 
 export const LocationContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   border-bottom: 0.5px solid rgba(28, 28, 28, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
   margin-top: 10px;
-  h1 {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 40px;
-  }
 `;
 
 export const Location = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: wrap;
+    align-items: center;
+  }
   img {
     justify-content: flex-start;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
   }
   p {
-    font-weight: 400;
-    font-size: 10px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 10px;
     color: #000000;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 40px;
   }
 `;
 export const LocationLogo = styled.img`
   margin-left: auto;
+  position: a;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
 `;
 
 export const BookingContainer = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 80px;
-  margin-top: 15px;
+  margin-top: 100px;
   margin-left: 0;
   margin-bottom: auto;
   width: 418px;
@@ -128,9 +138,8 @@ export const ConsultationContainer = styled.div`
 `;
 
 export const HeaderConsultation = styled.h2`
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
-  margin-bottom: 20px;
 `;
 
 export const Watch = styled.div`
@@ -171,16 +180,26 @@ export const WatchHead = styled.div`
 
 export const WatchContent = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: wrap;
+  width: 107px;
+  height: 24px;
 
   div {
     display: flex;
-    background: #ece4e4;
-    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #ece4e4;
+    border-radius: 5px;
+    padding: 5px 15px;
     width: 107px;
     height: 24px;
-    align-items: center;
-    margin-right: 12px;
+
+    &.selected {
+      background: linear-gradient(180deg, #5296e5 0%, #90aad1 100%);
+      color: white;
+    }
   }
 `;
 

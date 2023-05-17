@@ -10,18 +10,20 @@ const TabSection = () => {
   const [curTab, setCurTab] = useState<TabTypes>("informasi");
 
   return (
-      <StyledClinicNav>
-        <ClinicWrapper>
-
+    <StyledClinicNav>
+      <ClinicWrapper>
         {tabs.map((tab, i) => (
-          <StyledLi key={i} onClick={() => setCurTab(tab)} isActive={curTab === tab}>
+          <StyledLi
+            key={i}
+            onClick={() => setCurTab(tab)}
+            isActive={curTab === tab}
+          >
             {tab}
           </StyledLi>
         ))}
-        </ClinicWrapper>
-        <Tab tab={curTab} />
-      
-      </StyledClinicNav>
+      </ClinicWrapper>
+      <Tab tab={curTab} />
+    </StyledClinicNav>
   );
 };
 

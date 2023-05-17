@@ -10,10 +10,10 @@ const useSelect = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleValueChange = (value:string) => {
+  const handleValueChange = (value: string) => {
     setCurrentValue(value);
   };
-  const handleChange = (value:string) => {
+  const handleChange = (value: string) => {
     handleValueChange(value);
     // call method, if it exists
     // if (onChange) onChange(value);
@@ -21,7 +21,14 @@ const useSelect = () => {
     handleClose();
   };
 
-  return { handleOpen, handleClose,handleValueChange,handleChange,open,currentValue };
+  return {
+    handleOpen,
+    handleClose,
+    handleValueChange,
+    handleChange,
+    open,
+    currentValue,
+  };
 };
 
 export default useSelect;

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ColumnContainer,
   Container,
@@ -43,7 +43,12 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
     setPengalamanPraktik(value);
   };
 
-  const filterData = useCallback(() => {
+  const handleReset = () => {
+    setHargaKonsultasi("");
+    setPengalamanPraktik("");
+  };
+
+  const filterData = () => {
     let filteredData = data;
     if (hargaKonsultasi !== "") {
       if (hargaKonsultasi === "<50000") {
@@ -70,15 +75,13 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
     }
 
     return filteredData;
-  }, [hargaKonsultasi, pengalamanPraktik]);
+  };
 
   const [filteredData, setFilteredData] = useState(data);
 
   useEffect(() => {
     setFilteredData(filterData());
-  }, [filterData, hargaKonsultasi, pengalamanPraktik]);
-
-  const [limit, setLimit] = useState(2);
+  }, [hargaKonsultasi, pengalamanPraktik]);
 
   return (
     <>
@@ -91,7 +94,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
           <FilterContainer>
             <Heading>
               <Title>Filter</Title>
-              <Link>Reset</Link>
+              <Link onClick={handleReset}>Reset</Link>
             </Heading>
             <HargaKonsultasiFilter
               selectedValue={hargaKonsultasi}
@@ -114,7 +117,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
         <WrapperContainer>
           <Heading>
             <ContainerDesc>
-              <Title>Rekomendasi Dokter</Title>
+              <Title>Rekomendasi Dokter Hewan Terbaik</Title>
               <p>Konsultasi online dengan dokter siaga kami</p>
             </ContainerDesc>
             <Link>Lihat Semua</Link>
@@ -122,7 +125,10 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
           {filteredData.length > 0 ? (
             <HasilFilter data={filteredData.slice(0, 2)} text={""} />
           ) : (
-            <HasilFilter text="Tidak ada yang cocok" data={[]} />
+            <HasilFilter
+              text="Sepertinya yang kamu cari tidak ada, coba kata kunci lain."
+              data={[]}
+            />
           )}
           <Banner>
             <ImgBanner src={ConsultImg} />
@@ -145,19 +151,19 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
           <DoctorGrid>
             <ContainerDesc>
               <Title>Cari Dokter atau Spesialisasi</Title>
-              <p>Pilih kategori yang tersedia sesuai kondisimu</p>
+              <p>Pilih kategori yang tersedia sesuai kondisi hewan kesayangan anda</p>
             </ContainerDesc>
             <DoctorList doctors={doctors} />
             <ButtonGrid>
               <Button
                 text="Tampilkan lebih banyak"
                 textColor="#040000"
-                color="#ECE4E4"
+                color="#ece4e4"
                 fontSize="14px"
                 radius="5px"
                 height="35px"
                 width="179px"
-                outline="false"
+                outline={false}
               />
             </ButtonGrid>
           </DoctorGrid>

@@ -4,7 +4,6 @@ export const Form = styled.div`
     margin-top: 52px;
 
     h2 {
-        font-family: 'DM Sans';
         font-weight: 700;
         font-size: 25.63px;
         color: #06152B;
@@ -20,48 +19,41 @@ export const Form = styled.div`
 
     form {
         width: 70%;
+        @media (max-width: 720px) {
+            width: 100%;
+        }
 
         .row {
             display: flex;
             flex-direction: row;
             column-gap: 45px;
-        }
-
-        button {
-            padding: 8px 43px;
-            border-radius: 5px;
-            font-weight: 400;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .btn-cancel {
-            color: #0D6EFD;
-            background: #FFFFFF;
-            border: 2px solid #FFE9E9;
-            margin-right: 22px
-        }
-
-        .btn-save {
-            background: #127FFF;
-            color: #FFF;
-            border: 2px solid #127FFF;
+            @media (max-width: 720px) {
+                column-gap: 13px;
+            }
         }
     }
 
     .inpWrap{
         width: 100%;
-        margin-bottom: 18px;
+        margin-bottom: 19px;
         display: flex;
         flex-direction: column;
         gap: 8px;
-
-        label{
+        @media (max-width: 720px) {
+            margin-bottom: 17px;
+            gap: 7px;
+        }
+        
+        label {
             font-weight: 600;
             font-size: 16px;
+            @media (max-width: 720px) {
+                font-size: 12px;
+            }
         }
 
         input, select, option {
+            height: 40px;
             border: 2px solid #FFE9E9;
             outline: none;
             border-radius: 5px;
@@ -69,19 +61,43 @@ export const Form = styled.div`
             background: #FFFFFF
             font-weight: 500;
             font-size: 14px;
+            @media (max-width: 720px) {
+                height: 28px;
+                font-size: 8px;
+                border-radius: 3px;
+            }
         }
+    }
+`;
+
+export const Cards = styled.div`
+    display: flex;
+    column-gap: 30px;
+    @media (max-width: 720px) {
+        column-gap: 20px;
     }
 `
 
 export const Card = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
     background: #FCF6F6;
     border-radius: 10.5635px;
-    min-width: 292.61px;
+    min-width: 30%;
+    min-height: 114px;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    padding: 13px 17px 15px 25px;
+    padding: 15px;
+    @media (max-width: 720px) {
+       max-width: 132px;
+        min-height: 49px;
+        border-radius: 5px;
+        column-gap: 3px;
+        padding: 5px;
+    }
     
     .text {
-        display: flex;
         align-items: center;
         column-gap: 15px;
         color: #06152B;
@@ -91,18 +107,21 @@ export const Card = styled.div`
             font-weight: 700;
             font-size: 24.0637px;
             opacity: 0.7;
+            @media (max-width: 720px) {
+                font-size: 14px;
+            }
         }
         
         span {
             font-weight: 400;
             font-size: 15.0213px;
             opacity: 0.7;
+            @media (max-width: 720px) {
+                font-size: 8px;
+            }
         }
     }
     
-    img {
-        width: 63.38px;
-    }
 
     button {
         background: #127FFF;

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Container } from '../PageArtikel/PageArtikelStyle'
 import { CardDoc, CardMed, Col, SeeAll, Location, Button, Top, Brand, SearchBar } from './TindakanMedisStyle'
 import imgLoc from '../../assets/image/img-location.png'
