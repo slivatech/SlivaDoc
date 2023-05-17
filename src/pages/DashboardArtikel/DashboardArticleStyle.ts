@@ -45,48 +45,46 @@ export const Chart =styled.div`
             padding: 30px;
         }
         .pie-chart{
-                background-color: #fff;
-                border-radius: 10px;
-                padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
         }
 `;
 
-export const Form = styled.div`
-  width: 100%;
-  height: 100%;
-
-  .inpWrap {
+export const Form = styled.form`
     width: 100%;
-    margin-bottom: 20px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    
+    .inpWrap{
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-    label {
-      font-weight: 500;
-      font-size: 16px;
-      color: #06152b;
+        label {
+            font-weight: 500;
+            font-size: 16px;
+            color: #06152B;
+        }
+
+        input, textarea{
+            outline: none;
+            border: none;
+            background-color: #F1F4FA;
+            border-radius: 5px;
+            padding: 20px 15px;
+        }
     }
 
-    input,
-    textarea {
-      outline: none;
-      border: none;
-      background-color: #f1f4fa;
-      border-radius: 5px;
-      padding: 20px 15px;
-    }
-  }
-
-  // .submit{
-  //     margin-top: 3rem;
-  // }
-`;
+`
 
 export const Profile = styled.div`
-  width: 110px;
-  height: 110px;
-  background-color: #f1f4fa;
-  border-radius: 50%;
-  position: relative;
-`;
+    width: 178px;
+    height: 71px;
+    background-color: #EBDEDE;
+    border-radius: 5px;
+    position: relative;
+`

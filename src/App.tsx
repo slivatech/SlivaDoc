@@ -9,7 +9,7 @@ import { useWindowDimensions } from "./hooks/useWindowDimensions";
 import Auth from "./pages/Auth/Auth";
 // import TablePage from './pages/Example/TablePage';
 import DetailKlinik from "./pages/DetailKlinik/DetailKlinik";
-// import EditProfil from './pages/EditProfil/EditProfil';
+import EditProfil from './pages/EditProfil/EditProfil';
 import TindakanMedis from "./pages/TindakanMedis/TindakanMedis";
 // import PageArtikel from './pages/PageArtikel/PageArtikel';
 import DetailDokter from "./pages/DetailDokter/DetailDokter";
@@ -18,8 +18,8 @@ import TanyaDokter from "./pages/TanyaDokter/TanyaDokter";
 import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
-// import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
-import TabGroup from "./pages/DashboardArtikel/TabGroup";
+import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
+
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -37,11 +37,11 @@ const App = () => {
         <Route path='/ask' element={<TanyaDokter width={width}/>}/>
         <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
         <Route path='/doctor' element={<DetailDokter width={width} />}/>
-        {/* <Route path='/profileUpdate' element={<EditProfil />}/> */}
+        <Route path='/profileUpdate' element={<EditProfil />}/>
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
-        {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
-        <Route path='/tabs' element={<TabGroup />}/>
+        <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
+       
       </Routes>
     </ThemeProvider>
   );
