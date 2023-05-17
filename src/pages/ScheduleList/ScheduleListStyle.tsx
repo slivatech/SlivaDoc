@@ -143,9 +143,10 @@ export const AddNewScheduleSidebar = styled.div`
         width: 40px;
         height: 40px;
         position: absolute;
-        top: 8px;
+        top: 50%;
+        transform: translate(0, -50%);
         cursor: pointer;
-        right: 20px;
+        right: 10px;
         &:hover {
           background: rgba(255, 105, 180, 0.1);
         }
