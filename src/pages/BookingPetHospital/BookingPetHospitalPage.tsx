@@ -115,7 +115,7 @@ const BookingPetHospitalPage = () => {
                     <>
                       {tablet ? (
                         <>
-                          <h1 style={{ fontSize: "18px", fontWeight: 400 }}>
+                          <h1 style={{ fontSize: "18px", fontWeight: 400,margin:"1rem 0" }}>
                             Dokter Hewan Rekomendasi
                           </h1>
 

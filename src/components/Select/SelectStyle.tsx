@@ -55,7 +55,9 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 1000;
+  max-height:200px;
+  overflow-y: scroll;
   /* max-height: 40vmax;
   min-width: 10rem; */
   padding: 0.4rem;
@@ -65,7 +67,6 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   background: #fafafa;
   border: 1.5px solid slategrey;
   transition: max-height 0.2s ease;
-  overflow: hidden;
   ${({ isVisible }) =>
     isVisible !== true &&
     css`
