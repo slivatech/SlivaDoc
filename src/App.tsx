@@ -19,6 +19,7 @@ import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
 import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
+import DashboardAds from "./pages/DashboardAds/DashboardAds";
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <Route path='/invoice' element={<Invoice />}/>
         <Route path='/customers' element={<CustomerListPage />}/>
         <Route path='/dashboardArticle' element={<DashboardArtikel />}/>
+        <Route path='/dashboardAds' element={<DashboardAds />}/>
        
       </Routes>
     </ThemeProvider>
