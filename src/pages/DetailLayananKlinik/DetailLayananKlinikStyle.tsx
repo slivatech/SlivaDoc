@@ -17,9 +17,9 @@ export const Container = styled.div`
 export const ContainerInformasi = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin: 100px;
+  margin: 30px 100px;
   margin-right: 0;
-  width: 739px;
+  width: 659px;
   @media only screen and (max-width: 768px) {
     margin: 0;
     margin-top: 50px;
@@ -118,7 +118,7 @@ export const LocationLogo = styled.img`
 export const BookingContainer = styled.div`
   background: #ffff;
   border-radius: 5px;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-left: 0;
   margin-bottom: auto;
   width: 418px;

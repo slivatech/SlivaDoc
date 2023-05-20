@@ -197,6 +197,7 @@ const DashboardArtikel = () => {
                                                     border: 'none',
                                                     borderRadius: '5px'
                                                 }} 
+                                                alt=''
                                             />
                                         )) }
                                     </Profile>
