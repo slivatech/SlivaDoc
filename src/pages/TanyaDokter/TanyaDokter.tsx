@@ -57,7 +57,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
         filteredData = filteredData.filter(
           (d) => d.hargaKonsultasi >= 50000 && d.hargaKonsultasi <= 100000
         );
-      } else if (hargaKonsultasi === ">=100000") {
+      } else if (hargaKonsultasi === ">100000") {
         filteredData = filteredData.filter((d) => d.hargaKonsultasi >= 100000);
       }
     }

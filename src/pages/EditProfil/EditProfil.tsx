@@ -5,8 +5,14 @@ import topUp from "../../assets/icon/topUp.svg";
 import tarik from "../../assets/icon/tarik-tunai.svg";
 import { Container } from "../PageArtikel/PageArtikelStyle";
 import { Card, Form } from "./EditProfilStyle";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
-const EditProfil = () => {
+interface EditProfilProps {
+  width: number;
+}
+
+const EditProfil: React.FC<EditProfilProps> = ({width}) => {
   interface IProfile {
     input: string;
     name: string;
@@ -112,6 +118,7 @@ const EditProfil = () => {
 
   return (
     <>
+    <Navbar width={width}/>
       <Container>
         <div style={{ display: "flex", gap: "33px" }}>
           {jobAp.map((i: ICard) => (
@@ -158,13 +165,14 @@ const EditProfil = () => {
             </div>
             <Input input="password" name="Password" type="password" />
             <Input input="repassword" name="Re-Type Password" type="password" />
-            <div style={{ margin: "44px 0" }}>
+            <div className="button-end" style={{ margin: "44px 0; padding: 20px" }}>
               <button className="btn-cancel">Cancel</button>
               <button className="btn-save">Save</button>
             </div>
           </form>
         </Form>
       </Container>
+      <Footer/>
     </>
   );
 };

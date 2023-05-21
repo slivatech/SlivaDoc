@@ -62,6 +62,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
               src="/assets/back-arrow.svg"
               style={{ cursor: "pointer" }}
               onClick={handleClose}
+              alt=""
             />
             <h2>{id ? "Edit consultation" : "Add a new consultation"}</h2>
           </div>
@@ -86,7 +87,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                   className="icon"
                   onClick={() => setOpenCalendar(!openCalendar)}
                 >
-                  <img src="/assets/calendar-schedule.svg" />
+                  <img src="/assets/calendar-schedule.svg" alt="calendar-schedule"/>
                 </div>
                 <div className="dropdown">
                   {openCalendar ? (
@@ -107,7 +108,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                   className="icon"
                   onClick={() => setOpenTimePicker(!openTimePicker)}
                 >
-                  <img src="/assets/time-circle-purple.svg" />
+                  <img src="/assets/time-circle-purple.svg" alt="time-circle-purple"/>
                 </div>
               </div>
               {openTimePicker ? (
@@ -141,9 +142,9 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
                   onChange={()=>null}
                   label="Choose Location"
                   defaultValue={singleSchedule?.location}
-                  iconEnd={<img src="/assets/arrow_dropdown2.svg" />}
+                  iconEnd={<img src="/assets/arrow_dropdown2.svg" alt="arrow"/>}
                   values={["Online", "Clinic"]}
-                  iconStart={<img src="/assets/location-schedule.svg" />}
+                  iconStart={<img src="/assets/location-schedule.svg" alt="location"/>}
                 />
               </div>
             </div>
@@ -152,7 +153,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
           <BaseButton
             radius="10px"
             height="40px"
-            iconStart={<img src="/assets/download.svg" />}
+            iconStart={<img src="/assets/download.svg" alt="download"/>}
             color="#3A36DB"
             textColor="white"
             text="Save Sliva Ads"

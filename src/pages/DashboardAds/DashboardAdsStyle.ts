@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import calendarPink from '../../assets/icon/calendar-pink.svg'
 
 export const ImageColumn = styled.img`
   width: 79px;
@@ -77,6 +78,16 @@ export const Form = styled.form`
             border-radius: 5px;
             padding: 20px 15px;
         }
+
+        input[type=date] {
+            padding: 15px;
+        }
+        input[type=date]::-webkit-calendar-picker-indicator {
+            background-image: url(${calendarPink});
+            width: 40px;
+            height: 40px;
+        }
+    
     }
 
 `
@@ -88,3 +99,31 @@ export const Profile = styled.div`
     border-radius: 5px;
     position: relative;
 `
+
+export const StatusColumn = styled.div<{
+    status: "Complete" | "Pending" | "Cancel";
+  }>(
+    ({ status }) => `
+      padding: 7px 20px;
+      min-width: 89px;
+      border-radius: 22.5px;
+      font-size: 10px;
+      background:${
+        status === "Complete"
+          ? "rgba(3, 168, 158, 0.1)"
+          : status === "Pending"
+          ? "rgba(58, 54, 219, 0.1)"
+          : " rgba(255, 105, 180, 0.1)"
+      };
+      color: ${
+        status === "Complete"
+          ? "#03A89E"
+          : status === "Pending"
+          ? " #3A36DB"
+          : "#FF69B4"
+      };
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  `
+);

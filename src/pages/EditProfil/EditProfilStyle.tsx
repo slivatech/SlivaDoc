@@ -31,6 +31,27 @@ export const Form = styled.div`
                 column-gap: 13px;
             }
         }
+    .button-end {
+        display: flex;
+        justify-content: space-arround;
+    }
+
+    .btn-cancel {
+        cursor: pointer;
+        margin-right: 10px;
+        padding: 10px 20px;
+    }
+
+    .btn-save {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+    }
+    .btn-save: Hover {
+        background-color: white;
+        color: black;
+    }
     }
 
     .inpWrap{
@@ -71,79 +92,78 @@ export const Form = styled.div`
 `;
 
 export const Cards = styled.div`
-    display: flex;
-    column-gap: 30px;
-    @media (max-width: 720px) {
-        column-gap: 20px;
-    }
-`
+  display: flex;
+  column-gap: 30px;
+  @media (max-width: 720px) {
+    column-gap: 20px;
+  }
+`;
 
 export const Card = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  background: #fcf6f6;
+  border-radius: 10.5635px;
+  min-width: 30%;
+  min-height: 114px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 15px;
+  @media (max-width: 720px) {
+    max-width: 132px;
+    min-height: 49px;
+    border-radius: 5px;
+    column-gap: 3px;
+    padding: 5px;
+  }
+
+  .text {
+    align-items: center;
+    column-gap: 15px;
+    color: #06152b;
+    margin-bottom: 12px;
+
+    h1 {
+      font-weight: 700;
+      font-size: 24.0637px;
+      opacity: 0.7;
+      @media (max-width: 720px) {
+        font-size: 14px;
+      }
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 15.0213px;
+      opacity: 0.7;
+      @media (max-width: 720px) {
+        font-size: 8px;
+      }
+    }
+  }
+
+  button {
+    background: #127fff;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-weight: 400;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .btn-card {
+    padding: 8px 16px;
+    line-height: 12px;
+    text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 30px;
-    background: #FCF6F6;
-    border-radius: 10.5635px;
-    min-width: 30%;
-    min-height: 114px;
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    padding: 15px;
-    @media (max-width: 720px) {
-       max-width: 132px;
-        min-height: 49px;
-        border-radius: 5px;
-        column-gap: 3px;
-        padding: 5px;
-    }
-    
-    .text {
-        align-items: center;
-        column-gap: 15px;
-        color: #06152B;
-        margin-bottom: 12px;
-        
-        h1 {
-            font-weight: 700;
-            font-size: 24.0637px;
-            opacity: 0.7;
-            @media (max-width: 720px) {
-                font-size: 14px;
-            }
-        }
-        
-        span {
-            font-weight: 400;
-            font-size: 15.0213px;
-            opacity: 0.7;
-            @media (max-width: 720px) {
-                font-size: 8px;
-            }
-        }
-    }
-    
+    gap: 3px;
 
-    button {
-        background: #127FFF;
-        border-radius: 5px;
-        color: #FFF;
-        border: none;
-        font-weight: 400;
-        font-size: 10px;
-        cursor: pointer;
+    img {
+      width: 12px;
+      margin-left: 3px;
     }
-
-    .btn-card {
-        padding: 8px 16px;
-        line-height: 12px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 3px;
-
-        img {
-            width: 12px;
-            margin-left: 3px;
-        }
-    }
-`
+  }
+`;
