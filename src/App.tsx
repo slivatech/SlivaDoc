@@ -23,6 +23,7 @@ import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
 import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
+import PromoGajian from "./pages/PromoProduct/PromoGajian";
 
 const App = () => {
   const {width} = useWindowDimensions()
@@ -35,11 +36,12 @@ const App = () => {
       <DetailDokter width={0}/>
       <DetailLayananKlinik width={0}/>
       <TanyaDokter width={0}/>
-      <PopUpTranksaksi /> */}
+      <PopUpTranksaksi /> 
       <SlivaProteksi width={0}/>
       <UnlimitedChat width={0}/>
       <Reguler width={0}/>
-      <Plus width={0}/>
+      <Plus width={0}/>*/}
+      <PromoGajian width={0}/>
       <Routes>
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
