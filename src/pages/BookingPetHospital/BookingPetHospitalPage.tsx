@@ -7,7 +7,7 @@ import Select from "../../components/Select/Select";
 import {
   TimeDropdownContainer,
 } from "../../components/BookingComponents/BookingStyle";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery"
 // import BaseButton from "../../components/Common/Buttons/BaseButton";
 import FilterTags from "../../components/BookingComponents/FilterTags";
 import Navbar from "../../components/Navbar/Navbar";

@@ -3,8 +3,8 @@ import SidebarBooking from "./SidebarBooking";
 import { FeatureContainer, SearchWrapper } from "./BookingStyle";
 // import Select from "../Select/Select";
 import BaseButton from "../Common/Buttons/BaseButton";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import { useFilterDoctors } from "../../hooks/useFilterDoctors";
+import useMediaQuery from "../../Hooks/useMediaQuery";
+import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
 
 const BookingWrapperComponent = ({
   children,

@@ -3,7 +3,7 @@ import BookingWrapperComponent from "../../components/BookingComponents/BookingW
 import { TimeDropdownContainer } from "../../components/BookingComponents/BookingStyle";
 import Select from "../../components/Select/Select";
 import DoctorResultsList from "../../components/BookingComponents/DoctorResultsList";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 

@@ -1,47 +1,36 @@
-import useSelect from "../../hooks/useSelect";
-import {
-  DropdownItem,
-  DropdownStyle,
-  SelectContainer,
-  SelectLabelButton,
-} from "./SelectStyle";
+import React from "react";
+import useSelect from "../../Hooks/useSelect";
+import { DropdownItem, DropdownStyle, SelectContainer, SelectLabelButton } from "./SelectStyle";
 
 interface ISelect {
   label: string;
   values: any;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  iconEnd?: any;
-  iconStart?: any;
-  borderType?: "bottom" | "top";
-  radius?: string;
-  padding?: string;
-  border?: string;
+  iconEnd?:any;
+  iconStart?:any;
+  borderType?:"bottom" | "top";
+  radius?:string;
+  padding?:string;
+  border?:string;
+  background?:string;
+  defaultValue?:string;
 }
-const Select = ({
-  label,
-  values,
-  iconStart,
-  onChange,
-  iconEnd,
-  radius,
-  borderType,
-  border,
-  padding,
-}: ISelect) => {
-  const { currentValue, handleOpen, open, handleChange } = useSelect();
+const Select = ({background,defaultValue, label, values, iconStart,onChange,iconEnd,radius,borderType,border,padding }: ISelect) => {
 
-  return (
+    const { currentValue,handleOpen,open,handleChange } = useSelect();
+
+
+
+   return (
     <SelectContainer>
-      <SelectLabelButton
-        padding={padding}
-        onClick={handleOpen}
-        borderType={borderType}
-        radius={radius}
-        border={border}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+      <SelectLabelButton  background={background} padding={padding} onClick={(e)=>{
+        handleOpen();
+        e.preventDefault()
+      }} borderType={borderType} radius={radius} border={border}>
+        <div style={{display:"flex",alignItems:'center',gap:".5rem"}}>
           {iconStart}
-          <p>{currentValue !== "" ? currentValue : label}</p>
+        <p>{currentValue !== "" ? currentValue : defaultValue ? defaultValue : label}</p>
+
         </div>
         {iconEnd}
       </SelectLabelButton>

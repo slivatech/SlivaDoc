@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { StyledAppointment } from "./TabSectionStyle";
 

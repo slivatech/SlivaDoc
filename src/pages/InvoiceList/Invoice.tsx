@@ -17,8 +17,14 @@ import editIc from "../../assets/icon/edit.svg";
 import { IconColumn, NameColumn, StatusColumn } from "./InvoiceListStyle";
 import { GlobalFilter } from "./GlobalFilter";
 import { Container } from "../PageArtikel/PageArtikelStyle";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
-const Invoice = () => {
+interface InvoiceProps {
+  width: number;
+}
+
+const Invoice: React.FC<InvoiceProps> = ({width}) => {
   const [editable, setEditable] = useState<number>(0);
   const { alertColumn } = useAlertColumn({
     editable: editable,
@@ -79,6 +85,8 @@ const Invoice = () => {
   }, [selectedData, selectedRow]);
 
   return (
+    <>
+    <Navbar width={width}/>
     <Container style={{ background: "rgba(153, 178, 198, 0.2)" }}>
       <div
         style={{
@@ -113,6 +121,8 @@ const Invoice = () => {
         />
       </div>
     </Container>
+    <Footer/>
+    </>
   );
 };
 

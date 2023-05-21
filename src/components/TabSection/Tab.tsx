@@ -1,4 +1,4 @@
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import Select from "../Select/Select";
 import CategorySection from "./CategorySection";
 import DoctorsList from "./DoctorsList";

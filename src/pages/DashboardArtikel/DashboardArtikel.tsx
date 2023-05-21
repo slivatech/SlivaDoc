@@ -11,6 +11,8 @@ import downloadIcon from '../../assets/icon/Download.svg'
 import Dropdown from '../../components/Common/Dropdown/Dropdown'
 import TabGroup, { TTab } from './TabGroup'
 import PieChartComp from '../../components/Chart/PieChart'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const categories = [
     {
@@ -40,7 +42,11 @@ interface FormDataType {
     imageURLs?: string,
 }
 
-const DashboardArtikel = () => {
+interface DashboardArticleProps {
+    width : number;
+}
+
+const DashboardArtikel: React.FC<DashboardArticleProps> = ({width}) => {
     // state form
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -136,6 +142,8 @@ const DashboardArtikel = () => {
     }, [data?.length, selectedRow]);
 
     return (
+        <>
+        <Navbar width={width}/>
     <Container style={{ background: 'rgba(153, 178, 198, 0.2)'}}>
         <h2 style={{ fontWeight: 700, fontSize: '26px'}}>Article</h2>
         <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', margin: '30px 0 34px'}}>
@@ -351,6 +359,8 @@ const DashboardArtikel = () => {
             // end of section draft tab
         } 
     </Container>
+    <Footer/>
+    </>
   )
 }
 
