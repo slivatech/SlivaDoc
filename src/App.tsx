@@ -20,6 +20,7 @@ import Invoice from './pages/InvoiceList/Invoice';
 import {Routes, Route} from 'react-router-dom'
 // import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
+import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -31,8 +32,8 @@ const App = () => {
         <Route path='/' element={<HomePage width={width}/>} />
         <Route path='/auth' element={<Auth/>} />
         <Route path='/articles' element={<Artikel width={width}/>}/>
-        <Route path='/article' element={<DetailArtikel width={width}/>}/>
-        <Route path="/clinic" element={<DetailKlinik width={width}/>} />
+        <Route path='/article/:id' element={<DetailArtikel width={width}/>}/>
+        <Route path="/clinic/:id" element={<DetailKlinik width={width}/>} />
         <Route path='/medical' element={<TindakanMedis width={width}/>}/>
         <Route path='/ask' element={<TanyaDokter width={width}/>}/>
         <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
@@ -42,6 +43,7 @@ const App = () => {
         <Route path='/customers' element={<CustomerListPage />}/>
         {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
         <Route path='/tabs' element={<TabGroup />}/>
+        <Route path='/protection' element={<SlivaProteksi width={width} />}/>
       </Routes>
     </ThemeProvider>
   );

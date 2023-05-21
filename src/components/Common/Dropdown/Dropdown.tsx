@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
+import arrow from '../../../assets/icon/downArrow.png'
 
 type DropdownWrapProps = {
   width: string;
@@ -154,7 +155,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <div className="first">{value || options[0]?.value}</div>
         <div className="second">
           <div>{icon ? icon : ""}</div>
-          <img src="./assets/downArrow.png" alt="" />
+          <img src={arrow} alt="" />
         </div>
       </DropdownLabel>
       <DropdownContent display={isChecked} fontSize={fontSize}>

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import BarHelper from "./BarHelper";
 import BaseButton from "../Common/Buttons/BaseButton";
+import { useNavigate } from "react-router-dom";
+import logo from '../../assets/icon/logo.svg'
+import uk from '../../assets/icon/uk.png'
+import id from '../../assets/icon/Indonesia.png'
+
 import {
   BottomNav,
   BottomWrap,
@@ -14,35 +19,43 @@ import {
   TopNav,
 } from "./styled";
 import Dropdown from "../Common/Dropdown/Dropdown";
+import SlideIn from "../Common/Slide/SlideIn";
 
 const navigation = [
   {
     id: 1,
     name: "Cari Dokter",
+    nav: "medical"
   },
   {
     id: 2,
     name: "Tanya Dokter",
+    nav: "ask"
   },
   {
     id: 3,
     name: "Artikel Kesehatan",
+    nav: "articles"
   },
   {
     id: 4,
     name: "SlivaProteksi",
+    nav: "protection"
   },
   {
     id: 5,
     name: "SlivaShop",
+    nav: ""
   },
   {
     id: 6,
     name: "Animal Events",
+    nav: ""
   },
   {
     id: 7,
     name: "Animal Academies",
+    nav: ""
   },
 ];
 
@@ -60,12 +73,9 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ width }) => {
+  const navigate = useNavigate();
   const [overlay, setOverlay] = useState(false);
   const [lang, setLang] = useState("Indonesia");
-
-  React.useEffect(() => {
-    console.log({ width });
-  }, [width]);
 
   return (
     <>
@@ -80,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
                 onClick={() => setOverlay(true)}
               />
             )}
-            <img src="./assets/logo.svg" alt="Logo" className="Logo" />
+            <img src={logo} alt="Logo" className="Logo" />
           </Logo>
           <BottomWrap>
             <BaseButton
@@ -111,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
         <BottomNav>
           <MenuWrap>
             {navigation?.map((data) => (
-              <LinkWrap to={``} key={data.id}>
+              <LinkWrap to={`/${data.nav}`} key={data.id}>
                 {data.name}
               </LinkWrap>
             ))}
@@ -124,12 +134,12 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
               icon={
                 lang === "Indonesia" ? (
                   <img
-                    src="./assets/indonesia.png"
+                    src={id}
                     alt="flag"
                     className="flag"
                   />
                 ) : (
-                  <img src="./assets/uk.png" alt="flag" className="flag" />
+                  <img src={uk} alt="flag" className="flag" />
                 )
               }
               value={lang}
@@ -140,32 +150,43 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
       </Header>
 
       {width < 768 && overlay && (
-        <Overlay>
-          {/* <Wrapper></Wrapper> */}
-          <div className="close" onClick={() => setOverlay(false)}>
-            <img src="./assets/close.png" alt="close" />
-          </div>
-          <Line />
-          <div className="contentWrap">
-            {navigation?.map((data) => (
-              <LinkWrap to={``} className="content" key={data.id}>
-                {data.name}
-              </LinkWrap>
-            ))}
-          </div>
-          <div className="bttnWrap">
-            <BaseButton
-              text="Download Aplikasi"
-              textColor="#fff"
-              fontSize="16px"
-              color="#127fff"
-              radius="5px"
-              width="100%"
-              height="40px"
-              // onClick={() => {alert('ressssss')}}
-            />
-          </div>
-        </Overlay>
+        <SlideIn
+          isOpen={overlay}
+          slideDirection="right"
+          slideSpeed={280}
+          width="100%"
+          height="100%"
+        >
+          <Overlay>
+            <div className="close" onClick={() => setOverlay(false)}>
+              <img src="./assets/close.png" alt="close" />
+            </div>
+            <Line />
+            <div className="contentWrap">
+              {navigation?.map((data) => (
+                <LinkWrap 
+                  to={`/${data.nav}`}
+                  className="content" 
+                  key={data.id}
+                >
+                  {data.name}
+                </LinkWrap>
+              ))}
+            </div>
+            <div className="bttnWrap">
+              <BaseButton
+                text="Download Aplikasi"
+                textColor="#fff"
+                fontSize="16px"
+                color="#127fff"
+                radius="5px"
+                width="100%"
+                height="40px"
+                // onClick={() => {alert('ressssss')}}
+              />
+            </div>
+          </Overlay>
+        </SlideIn>
       )}
       <BarHelper />
     </>

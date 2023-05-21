@@ -60,6 +60,7 @@ const doctors: Doctor[] = [
     image: doctor,
   },
 ];
+
 const ListArticle = [
   {
     id: 1,

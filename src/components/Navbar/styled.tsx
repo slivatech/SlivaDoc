@@ -75,20 +75,21 @@ export const LinkWrap = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 14px;
+  cursor: pointer;
 `;
 
 export const Overlay = styled.div`
-  display: none;
+  /* display: none;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
   /* right: 0; */
   background-color: #fff;
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  transition: 1.5s all;
+  /* transition: 1.5s all; */
   padding: 15px 8%;
 
   @media (max-width: 768px) {

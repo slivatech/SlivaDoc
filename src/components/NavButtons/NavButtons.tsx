@@ -1,27 +1,32 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Container } from "../Container";
+import { useNavigate } from "react-router-dom";
 
 const card = [
   {
     id: 1,
     text: "Tanya dokter",
     img: "./assets/chat.svg",
+    nav: "ask"
   },
   {
     id: 2,
     text: "Cari Dokter",
     img: "./assets/search.svg",
+    nav: "medical"
   },
   {
     id: 3,
     text: "Sliva Proteksi",
     img: "./assets/protection.svg",
+    nav: "protection"
   },
   {
     id: 4,
     text: "SlivaShop",
     img: "./assets/shop.svg",
+    nav: ""
   },
 ];
 
@@ -78,11 +83,12 @@ const SVGIcon = styled.img`
 `;
 
 const NavButtons: FC = () => {
+  const nav = useNavigate()
   return (
     <Container>
       <NavButtonsStyled>
         {card.map((data) => (
-          <NavButton key={data.id}>
+          <NavButton key={data.id} onClick={() => nav(`/${data.nav}`)}>
             <SVGIcon src={data.img} />
             <p>{data.text}</p>
           </NavButton>

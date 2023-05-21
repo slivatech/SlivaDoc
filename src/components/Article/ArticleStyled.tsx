@@ -66,9 +66,14 @@ export const BannerSection = styled.div`
   max-width: 500px;
 `;
 
-export const BannerAds = styled.img`
-  width: 100%;
-  height: 100%;
+type BannerAdsProps = {
+  height?: string;
+  width?: string;
+}
+
+export const BannerAds:any = styled.img<BannerAdsProps>`
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '100%'};
   border-radius: 5px;
   object-fit: cover;
   @media (max-width: 768px) {

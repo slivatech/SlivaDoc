@@ -106,7 +106,7 @@ const article = [
 const ArticleSection = () => {
   return (
     <StyledArticle>
-      <RowHeader title="Baca Artikel Kesehatan" />
+      <RowHeader title="Baca Artikel Kesehatan" nav="articles" />
       <StyledP>Informasi kesehatan terpercaya hanya untukmu</StyledP>
       <GroupButtons>
         {buttonList.map((button, i) => (
@@ -141,7 +141,7 @@ const ArticleSection = () => {
               </Article>
             </MainArticleContainer>
             <AdsWrapper>
-              <BannerAds src="./assets/peliharaan.png" />
+              <BannerAds height='600px' src="./assets/peliharaan.png" />
             </AdsWrapper>
           </MainArticleWrapper>
           <SecondaryArticleWrapper>
