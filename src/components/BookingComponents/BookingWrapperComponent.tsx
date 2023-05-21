@@ -43,6 +43,7 @@ const BookingWrapperComponent = ({
             <BaseButton
               className="btn"
               text="Search"
+              height="40px"
               radius="0 5px 5px 0"
               color="#127FFF"
               textColor="white"

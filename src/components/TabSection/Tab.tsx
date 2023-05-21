@@ -70,6 +70,7 @@ const ServiceTab = () => {
     <>
       {!desktop ? (
         <Select
+          onChange={() => null}
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"
@@ -99,6 +100,7 @@ const DoctorTab = () => {
     <div>
       {!desktop ? (
         <Select
+          onChange={() => null}
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"

@@ -41,13 +41,15 @@ const BookingDoctorPage = () => {
             </h1>
             <TimeDropdownContainer>
               <Select
+                onChange={() => null}
                 border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                 label="Pilih Hari"
-                values={["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]}
+                values={["Senin", "Selasa", "Rabu", "Kamis", "Jumat"]}
                 radius="5px"
                 iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow-dropdown"/>}
               />
               <Select
+                onChange={() => null}
                 border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                 label="Pilih Jam"
                 values={["08.00 - 11.59", "12.00 - 14.59","15.00 - 17.59", "18.00 - 21.00"]}
