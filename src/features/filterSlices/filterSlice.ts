@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../store/store"
+import { RootState } from "../../store/store";
+import { LooseValue } from "react-time-picker/dist/cjs/shared/types";
+import { Doctor } from "../../types/typings";
 
 interface FilterState {
   city: string;
@@ -9,7 +11,12 @@ interface FilterState {
     min: number;
     max: number;
   };
+  day: string;
   doctors: Doctor[];
+  availableTime: {
+    startTime: LooseValue;
+    endTime: LooseValue;
+  };
 }
 
 const initialState: FilterState = {
@@ -20,7 +27,12 @@ const initialState: FilterState = {
     min: 0,
     max: 1000000,
   },
+  day: "",
   doctors: [],
+  availableTime: {
+    startTime: "",
+    endTime: "",
+  },
 };
 
 const filterSlice = createSlice({
@@ -45,6 +57,18 @@ const filterSlice = createSlice({
     setMaxPrice(state, action: PayloadAction<number>) {
       state.priceRange = { ...state.priceRange, max: action.payload };
     },
+    setDay(state, action: PayloadAction<string>) {
+      state.day = action.payload;
+    },
+    setStartTime(state, action: PayloadAction<LooseValue>) {
+      state.availableTime = {
+        ...state.availableTime,
+        startTime: action.payload,
+      };
+    },
+    setEndTime(state, action: PayloadAction<LooseValue>) {
+      state.availableTime = { ...state.availableTime, endTime: action.payload };
+    },
   },
 });
 
@@ -54,6 +78,9 @@ export const {
   setMinPrice,
   setYearsOfExperienceRange,
   setTerm,
+  setDay,
+  setEndTime,
+  setStartTime,
   filterDoctors,
 } = filterSlice.actions;
 

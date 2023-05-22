@@ -1,3 +1,5 @@
+import { LooseValue } from "react-time-picker/dist/cjs/shared/types";
+
 interface Doctor {
   imageSrc: string;
   name: string;
@@ -9,5 +11,10 @@ interface Doctor {
   reviewsCount: number;
   price: number;
   location: string;
+  availableDays:string[];
   yearsOfExperience: number;
+  availableTime:{
+    startTime:LooseValue,
+    endTime:LooseValue
+  }
 }

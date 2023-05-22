@@ -2,6 +2,7 @@ import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { useAppSelector } from "../../store/hooks";
 import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
+import { Doctor } from "../../types/typings";
 
 const DoctorResult = ({
   doctor,

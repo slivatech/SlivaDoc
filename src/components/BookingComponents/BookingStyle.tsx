@@ -60,6 +60,7 @@ export const TimeDropdownContainer = styled.div`
   display: flex;
   gap: 1rem;
   width: 50%;
+  position: relative;
   div {
     white-space: nowrap;
   }
@@ -167,4 +168,30 @@ export const GunakanLokasi = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-size: 10px;
+`;
+
+export const TimePickerButton = styled.div`
+  padding: 0.1rem 0.5rem;
+  min-width: 7rem;
+  width: 100%;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  color: rgba(28, 28, 28, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5px solid rgba(153, 146, 146, 0.7);
+  cursor: pointer;
+  position: relative;
+`;
+
+export const TimePickerDropdown = styled.div`
+  position: absolute;
+  background: white;
+  padding: 1rem;
+  right: 0;
+  bottom: -400%;
+  z-index: 50;
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
 `;
