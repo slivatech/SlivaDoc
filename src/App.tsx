@@ -19,11 +19,12 @@ import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from "./pages/InvoiceList/Invoice";
 import { Routes, Route } from "react-router-dom";
 import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
-import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
+import DashboardAds from "./pages/DashboardAds/DashboardAds";
+import ShopHome from "./pages/ShopHomePage/ShopHome";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -42,12 +43,13 @@ const App = () => {
           <Route path='/ask' element={<TanyaDokter width={width}/>}/>
           <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
           <Route path='/doctor' element={<DetailDokter width={width} />}/>
-          {/* <Route path='/profileUpdate' element={<EditProfil />}/>
-          <Route path='/invoice' element={<Invoice />}/>
+          <Route path='/profileUpdate' element={<EditProfil width={width} />}/>
+          <Route path='/invoice' element={<Invoice width={width} />}/>
           <Route path='/customers' element={<CustomerListPage />}/>
-          {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
-          <Route path='/tabs' element={<TabGroup />}/>
+          <Route path='/dashboardArticle' element={<DashboardArtikel width={width} />}/>
+          <Route path='/dashboardAds' element={<DashboardAds />}/>
           <Route path='/protection' element={<SlivaProteksi width={width} />}/>
+          <Route path='/shop-home' element={<ShopHome width={width}/>}/>
         </Routes>
       </Provider>
     </ThemeProvider>
