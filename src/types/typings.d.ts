@@ -18,3 +18,12 @@ interface Doctor {
     endTime:LooseValue
   }
 }
+
+interface Animal {
+  name:string;
+  rating:number;
+  price:number;
+  remainingStock:number;
+  city:string;
+  image:string;
+}

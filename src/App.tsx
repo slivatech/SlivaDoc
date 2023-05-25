@@ -25,6 +25,7 @@ import { Provider } from "react-redux";
 import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
+import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -50,7 +51,8 @@ const App = () => {
           {/* <Route path='/tabs' element={<TabGroup />}/> */}
         </Routes>
         {/* <ScheduleListPage /> */}
-        <BookingPetHospitalPage />
+        {/* <BookingPetHospitalPage /> */}
+        <ResellerDetailPage />
       </Provider>
     </ThemeProvider>
   );

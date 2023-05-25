@@ -21,7 +21,7 @@ interface ISwiper {
 
 const SwiperWrapper = ({ children, breakPoints }: ISwiper) => {
   return (
-    <Swiper style={{ marginTop: "1rem" }} breakpoints={breakPoints}>
+    <Swiper  style={{ marginTop: "1rem" }} breakpoints={breakPoints}>
       {children}
     </Swiper>
   );
