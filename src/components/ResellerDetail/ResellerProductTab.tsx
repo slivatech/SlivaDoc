@@ -10,6 +10,7 @@ import AnimalCard from "./AnimalCard";
 import { animals } from "./fakeData";
 
 const ResellerProductTab = () => {
+  const filterValues=["Terbaru","Harga Tertinggi","Harga Terendah","Ulasan Terbanyak","Pembelian Terbanyak","Dilihat Terbanyak","Pembaruan Terbanyak"]
   return (
     <>
       <ResellerProductHeader>
@@ -27,7 +28,7 @@ const ResellerProductTab = () => {
                 iconEnd={<i className="fa-solid fa-chevron-down"></i>}
                 radius="5px"
                 padding=".5rem "
-                values={["Paling sesuai", "Terlaris"]}
+                values={filterValues}
               />
             </div>
           </div>

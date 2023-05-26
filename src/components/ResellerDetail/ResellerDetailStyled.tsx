@@ -258,7 +258,7 @@ export const ProductContent = styled.div`
   margin-top: 2rem;
   column-gap: 1rem;
   .product-row {
-    flex:.75;
+    flex: 0.75;
   }
   .sidebar {
     flex: 0.25;
@@ -266,39 +266,37 @@ export const ProductContent = styled.div`
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      row-gap: .5rem;
+      row-gap: 0.5rem;
       label {
-        font-style:italic;
-        padding: .5rem 1rem;
-
+        font-style: italic;
+        padding: 0.5rem 1rem;
       }
       .all-product {
-        background: #F4FCFE;
+        background: #f4fcfe;
         font-weight: 700;
         border-radius: 5px;
-        border: 0.5px solid #66C2DF;
-        margin-top:1rem;
+        border: 0.5px solid #66c2df;
+        margin-top: 1rem;
       }
 
       .discount-promo {
-        display:flex;
+        display: flex;
         align-items: center;
         column-gap: 1rem;
         .promo {
-        text-transform: uppercase;
-        color:white;
-        font-weight: 700;
-        border-radius: 2px;
-        background-color: #F9032F;
-        font-size: 10px;
-        display: grid;
-        place-items: center;
-        width: 60px;
-        height: 18px;
-        align-items: center;
+          text-transform: uppercase;
+          color: white;
+          font-weight: 700;
+          border-radius: 2px;
+          background-color: #f9032f;
+          font-size: 10px;
+          display: grid;
+          place-items: center;
+          width: 60px;
+          height: 18px;
+          align-items: center;
+        }
       }
-      }
-
     }
     .voucher,
     .etalase {
@@ -347,4 +345,168 @@ export const VoucherCard = styled.div`
     font-size: 10px;
     font-style: italic;
   }
+`;
+
+export const ReviewWrapper = styled.div`
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 1.5rem;
+`;
+
+export const ReviewContent = styled.div`
+  flex: 0.75;
+`;
+
+export const RatingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  .rating-number {
+    color: #2335d4;
+    font-weight: 700;
+  }
+  .rating-count {
+    color: #2335d4;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 200px;
+    height: 3px;
+    background: #2335d4;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #2335d4;
+    box-shadow: 0 0 2px 0 #555;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+`;
+
+export const ReviewSidebar = styled.div`
+  flex: 0.25;
+  display: flex;
+  flex-direction: column;
+  i {
+    font-size: 1.25rem;
+    color: #ffe816;
+  }
+  .rating-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    i {
+      font-size: 1rem;
+    }
+  }
+  .sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .sub {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1c1c;
+  }
+
+  .qty {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding-left: 1.5rem;
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50px;
+      background: black;
+    }
+  }
+
+  .main-rating {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+    .rating-text {
+      display: flex;
+      column-gap: 1rem;
+      align-items: center;
+    }
+    .secondary {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 500;
+      span {
+        font-size: 56px;
+        font-weight: 700;
+      }
+    }
+  }
+`;
+
+export const ReviewFilter = styled.div`
+  background: white;
+  border: 0.5px solid #ceeaf0;
+  border-radius: 5px;
+
+  header {
+    border-bottom: 0.5px solid #ceeaf0;
+    padding: 1rem;
+  }
+  .filter-header {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+  }
+  .checkbox {
+      display: flex;
+      column-gap: 1rem;
+      align-items: center;
+      label {
+        color: #7076ae;
+      }
+      input[type="checkbox"] {
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+      }
+    }
+
+  .media {
+    padding: 1rem;
+    border-bottom: 0.5px solid #ceeaf0;
+
+
+
+  }
+
+  .filter-by-rating {
+    padding: 1rem;
+    border-bottom: 0.5px solid #ceeaf0;
+
+  }
+  .filter-by-description {
+    padding: 1rem;
+
+  }
+  .checkbox-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
 `;

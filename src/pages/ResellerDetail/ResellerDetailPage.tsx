@@ -7,6 +7,7 @@ import ResellerMainTab from "../../components/ResellerDetail/ResellerMainTab";
 import { ShopDetailsStyled } from "../../components/ResellerDetail/ResellerDetailStyled";
 import ShopDetails from "../../components/ResellerDetail/ShopDetails";
 import ResellerProductTab from "../../components/ResellerDetail/ResellerProductTab";
+import ResellerReviewTab from "../../components/ResellerDetail/ResellerReviewTab";
 
 const ResellerDetailPage = () => {
   return (
@@ -31,7 +32,7 @@ const ResellerDetailPage = () => {
               },
               {
                 title: "Ulasan",
-                render: () => <></>,
+                render: () => <ResellerReviewTab />,
               },
             ]}
           />

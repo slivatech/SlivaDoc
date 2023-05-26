@@ -161,3 +161,21 @@ export const animals:Animal[] = [{
     image:"/assets/cat-reseller.png"
 
 },]
+
+export const ratingList = [{
+    rating:5,
+    ratingCount:98,
+
+},{
+    rating:4,
+    ratingCount:0,
+},{
+    rating:3,
+    ratingCount:0,
+},{
+    rating:2,
+    ratingCount:0,
+},{
+    rating:1,
+    ratingCount:0,
+}]
