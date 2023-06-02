@@ -10,6 +10,13 @@ const SearchContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px 0;
+  @media (max-width: 720px) {
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    padding: 0 5%;
+  }
+  
 
   button {
     background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
