@@ -1,12 +1,15 @@
-import React from "react";
 import {
   RatingWrapper,
   ReviewContent,
   ReviewFilter,
   ReviewSidebar,
   ReviewWrapper,
+  ShowMoreBtn,
 } from "./ResellerDetailStyled";
-import { ratingList } from "./fakeData";
+import { ratingList, reviews } from "./fakeData";
+import Select from "../Select/Select";
+import ReviewsContainer from "./ReviewsContainer";
+import { useState } from "react";
 
 const ResellerReviewTab = () => {
   const reviewArray = [5, 4, 3, 2, 1];
@@ -16,6 +19,25 @@ const ResellerReviewTab = () => {
     "Sesuai Deskripsi",
     "Pengiriman",
   ];
+
+  const [_rating, setRating] = useState<number[]>([]);
+  const[isMediaChecked,setIsMediaChecked] = useState<boolean>(false);
+ 
+  console.log(_rating);
+
+  const handleAddRating = (rating: number) => {
+    if (_rating.includes(rating)) {
+      return setRating((cur) => cur.filter((r) => r !== rating));
+    } 
+    setRating([..._rating, rating]);
+
+  };
+
+  const[sortBy,setSortBy] = useState("Terbaru")
+
+  const handleSortBy = (value:string) => {
+    setSortBy(value)
+  }
   return (
     <ReviewWrapper>
       <ReviewSidebar>
@@ -33,14 +55,14 @@ const ResellerReviewTab = () => {
               <div className="qty">
                 <span>98 Rating</span>
                 <div className="dot"></div>
-                <span>5 Ulasan</span>
+                <span>{reviews.length} Ulasan</span>
               </div>
             </div>
           </div>
 
           <div className="rating-list">
             {ratingList.map((value, i) => (
-              <RatingWrapper>
+              <RatingWrapper key={i}>
                 <i className="fa-solid fa-star"></i>
                 <span className="rating-number">{value.rating}</span>
                 <input
@@ -59,7 +81,7 @@ const ResellerReviewTab = () => {
             <div className="media">
               <p className="filter-header">Media</p>
               <div className="checkbox">
-                <input value={"media"} type="checkbox" />
+                <input  onChange={()=>setIsMediaChecked(!isMediaChecked)} type="checkbox" />
                 <label>Dengan Foto & Video</label>
               </div>
             </div>
@@ -68,7 +90,11 @@ const ResellerReviewTab = () => {
               <div className="checkbox-list">
                 {reviewArray.map((rating, i) => (
                   <div className="checkbox" key={i}>
-                    <input value={"media"} type="checkbox" />
+                    <input
+                      value={rating}
+                      onChange={(e) => handleAddRating(Number(e.target.value))}
+                      type="checkbox"
+                    />
                     <div>
                       <i className="fa-solid fa-star"></i>
                       <label style={{ marginLeft: ".5rem" }}>{rating}</label>
@@ -83,7 +109,7 @@ const ResellerReviewTab = () => {
                 {descriptionValues.map((rating, i) => (
                   <div className="checkbox" key={i}>
                     <input value={"media"} type="checkbox" />
-                    <label >{rating}</label>
+                    <label>{rating}</label>
                   </div>
                 ))}
               </div>
@@ -91,7 +117,25 @@ const ResellerReviewTab = () => {
           </ReviewFilter>
         </div>
       </ReviewSidebar>
-      <ReviewContent>dsds</ReviewContent>
+      <ReviewContent>
+        <header className="review-header">
+          <p className="title">Ulasan pilihan</p>
+          <div className="sort-filter">
+            <p className="sort-text">Urutkan</p>
+            <Select
+              label="Terbaru"
+              border="1px solid black"
+              radius="5px"
+              padding=".5rem"
+              iconEnd={<i className="fa-solid fa-chevron-down"></i>}
+              onChange={handleSortBy}
+              values={["Terbaru", "Paling relevan"]}
+            />
+          </div>
+        </header>
+        <ReviewsContainer reviews={reviews} sortBy={sortBy} filterByRating={_rating} showMedia={isMediaChecked} />
+        <ShowMoreBtn>Lihat Selengkapnya</ShowMoreBtn>
+      </ReviewContent>
     </ReviewWrapper>
   );
 };

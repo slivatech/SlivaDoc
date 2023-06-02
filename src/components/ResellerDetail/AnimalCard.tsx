@@ -1,9 +1,11 @@
 import { Animal } from "../../types/typings";
-import { AnimalCardStyled } from "./ResellerDetailStyled";
+import { AnimalCardStyled, GridContent } from "./ResellerDetailStyled";
 
 interface Props {
   animal: Animal;
 }
+
+
 
 const AnimalCard: React.FC<Props> = ({ animal }) => {
   return (

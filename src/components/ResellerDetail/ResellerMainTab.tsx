@@ -61,8 +61,8 @@ const ResellerMainTab = () => {
       <Row>
         <h2 style={{margin:'1.5rem 0'}}>Semua Produk</h2>
         <GridContent>
-          {animals.map((animal) => (
-            <AnimalCard animal={animal} />
+          {animals.map((animal,i) => (
+            <AnimalCard animal={animal} key={i} />
           ))}
         </GridContent>
       </Row>
