@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import more from "../../assets/icon/morearrow.svg"
-import less from "../../assets/icon/lessarrow.svg"
+import more from "../../assets/icon/morearrow.svg";
+import less from "../../assets/icon/lessarrow.svg";
 
 interface Question {
   id: number;
@@ -30,15 +30,17 @@ const FaqDropdown: React.FC<FAQProps> = ({ questions }) => {
         {questions.map((question) => (
           <QuestionItem key={question.id}>
             <QuestionHeader
-                onClick={() => handleQuestionClick(question.id)}
-                isActive={activeQuestion === question.id}
-                >
+              onClick={() => handleQuestionClick(question.id)}
+              isActive={activeQuestion === question.id}
+            >
               {question.question}
               <ExpandIcon>
-                {activeQuestion === question.id ? 
-                <img src={less} alt="Less"/> : 
-                <img src={more} alt="More"/>}
-            </ExpandIcon>
+                {activeQuestion === question.id ? (
+                  <img src={less} alt="Less" />
+                ) : (
+                  <img src={more} alt="More" />
+                )}
+              </ExpandIcon>
             </QuestionHeader>
             {activeQuestion === question.id && (
               <Answer>{question.answer}</Answer>
@@ -55,7 +57,6 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-
 const QuestionList = styled.ul`
   list-style: none;
   margin: 0;
@@ -64,9 +65,9 @@ const QuestionList = styled.ul`
 
 const QuestionItem = styled.li`
   margin: 0;
-  border-left:1px solid #62DAE1;;
-  border-bottom: 1px solid #62DAE1;
-transform: rotate(0.06deg);
+  border-left: 1px solid #62dae1;
+  border-bottom: 1px solid #62dae1;
+  transform: rotate(0.06deg);
 `;
 
 const QuestionHeader = styled.button<{ isActive: boolean }>`
@@ -84,8 +85,7 @@ const QuestionHeader = styled.button<{ isActive: boolean }>`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
-  border-left: ${({ isActive }) =>
-    isActive ? '2px solid #08A1F8' : 'none'};
+  border-left: ${({ isActive }) => (isActive ? "2px solid #08A1F8" : "none")};
 
   &:hover {
     background-color: #eee;
@@ -95,14 +95,14 @@ const QuestionHeader = styled.button<{ isActive: boolean }>`
 const Answer = styled.div`
   padding: 1rem;
   font-weight: 400;
-font-size: 16px;
-line-height: 22px;
-color: #505050;
+  font-size: 16px;
+  line-height: 22px;
+  color: #505050;
 `;
 
 const ExpandIcon = styled.span`
   width: 48px;
-height: 48px;
+  height: 48px;
 `;
 
 export default FaqDropdown;

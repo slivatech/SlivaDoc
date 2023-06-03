@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-
+import React from "react";
+import styled from "styled-components";
 
 interface BenefitItem {
   image: string;
@@ -19,31 +18,35 @@ const Benefits: React.FC<BenefitsListProps> = ({ benefits, columns, rows }) => {
 
   return (
     <Container>
-    <Title>Semua Biaya Ditanggung Cashless Rp.100 Juta</Title>
-    <BenefitsListContainer columns={columns}>
-      {Array.from({ length: rows }).map((_, rowIndex) => (
-        <BenefitsRow key={rowIndex}>
-          {benefits
-            .slice(rowIndex * columns * rows, rowIndex * columns * rows + itemsPerPage)
-            .map((benefit, index) => (
-              <BenefitsItem key={index}>
-                <BenefitsImage src={benefit.image} alt={benefit.title} />
-                <BenefitsContent>
-                  <BenefitsTitle>{benefit.title}</BenefitsTitle>
-                  <BenefitsDescription>{benefit.description}</BenefitsDescription>
-                </BenefitsContent>
-              </BenefitsItem>
-            ))}
-        </BenefitsRow>
-      ))}
-      
-    </BenefitsListContainer>
+      <Title>Semua Biaya Ditanggung Cashless Rp.100 Juta</Title>
+      <BenefitsListContainer columns={columns}>
+        {Array.from({ length: rows }).map((_, rowIndex) => (
+          <BenefitsRow key={rowIndex}>
+            {benefits
+              .slice(
+                rowIndex * columns * rows,
+                rowIndex * columns * rows + itemsPerPage
+              )
+              .map((benefit, index) => (
+                <BenefitsItem key={index}>
+                  <BenefitsImage src={benefit.image} alt={benefit.title} />
+                  <BenefitsContent>
+                    <BenefitsTitle>{benefit.title}</BenefitsTitle>
+                    <BenefitsDescription>
+                      {benefit.description}
+                    </BenefitsDescription>
+                  </BenefitsContent>
+                </BenefitsItem>
+              ))}
+          </BenefitsRow>
+        ))}
+      </BenefitsListContainer>
     </Container>
   );
 };
 
 const BenefitsListContainer = styled.div<{ columns: number }>`
-margin-top:43px;
+  margin-top: 43px;
 
   grid-template-columns: repeat(${(props) => props.columns}, 1fr);
   grid-gap: 16px;
@@ -84,7 +87,7 @@ const BenefitsItem = styled.div`
 
 const BenefitsImage = styled.img`
   width: 50px;
-height: 45px;
+  height: 45px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 16px;

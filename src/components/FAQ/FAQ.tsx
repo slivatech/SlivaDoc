@@ -34,13 +34,14 @@ const FAQ: React.FC<FAQListProps> = ({ questions }) => {
   }, [questions]);
   
   const handleQuestionClick = (questionId: number) => {
-    const selectedQuestion = questions.find((question) => question.id === questionId);
+    const selectedQuestion = questions.find(
+      (question) => question.id === questionId
+    );
     if (selectedQuestion) {
       setSelectedQuestion(selectedQuestion.id);
       setSelectedFAQs(selectedQuestion.faqs);
     }
   };
-
 
   const toggleAnswer = (faqId: number) => {
     setShowAnswers({
@@ -105,8 +106,7 @@ const QuestionsList = styled.ul`
   padding: 0;
 `;
 
-
-  const QuestionItem = styled.li<{ selected: boolean }>`
+const QuestionItem = styled.li<{ selected: boolean }>`
   padding: 1rem;
   background-color: #fff;
   color: ${({ selected }) => (selected ? "#505050" : "#B7B3B3")};
@@ -114,7 +114,8 @@ const QuestionsList = styled.ul`
   width: 324px;
   height: 51px;
   transition: all 0.2s ease-in-out;
-  border-left: ${({ selected }) => (selected ? "2px solid #08A1F8;" : "1px solid #62DAE1")};
+  border-left: ${({ selected }) =>
+    selected ? "2px solid #08A1F8;" : "1px solid #62DAE1"};
 
   font-weight: 700;
 font-size: 20px;
@@ -132,7 +133,7 @@ const FAQList = styled.ul`
 `;
 
 const FAQItem = styled.li`
-  width:620px;
+  width: 620px;
   padding: 0.4rem;
   background-color: #fff;
   border-radius: 0.25rem;

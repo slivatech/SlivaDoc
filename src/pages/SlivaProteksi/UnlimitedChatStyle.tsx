@@ -1,47 +1,47 @@
 import styled from "styled-components";
 
-  
+
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
-justify-content: center;
-margin-top:49px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-top: 49px;
 `;
 
-export const SectionTop =styled.div`
- display: flex;
- flex-direction: column;
- margin-left: 130px;
+export const SectionTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 130px;
 
- img{
+  img {
     width: 180px;
-height: 24px;
- }
+    height: 24px;
+  }
 
- p{
+  p {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;
-height: 15px;
-font-weight: 500;
-font-size: 8px;
-line-height: 10px;
-text-align: center;
-color:#ffff;
-background: linear-gradient(180deg, #69717B 0%, #90AAD1 100%);
-border-radius: 5px;
- }
- h1{
-    width:408px;
-    margin-top:24px;
+    height: 15px;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+    text-align: center;
+    color: #ffff;
+    background: linear-gradient(180deg, #69717b 0%, #90aad1 100%);
+    border-radius: 5px;
+  }
+  h1 {
+    width: 408px;
+    margin-top: 24px;
     font-weight: 700;
-font-size: 24px;
-line-height: 40px;
-color: #1C1C1C;
-    span{
-        color:#2557D9;
+    font-size: 24px;
+    line-height: 40px;
+    color: #1c1c1c;
+    span {
+      color: #2557d9;
     }
  }
  button{
@@ -112,20 +112,20 @@ color: #1C1C1C;
 }
 `;
 
-export const Heading=styled.h1`
-   display:flex;
-   flex-direction:column;
-   margin-bottom:47px;
+export const Heading = styled.h1`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 47px;
 
-h1{
+  h1 {
     text-align: center;
     font-weight: 700;
-font-size: 30px;
-line-height: 22px;
-}
-img{
-    margin:auto;
-    margin-top:26px;
+    font-size: 30px;
+    line-height: 22px;
+  }
+  img {
+    margin: auto;
+    margin-top: 26px;
     width: 109px;
 height: 3px;
 

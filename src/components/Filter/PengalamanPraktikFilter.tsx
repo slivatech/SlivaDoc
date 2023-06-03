@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 interface PengalamanPraktikFilterProps {
   selectedValue: string;
@@ -32,52 +32,52 @@ const Radio = styled.input`
 
 const RadioLabel = styled.label``;
 
-const PengalamanPraktikFilter: React.FC<PengalamanPraktikFilterProps> = ({selectedValue,
-    onValueChange,
-    }) => {
-    const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+const PengalamanPraktikFilter: React.FC<PengalamanPraktikFilterProps> = ({
+  selectedValue,
+  onValueChange,
+}) => {
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onValueChange(event.target.value);
-    };
-    
-    return (
+  };
+
+  return (
     <PengalamanPraktikFilterContainer>
-    <Label>Pengalaman Praktik</Label>
-    <RadioContainer>
-    <Radio
-    type="radio"
-    id="pengalaman-praktik-1"
-    name="pengalaman-praktik"
-    value="<5"
-    checked={selectedValue === '<5'}
-    onChange={handleRadioChange}
-    />
-    <RadioLabel htmlFor="pengalaman-praktik-1">5 Tahun</RadioLabel>
-    </RadioContainer>
-    <RadioContainer>
-    <Radio
-    type="radio"
-    id="pengalaman-praktik-2"
-    name="pengalaman-praktik"
-    value="5-10"
-    checked={selectedValue === '5-10'}
-    onChange={handleRadioChange}
-    />
-    <RadioLabel htmlFor="pengalaman-praktik-2">5 - 10 Tahun</RadioLabel>
-    </RadioContainer>
-    <RadioContainer>
-    <Radio
-    type="radio"
-    id="pengalaman-praktik-3"
-    name="pengalaman-praktik"
-    value=">10"
-    checked={selectedValue === '>10'}
-    onChange={handleRadioChange}
-    />
-    <RadioLabel htmlFor="pengalaman-praktik-3"> 10 Tahun</RadioLabel>
-    </RadioContainer>
+      <Label>Pengalaman Praktik</Label>
+      <RadioContainer>
+        <Radio
+          type="radio"
+          id="pengalaman-praktik-1"
+          name="pengalaman-praktik"
+          value="<5"
+          checked={selectedValue === "<5"}
+          onChange={handleRadioChange}
+        />
+        <RadioLabel htmlFor="pengalaman-praktik-1">5 Tahun</RadioLabel>
+      </RadioContainer>
+      <RadioContainer>
+        <Radio
+          type="radio"
+          id="pengalaman-praktik-2"
+          name="pengalaman-praktik"
+          value="5-10"
+          checked={selectedValue === "5-10"}
+          onChange={handleRadioChange}
+        />
+        <RadioLabel htmlFor="pengalaman-praktik-2">5 - 10 Tahun</RadioLabel>
+      </RadioContainer>
+      <RadioContainer>
+        <Radio
+          type="radio"
+          id="pengalaman-praktik-3"
+          name="pengalaman-praktik"
+          value=">10"
+          checked={selectedValue === ">10"}
+          onChange={handleRadioChange}
+        />
+        <RadioLabel htmlFor="pengalaman-praktik-3"> 10 Tahun</RadioLabel>
+      </RadioContainer>
     </PengalamanPraktikFilterContainer>
-    );
-    };
-    
-    export default PengalamanPraktikFilter;
- 
+  );
+};
+
+export default PengalamanPraktikFilter;

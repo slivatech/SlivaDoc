@@ -1,25 +1,25 @@
 import styled from "styled-components";
 
-  
+
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
-justify-content: center;
-margin-top:49px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-top: 49px;
 `;
 
-export const SectionTop =styled.div`
- display: flex;
- flex-direction: column;
- margin-left: 130px;
+export const SectionTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 130px;
 
- img{
+  img {
     width: 180px;
-height: 24px;
- }
+    height: 24px;
+  }
 
- p{
+  p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,11 +37,11 @@ border-radius: 5px;
     width:408px;
     margin-top:24px;
     font-weight: 700;
-font-size: 24px;
-line-height: 40px;
-color: #1C1C1C;
-    span{
-        color:#2557D9;
+    font-size: 24px;
+    line-height: 40px;
+    color: #1c1c1c;
+    span {
+      color: #2557d9;
     }
  }
  button{
@@ -72,18 +72,18 @@ height: 30px;
  }
 `;
 
-export const BenefitContainer =styled.div`
-display: flex;
+export const BenefitContainer = styled.div`
+  display: flex;
   justify-content: space-between;
-    width: 1096px;
-margin:auto;
-margin-top:87px;
-padding: 36px;
-    background: #EDEFF4;
-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-h1{
-    width:252px;
+  width: 1096px;
+  margin: auto;
+  margin-top: 87px;
+  padding: 36px;
+  background: #edeff4;
+  box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  h1 {
+    width: 252px;
     font-weight: 700;
 font-size: 24px;
 line-height: 36px;
@@ -105,32 +105,30 @@ color: #1C1C1C;
    
 }
 `;
-export const Heading=styled.h1`
-   display:flex;
-   flex-direction:column;
-   margin-bottom:47px;
+export const Heading = styled.h1`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 47px;
 
-h1{
+  h1 {
     text-align: center;
     font-weight: 700;
-font-size: 30px;
-line-height: 22px;
-}
-img{
-    margin:auto;
-    margin-top:26px;
+    font-size: 30px;
+    line-height: 22px;
+  }
+  img {
+    margin: auto;
+    margin-top: 26px;
     width: 109px;
-height: 3px;
-
-}
+    height: 3px;
+  }
 `;
 
-export const Title=styled.h1`
-    text-align: center;
-    font-weight: 700;
-font-size: 30px;
-line-height: 22px;
-
+export const Title = styled.h1`
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 22px;
 `;
 export const FaqContainer =styled.div`
     display:flex;
@@ -162,25 +160,25 @@ height: 378px;
 }
 `;
 
-export const SponsorContainer =styled.div`
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-margin: auto;
-align-items: center;
-margin-top:156px;
-h1{
-    width:335px;
+export const SponsorContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  margin-top: 156px;
+  h1 {
+    width: 335px;
     font-weight: 700;
-font-size: 24px;
-line-height: 36px;
-color: #1C1C1C;
-margin-right:105px;
-span{
-    color:#00B7FF;
-}
-}
-img{
+    font-size: 24px;
+    line-height: 36px;
+    color: #1c1c1c;
+    margin-right: 105px;
+    span {
+      color: #00b7ff;
+    }
+  }
+  img {
     width: 656px;
 height: 153px;
 }

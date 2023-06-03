@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 type ContainerProps = {
-    color?: string;
-    outline?: boolean;
-    radius?: string;
-    height?: string;
-    width?: string;
-    shadow?:string;
-    gap?:string;
-}
+  color?: string;
+  outline?: boolean;
+  radius?: string;
+  height?: string;
+  width?: string;
+  shadow?: string;
+  gap?: string;
+  border?: string;
+};
 
 const Container : any = styled.div<ContainerProps>`
     display: flex;
@@ -17,7 +18,7 @@ const Container : any = styled.div<ContainerProps>`
     align-items: center;
     gap:${({ gap })=>gap ? gap : '1rem'};
     cursor: pointer;
-    /* border: ${({ color }) => color?  `1px solid ${color}` : ''}; */
+    border: ${({ color, outline }) => !outline? '' : color?  `1px solid ${color}` : ''};
     background: ${({ outline, color }) => !outline? color? color : '' : 'transparent'};
     border-radius: ${({ radius }) => radius? radius : '30px'};
     height: ${({ height }) => height? height : 'auto'};
@@ -26,13 +27,13 @@ const Container : any = styled.div<ContainerProps>`
     img{
         /* width: 15px;
         height: 15px; */
-        margin-left: 5px;
-        /* object-fit: contain; */
-    }
-`
+    margin-left: 5px;
+    /* object-fit: contain; */
+  }
+`;
 
 interface BaseButtonProps {
-    outline?: string;
+    outline?: boolean;
     color?: string;
     radius?: string;
     textColor?: string;
@@ -44,23 +45,26 @@ interface BaseButtonProps {
 }
 
 const BaseButton: React.FC<BaseButtonProps> = ({
-    outline,
-    textColor,
-    color,
-    radius,
-    fontSize,
-    text,
-    iconStart,
-    iconEnd,
-    ...rest
+  outline,
+  textColor,
+  color,
+  radius,
+  fontSize,
+  text,
+  iconStart,
+  iconEnd,
+  border,
+  ...rest
 }) => {
-    return (
-        <Container outline={outline} color={color} radius={radius} {...rest }>
-            {iconStart? ( iconStart ) : ''}
-            <p style={{color:textColor? textColor : '', fontSize:fontSize}}>{text}</p>
-            {iconEnd? ( iconEnd ) : ''}
-        </Container>
-    )
-}
+  return (
+    <Container outline={outline} color={color} radius={radius} {...rest}>
+      {iconStart ? iconStart : ""}
+      <p style={{ color: textColor ? textColor : "", fontSize: fontSize }}>
+        {text}
+      </p>
+      {iconEnd ? iconEnd : ""}
+    </Container>
+  );
+};
 
-export default BaseButton
+export default BaseButton;

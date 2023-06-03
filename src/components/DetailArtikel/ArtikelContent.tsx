@@ -32,11 +32,18 @@ const ArticlePage: React.FC<Props> = ({
   return (
     <ArticleWrapper>
       <Article>
-      <ArticleTitle>{title}</ArticleTitle>
-      <ArticleAuthor >Ditinjau oleh  <a href='https://www.halodoc.com/cari-dokter/nama/dr-fadhli-rizal-makarim'> {author} </a>: {date}</ArticleAuthor>
-      <CoreArticleContent>{coreContent}</CoreArticleContent>
-      <ArticleImage src={image} alt={title} />
-      <ArticleContent>{content}</ArticleContent>
+        <ArticleTitle>{title}</ArticleTitle>
+        <ArticleAuthor>
+          Ditinjau oleh{" "}
+          <a href="https://www.halodoc.com/cari-dokter/nama/dr-fadhli-rizal-makarim">
+            {" "}
+            {author}{" "}
+          </a>
+          : {date}
+        </ArticleAuthor>
+        <CoreArticleContent>{coreContent}</CoreArticleContent>
+        <ArticleImage src={image} alt={title} />
+        <ArticleContent>{content}</ArticleContent>
       </Article>
       <Sidebar>
         <BannerSection>

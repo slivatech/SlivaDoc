@@ -4,6 +4,9 @@ export const SelectContainer = styled.div`
   position: relative;
   margin: 0;
   width: 100%;
+  height:100%;
+
+  white-space: nowrap;
 `;
 
 type BorderType = "bottom" | "top";
@@ -12,31 +15,37 @@ interface LabelBtnProps {
   border?: string;
   radius?: string;
   borderType?: BorderType;
+  padding?:string;
+  background?:string;
+  height?:string;
 }
 
-export const SelectLabelButton = styled.button<LabelBtnProps>(({ border, radius, borderType }) => `
-  padding: .5rem 1.25rem;
+export const SelectLabelButton = styled.button<LabelBtnProps>(({height, border, radius, borderType,padding,background }) => `
+  padding:${padding ? padding:"0.5rem 1.25rem"};
   min-width: 7rem;
   width:100%;
-  font-size: 10px;
-  font-weight: 500;
-  background-color: #fff;
+  font-size: 12px;
+  background-color: ${background ? background : "#fff"};
   border-radius: ${radius ? radius : ""};
-  color: #1c1c1c;
+  color: rgba(28, 28, 28, 0.7);
   display:flex;
   align-items: center;
   justify-content: space-between;
   border:${borderType ? "none" : border};
+  height:${height || "auto"};
   cursor: pointer;
   /* transition: 0.3s ease; */
   /* &:hover {
     background-color: #eee;
   } */
-  ${borderType === "bottom" ? css`
-    border-bottom:1px solid black;
-    /* border:none; */
-    
-  `:null}
+  ${
+    borderType === "bottom"
+      ? css`
+          border-bottom: 1px solid black;
+          /* border:none; */
+        `
+      : null
+  }
 
 `
 );
@@ -46,6 +55,9 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1000;
+  max-height:200px;
+  overflow-y: scroll;
   /* max-height: 40vmax;
   min-width: 10rem; */
   padding: 0.4rem;
@@ -55,7 +67,6 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   background: #fafafa;
   border: 1.5px solid slategrey;
   transition: max-height 0.2s ease;
-  overflow: hidden;
   ${({ isVisible }) =>
     isVisible !== true &&
     css`

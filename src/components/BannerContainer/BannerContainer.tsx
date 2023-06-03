@@ -12,8 +12,8 @@ interface ButtonProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  width: ${(props) => props.width || '60.6875rem'}; 
-  height: ${(props) => props.height || '9.3125rem'};
+  width: ${(props) => props.width || "60.6875rem"};
+  height: ${(props) => props.height || "9.3125rem"};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +75,7 @@ const Deskripsi = styled.div`
 `;
 
 const Button = styled.button<ButtonProps>`
-  background: linear-gradient(180deg, #C8D5E4 0%, #90AAD1 100%);
+  background: linear-gradient(180deg, #c8d5e4 0%, #90aad1 100%);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -92,7 +92,7 @@ const Button = styled.button<ButtonProps>`
 
 const BannerContainer: React.FC = () => {
   const handleClick = () => {
-    console.log('Click');
+    console.log("Click");
   };
 
   return (
@@ -110,3 +110,4 @@ const BannerContainer: React.FC = () => {
 };
 
 export default BannerContainer;
+

@@ -11,6 +11,5 @@ export const GridRow = styled.div`
 
   @media (max-width: 540px) {
     grid-template-columns: repeat(3, 1fr);
- 
   }
 `;

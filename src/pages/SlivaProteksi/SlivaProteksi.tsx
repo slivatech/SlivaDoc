@@ -1,5 +1,13 @@
-import FAQ from "../../components/FAQ/FAQ"
-import { CardPaket, Container, FAQContainer, PaketContainer, Section, SectionRegister, Title } from "./SlivaProteksiStyle";
+import FAQ from "../../components/FAQ/FAQ";
+import {
+  CardPaket,
+  Container,
+  FAQContainer,
+  PaketContainer,
+  Section,
+  SectionRegister,
+  Title,
+} from "./SlivaProteksiStyle";
 import Card from "../../components/PaketCard/PaketCard";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";

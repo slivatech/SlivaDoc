@@ -5,7 +5,7 @@ export const StyledArticle = styled(Container)`
   padding: 2rem 8%;
 
   & > * {
-    margin-top:1rem;
+    margin-top: 0.8rem;
   }
 `;
 
@@ -59,16 +59,21 @@ export const BannerSection = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
-  &>img {
-    margin-top:1rem;
+  & > img {
+    margin-top: 1rem;
   }
-  height:100%;
-  max-width:500px;
+  height: 100%;
+  max-width: 500px;
 `;
 
-export const BannerAds = styled.img`
-  width: 100%;
-  height: 100%;
+type BannerAdsProps = {
+  height?: string;
+  width?: string;
+}
+
+export const BannerAds:any = styled.img<BannerAdsProps>`
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '100%'};
   border-radius: 5px;
   object-fit: cover;
   @media (max-width: 768px) {

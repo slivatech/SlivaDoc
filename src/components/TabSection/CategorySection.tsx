@@ -22,11 +22,14 @@ const CategorySection = () => {
       {categories?.map((category, i) => (
         <CategoryBox key={i}>
           <Select
+            onChange={() => null}
             border=" 0.5px solid rgba(153, 146, 146, 0.7)"
             label={category.mainValue}
             borderType="bottom"
             values={[category.mainValue]}
-            icon={<img src="/assets/arrow_dropdown.svg" />}
+            iconEnd={
+              <img src="/assets/arrow_dropdown.svg" alt="arrow_dropdown" />
+            }
           />
 
           {category.radios.map((radio, i) => (

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 import calenderIcon from "../../assets/icon/calender.png";
 
-interface MultipleDatePickerProps {
+interface DatePickerProps {
   onClickIcon?: () => void;
 }
 
@@ -12,12 +12,12 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: wrap;
-  width:100%;
+  width: 100%;
 `;
 
 const CalendarWrapper = styled.div`
   position: absolute;
-  top:30px;
+  top: 30px;
   left: 0;
   z-index: 1;
 `;
@@ -25,23 +25,20 @@ const CalendarWrapper = styled.div`
 const SelectedDatesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 24px;
 `;
 
 const SelectedDate = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   border: 0.5px solid rgba(153, 146, 146, 0.7);
   border-radius: 5px;
-  margin-left:10px;
-  margin-bottom:10px;
-  padding: 3px;
+
+  padding: 12px;
   box-sizing: border-box;
-  width: 132px;
-height: 27px;
-border: 0.5px solid rgba(153, 146, 146, 0.7);
-border-radius: 3px;
+
+  border: 0.5px solid rgba(153, 146, 146, 0.7);
+  border-radius: 3px;
   cursor: pointer;
   &:hover {
     background-color: #e0e0e0;
@@ -49,32 +46,25 @@ border-radius: 3px;
 `;
 
 const IconWrapper = styled.div`
-  margin-top:10px;
+  align-items: center;
+  display: flex;
+  margin-top: 24px;
   left: 0;
   cursor: pointer;
   padding: 3px;
+  border: 0.5px solid rgba(153, 146, 146, 0.7);
+  border-radius: 3px;
+  margin-right: 14px;
 `;
 
-const CalendarComponent: React.FC<MultipleDatePickerProps> = ({
-  onClickIcon,
-}) => {
+const CalendarComponent: React.FC<DatePickerProps> = ({ onClickIcon }) => {
   const [showCalendar, setShowCalendar] = useState(false);
-  const [selectedDates, setSelectedDates] = useState<Date[]>([]);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const minDate = new Date();
 
   const handleTileClick = (date: Date) => {
-    const selectedDateIndex = selectedDates.findIndex(
-      (selectedDate) =>
-        selectedDate.getDate() === date.getDate() &&
-        selectedDate.getMonth() === date.getMonth() &&
-        selectedDate.getFullYear() === date.getFullYear()
-    );
-    if (selectedDateIndex === -1) {
-      setSelectedDates([...selectedDates, date]);
-    } else {
-      const updatedDates = [...selectedDates];
-      updatedDates.splice(selectedDateIndex, 1);
-      setSelectedDates(updatedDates);
-    }
+    setSelectedDate(date);
+    setShowCalendar(false);
   };
 
   const handleIconClick = () => {
@@ -85,11 +75,14 @@ const CalendarComponent: React.FC<MultipleDatePickerProps> = ({
   };
 
   const formatDate = (date: Date) => {
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = date.toLocaleString('default', { month: 'short' });
-    const year = date.getFullYear().toString();
-    return `${day}-${month}-${year}`;
-  }
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "long",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    };
+    return new Intl.DateTimeFormat("id-ID", options).format(date);
+  };
 
   return (
     <Wrapper>
@@ -98,16 +91,16 @@ const CalendarComponent: React.FC<MultipleDatePickerProps> = ({
       </IconWrapper>
       {showCalendar && (
         <CalendarWrapper>
-          <Calendar onClickDay={handleTileClick} />
+          <Calendar minDate={minDate} onClickDay={handleTileClick} />
         </CalendarWrapper>
       )}
-      <SelectedDatesWrapper>
-        {selectedDates.map((date) => (
-          <SelectedDate key={date.toDateString()} onClick={() => handleTileClick(date)}>
-            {formatDate(date)}
+      {selectedDate && (
+        <SelectedDatesWrapper>
+          <SelectedDate onClick={() => setSelectedDate(null)}>
+            {formatDate(selectedDate)}
           </SelectedDate>
-        ))}
-      </SelectedDatesWrapper>
+        </SelectedDatesWrapper>
+      )}
     </Wrapper>
   );
 };

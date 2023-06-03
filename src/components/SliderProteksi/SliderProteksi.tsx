@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import Next from "../../assets/icon/Next.png";
 import Prev from "../../assets/icon/Prev.png";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -122,7 +122,7 @@ const PaginationWrapper = styled.div`
 
   .swiper-pagination-bullet-active {
     width: 20px;
-    background-color: linear-gradient(180deg, #C8D5E4 0%, #90AAD1 100%);
+    background-color: linear-gradient(180deg, #c8d5e4 0%, #90aad1 100%);
     border-radius: 10px;
   }
 `;

@@ -69,3 +69,22 @@ color: #1C1C1C;
   }
 }
 `;
+
+export const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  margin-top: 20px;
+`;
+
+export const Card = styled.div`
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+`;
+
+export const CardTitle = styled.h3`
+  margin-top: 0;
+`;
+
+export const CardContent = styled.div``;

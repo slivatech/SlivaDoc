@@ -19,6 +19,7 @@ const SearchButton = styled.button`
   padding: 8px 24px;
   border-radius: 0px 4px 4px 0px;
   border: none;
+  cursor: pointer;
 `;
 
 const Search: FC = () => {

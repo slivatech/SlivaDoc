@@ -2,7 +2,7 @@ import img from "../../assets/doctor.png";
 import morning from "../../assets/icon/morning.png";
 import sun from "../../assets/icon/sun.png";
 import night from "../../assets/icon/night.png";
-import porto from "../../assets/icon/portfolio.png"
+import porto from "../../assets/icon/portfolio.png";
 import review from "../../assets/icon/review.png";
 
 interface Doctor {
@@ -19,7 +19,7 @@ interface Doctor {
 }
 
 export const doctor: Doctor = {
-  name: "Dr.Evans moris",
+  name: "Drh.Evans moris",
   specialty: "Spesialis Kepo apa aja",
   STR: "1221 6023 2012 2045",
   photo: img,
@@ -51,18 +51,21 @@ export const data = [
   {
     timePeriod: "Pagi",
     imgSrc: morning,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["08:00", "09:00"],
   },
   {
     timePeriod: "Siang",
     imgSrc: sun,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["12:00", "14:00"],
   },
   {
     timePeriod: "Malam",
     imgSrc: night,
-    schedule: ["08:00 - 12:00", "08:00 - 12:00"],
+    schedule: ["19:00", "20:00"],
   },
 ];
 
-export const rate = [  { icon: porto, text: '3 Tahun' },  { icon: review, text: '99%' },];
+export const rate = [
+  { icon: porto, text: "3 Tahun" },
+  { icon: review, text: "99%" },
+];

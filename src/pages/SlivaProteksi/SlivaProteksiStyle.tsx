@@ -1,27 +1,25 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
-justify-content: center;
-margin-top:49px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-top: 49px;
 `;
 
-export const CardPaket=styled.div`
- display:flex;
- flex-wrap: wrap;
-justify-content: center;
-margin-top:3.75rem;
- `
-;
+export const CardPaket = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4rem;
+`;
 
-export const Title=styled.h1`
-    text-align: center;
-    font-weight: 700;
-font-size: 30px;
-line-height: 22px;
-
+export const Title = styled.h1`
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 22px;
 `;
 
 export const PaketContainer=styled.div`
@@ -31,43 +29,43 @@ margin-top:3.75rem;
 
 `;
 
-export const Section=styled.div`
-margin-top: 5.125rem;
-    display:flex;
-    flex-direction: column;
+export const Section = styled.div`
+  margin-top: 5.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #1c1c1c;
+  }
+  button {
+    align-items: center;
     justify-content: center;
-    p{
-        text-align: center;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        color:#1C1C1C;
+    margin: auto;
+    margin-top: 17px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #c8d5e4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 225px;
+    height: 40px;
+    img {
+      width: 15px;
+      height: 15px;
     }
-    button{
-        align-items: center;
-        justify-content: center;
-        margin:auto;
-        margin-top: 17px;
-        cursor: pointer;
-        display: flex;
-        flex-wrap: wrap;
-        border: 1px solid #C8D5E4;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        width:211px;
-        height:31px;
-        img{
-            width: 15px;
-            height: 15px;
-        }
-        p{
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-        }
+    p {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 15px;
+      text-align: center;
+      padding-left: 3px;
     }
-
+  }
 `;
 
 export const SectionRegister=styled.div`
@@ -155,8 +153,8 @@ export const SectionRegister=styled.div`
 
 `;
 
-export const FAQContainer=styled.div`
-    display:flex;
-    justify-content: center;
-margin-top:3.75rem;
+export const FAQContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3.75rem;
 `;

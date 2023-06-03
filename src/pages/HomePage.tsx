@@ -13,7 +13,7 @@ import Footer from "../components/Footer/Footer";
 interface HomePageProps {
   width: number;
 }
-const HomePage: React.FC<HomePageProps> = ({width}) => {
+const HomePage: React.FC<HomePageProps> = ({ width }) => {
   return (
     <div>
       {/* <Header /> */}

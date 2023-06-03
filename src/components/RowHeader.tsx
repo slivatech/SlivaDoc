@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledH3 } from "./FontStyle/Font";
+import { useNavigate } from "react-router-dom";
 
 const StyledHref = styled.a`
-  font-weight: 500;
+  font-weight: 400;
   padding: 8px 16px;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   color: #454467;
   background-color: #e7ebf0;
@@ -25,7 +26,13 @@ const StyledHref = styled.a`
   }
 `;
 
-const RowHeader = ({ title }: { title: string }) => {
+interface RowHeaderProps {
+  title: string;
+  nav?: string;
+}
+
+const RowHeader: React.FC<RowHeaderProps> = ({ title, nav }) => {
+  const navigate = useNavigate()
   return (
     <div
       style={{
@@ -36,7 +43,7 @@ const RowHeader = ({ title }: { title: string }) => {
     >
       <StyledH3>{title}</StyledH3>
 
-      <StyledHref>Lihat Semua</StyledHref>
+      <StyledHref onClick={() => navigate(`/${nav}`)}>Lihat Semua</StyledHref>
     </div>
   );
 };

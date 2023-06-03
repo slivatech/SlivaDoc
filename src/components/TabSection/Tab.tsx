@@ -70,10 +70,11 @@ const ServiceTab = () => {
     <>
       {!desktop ? (
         <Select
+          onChange={() => null}
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"
-          icon={
+          iconEnd={
             <span
               style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
             >
@@ -99,10 +100,11 @@ const DoctorTab = () => {
     <div>
       {!desktop ? (
         <Select
+          onChange={() => null}
           label="Semua Layanan"
           radius="5px"
           border="0.5px solid rgba(153, 146, 146, 0.7)"
-          icon={
+          iconEnd={
             <span
               style={{ fontWeight: 700, color: "#1c1c1c", fontSize: "10px" }}
             >

@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../../assets/image/img-artikel.svg";
-import Live from '../../assets/icon/live.png';
+import Live from "../../assets/icon/live.png";
 import {
   Banner,
   Button,
@@ -56,6 +57,65 @@ const ListArticle = [
     title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
     desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
     category: "Radang Usus",
+  }
+];
+
+const ListArticle2 = [
+  {
+    id: 1,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 2,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 3,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 4,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 5,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 6,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 7,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
+  },
+  {
+    id: 8,
+    image: img,
+    title: "Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    desc: "Kumpulan makanan 4 sehat 5 Sempurna yang enak. Kumpulan makanan 4 sehat 5 Sempurna yang enak",
+    category: "Radang Usus",
   },
 ];
 
@@ -63,7 +123,8 @@ interface PageArtikelProps {
   width: number;
 }
 
-const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
+const PageArtikel: React.FC<PageArtikelProps> = ({ width }) => {
+  const navigate = useNavigate()
   return (
     <>
       <Navbar width={width} />
@@ -89,11 +150,14 @@ const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
             </Banner>
             <List>
               {ListArticle.map((i: IListArticle) => (
-                <Row className="item">
+                <Row key={i.id} 
+                  className="item" 
+                  onClick={() => navigate(`/article/${i.id}`)}
+                >
                   <ListImage src={i.image} />
                   <ListInfo>
-                    <h2 style={{marginBottom: '5px'}}>{i.title}</h2>
-                    <ListWrap to={''}>
+                    <h2 style={{ marginBottom: "5px" }}>{i.title}</h2>
+                    <ListWrap to={""}>
                       <img src={Live} alt="live" />
                       <div>{i.category}</div>
                     </ListWrap>
@@ -106,19 +170,11 @@ const PageArtikel: React.FC<PageArtikelProps> = ({width}) => {
         <div>
           <h1>Artikel Terbaru</h1>
           <Col>
-            {ListArticle.map((i: IListArticle) => (
-              <Card>
-                <CardImage src={img} />
-                <button>{i.category}</button>
-                <div>
-                  <h3>{i.title}</h3>
-                  <p>{i.desc}</p>
-                  <a href="#">Selengkapnya</a>
-                </div>
-              </Card>
-            ))}
-            {ListArticle.map((i: IListArticle) => (
-              <Card>
+            {ListArticle2.map((i: IListArticle) => (
+              <Card 
+                key={i.id} 
+                onClick={() => navigate(`/article/${i.id}`)}
+              >
                 <CardImage src={img} />
                 <button>{i.category}</button>
                 <div>

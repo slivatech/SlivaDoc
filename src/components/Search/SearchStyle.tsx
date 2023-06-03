@@ -13,12 +13,12 @@ const SearchInput = styled.input`
   }
   ::placeholder,
   ::-webkit-input-placeholder {
-    color: #1C1C1CB2;
+    color: #1c1c1cb2;
   }
   :-ms-input-placeholder {
     color: #dadada;
   }
-  border: 1px solid #999292B2;
+  border: 1px solid #999292b2;
   border-radius: 4px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;

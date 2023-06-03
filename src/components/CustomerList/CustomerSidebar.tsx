@@ -28,12 +28,12 @@ export const ProfileSection = styled.section`
     font-size: 22px;
     color: #06152b;
     margin: 0 !important;
-    margin-top:1rem;
+    margin-top: 1rem;
   }
   p {
     color: #06152b;
     font-size: 14px;
-    margin:0;
+    margin: 0;
   }
 `;
 
@@ -42,12 +42,11 @@ export const ContactSection = styled.section`
   flex-direction: column;
   gap: 0.5rem;
   color: #06152b;
-  padding:1rem ;
+  padding: 1rem;
 
   h2 {
     font-size: 18px;
-    margin:0;
-
+    margin: 0;
   }
   .email {
     display: flex;
@@ -72,8 +71,8 @@ export const PerformanceSection = styled.section`
 
   h2 {
     font-size: 18px;
-    margin:0;
-    padding:1rem 0 0 1rem;
+    margin: 0;
+    padding: 1rem 0 0 1rem;
   }
 `;
 
@@ -89,7 +88,7 @@ export const CircularProgressBox = styled.div`
   border: 1px solid #f1f4fa;
   border-radius: 5px;
   max-width: 150px;
-  padding:.5rem;
+  padding: 0.5rem;
 `;
 
 export const BarContainer = styled.div`
