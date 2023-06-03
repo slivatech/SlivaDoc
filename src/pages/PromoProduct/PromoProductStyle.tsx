@@ -46,7 +46,7 @@ border-radius: 10px;
 max-width: 1181px;
 height: auto;
 padding: 45px 56px 40px 56px;
-
+   
 .name-promo{
   display: flex;
   flex-direction: column;
@@ -67,7 +67,9 @@ color: #1C1C1C;
       color: #2335D4;
     }
   }
+  
 }
+
 `;
 
 export const CardGrid = styled.div`

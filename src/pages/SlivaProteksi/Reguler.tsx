@@ -9,7 +9,7 @@ import line from "../../assets/icon/line.png";
 import SliderProteksi from "../../components/SliderProteksi/SliderProteksi";
 import BannerContainer from "../../components/BannerContainer/BannerContainer";
 import Sponsorpic from "../../assets/image/sponsor.png"
-import TableProteksi from "../../components/TableProteksi/TableProteksi";
+
 interface RegulerProps{
     width:number;
 }

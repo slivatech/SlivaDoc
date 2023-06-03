@@ -28,7 +28,7 @@ import UnlimitedChat from "./pages/SlivaProteksi/UnlimitedChat";
 import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
 import PromoGajian from "./pages/PromoProduct/PromoGajian";
-
+import DiskonSpesial from "./pages/PromoProduct/DiskonSpesial";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -37,6 +37,7 @@ const App = () => {
       <Provider store={store}>
         <GlobalCss />
         <PromoGajian width={0}/>
+        <DiskonSpesial width={0}/>
         <Routes>
           <Route path='/' element={<HomePage width={width}/>} />
           <Route path='/auth' element={<Auth/>} />

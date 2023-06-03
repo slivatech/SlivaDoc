@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import filtericon from "../../assets/icon/Filter.png";
-import { Button, Card, CardContainer, CardContent, CardGrid, CardTitle, CloseButton, Detailproduk, Discount, DiscountedPrice, FilterButton, FilterContainer, FilterDropdown, FilterInput, FilterPopup, HeadPopup, Images, OriginalPrice, Rating, Tab, TabContainer } from "./FilterShopStyle";
+import { Button, Card, CardContainer, CardContent, CardGrid, CardTitle, CloseButton, Detailproduk, Discount, DiscountedPrice, FilterButton, FilterContainer, FilterDropdown, FilterInput, FilterOverlay, FilterPopup, HeadPopup, Images, OriginalPrice, Rating, Tab, TabContainer } from "./FilterShopStyle";
 
 interface FilterProps {
   data: Product[];
@@ -144,7 +144,7 @@ const FilterShop: React.FC<FilterProps> = ({ data }) => {
         </div>
         {isOpen && (
           <>
-             
+             <FilterOverlay onClick={handleFilter}/>
             <FilterPopup >
               <HeadPopup>Semua Filter</HeadPopup>
               <CloseButton onClick={handleClose}>X</CloseButton>
