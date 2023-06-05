@@ -8,19 +8,26 @@ interface CountdownProps {
 
 const CountdownContainer = styled.div`
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   align-items: center;
+  @media (max-width: 768px) {
+  width: 100%;
+  justify-content: space-between;
+  }
 `;
 
 const CountdownUnitWrapper = styled.span`
   display: inline-block;
-    margin:0 11px;
-    
+  margin: 0 11px;
+
+  @media (max-width: 768px) {
+    margin: 11px;
+  }
 `;
 
 const CountdownUnit = styled.div<{ background: string }>`
   width: 41px;
-height: 39px;
+  height: 39px;
   background: ${(props) => props.background};
   border-radius: 5px;
   display: flex;
@@ -29,21 +36,35 @@ height: 39px;
   font-size: 24px;
   color: #fff;
   font-weight: 700;
-font-size: 20px;
-line-height: 22px;
+  font-size: 20px;
+  line-height: 22px;
+
+  @media (max-width: 768px) {
+    width: 33px;
+    height: 31px;
+    font-size: 16px;
+  }
 `;
 
 const CountdownSeparator = styled.span`
   font-size: 24px;
   color: #000;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const CountdownText = styled.div`
   font-weight: 400;
-font-size: 16px;
-line-height: 22px;
+  font-size: 16px;
+  line-height: 22px;
   margin-right: 5px;
   color: #1C1C1C;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const [timeRemaining, setTimeRemaining] = useState(targetDate.getTime() - Date.now());

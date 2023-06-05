@@ -5,7 +5,7 @@ export const FilterContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 10px;
+  width: 100%;
   .Tab-Container{
     display: flex;
     flex-direction:column;
@@ -84,6 +84,10 @@ font-size: 32px;
 line-height: 22px;
 margin-bottom:45px;
 color: #1C1C1C;
+@media (max-width: 768px) {
+      font-size: 24px;
+      margin-bottom:10px;
+    }
 ;`
 export const FilterPopup = styled.div`
   background: #FFFFFF;
@@ -100,6 +104,10 @@ height: 794px;
     display: flex;
     flex-direction: column;
     margin-bottom:50px;
+    @media (max-width: 768px) {
+  
+      margin-bottom:10px;
+    }
     .input-filter{
       display: flex;
       justify-content: space-between;
@@ -113,6 +121,10 @@ height: 794px;
     line-height: 22px;
     color: #674c4c;
     margin-bottom:28px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      margin-bottom:10px;
+    }
   }
   .filter-select {
     display: flex;
@@ -125,6 +137,9 @@ height: 794px;
 border: 0.5px solid #CEEAF0;
 border-radius: 5px;
 margin-right: 23px;
+@media (max-width: 768px) {
+      margin:0;
+    }
     }
   }
 
@@ -139,6 +154,32 @@ margin-right: 23px;
     background-color: #007bff;
     color: #fff;
   }
+  @media (max-width: 768px) {
+    animation: slideIn 0.5s;
+    animation-fill-mode: forwards;
+    position: fixed;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #E2EDF5;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @media (max-width: 768px) {
+      padding:29px 18px ;
+    }
+
 `;
 
 export const FilterOverlay = styled.div`
@@ -192,6 +233,9 @@ export const CloseButton = styled.button`
   font-style:bold;
   font-weight:800;
   cursor: pointer;
+  @media (max-width: 768px) {
+      display: none;
+    }
 `;
 
 export const OriginalPrice = styled.p`
@@ -223,7 +267,17 @@ color: #2335D4;
 `;
 export const TabContainer = styled.div`
   display: flex;
-  margin-top:57px;
+  margin-top: 57px;
+  overflow-x: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  &::-webkit-scrollbar {
+    display: none;
+    @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  }
 `;
 
 export const Tab = styled.div<{ isActive: boolean }>`
@@ -237,6 +291,11 @@ font-weight:  ${(props) => (props.isActive ? "700" : "400")};
   padding: 10px;
   cursor: pointer;
   border-bottom: ${(props) => (props.isActive ? "5px solid #617A80;" : "none")};
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    margin-right: 12px;
+    margin-bottom: 10px;
+  }
 
 `;
 
@@ -325,7 +384,6 @@ font-weight: 600;
 font-size: 16px;
 line-height: 19px;
 text-align: center;
-
 color: #040000;
 }
 `;

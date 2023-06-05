@@ -37,9 +37,9 @@ const App = () => {
       <Provider store={store}>
         <GlobalCss />
         <PromoGajian width={0}/>
-        <DiskonSpesial width={0}/>
+        {/* <DiskonSpesial width={0}/> */}
         <Routes>
-          <Route path='/' element={<HomePage width={width}/>} />
+          {/* <Route path='/' element={<HomePage width={width}/>} />
           <Route path='/auth' element={<Auth/>} />
           <Route path='/articles' element={<Artikel width={width}/>}/>
           <Route path='/article/:id' element={<DetailArtikel width={width}/>}/>
@@ -47,7 +47,7 @@ const App = () => {
           <Route path='/medical' element={<TindakanMedis width={width}/>}/>
           <Route path='/ask' element={<TanyaDokter width={width}/>}/>
           <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
-          <Route path='/doctor' element={<DetailDokter width={width} />}/>
+          <Route path='/doctor' element={<DetailDokter width={width} />}/> */}
           {/* <Route path='/profileUpdate' element={<EditProfil />}/>
           <Route path='/invoice' element={<Invoice />}/>
           <Route path='/customers' element={<CustomerListPage />}/>

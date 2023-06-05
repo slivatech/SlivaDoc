@@ -5,6 +5,10 @@ export const Container = styled.div`
   margin:0 129px;
   background: #ffff;
 
+  @media (max-width: 768px) {
+    margin: 5px;
+  }
+
 `;
 
 export const HeadingContainer =styled.div`
@@ -30,6 +34,9 @@ export const HeadingContainer =styled.div`
             color: #1C1C1C;
         }
    }
+   @media (max-width: 768px) {
+      display: none;
+  }
 `;
 
 export const SliderContainer =styled.div`
@@ -56,6 +63,9 @@ padding: 45px 56px 40px 56px;
     line-height: 22px;
     color: #1C1C1C;
     font-style: italic;
+    @media (max-width: 768px) {
+      font-size: 20px;
+  }
   }
   h1{
     margin-top:12px;
@@ -66,10 +76,18 @@ color: #1C1C1C;
     span{
       color: #2335D4;
     }
+    @media (max-width: 768px) {
+      font-size: 36px;
+  }
   }
   
 }
-
+@media (max-width: 768px) {
+    padding:15px;
+    flex-direction:column;
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
 
 export const CardGrid = styled.div`

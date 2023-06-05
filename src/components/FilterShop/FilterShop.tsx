@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import filtericon from "../../assets/icon/Filter.png";
 import { Button, Card, CardContainer, CardContent, CardGrid, CardTitle, CloseButton, Detailproduk, Discount, DiscountedPrice, FilterButton, FilterContainer, FilterDropdown, FilterInput, FilterOverlay, FilterPopup, HeadPopup, Images, OriginalPrice, Rating, Tab, TabContainer } from "./FilterShopStyle";
 
+
 interface FilterProps {
   data: Product[];
 }
@@ -87,7 +88,6 @@ const FilterShop: React.FC<FilterProps> = ({ data }) => {
     setIsOpen(false);
   };
 
-  
   return (
     <>
       <FilterContainer>
@@ -142,9 +142,10 @@ const FilterShop: React.FC<FilterProps> = ({ data }) => {
             </FilterDropdown>
             </div>
         </div>
+      
         {isOpen && (
           <>
-             <FilterOverlay onClick={handleFilter}/>
+             <FilterOverlay onClick={handleClose} />
             <FilterPopup >
               <HeadPopup>Semua Filter</HeadPopup>
               <CloseButton onClick={handleClose}>X</CloseButton>
