@@ -59,7 +59,6 @@ const App = () => {
           <Route path='/bookingdokter' element={<BookingDoctorPage/>}/>
           <Route path='/diskonspesial' element={<DiskonSpesial width={0}/>}/>
           <Route path='/dashboardads' element={<DashboardAds/>}/>
-          <Route path='/diskonspesial' element={<DiskonSpesial width={0}/>}/>
           <Route path='/schedulelist' element={<ScheduleListPage/>}/>
           <Route path='/unlimitedchatprotection' element={<UnlimitedChat width={0}/>}/>
           <Route path='/regulerprotection' element={<Reguler width={0}/>}/>
