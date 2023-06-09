@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BarHelper from "./BarHelper";
 import BaseButton from "../Common/Buttons/BaseButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../../assets/icon/logo.svg'
 import uk from '../../assets/icon/uk.png'
 import id from '../../assets/icon/Indonesia.png'
@@ -93,6 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
             <img src={logo} alt="Logo" className="Logo" />
           </Logo>
           <BottomWrap>
+          <Link to="/Auth" >
             <BaseButton
               text="Masuk"
               textColor="#fff"
@@ -101,9 +102,11 @@ const Navbar: React.FC<NavbarProps> = ({ width }) => {
               radius="5px"
               width="80px"
               height="32px"
+              
               // onClick={() => {alert('ressssss')}}
               // style={{background:'linear-gradient(180deg, #127FFF 99.92%, rgba(23, 189, 252, 0) 100%)'}}
             />
+            </Link>
             {width > 450 && (
               <BaseButton
                 text="Download Aplikasi"

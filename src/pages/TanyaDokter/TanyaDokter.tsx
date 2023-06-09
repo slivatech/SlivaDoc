@@ -7,7 +7,6 @@ import {
   WrapperContainer,
   Title,
   Heading,
-  Link,
   Banner,
   ImgBanner,
   DescBanner,
@@ -15,6 +14,7 @@ import {
   ContainerDesc,
   DoctorGrid,
   ButtonGrid,
+  Linked,
 } from "./TanyaDokterStyle";
 import Slider from "../../components/Slider/Slider";
 import { sliderData, data, doctors } from "./datas";
@@ -26,6 +26,7 @@ import Button from "../../components/Common/Buttons/BaseButton";
 import DoctorList from "../../components/DoctorList/DoctorList";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 interface TanyaDokterProps {
   width: number;
@@ -94,7 +95,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
           <FilterContainer>
             <Heading>
               <Title>Filter</Title>
-              <Link onClick={handleReset}>Reset</Link>
+              <Linked onClick={handleReset}>Reset</Linked>
             </Heading>
             <HargaKonsultasiFilter
               selectedValue={hargaKonsultasi}
@@ -120,7 +121,9 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
               <Title>Rekomendasi Dokter Hewan Terbaik</Title>
               <p>Konsultasi online dengan dokter siaga kami</p>
             </ContainerDesc>
-            <Link>Lihat Semua</Link>
+            <Link to='/bookingdokter'>
+            <Linked>Lihat Semua</Linked>
+            </Link>
           </Heading>
           {filteredData.length > 0 ? (
             <HasilFilter data={filteredData.slice(0, 2)} text={""} />
@@ -155,6 +158,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
             </ContainerDesc>
             <DoctorList doctors={doctors} />
             <ButtonGrid>
+              <Link to={"/medical"}>
               <Button
                 text="Tampilkan lebih banyak"
                 textColor="#040000"
@@ -165,6 +169,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
                 width="179px"
                 outline={false}
               />
+              </Link>
             </ButtonGrid>
           </DoctorGrid>
         </WrapperContainer>

@@ -14,6 +14,10 @@ export default createGlobalStyle`
     padding: 0;
     max-width: 1920px;
     margin: 0 auto;
+    a {
+    text-decoration: none;
+  }
+
   }
 
   

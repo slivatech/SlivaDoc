@@ -95,7 +95,7 @@ export const Heading = styled.div`
 
 `;
 
-export const Link = styled.p`
+export const Linked = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;

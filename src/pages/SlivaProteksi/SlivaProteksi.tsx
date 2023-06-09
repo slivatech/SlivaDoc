@@ -36,6 +36,7 @@ const SlivaProteksi: React.FC<SLivaProteksirProps> = ({width}) => {
           description={card.description}
           pricePerMonth={card.pricePerMonth}
           backgroundColor={card.backgroundColor}
+          detailPath={card.detailPath}
         />
       ))}
       </CardPaket>

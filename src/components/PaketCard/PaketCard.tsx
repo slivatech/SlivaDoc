@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 type CardProps = {
@@ -7,6 +8,7 @@ type CardProps = {
   description: string;
   pricePerMonth: number;
   backgroundColor?: string;
+  detailPath: string;
 };
 
 const CardContainer = styled.div<{ backgroundColor?: string }>`
@@ -122,7 +124,10 @@ const Card = ({
   description,
   pricePerMonth,
   backgroundColor,
+  detailPath,
 }: CardProps) => {
+
+
   return (
     <CardContainer backgroundColor={backgroundColor}>
       <Logo src={logo} alt="Logo" />
@@ -131,7 +136,8 @@ const Card = ({
       <Span>Mulai Dari</Span>
       <PricePerMonth>{`Rp.${pricePerMonth}/bulan`}</PricePerMonth>
       <ButtonContainer>
-        <DetailButton>Lihat Detail</DetailButton>
+      <DetailButton as={Link} to={detailPath}>
+          Lihat Detail</DetailButton>
         <RegisterButton>Daftar</RegisterButton>
       </ButtonContainer>
     </CardContainer>

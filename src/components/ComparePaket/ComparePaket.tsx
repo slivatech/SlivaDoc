@@ -3,6 +3,7 @@ import styled from "styled-components";
 import truepic from "../../assets/icon/true.png";
 import falsepic from "../../assets/icon/false.png";
 import protectpic from "../../assets/icon/ProteksiLogo.svg";
+import { Link } from "react-router-dom";
 interface Package {
   paket: string;
   chat: string | JSX.Element;
@@ -179,13 +180,19 @@ const ComparePaket: React.FC<ComparePackagesProps> = ({ packages }) => {
         <tfoot>
           <th></th>
           <th>
+            <Link to="/unlimitedchatprotection">
             <button>Lihat Detail</button>
+            </Link>
           </th>
           <th>
+          <Link to="/regulerprotection">
             <button>Lihat Detail</button>
+            </Link>
           </th>
           <th>
+          <Link to="/plusprotection">
             <button>Lihat Detail</button>
+            </Link>
           </th>
         </tfoot>
       </Table>

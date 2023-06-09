@@ -125,6 +125,7 @@ export const cardData = [
     pricePerMonth: 50000,
     backgroundColor:
       "linear-gradient(180deg, #B4B7B7 0%, rgba(234, 243, 245, 0) 100%)",
+      detailPath:"/unlimitedchatprotection",
   },
   {
     logo: protectpic,
@@ -133,6 +134,7 @@ export const cardData = [
     pricePerMonth: 150000,
     backgroundColor:
       "linear-gradient(180deg, #D9D9D9 0%, rgba(234, 243, 245, 0) 100%);",
+      detailPath:"/regulerprotection",
   },
   {
     logo: protectpic,
@@ -141,6 +143,7 @@ export const cardData = [
     pricePerMonth: 250000,
     backgroundColor:
       "linear-gradient(180deg, #AAE6EA 0%, rgba(234, 243, 245, 0) 100%);",
+      detailPath:"/plusprotection",
   },
 ];
 export const sectionRegister = [

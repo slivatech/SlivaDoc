@@ -29,6 +29,9 @@ import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
 import PromoGajian from "./pages/PromoProduct/PromoGajian";
 import DiskonSpesial from "./pages/PromoProduct/DiskonSpesial";
+import { BookingContainer } from "./pages/DetailDokter/DetailDokterStyle";
+import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
+import DashboardAds from "./pages/DashboardAds/DashboardAds";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -36,10 +39,8 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <Provider store={store}>
         <GlobalCss />
-        <PromoGajian width={0}/>
-        {/* <DiskonSpesial width={0}/> */}
         <Routes>
-          {/* <Route path='/' element={<HomePage width={width}/>} />
+          <Route path='/' element={<HomePage width={width}/>} />
           <Route path='/auth' element={<Auth/>} />
           <Route path='/articles' element={<Artikel width={width}/>}/>
           <Route path='/article/:id' element={<DetailArtikel width={width}/>}/>
@@ -47,13 +48,22 @@ const App = () => {
           <Route path='/medical' element={<TindakanMedis width={width}/>}/>
           <Route path='/ask' element={<TanyaDokter width={width}/>}/>
           <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
-          <Route path='/doctor' element={<DetailDokter width={width} />}/> */}
-          {/* <Route path='/profileUpdate' element={<EditProfil />}/>
-          <Route path='/invoice' element={<Invoice />}/>
+          <Route path='/doctor/:id' element={<DetailDokter width={width} />}/> 
+          <Route path='/profileUpdate' element={<EditProfil width={0} />}/>
+          <Route path='/invoice' element={<Invoice width={0} />}/>
           <Route path='/customers' element={<CustomerListPage />}/>
-          {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
+          <Route path='/dashboardArticle' element={<DashboardArtikel width={0} />}/>
           <Route path='/tabs' element={<TabGroup />}/>
           <Route path='/protection' element={<SlivaProteksi width={width} />}/>
+          <Route path='/promogajian' element={<PromoGajian width={0}/>}/>
+          <Route path='/bookingdokter' element={<BookingDoctorPage/>}/>
+          <Route path='/diskonspesial' element={<DiskonSpesial width={0}/>}/>
+          <Route path='/dashboardads' element={<DashboardAds/>}/>
+          <Route path='/diskonspesial' element={<DiskonSpesial width={0}/>}/>
+          <Route path='/schedulelist' element={<ScheduleListPage/>}/>
+          <Route path='/unlimitedchatprotection' element={<UnlimitedChat width={0}/>}/>
+          <Route path='/regulerprotection' element={<Reguler width={0}/>}/>
+          <Route path='/plusprotection' element={<Plus width={0}/>}/>
         </Routes>
       </Provider>
     

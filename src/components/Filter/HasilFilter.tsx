@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../Common/Buttons/BaseButton";
 import portoicon from "../../assets/icon/portfolio.png";
 import reviewicon from "../../assets/icon/review.png";
+import { Link } from "react-router-dom";
 
 interface HasilFilterProps {
   data: any[];
@@ -145,6 +146,7 @@ const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
                 </HargaKonsultasi>
               </DetailProfile>
               <ButtonContainer>
+                <Link to="/doctor/:id">
                 <Button
                   text="Mulai Konsultasi"
                   textColor="#fff"
@@ -154,6 +156,7 @@ const HasilFilter: React.FC<HasilFilterProps> = ({ data, text }) => {
                   height="32px"
                   width="156px"
                 />
+                </Link>
               </ButtonContainer>
             </Detailcontainer>
           </Card>
