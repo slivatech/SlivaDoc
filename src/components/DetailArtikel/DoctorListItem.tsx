@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import expicon from "../../assets/icon/portfolio.png"
 import rateicon from "../../assets/icon/review.png"
+import { Link } from "react-router-dom";
 
 interface Doctor {
   id: number;
@@ -11,6 +12,7 @@ interface Doctor {
   image: string;
   rating:number;
   exp:number;
+  nav:string;
 }
 
 interface DoctorListItemProps {
@@ -122,7 +124,7 @@ line-height: 10px;
 
 
 const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
-  const { name, specialty, price, image,rating,exp } = doctor;
+  const { name, specialty, price, image,rating,exp,nav,id } = doctor;
 
   return (
     <DoctorListItemContainer>
@@ -154,7 +156,9 @@ const DoctorListItem: React.FC<DoctorListItemProps> = ({ doctor }) => {
         <DoctorPrice>{`RP ${price}`}</DoctorPrice>
       </DoctorInfo>
       <ButtonContainer>
+        <Link to={`/${nav}`} key={id}>
       <button>Mulai konsultasi</button>
+      </Link>
       </ButtonContainer>
 
     </DoctorListItemContainer>

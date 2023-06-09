@@ -44,6 +44,7 @@ interface Doctor {
   image: string;
   rating:number;
   exp:number;
+  nav:string;
 }
 interface IListArticle {
   id: number;
@@ -62,6 +63,7 @@ const doctors: Doctor[] = [
     image: doctor,
     rating:90,
     exp:3,
+    nav:'doctor/:id',
   },
   {
     id: 2,
@@ -71,6 +73,7 @@ const doctors: Doctor[] = [
     image: doctor,
     rating:96,
     exp:4,
+    nav:'doctor/:id',
   },
 ];
 
@@ -134,7 +137,9 @@ const DetailArtikel: React.FC<DetailArtikelProps> = ({ width }) => {
           <DoctorListContainer>
             <Heading>
           <Title>konsultasi Dokter Terkait</Title>
+          <Link to={"/bookingdokter"}>
           <Linked>Lihat Semua</Linked>
+          </Link>
           </Heading>
         <Description>Konsultasi online dengan dokter siaga kami</Description>
             {doctors.map((doctor) => (

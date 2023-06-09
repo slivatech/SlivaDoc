@@ -2,6 +2,7 @@ import { DoctorResultStyle } from "./BookingStyle";
 import BaseButton from "../Common/Buttons/BaseButton";
 import { useAppSelector } from "../../store/hooks";
 import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
+import { Link } from "react-router-dom";
 
 const DoctorResult = ({
   doctor,
@@ -69,6 +70,7 @@ const DoctorResult = ({
           <img src="/assets/calendar.svg" alt="calendar" />
           <p>{doctor.isAvailable ? "Tersedia hari ini" : ""}</p>
         </div>
+        <Link to={"/doctor/:id"} key={doctor.id}>
         <BaseButton
           width="113px"
           height="25px"
@@ -78,6 +80,7 @@ const DoctorResult = ({
           text={isDoctorTab ? "Buat Janji" : "Mulai Konsultasi"}
           textColor="white"
         />
+        </Link>
       </div>
     </DoctorResultStyle>
   );

@@ -8,6 +8,7 @@ export const yearsOfExperience = [
 
 export const doctors: Doctor[] = [
   {
+    id:1,
     imageSrc: "/assets/doc.png",
     name: "Drh.Evans Moris",
     role: "Dokter Kucing",
@@ -21,6 +22,7 @@ export const doctors: Doctor[] = [
     yearsOfExperience: 4,
   },
   {
+    id:2,
     imageSrc: "/assets/doc.png",
     name: "Drh.Evans Moris",
     role: "Dokter Kucing",
@@ -34,6 +36,7 @@ export const doctors: Doctor[] = [
     yearsOfExperience: 5,
   },
   {
+    id:3,
     imageSrc: "/assets/doc.png",
     name: "Drh. Jackson Wang",
     role: "Dokter Kucing",
@@ -47,6 +50,7 @@ export const doctors: Doctor[] = [
     yearsOfExperience: 11,
   },
   {
+    id:4,
     imageSrc: "/assets/doc.png",
     name: "Drh.Evans Moris",
     role: "Dokter Kucing",
@@ -60,6 +64,7 @@ export const doctors: Doctor[] = [
     yearsOfExperience: 8,
   },
   {
+    id:5,
     imageSrc: "/assets/doc.png",
     name: "Drh.Evans Moris",
     role: "Dokter Kucing",
@@ -73,6 +78,7 @@ export const doctors: Doctor[] = [
     yearsOfExperience: 7,
   },
   {
+    id:6,
     imageSrc: "/assets/doc.png",
     name: "Drh.Evans Moris",
     role: "Dokter Kucing",

@@ -45,7 +45,7 @@ const navigation = [
   {
     id: 5,
     name: "SlivaShop",
-    nav: ""
+    nav: "shop-home"
   },
   {
     id: 6,

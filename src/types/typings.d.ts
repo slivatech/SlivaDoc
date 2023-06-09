@@ -1,4 +1,5 @@
 interface Doctor {
+  id:number;
   imageSrc: string;
   name: string;
   role: string;

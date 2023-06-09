@@ -19,7 +19,6 @@ import CustomerListPage from "./pages/CustomerList/CustomerListPage";
 import Invoice from "./pages/InvoiceList/Invoice";
 import { Routes, Route } from "react-router-dom";
 import DashboardArtikel from "./pages/DashboardArtikel/DashboardArtikel";
-import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import store from "./store/store";
 import { Provider } from "react-redux";
@@ -32,6 +31,8 @@ import DiskonSpesial from "./pages/PromoProduct/DiskonSpesial";
 import { BookingContainer } from "./pages/DetailDokter/DetailDokterStyle";
 import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import DashboardAds from "./pages/DashboardAds/DashboardAds";
+import TabGroup from "./pages/DashboardArtikel/TabGroup";
+import ShopHome from "./pages/ShopHomePage/ShopHome";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path='/unlimitedchatprotection' element={<UnlimitedChat width={0}/>}/>
           <Route path='/regulerprotection' element={<Reguler width={0}/>}/>
           <Route path='/plusprotection' element={<Plus width={0}/>}/>
+          <Route path='/shop-home' element={<ShopHome width={width}/>}/>
         </Routes>
       </Provider>
     
