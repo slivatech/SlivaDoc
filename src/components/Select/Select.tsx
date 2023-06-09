@@ -6,6 +6,7 @@ import {
   SelectContainer,
   SelectLabelButton,
 } from "./SelectStyle";
+import useClickOutside from "../../Hooks/useClickOutside";
 
 interface ISelect {
   label: string;
@@ -57,8 +58,12 @@ const Select = ({
     handleClose();
   };
 
+  const selectRef = useClickOutside<HTMLDivElement>(() => {
+    handleClose()
+  });
+
   return (
-    <SelectContainer>
+    <SelectContainer ref={selectRef}>
       <SelectLabelButton
         {...rest}
         padding={padding}

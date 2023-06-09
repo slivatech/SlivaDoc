@@ -33,6 +33,7 @@ import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import DashboardAds from "./pages/DashboardAds/DashboardAds";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import ShopHome from "./pages/ShopHomePage/ShopHome";
+import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -65,6 +66,7 @@ const App = () => {
           <Route path='/regulerprotection' element={<Reguler width={0}/>}/>
           <Route path='/plusprotection' element={<Plus width={0}/>}/>
           <Route path='/shop-home' element={<ShopHome width={width}/>}/>
+          <Route path='/reseller' element={<ResellerDetailPage/>}/>
         </Routes>
       </Provider>
     

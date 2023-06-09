@@ -7,15 +7,21 @@ import Select from "../../components/Select/Select";
 import {
   SearchWrapper,
   TimeDropdownContainer,
+  TimePickerButton,
 } from "../../components/BookingComponents/BookingStyle";
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import BaseButton from "../../components/Common/Buttons/BaseButton";
 import FilterTags from "../../components/BookingComponents/FilterTags";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
+import TimeComponent from "../../components/BookingComponents/TimeComponent";
+import useClickOutside from "../../Hooks/useClickOutside";
+import useSelect from "../../Hooks/useSelect";
 
 const BookingPetHospitalPage = () => {
   const tablet = useMediaQuery("(min-width:1024px)");
+  const { handleDay } = useFilterDoctors();
 
   return (
     <>
@@ -39,6 +45,7 @@ const BookingPetHospitalPage = () => {
 
                   <TimeDropdownContainer>
                     <Select
+                    
                       border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                       label="Pilih Hari"
                       values={[
@@ -51,23 +58,11 @@ const BookingPetHospitalPage = () => {
                         "Minggu",
                       ]}
                       radius="5px"
-                      onChange={() => null}
+                      onChange={handleDay}
                       padding=".1rem .5rem"
                       iconEnd={<img src="/assets/arrow_dropdown.svg" />}
                     />
-                    <Select
-                      onChange={() => null}
-                      border=" 0.5px solid rgba(153, 146, 146, 0.7)"
-                      label="Pilih Jam"
-                      values={[
-                        "08.00 - 09.00",
-                        "14.00 - 15.00",
-                        "20.00 - 21.00",
-                      ]}
-                      padding=".1rem .5rem"
-                      radius="5px"
-                      iconEnd={<img src="/assets/arrow_dropdown.svg" />}
-                    />
+                    <TimeComponent />
                   </TimeDropdownContainer>
                 </div>
               ) : null}
@@ -115,11 +110,20 @@ const BookingPetHospitalPage = () => {
                     <>
                       {tablet ? (
                         <>
-                          <h1 style={{ fontSize: "18px", fontWeight: 400,margin:"1rem 0" }}>
+                          <h1
+                            style={{
+                              fontSize: "18px",
+                              fontWeight: 400,
+                              margin: "1rem 0",
+                            }}
+                          >
                             Dokter Hewan Rekomendasi
                           </h1>
 
                           <TimeDropdownContainer>
+                            <div>
+
+                            </div>
                             <Select
                               border=" 0.5px solid rgba(153, 146, 146, 0.7)"
                               label="Pilih Hari"
@@ -132,24 +136,12 @@ const BookingPetHospitalPage = () => {
                                 "Sabtu",
                                 "Minggu",
                               ]}
-                              onChange={() => null}
+                              onChange={handleDay}
                               radius="5px"
                               padding=".1rem .5rem"
                               iconEnd={<img src="/assets/arrow_dropdown.svg" />}
                             />
-                            <Select
-                              onChange={() => null}
-                              border=" 0.5px solid rgba(153, 146, 146, 0.7)"
-                              label="Pilih Jam"
-                              values={[
-                                "08.00 - 09.00",
-                                "14.00 - 15.00",
-                                "20.00 - 21.00",
-                              ]}
-                              padding=".1rem .5rem"
-                              radius="5px"
-                              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
-                            />
+                            <TimeComponent />
                           </TimeDropdownContainer>
                         </>
                       ) : null}

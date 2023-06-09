@@ -3,6 +3,7 @@ import BaseButton from "../Common/Buttons/BaseButton";
 import { useAppSelector } from "../../store/hooks";
 import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
 import { Link } from "react-router-dom";
+import { Doctor } from "../../types/typings";
 
 const DoctorResult = ({
   doctor,

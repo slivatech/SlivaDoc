@@ -8,21 +8,26 @@ type Tab = {
 
 interface TabProps {
   tabs: Tab[];
+  width?:string;
+  activeColor?:string;
+  indicatorColor?:string;
+  activeIndicatorColor?:string;
 }
-const Tabs = ({ tabs }: TabProps) => {
+
+  const Tabs = ({ tabs,width,activeColor,indicatorColor="rgba(28, 28, 28, 0.322)",activeIndicatorColor="rgba(25, 96, 203,0.6)"  }: TabProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <>
-      <TabContainer>
+      <TabContainer width={width} >
         {tabs.map((tab, index) => (
           <TabButton
             key={index}
             active={activeTab === index}
             onClick={() => setActiveTab(index)}
           >
-            <Title active={activeTab === index}>{tab.title}</Title>
-            <Indicator active={activeTab === index} />
+            <Title active={activeTab === index} activeColor={activeColor!}>{tab.title}</Title>
+            <Indicator active={activeTab === index} indicatorColor={indicatorColor!} activeIndicatorColor={activeIndicatorColor!} />
           </TabButton>
         ))}
       </TabContainer>
@@ -31,10 +36,10 @@ const Tabs = ({ tabs }: TabProps) => {
   );
 };
 
-const TabContainer = styled.section`
+const TabContainer = styled.section<{ width?:string }>`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: ${(props) => props.width ? props.width : "100%"};
   height: 50px;
 `;
 const TabButton = styled.button<{ active: boolean }>`
@@ -53,7 +58,7 @@ const TabButton = styled.button<{ active: boolean }>`
     outline: none;
   }
 `;
-const Title = styled.span<{ active: boolean }>`
+const Title = styled.span<{ active: boolean,activeColor:string }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -61,10 +66,12 @@ const Title = styled.span<{ active: boolean }>`
   height: inherit;
   font-size: 20px;
   transition: 0.6s;
-  color: #1c1c1c;
+  /* color: #1c1c1c; */
+  color: ${(props) => (props.active ? props.activeColor : "#1c1c1c")};
+
   font-weight: ${(props) => (props.active ? 700 : 500)};
 `;
-const Indicator = styled.span<{ active: boolean }>`
+const Indicator = styled.span<{ active: boolean,indicatorColor?:string,activeIndicatorColor?:string }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -73,7 +80,7 @@ const Indicator = styled.span<{ active: boolean }>`
   border-bottom-width: ${(props) => (props.active ? "2px" : "1px")};
   border-bottom-style: solid;
   border-bottom-color: ${(props) =>
-    props.active ? "rgba(25, 96, 203,0.6)" : "rgba(28, 28, 28, 0.322)"};
+    props.active ? props.activeIndicatorColor : props.indicatorColor};
 `;
 
 export default Tabs;

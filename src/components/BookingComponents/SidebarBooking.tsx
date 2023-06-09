@@ -36,7 +36,7 @@ const SidebarBooking = () => {
     (state) => state.filter.priceRange
   );
 
-  const { handleCityChange, handleYearsOfExperienceChange } =
+  const { handleCityChange, handleYearsOfExperienceChange,handleDay } =
     useFilterDoctors();
   const handleMinPrice = (min: string) => {
     dispatch(setMinPrice(Number(min)));
