@@ -24,6 +24,8 @@ import SlivaProteksi from "./pages/SlivaProteksi/SlivaProteksi";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
+import DetailProduct from "./pages/ShopDetailProduct/DetailProduct";
+
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -42,12 +44,12 @@ const App = () => {
           <Route path='/ask' element={<TanyaDokter width={width}/>}/>
           <Route path='/clinicService' element={<DetailLayananKlinik width={width}/>}/>
           <Route path='/doctor' element={<DetailDokter width={width} />}/>
-          {/* <Route path='/profileUpdate' element={<EditProfil />}/>
-          <Route path='/invoice' element={<Invoice />}/>
+          <Route path='/profileUpdate' element={<EditProfil width={width} />}/>
+          <Route path='/invoice' element={<Invoice width={width} />}/>
           <Route path='/customers' element={<CustomerListPage />}/>
-          {/* <Route path='/dashboardArticle' element={<DashboardArtikel />}/> */}
-          <Route path='/tabs' element={<TabGroup />}/>
+          <Route path='/dashboardArticle' element={<DashboardArtikel width={width} />}/>
           <Route path='/protection' element={<SlivaProteksi width={width} />}/>
+          <Route path='/product/:id' element={<DetailProduct/>}/>
         </Routes>
       </Provider>
     </ThemeProvider>
