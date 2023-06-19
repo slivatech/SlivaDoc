@@ -26,6 +26,7 @@ import ScheduleListPage from "./pages/ScheduleList/ScheduleListPage";
 import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
+import CategoryPage  from "./pages/CategorySlivaShopPage/CategoryPage";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -52,7 +53,8 @@ const App = () => {
         </Routes>
         {/* <ScheduleListPage /> */}
         {/* <BookingPetHospitalPage /> */}
-        <ResellerDetailPage />
+        {/* <ResellerDetailPage /> */}
+        <CategoryPage />
       </Provider>
     </ThemeProvider>
   );

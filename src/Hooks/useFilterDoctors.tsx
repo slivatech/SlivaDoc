@@ -110,8 +110,10 @@ export const useFilterDoctors = () => {
       const timeMatches =
         startTime === "" ||
         endTime === "" ||
-        (convertToSeconds(doctor.availableTime?.startTime) >= convertToSeconds(startTime) &&
-        convertToSeconds(doctor.availableTime?.endTime) <= convertToSeconds(endTime));
+        (convertToSeconds(doctor.availableTime?.startTime) >=
+          convertToSeconds(startTime) &&
+          convertToSeconds(doctor.availableTime?.endTime) <=
+            convertToSeconds(endTime));
       return (
         cityMatches &&
         yearsOfExperienceMatches &&
