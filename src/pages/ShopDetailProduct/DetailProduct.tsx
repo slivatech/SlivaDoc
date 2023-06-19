@@ -10,6 +10,9 @@ import SwiperProduct from './SwiperProduct'
 import { CheckboxFilter } from './CheckboxFilter'
 import { imagesProduct, Testimoni } from './data'
 import Dropdown from '../../components/Common/Dropdown/Dropdown'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+import { title } from 'process'
 
 
 interface ITestimoni {
@@ -21,11 +24,19 @@ interface ITestimoni {
     reply?: any,
 }
 
+interface ShopDetailProductProps {
+    width: number
+}
 
-const DetailProduct = () => {
+
+
+const DetailProduct: React.FC<ShopDetailProductProps> = ({ width }) => {
     const [isReply, setIsReply] = useState<boolean>(false)
     const [count, setCount] = useState<number>(0)
     const [filter, setFilter] = useState("Terbaru")
+    const [filteredStar, setFilteredStar] = useState<any>([]);
+    console.log(filteredStar.length, 'this is length');
+    
     
     const increase = () => {
         setCount(count + 1)
@@ -44,8 +55,65 @@ const DetailProduct = () => {
         },
     ]
 
+    const StarCategories = [
+        {
+            title: 5
+        },
+        {
+            title: 4
+        },
+        {
+            title: 3
+        },
+        {
+            title: 2
+        },
+        {
+            title: 1
+        },
+      ];
+
+    let [categoryFilters, setcategoryFilters] = useState(new Set<any>([]));
+
+    function updateFilters(checked:any, categoryFilter:any) {
+        if (checked)
+        setcategoryFilters((prev) => new Set(prev).add(categoryFilter));
+        if (!checked)
+        setcategoryFilters((prev) => {
+            const next = new Set(prev);
+            next.delete(categoryFilter);
+            return next;
+        });
+    }
+
+    const filteredProducts =
+        categoryFilters.size === 0
+        ? Testimoni
+        : Testimoni.filter((p) => (
+            categoryFilters.has(p.rate)
+            ));
+        
+
+
+    // const handleFilter = (event:any) => {
+    //     if (filteredStar.length > 0) {
+    //         FilterStar(event);
+    //     } else {
+    //         setFilteredStar([...filteredStar, ...Testimoni]);
+    //     }
+    // };
+
+    // const FilterStar = (event:any) => {
+    //     let selectedFilter = event.target.value;
+    //     selectedFilter = parseInt(selectedFilter)
+    //     setFilter(selectedFilter);
+    //     const filteredData = Testimoni.filter((star) => star.rate === selectedFilter)
+    //     setFilteredStar(filteredData);
+    // };
+
   return (
     <>
+    <Navbar width={width} />
     <Container>
         <GridCols column='40%' gap='40px'>
             <SwiperProduct images={imagesProduct} />
@@ -217,31 +285,14 @@ const DetailProduct = () => {
                 </div>
                 <div className='filter'>
                     <h3>Rating</h3>
-                    <CheckboxFilter
-                        id='1'
-                        name='media'
-                        title='5'
-                    />
-                    <CheckboxFilter
-                        id='1'
-                        name='media'
-                        title='4'
-                    />
-                    <CheckboxFilter
-                        id='1'
-                        name='media'
-                        title='3'
-                    />
-                    <CheckboxFilter
-                        id='1'
-                        name='media'
-                        title='2'
-                    />
-                    <CheckboxFilter
-                        id='1'
-                        name='media'
-                        title='1'
-                    />
+                    {StarCategories.map((item, index) => (
+                        <CheckboxFilter
+                            id={index.toString()}
+                            name='media'
+                            title={item.title}
+                            handleChange={(e:any) => updateFilters(e.target.checked, item.title)}
+                        />
+                    ))}
                 </div>
                 <div style={{marginTop: '19px'}}>
                     <h3>Rating</h3>
@@ -268,7 +319,7 @@ const DetailProduct = () => {
                 </div>
             </ContainerFilter>
             <ContainerTestimoni>
-                {Testimoni.map((item: ITestimoni, index: number) => (
+                {filteredProducts.map((item: ITestimoni, index: number) => (
                     <GridCols column='100px' key={index}>
                         <ImageTesti src={item.image} width='98px' height='114px'/>
                         <div>
@@ -335,6 +386,7 @@ const DetailProduct = () => {
         </GridCols>
         
     </Container>
+    <Footer/>
     </>
   )
 }

@@ -8,17 +8,17 @@ const CheckBox = styled.div`
   margin-bottom: 1rem;
   gap: 2rem;
 
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
+  // input[type="checkbox"] {
+  //   -webkit-appearance: none;
+  //   appearance: none;
 
-    width: 31px;
-    height: 29px;
-    border-radius: 5px;
-    border: 0.5px solid #2B3335;
-    outline: none;
-    cursor: pointer;
-  }
+  //   width: 31px;
+  //   height: 29px;
+  //   border-radius: 5px;
+  //   border: 0.5px solid #2B3335;
+  //   outline: none;
+  //   cursor: pointer;
+  // }
 
   label {
     color: #7076AE;
@@ -47,6 +47,7 @@ export const CheckboxFilter:React.FC<CheckboxProps> = ({id, title, name, handleC
           name={name}
           onChange={handleChange}
           checked={checked}
+          value={title}
         />
         <label htmlFor={id}>{title}</label>
     </CheckBox>

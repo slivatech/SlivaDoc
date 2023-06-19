@@ -49,7 +49,7 @@ const App = () => {
           <Route path='/customers' element={<CustomerListPage />}/>
           <Route path='/dashboardArticle' element={<DashboardArtikel width={width} />}/>
           <Route path='/protection' element={<SlivaProteksi width={width} />}/>
-          <Route path='/product/:id' element={<DetailProduct/>}/>
+          <Route path='/product/:id' element={<DetailProduct width={width}/>}/>
         </Routes>
       </Provider>
     </ThemeProvider>
