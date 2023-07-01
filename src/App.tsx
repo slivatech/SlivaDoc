@@ -35,6 +35,7 @@ import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import ShopHome from "./pages/ShopHomePage/ShopHome";
 import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
 import DashboardAdmin from "./pages/DashboardAdmin/DashboardAdmin";
+import DashboardAdminSeller from "./pages/DashboardAdminSeller/DashboardAdminSeller";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -69,6 +70,7 @@ const App = () => {
           <Route path='/shop-home' element={<ShopHome width={width}/>}/>
           <Route path='/reseller' element={<ResellerDetailPage/>}/>
           <Route path='/dashboardadmin' element={<DashboardAdmin/>}/>
+          <Route path='/dashboardadminseller' element={<DashboardAdminSeller/>}/>
         </Routes>
       </Provider>
     
