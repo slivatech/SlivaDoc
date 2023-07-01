@@ -43,7 +43,7 @@ const TotalValue = styled.span`
   margin-right: 5px;
 `;
 
-const TotalPercentage = styled.span`
+const TotalText = styled.span`
   font-size: 14px;
   font-weight: 400;
   margin-left: 2px;
@@ -114,13 +114,15 @@ const BannerDashboard: React.FC<Props> = ({ data }) => {
         <DivContainer key={item.id}>
           <Image src={item.imageSrc} alt="Item Image" />
           <DetailContainer>
-            {index === 2 ? (
+            {index === 3 ? (
               <Total>
-                <TotalValue>{item.total}</TotalValue>
-                <TotalPercentage>%</TotalPercentage>
+                <TotalValue>{formatCurrency(item.total)}</TotalValue>
               </Total>
             ) : (
-              <Total>{formatCurrency(item.total)}</Total>
+              <Total>
+                <TotalValue>{item.total}</TotalValue>
+                
+              </Total>
             )}
             <Name>{item.name}</Name>
             {index === 3 && (
