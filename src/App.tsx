@@ -34,6 +34,7 @@ import DashboardAds from "./pages/DashboardAds/DashboardAds";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";
 import ShopHome from "./pages/ShopHomePage/ShopHome";
 import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
+import DashboardAdmin from "./pages/DashboardAdmin/DashboardAdmin";
 const App = () => {
   const { width } = useWindowDimensions();
 
@@ -67,6 +68,7 @@ const App = () => {
           <Route path='/plusprotection' element={<Plus width={0}/>}/>
           <Route path='/shop-home' element={<ShopHome width={width}/>}/>
           <Route path='/reseller' element={<ResellerDetailPage/>}/>
+          <Route path='/dashboardadmin' element={<DashboardAdmin/>}/>
         </Routes>
       </Provider>
     
