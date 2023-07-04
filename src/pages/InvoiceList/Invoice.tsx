@@ -77,7 +77,7 @@ const Invoice: React.FC<InvoiceProps> = ({width}) => {
     let data = customers?.slice(startIndex, endIndex);
 
     setData(data);
-  }, [page]);
+  }, [page, pageIndex]);
 
   useEffect(() => {
     console.log({ selectedRow });
@@ -317,7 +317,7 @@ export const useAlertColumn = ({
         ),
       }),
     ],
-    [table]
+    [editable, setEditable, table]
   );
   return { alertColumn };
 };

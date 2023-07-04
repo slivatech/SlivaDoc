@@ -38,6 +38,7 @@ const ActionText: React.FC<ActionTextProps> = React.forwardRef(
     }: ActionTextProps,
     ref
   ) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const textProps = {
       color: disabled ? "#E6E6E6" : color,
       size,

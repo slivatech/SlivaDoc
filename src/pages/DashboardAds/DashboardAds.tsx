@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { TableV8, createColumnHelper } from '../../components/Common/Tablev8'
 import { article, months, analytics } from './data'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { ImageColumn, Content, Form, Profile, Chart, StatusColumn } from './DashboardAdsStyle'
 import BarChartVertical from '../../components/Chart/BarChartVertical'
 import { Container } from '../PageArtikel/PageArtikelStyle'
@@ -11,17 +11,17 @@ import downloadIcon from '../../assets/icon/Download.svg'
 import TabGroup, { TTab } from '../DashboardArtikel/TabGroup'
 import PieChartComp from '../../components/Chart/PieChart'
 
-const categories = [
-    {
-        value: 'Bulu kucing'
-    },
-    {
-        value: 'Bulu anjing'
-    },
-    {
-        value: 'Bulu harimau'
-    },
-]
+// const categories = [
+//     {
+//         value: 'Bulu kucing'
+//     },
+//     {
+//         value: 'Bulu anjing'
+//     },
+//     {
+//         value: 'Bulu harimau'
+//     },
+// ]
 
 const types:TTab[] = [
     {   id: 1,
@@ -42,7 +42,7 @@ interface FormDataType {
 const DashboardAds = () => {
     // state form
     const [place, setPlace] = useState("")
-    const [description, setDescription] = useState("")
+    // const [description, setDescription] = useState("")
     const [images, setImages] = useState<any>([]) ;
     const [imageURLs, setImageURLs] = useState<any>([]);
     const [startDate, setStartDate] = useState<any>('');
@@ -128,7 +128,7 @@ const DashboardAds = () => {
         let data = article?.slice(startIndex, endIndex);
 
         setData(data);
-    }, [page]);
+    }, [page, pageIndex]);
 
     useEffect(() => {
         console.log({ selectedRow });
@@ -196,7 +196,7 @@ const DashboardAds = () => {
                                                     objectFit: 'cover',
                                                     border: 'none',
                                                     borderRadius: '5px'
-                                                }} 
+                                                }} alt=''
                                             />
                                         )) }
                                     </Profile>

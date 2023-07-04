@@ -178,7 +178,7 @@ const ResellerProductTab = () => {
               </div>
               <p className="minimal">Minimal pembelian 3jt</p>
               <div className="voucher-name">
-                <img src="/assets/arrow-chevron.svg" height={"100%"} />
+                <img src="/assets/arrow-chevron.svg" height={"100%"} alt="arrow"/>
                 <h1>
                   Voucher <br /> special
                 </h1>
@@ -191,7 +191,7 @@ const ResellerProductTab = () => {
               </div>
               <p className="minimal">Minimal pembelian 3jt</p>
               <div className="voucher-name">
-                <img src="/assets/arrow-chevron.svg" height={"100%"} />
+                <img src="/assets/arrow-chevron.svg" height={"100%"} alt="arrow"/>
                 <h1>
                   Voucher <br /> special
                 </h1>

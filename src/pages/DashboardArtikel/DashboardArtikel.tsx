@@ -134,7 +134,7 @@ const DashboardArtikel: React.FC<DashboardArticleProps> = ({width}) => {
         let data = article?.slice(startIndex, endIndex);
 
         setData(data);
-    }, [page]);
+    }, [page, pageIndex]);
 
     useEffect(() => {
         console.log({ selectedRow });

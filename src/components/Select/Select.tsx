@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import useSelect from "../../Hooks/useSelect";
+import React, { useState } from "react";
+// import useSelect from "../../Hooks/useSelect";
 import {
   DropdownItem,
   DropdownStyle,

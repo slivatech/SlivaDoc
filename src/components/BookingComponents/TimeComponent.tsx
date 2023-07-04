@@ -40,7 +40,7 @@ const TimeComponent = () => {
         <span>
           {endTime || startTime  ?`${startTime} - ${endTime}` :"Pilih Waktu"}
         </span>
-        <img src="/assets/arrow_dropdown.svg" />
+        <img src="/assets/arrow_dropdown.svg" alt="arrow"/>
       </TimePickerButton>
       {isOpen ? (
         <TimePickerDropdown ref={timeRef}>

@@ -82,6 +82,7 @@ const TanyaDokter: React.FC<TanyaDokterProps> = ({ width }) => {
 
   useEffect(() => {
     setFilteredData(filterData());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hargaKonsultasi, pengalamanPraktik]);
 
   return (

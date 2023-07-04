@@ -1,16 +1,14 @@
 import { Animal } from "../../types/typings";
-import { AnimalCardStyled, GridContent } from "./ResellerDetailStyled";
+import { AnimalCardStyled } from "./ResellerDetailStyled";
 
 interface Props {
   animal: Animal;
 }
 
-
-
 const AnimalCard: React.FC<Props> = ({ animal }) => {
   return (
     <AnimalCardStyled>
-      <img src={animal.image} />
+      <img src={animal.image} alt="animal" />
       <p className="name">{animal.name}</p>
       <div className="rating">
         {[...new Array(animal.rating)].map(() => (
@@ -18,7 +16,9 @@ const AnimalCard: React.FC<Props> = ({ animal }) => {
         ))}
         <i className="fa-solid fa-star"></i>
       </div>
-      <p className="price">Rp. {(animal.price - (animal.price * 5/100)).toLocaleString()}</p>
+      <p className="price">
+        Rp. {(animal.price - (animal.price * 5) / 100).toLocaleString()}
+      </p>
       <div className="discount">
         <span>5%</span>
         <p className="strikethrough">Rp{animal.price.toLocaleString()} </p>

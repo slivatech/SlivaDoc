@@ -28,7 +28,7 @@ import Reguler from "./pages/SlivaProteksi/Reguler";
 import Plus from "./pages/SlivaProteksi/Plus";
 import PromoGajian from "./pages/PromoProduct/PromoGajian";
 import DiskonSpesial from "./pages/PromoProduct/DiskonSpesial";
-import { BookingContainer } from "./pages/DetailDokter/DetailDokterStyle";
+// import { BookingContainer } from "./pages/DetailDokter/DetailDokterStyle";
 import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import DashboardAds from "./pages/DashboardAds/DashboardAds";
 import TabGroup from "./pages/DashboardArtikel/TabGroup";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { cities, yearsOfExperience } from "./fakeData";
 import Select from "../Select/Select";
 import { CategoryBox } from "../TabSection/TabSectionStyle";
@@ -8,7 +8,7 @@ import MultiRangeSlider from "../Common/MultiRangeSlider/MultiRangeSlider";
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import { useFilterDoctors } from "../../Hooks/useFilterDoctors";
 import { useAppSelector } from "../../store/hooks";
-import { doctors } from "./fakeData";
+// import { doctors } from "./fakeData";
 import { useDispatch } from "react-redux";
 import {
   setMinPrice,
@@ -36,7 +36,7 @@ const SidebarBooking = () => {
     (state) => state.filter.priceRange
   );
 
-  const { handleCityChange, handleYearsOfExperienceChange,handleDay } =
+  const { handleCityChange, handleYearsOfExperienceChange } =
     useFilterDoctors();
   const handleMinPrice = (min: string) => {
     dispatch(setMinPrice(Number(min)));
@@ -77,8 +77,8 @@ const SidebarBooking = () => {
               radius="5px 0 0 5px"
               border="0.5px solid rgba(153, 146, 146, 0.7)"
               values={["Medan", "Jakarta"]}
-              iconStart={<img src="/assets/location-4.svg" />}
-              iconEnd={<img src="/assets/track.svg" />}
+              iconStart={<img src="/assets/location-4.svg" alt="location"/>}
+              iconEnd={<img src="/assets/track.svg" alt="track"/>}
               height="40px"
             />
           </div>
@@ -97,7 +97,7 @@ const SidebarBooking = () => {
               }
             />
             <GunakanLokasi>
-              <img style={{ width: "16px" }} src="/assets/my-location.svg" />
+              <img style={{ width: "16px" }} src="/assets/my-location.svg" alt="location"/>
               <label>Gunakan Lokasi Saya</label>
             </GunakanLokasi>
 
@@ -119,7 +119,7 @@ const SidebarBooking = () => {
               borderType="bottom"
               padding="0"
               values={yearsOfExperience}
-              iconEnd={<img src="/assets/arrow_dropdown.svg" />}
+              iconEnd={<img src="/assets/arrow_dropdown.svg" alt="arrow"/>}
             />
 
             {yearsOfExperience.map((radio, i) => (

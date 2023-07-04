@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import { Card, CardContent, CardGrid, CardTitle, Container, CountdownContainer, HeadingContainer, SliderContainer } from "./PromoProductStyle";
+import { Container, CountdownContainer, HeadingContainer, SliderContainer } from "./PromoProductStyle";
 import logo from "../../assets/icon/slivasale.svg"
 import SearchShop from "../../components/SearchShop/SearchShop";
 import SliderPromo from "../../components/SliderPromo/SliderPromo";
@@ -19,6 +19,7 @@ interface DiskonSpesial {
     slideimg,
     slideimg
   ];
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
   const DiskonSpesial: React.FC<DiskonSpesial> = ({width}) => {
     const targetDate = new Date("2023-06-31T12:00:00");
 

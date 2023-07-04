@@ -10,13 +10,12 @@ const ResellerProfile = () => {
   return (
     <ResellerProfileStyled>
       <ResellerProfileWrapper>
-        <img src="/assets/slivapetlogo.svg" />
+        <img src="/assets/slivapetlogo.svg" alt="slivapetlogo" />
         <div className="content">
           <h2 className="store-name">SlivaPetStore</h2>
           <p className="city">Kota Bandung</p>
           <SecondaryWrapper>
             <div>
-                
               <div className="profile-buttons">
                 <BaseButton
                   radius="5px"
@@ -43,22 +42,22 @@ const ResellerProfile = () => {
               </div>
             </div>
             <div className="stats">
-                <div className="stat">
-                    <span>Penilaian</span>
-                    <span className="number">1.6jt</span>
-                </div>
-                <div className="stat">
-                    <span>Bergabung</span>
-                    <span className="number">1 bulan lalu</span>
-                </div>
-                <div className="stat">
-                    <span>Produk</span>
-                    <span className="number">1.6rb</span>
-                </div>
-                <div className="stat">
-                    <span>Pengikut</span>
-                    <span className="number">1.6rb</span>
-                </div>
+              <div className="stat">
+                <span>Penilaian</span>
+                <span className="number">1.6jt</span>
+              </div>
+              <div className="stat">
+                <span>Bergabung</span>
+                <span className="number">1 bulan lalu</span>
+              </div>
+              <div className="stat">
+                <span>Produk</span>
+                <span className="number">1.6rb</span>
+              </div>
+              <div className="stat">
+                <span>Pengikut</span>
+                <span className="number">1.6rb</span>
+              </div>
             </div>
           </SecondaryWrapper>
         </div>

@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/effect-cards";
 import { GridContent, PromoBanners, Row } from "./ResellerDetailStyled";
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import { animals, bestSellers } from "./fakeData";
 import AnimalCard from "./AnimalCard";
 
@@ -35,10 +35,10 @@ const ResellerMainTab = () => {
           }}
         >
           <SwiperSlide>
-            <img width={"100%"} src="/assets/banner-promo-reseller.png" />
+            <img width={"100%"} src="/assets/banner-promo-reseller.png" alt="banner"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img width={"100%"} src="/assets/banner-promo-reseller.png" />
+            <img width={"100%"} src="/assets/banner-promo-reseller.png" alt="banner"/>
           </SwiperSlide>
         </Swiper>
         <div className="navBtns">

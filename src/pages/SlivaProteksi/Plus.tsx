@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { BenefitContainer, Container, FaqContainer, Heading, SectionTop, SliderContainer, SponsorContainer, Table, TableCell, TableHeadCell, TableRow, Title } from "./PlusStyle";
 import Proteksipic from "../../assets/icon/ProteksiLogo.svg";
 import Benefits from "../../components/Benefits/Benefits";
-import { benefits, benefitsplus, data, questions } from "./datas";
+import { benefitsplus, data, questions } from "./datas";
 import FaqDropdown from "../../components/FaqDropdown/FaqDropdown";
 import line from "../../assets/icon/line.png";
 import SliderProteksi from "../../components/SliderProteksi/SliderProteksi";

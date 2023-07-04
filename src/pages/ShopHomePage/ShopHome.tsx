@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import SearchShop from './SearchShop';
 import { CardCategory, CardProduct, Col, CountdownContainer, Logo, PriceDiscount, SeeAll, Title, WrapContainer, Container, RecomendContainer, SwiperImg, SliderContainer, SliderTop, DoubleBanner, RecomText, BackdropImg, BestSeller } from './ShopHomeStyle';
 import { categories, Products, BannerAds, ProductAds } from './data';

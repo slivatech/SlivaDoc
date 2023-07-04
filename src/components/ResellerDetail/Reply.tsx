@@ -8,7 +8,7 @@ interface ReplyProps {
 const Reply: React.FC<ReplyProps> = ({ reply }) => {
   return (
     <ReplyWrapper>
-      <img src={reply.replyImage} />
+      <img src={reply.replyImage} alt="reply" />
       <div className="reply-content">
         <h3>{reply.replyName}</h3>
         <div className="info">

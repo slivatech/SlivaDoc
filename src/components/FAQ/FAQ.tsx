@@ -18,6 +18,7 @@ interface FAQListProps {
   questions: Question[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const FAQ: React.FC<FAQListProps> = ({ questions }) => {
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
   const [selectedFAQs, setSelectedFAQs] = useState<FAQ[]>([]);

@@ -307,7 +307,15 @@ const TableV8: React.FC<ITableV8> = React.forwardRef(
         typeof onColumnOrder === "function" && onColumnOrder(columnOrder);
       }
       prevMode.current = editMode;
-    }, [editMode]);
+    }, [
+      columnOrder,
+      columnSizing,
+      columnVisibility,
+      editMode,
+      onColumnOrder,
+      onColumnResize,
+      onHideColumnCheck,
+    ]);
     const instance = useReactTable({
       data,
       columns: tableColumns,
@@ -584,6 +592,7 @@ const TableV8: React.FC<ITableV8> = React.forwardRef(
             isDragging: monitor.isDragging(),
           }),
         });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const opacity = isDragging ? 0 : 1;
         preview(drop(dropRef));
         drag(dragRef);
@@ -629,7 +638,7 @@ const TableV8: React.FC<ITableV8> = React.forwardRef(
           </div>
         );
       },
-      [deleteMode]
+      [deleteMode, onDeleteRow]
     );
 
     const toggleTableRowCustom = useCallback((rowId: any) => {

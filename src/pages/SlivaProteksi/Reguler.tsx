@@ -13,46 +13,46 @@ import Sponsorpic from "../../assets/image/sponsor.png"
 interface RegulerProps{
     width:number;
 }
-const tableData = [
-  {
-    title: "Manfaat Konsultasi Online",
-    rows: [
-      {
-        title: "Konsultasi Dokter Pribadi",
-        description: "(Termasuk dokter umum dan dokter spesialis)",
-        value: "Gratis dan tanpa batas",
-        isBlue: true
-      },
-      {
-        title: "Obat-obatan",
-        description: "Tiba dalam 1 jam",
-        value: "Dibayar Cashless",
-        isBlue: true
-      }
-    ]
-  },
-  {
-    title: "Manfaat Rawat Jalan",
-    rows: [
-      {
-        title: "Biaya Konsultasi",
-        description: "(Termasuk dokter umum dan dokter spesialis)",
-      },
-      {
-        title: "Biaya Administrasi",
-      },
-      {
-        title: "Obat-Obatan",
-      },
-      {
-        title: "Pemeriksaan Laboratorium",
-      },
-      {
-        title: "Pemeriksaan Lain yang Direkomendasikan Dokter",
-      }
-    ]
-  }
-];
+// const tableData = [
+//   {
+//     title: "Manfaat Konsultasi Online",
+//     rows: [
+//       {
+//         title: "Konsultasi Dokter Pribadi",
+//         description: "(Termasuk dokter umum dan dokter spesialis)",
+//         value: "Gratis dan tanpa batas",
+//         isBlue: true
+//       },
+//       {
+//         title: "Obat-obatan",
+//         description: "Tiba dalam 1 jam",
+//         value: "Dibayar Cashless",
+//         isBlue: true
+//       }
+//     ]
+//   },
+//   {
+//     title: "Manfaat Rawat Jalan",
+//     rows: [
+//       {
+//         title: "Biaya Konsultasi",
+//         description: "(Termasuk dokter umum dan dokter spesialis)",
+//       },
+//       {
+//         title: "Biaya Administrasi",
+//       },
+//       {
+//         title: "Obat-Obatan",
+//       },
+//       {
+//         title: "Pemeriksaan Laboratorium",
+//       },
+//       {
+//         title: "Pemeriksaan Lain yang Direkomendasikan Dokter",
+//       }
+//     ]
+//   }
+// ];
 const Reguler:React.FC<RegulerProps> = ({width}) => {
 
     return(

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BarHelper from "./BarHelper";
 import BaseButton from "../Common/Buttons/BaseButton";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../../assets/icon/logo.svg'
 import uk from '../../assets/icon/uk.png'
 import id from '../../assets/icon/Indonesia.png'
@@ -73,7 +73,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ width }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [overlay, setOverlay] = useState(false);
   const [lang, setLang] = useState("Indonesia");
 

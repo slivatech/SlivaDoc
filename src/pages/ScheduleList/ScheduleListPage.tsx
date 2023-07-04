@@ -1,68 +1,52 @@
-import { useCallback, useRef, useState, useEffect, useMemo, PropsWithChildren } from "react";
+import React, { useCallback, useRef, useState, useEffect, useMemo } from "react";
 import {
-  AddNewScheduleSidebar,
   DeleteColumn,
   EditColumn,
-  Overlay,
   ScheduleListStyle,
   ScheduleSidebar,
   ScheduleWrapper,
   StyledCalendar,
 } from "./ScheduleListStyle";
 import BaseButton from "../../components/Common/Buttons/BaseButton";
-import Calendar from "../../components/Common/Calender/Calender";
-import {
-  IndeterminateCheckbox,
-  TableV8,
-  createColumnHelper,
-} from "../../components/Common/Tablev8";
+import { IndeterminateCheckbox, TableV8, createColumnHelper } from "../../components/Common/Tablev8";
 import { customers } from "../CustomerList/fakeData";
 import { schedules } from "./fakeData";
-import Select from "../../components/Select/Select";
 import AddScheduleContainer from "./AddScheduleContainer";
 import DeleteModal from "./DeleteModal";
 
 const ScheduleListPage = () => {
-  const [scheduleId,setScheduleId] = useState<string | null>(null);
+  const [scheduleId, setScheduleId] = useState<string | null>(null);
 
-  const handleOpenForm = (id?:string) => {
+  const handleOpenForm = (id?: string) => {
     setOpenForm(true);
-    if(id) {
+    if (id) {
       setScheduleId(id as string);
-
     } else {
-      setScheduleId(null)
+      setScheduleId(null);
     }
-  }
+  };
   const handleOpenModal = () => {
     setOpenDeleteModal(true);
-  }
+  };
   const handleCloseModal = () => {
     setOpenDeleteModal(false);
-  }
+  };
 
-
-  const { alertColumn } = useAlertColumn(handleOpenForm,handleOpenModal);
+  const { alertColumn } = useAlertColumn(handleOpenForm, handleOpenModal);
   const [data, setData] = useState(schedules);
   const [selectedRow, setSelectedRow] = useState<any>([]);
   const alertRef: any = useRef(null);
   const itemPerPage = 10;
-  const detailItemPerPage = 1;
   const [page, setPage] = useState(0);
-  const [pageCount, setPageCount] = useState(
-    Math.ceil(customers.length / itemPerPage)
-  );
+  const [pageCount, setPageCount] = useState(Math.ceil(customers.length / itemPerPage));
   const [{ pageIndex, pageSize }, setPagination] = useState({
     pageIndex: 0,
     pageSize: itemPerPage,
   });
-  const pagination = useMemo(
-    () => ({
-      pageIndex,
-      pageSize,
-    }),
-    [pageIndex, pageSize]
-  );
+  const pagination = useMemo(() => ({
+    pageIndex,
+    pageSize,
+  }), [pageIndex, pageSize]);
 
   const toDetail = useCallback((selectedRow: any, columnId: any) => {
     if (alertRef && alertRef.current && columnId !== "checked") {
@@ -72,7 +56,6 @@ const ScheduleListPage = () => {
 
   const handleCheckRow = useCallback((rowsData: any) => {
     let temp = [...rowsData];
-
     setSelectedRow([...temp]);
   }, []);
 
@@ -83,37 +66,30 @@ const ScheduleListPage = () => {
   useEffect(() => {
     let startIndex = pageIndex * itemPerPage;
     let endIndex = page * itemPerPage;
-
     let data = schedules?.slice(startIndex, endIndex);
-
     setData(data);
-  }, [page]);
+  }, [page, pageIndex]);
 
   useEffect(() => {
     console.log({ selectedRow });
   }, [selectedRow]);
 
   const [openForm, setOpenForm] = useState<boolean>(false);
-  const [openDeleteModal,setOpenDeleteModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (openForm || openDeleteModal) {
       document.body.style.overflow = "hidden";
     }
-    
-    
-    
 
     return () => {
       document.body.style.overflow = "visible";
     };
-  }, [openForm,openDeleteModal]);
+  }, [openForm, openDeleteModal]);
 
   const handleCloseForm = () => {
     setOpenForm(false);
-  }
-
- 
+  };
 
   return (
     <div
@@ -125,10 +101,13 @@ const ScheduleListPage = () => {
         justifyContent: "center",
       }}
     >
-      {openForm ? (
-       <AddScheduleContainer handleClose={handleCloseForm} id={scheduleId as string} />
-      ) : null}
-      {openDeleteModal ? <DeleteModal handleClose={handleCloseModal} /> : null}
+      {openForm && (
+        <AddScheduleContainer
+          handleClose={handleCloseForm}
+          id={scheduleId as string}
+        />
+      )}
+      {openDeleteModal && <DeleteModal handleClose={handleCloseModal} />}
 
       <ScheduleListStyle>
         <div
@@ -195,7 +174,6 @@ const ScheduleListPage = () => {
               data={data}
               ref={alertRef}
               columns={alertColumn}
-              //   paginationStyle='firstlast'
               pagination={pagination}
               setPagination={setPagination}
               pageCount={pageCount}
@@ -208,7 +186,6 @@ const ScheduleListPage = () => {
               onRowClick={toDetail}
               enableSorting={true}
               stickyHeader={true}
-              // stickyFromTop={0}
               noDataLabel={""}
             />
           </div>
@@ -220,145 +197,147 @@ const ScheduleListPage = () => {
 
 export default ScheduleListPage;
 
-
-export const useAlertColumn = (handleOpenForm:(id?:string)=>void,handleOpenModal:()=>void) => {
+export const useAlertColumn = (
+  handleOpenForm: (id?: string) => void,
+  handleOpenModal: () => void
+) => {
   const table = createColumnHelper();
 
-  const alertColumn = useMemo(
-    () => [
-      table.display({
-        size: 5,
-        header: (props: any) => {
-          if (props) {
-            const { table } = props;
-            return (
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <IndeterminateCheckbox
-                  {...{
-                    checked: table.getIsAllRowsSelected(),
-                    indeterminate: table.getIsSomeRowsSelected(),
-                    onChange: table.getToggleAllRowsSelectedHandler(),
-                  }}
-                />
-              </div>
-            );
-          } else {
-            return <></>;
-          }
-        },
-        id: "checked",
-        cell: (props: any) => {
+  const alertColumn = useMemo(() => [
+    table.display({
+      size: 5,
+      header: (props: any) => {
+        if (props) {
+          const { table } = props;
           return (
             <div
               style={{
                 width: "100%",
                 display: "flex",
-                alignItems: "center",
-                marginTop: "3px",
                 justifyContent: "center",
               }}
             >
               <IndeterminateCheckbox
                 {...{
-                  checked: props.row.getIsSelected(),
-                  indeterminate: props.row.getIsSomeSelected(),
-                  onChange: props.row.getToggleSelectedHandler(),
+                  checked: table.getIsAllRowsSelected(),
+                  indeterminate: table.getIsSomeRowsSelected(),
+                  onChange: table.getToggleAllRowsSelectedHandler(),
                 }}
               />
             </div>
           );
-        },
-      }),
-      table.accessor("date", {
-        size: 100,
-        header: "Date",
-        id: "date",
-        cell: (props: any) => (
+        } else {
+          return <></>;
+        }
+      },
+      id: "checked",
+      cell: (props: any) => {
+        return (
           <div
             style={{
               width: "100%",
               display: "flex",
-              gap: ".5rem",
               alignItems: "center",
+              marginTop: "3px",
+              justifyContent: "center",
             }}
           >
-            <img src="/assets/calendar-schedule.svg" />
-            <p className="column">{props.row.original.date}</p>
+            <IndeterminateCheckbox
+              {...{
+                checked: props.row.getIsSelected(),
+                indeterminate: props.row.getIsSomeSelected(),
+                onChange: props.row.getToggleSelectedHandler(),
+              }}
+            />
           </div>
-        ),
-      }),
-      table.accessor("time", {
-        size: 100,
-        id: "time",
-        header: "Time",
-        cell: (props: any) => (
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              gap: ".5rem",
-              alignItems: "center",
-            }}
-          >
-            <img src="/assets/time-circle.svg" />
-            <p className="column">{props.row.original.time}</p>
-          </div>
-        ),
-      }),
-      table.accessor("location", {
-        size: 100,
-        id: "location",
-        enableSorting: true,
-        header: "Location",
-        cell: (props: any) => (
-          <div className="location">
-            <img src="/assets/location-schedule.svg" alt="" />
-            <p className="column">{props.row.original.location}</p>
-          </div>
-        ),
-      }),
-      table.accessor("price", {
-        size: 50,
-        id: "price",
-        enableSorting: true,
-        header: "Price",
-        align:"center",
-        cell: (props: any) => (
-          <p className="column">
-            Rp.{(props.row.original.price as number).toLocaleString()}
-          </p>
-        ),
-      }),
-      table.accessor("edit", {
-        size: 25,
-        enableSorting: false,
-        header: null,
-        id: "edit",
-        cell:(props:any) => (
-          <EditColumn onClick={()=>handleOpenForm(props.row.original.id)}>
-            <img src="/assets/edit.svg" />
-          </EditColumn>
-        ),
-      }),
-      table.accessor("delete", {
-        size: 25,
-        enableSorting: false,
-        header: null,
-        id: "delete",
-        cell: () => (
-          <DeleteColumn onClick={handleOpenModal}>
-            <img src="/assets/delete.svg" />
-          </DeleteColumn>
-        ),
-      }),
-    ],
-    [table]
-  );
-  return { alertColumn };
+        );
+      },
+    }),
+    table.accessor("date", {
+      size: 100,
+      header: "Date",
+      id: "date",
+      cell: (props: any) => (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            gap: ".5rem",
+            alignItems: "center",
+          }}
+        >
+          <img src="/assets/calendar-schedule.svg" alt="calendar-schedule" />
+          <p className="column">{props.row.original.date}</p>
+        </div>
+      ),
+    }),
+    table.accessor("time", {
+      size: 100,
+      id: "time",
+      header: "Time",
+      cell: (props: any) => (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            gap: ".5rem",
+            alignItems: "center",
+          }}
+        >
+          <img src="/assets/time-circle.svg" alt="time-circle" />
+          <p className="column">{props.row.original.time}</p>
+        </div>
+      ),
+    }),
+    table.accessor("location", {
+      size: 100,
+      id: "location",
+      enableSorting: true,
+      header: "Location",
+      cell: (props: any) => (
+        <div className="location">
+          <img src="/assets/location-schedule.svg" alt="" />
+          <p className="column">{props.row.original.location}</p>
+        </div>
+      ),
+    }),
+    table.accessor("price", {
+      size: 50,
+      id: "price",
+      enableSorting: true,
+      header: "Price",
+      align: "center",
+      cell: (props: any) => (
+        <p className="column">
+          Rp.{(props.row.original.price as number).toLocaleString()}
+        </p>
+      ),
+    }),
+    table.accessor("edit", {
+      size: 25,
+      enableSorting: false,
+      header: null,
+      id: "edit",
+      cell: (props: any) => (
+        <EditColumn onClick={() => handleOpenForm(props.row.original.id)}>
+          <img src="/assets/edit.svg" alt="edit" />
+        </EditColumn>
+      ),
+    }),
+    table.accessor("delete", {
+      size: 25,
+      enableSorting: false,
+      header: null,
+      id: "delete",
+      cell: () => (
+        <DeleteColumn onClick={handleOpenModal}>
+          <img src="/assets/delete.svg" alt="delete" />
+        </DeleteColumn>
+      ),
+    }),
+  ], [handleOpenForm, handleOpenModal, table]);
+
+  return {
+    alertColumn,
+  };
 };

@@ -4,7 +4,7 @@ import { Container } from "../../components/Container";
 import Footer from "../../components/Footer/Footer";
 import Tabs from "../../components/Common/Tabs/Tabs";
 import ResellerMainTab from "../../components/ResellerDetail/ResellerMainTab";
-import { ShopDetailsStyled } from "../../components/ResellerDetail/ResellerDetailStyled";
+// import { ShopDetailsStyled } from "../../components/ResellerDetail/ResellerDetailStyled";
 import ShopDetails from "../../components/ResellerDetail/ShopDetails";
 import ResellerProductTab from "../../components/ResellerDetail/ResellerProductTab";
 import ResellerReviewTab from "../../components/ResellerDetail/ResellerReviewTab";

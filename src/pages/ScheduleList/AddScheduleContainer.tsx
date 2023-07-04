@@ -14,7 +14,7 @@ import "react-time-picker/dist/TimePicker.css";
 import "react-clock/dist/Clock.css";
 import {
   LooseValue,
-  Value as DateValue,
+  // Value as DateValue,
 } from "react-calendar/dist/cjs/shared/types";
 interface Props {
   handleClose: () => void;
@@ -24,7 +24,7 @@ const AddScheduleContainer = ({ handleClose, id }: Props) => {
   const singleSchedule = schedules.find((schedule) => schedule.id === id);
 
   const date = new Date();
-  const today = date.toLocaleDateString();
+  // const today = date.toLocaleDateString();
 
   const [openCalendar, setOpenCalendar] = useState<boolean>(false);
 

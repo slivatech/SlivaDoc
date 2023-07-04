@@ -100,6 +100,7 @@ const DropdownContent: any = styled.div<DropdownContentProps>`
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CheckboxInput = styled.input`
   &:checked + ${Label} > ${DropdownContent} {
     display: block;

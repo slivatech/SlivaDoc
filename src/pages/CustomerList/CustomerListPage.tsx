@@ -59,7 +59,7 @@ const CustomerListPage = () => {
     let data = customers?.slice(startIndex, endIndex);
 
     setData(data);
-  }, [page]);
+  }, [page, pageIndex]);
 
   useEffect(() => {
     console.log({ selectedRow });

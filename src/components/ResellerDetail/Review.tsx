@@ -13,7 +13,7 @@ const Review: React.FC<ReviewProps> = ({ review }) => {
   return (
     <ReviewStyled>
       <div className="product-wrapper">
-        <img className="product-image" src={review.productImage} />
+        <img className="product-image" src={review.productImage} alt="product"/>
         <div className="product-content-wrapper">
           <div className="product-content">
             <h2 className="product-name">{review.productName}</h2>
@@ -27,14 +27,14 @@ const Review: React.FC<ReviewProps> = ({ review }) => {
             </div>
           </div>
           <div className="review-wrapper">
-            <img src={review.buyerImage} />
+            <img src={review.buyerImage} alt="buyer"/>
             <div className="buyer-review">
               <p className="buyer-name">{review.buyerName}</p>
-              {review.media ? <img  width={"100%"} src={review.media} /> : null}
+              {review.media ? <img  width={"100%"} src={review.media} alt="media"/> : null}
               <p>{review.reviewContent}</p>
               <div className="details">
                 <div className="satisfaction">
-                  <img src="/assets/thumbs-up.svg" />
+                  <img src="/assets/thumbs-up.svg" alt="thumbs"/>
                   <p>{review.satisfaction}</p>
                 </div>
                 <button
