@@ -27,6 +27,7 @@ import BookingDoctorPage from "./pages/BookingDoctor/BookingDoctorPage";
 import BookingPetHospitalPage from "./pages/BookingPetHospital/BookingPetHospitalPage";
 import ResellerDetailPage from "./pages/ResellerDetail/ResellerDetailPage";
 import CategoryPage  from "./pages/CategorySlivaShopPage/CategoryPage";
+import AddProductPage from "./pages/AddProduct/AddProductPage";
 
 const App = () => {
   const { width } = useWindowDimensions();
@@ -54,7 +55,8 @@ const App = () => {
         {/* <ScheduleListPage /> */}
         {/* <BookingPetHospitalPage /> */}
         {/* <ResellerDetailPage /> */}
-        <CategoryPage />
+        {/* <CategoryPage /> */}
+        <AddProductPage />
       </Provider>
     </ThemeProvider>
   );
