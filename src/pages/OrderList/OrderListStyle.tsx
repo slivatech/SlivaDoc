@@ -53,15 +53,18 @@ export const Header = styled.div`
     border: 1px solid #E4E4E4;
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    ul {
-        display: flex;
-        list-style-type: none;
-        flex-direction: row;
-        gap: 2.5rem;
-        padding: 19px 32px 17px;
-        color: #5C5555;
-        font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 19px 32px 17px;
+    button {
+      border: none;
+      background: #FFF;
+      color: #5C5555;
+      font-size: 16px;
+      cursor: pointer;
     }
+   
 `
 
 export const FilterContainer = styled.div`

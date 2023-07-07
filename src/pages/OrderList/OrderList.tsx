@@ -14,17 +14,22 @@ import { products } from "./OrderListData";
 import moneyIc from "../../assets/icon/payment.svg";
 import calenderIC from "../../assets/icon/Calendar.svg";
 import searchIc from "../../assets/icon/Search.svg";
+import EmptyImage from '../../assets/image/empty-page.png'
 import { Filter, FilterContainer, Header, IconColumn, NameColumn, StatusColumn } from "./OrderListStyle";
 import { Container } from "../PageArtikel/PageArtikelStyle";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Dropdown from "../../components/Common/Dropdown/Dropdown";
+import NestedDropdown from "../../components/Common/Dropdown/NestedDropdown";
 
 const OrderList = () => {
   const { alertColumn } = useAlertColumn();
   const [sort, setSort] = useState("Sort")
   const [filter, setFilter] = useState("Select Filter")
   const [search, setSearch] = useState("")
+  // header filter ==========================
+  const [categoryActive, setActive] = useState('All Orders');
+  // end of header filter ===================
   const [data, setData] = useState(products);
   const [selectedRow, setSelectedRow] = useState<any>([]);
   const [selectedData, setSelectedData] = useState<any>([]);
@@ -47,29 +52,52 @@ const OrderList = () => {
     [pageIndex, pageSize]
   );
 
-    const toDetail = useCallback((selectedRow: any, columnId: any) => {
-        if (alertRef && alertRef.current && columnId !== "checked") {
-        console.log({ selectedRow });
-        }
-    }, []);
+  const toDetail = useCallback((selectedRow: any, columnId: any) => {
+      if (alertRef && alertRef.current && columnId !== "checked") {
+      console.log({ selectedRow });
+      }
+  }, []);
 
-    const handleCheckRow = useCallback((rowsData: any) => {
-        let temp = [...rowsData];
+  const handleCheckRow = useCallback((rowsData: any) => {
+      let temp = [...rowsData];
 
-        setSelectedRow([...temp]);
-    }, []);
+      setSelectedRow([...temp]);
+  }, []);
 
-    useEffect(() => {
-        setPage(pageIndex + 1);
-    }, [pageIndex]);
+  useEffect(() => {
+      setPage(pageIndex + 1);
+  }, [pageIndex]);
 
-    useEffect(() => {
-        let startIndex = pageIndex * itemPerPage;
-        let endIndex = page * itemPerPage;
-        let data = products?.slice(startIndex, endIndex);
+  useEffect(() => {
+      let startIndex = pageIndex * itemPerPage;
+      let endIndex = page * itemPerPage;
+      let data = products?.slice(startIndex, endIndex);
 
-        setData(data);
-    }, [page]);
+      setData(data);
+  }, [page]);
+
+  const categoryHandler = (category: string) => {
+    let filtered: any = [];
+    setActive(category);
+    if (category === 'All Orders') {
+        setData(products)
+    }
+    products.forEach((element:any) => {
+        if (element.status === category) {
+            filtered.push(element)
+            setData(filtered)
+            // filtered = []
+        } else if (element.paymentStatus === category) {
+            filtered.push(element)
+            setData(filtered)
+            // filtered = []
+        }     
+    });
+    console.log(data);
+    setActive('');
+    filtered = []
+  }
+
     const sortir = [
         {
             value: 'Terbaru'
@@ -80,10 +108,38 @@ const OrderList = () => {
     ]
     const filters = [
         {
-            value: 'Terbaru'
+            value: 'Tipe Pesanan',
+            option: [
+                {
+                    value: 'Pre Order'
+                },
+                {
+                    value: 'Pengajuan pembatalan'
+                },
+            ]
         },
         {
-            value: 'Terlama'
+            value: 'Kurir',
+            option: [
+                {
+                    value: 'SlivaPack(Rekomendasi)'
+                },
+                {
+                    value: 'J&T'
+                },
+                {
+                    value: 'JNE'
+                },
+                {
+                    value: 'Pos Indonesia'
+                },
+                {
+                    value: 'SiCepat'
+                },
+                {
+                    value: 'TIKI'
+                },
+            ]
         },
     ]
 
@@ -91,6 +147,19 @@ const OrderList = () => {
     console.log({ selectedRow });
     console.log({ selectedData });
   }, [selectedData, selectedRow]);
+
+  if (products.length === 0) {
+    return (
+        <>
+            <Container style={{ background: "#fff", textAlign: 'center' }}>
+                <img src={EmptyImage}/>    
+                <h2 style={{fontSize: '24px', fontWeight: 'bold'}}>No orders yet</h2>
+                <p>Keep the spirit, fortune will not go away as long as you don't give up.</p>
+            </Container>
+        </>
+    )
+  }
+  
   return (
     <>
         <Container style={{ background: "rgba(153, 178, 198, 0.2)" }}>
@@ -100,15 +169,13 @@ const OrderList = () => {
             <h2 style={{ fontSize: "2rem", fontWeight: "700" }}>Order List</h2>
         </div>
         <Header>
-            <ul>
-                <li>All Orders</li>
-                <li>New Order</li>
-                <li>Ready to ship</li>
-                <li>In Delivery</li>
-                <li>Complained</li>
-                <li>Order Completed</li>
-                <li>Canceled</li>
-            </ul>
+          <button onClick={() => {categoryHandler('All Orders')}}>All Orders</button>
+          <button onClick={() => {categoryHandler('All Orders')}}>New Order</button>
+          <button onClick={() => {categoryHandler('Ready to Ship')}}>Ready to ship</button>
+          <button onClick={() => {categoryHandler('In Delivery')}}>In Delivery</button>
+          <button onClick={() => {categoryHandler('Complained')}}>Complained</button>
+          <button onClick={() => {categoryHandler('Completed')}}>Order Completed</button>
+          <button onClick={() => {categoryHandler('Cancel')}}>Canceled</button>
         </Header>
         <FilterContainer>
             <Dropdown
@@ -121,12 +188,12 @@ const OrderList = () => {
                 value={sort}
                 setValue={setSort}
             />
-            <Dropdown
+            <NestedDropdown
                 options={filters}
                 border= '1px solid #E4E4E4'
                 backgroundColor='#fff'
                 fontSize="14px"
-                width='174px'
+                width='200px'
                 height='40px'
                 value={filter}
                 setValue={setFilter}
