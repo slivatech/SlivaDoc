@@ -193,7 +193,7 @@ const OrderList = () => {
                 border= '1px solid #E4E4E4'
                 backgroundColor='#fff'
                 fontSize="14px"
-                width='200px'
+                width='250px'
                 height='40px'
                 value={filter}
                 setValue={setFilter}

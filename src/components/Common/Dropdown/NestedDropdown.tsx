@@ -3,21 +3,21 @@ import styled from "styled-components";
 import arrow from '../../../assets/icon/downArrow.png'
 
 type DropdownWrapProps = {
-  width: string;
+    width: string;
 };
-
-const DropdownWrap: any = styled.div<DropdownWrapProps>`
+  
+  const DropdownWrap: any = styled.div<DropdownWrapProps>`
     position: relative;
     display: inline-block;
     width: ${({ width }) => width};
     min-width: 100px;
     cursor: pointer;
-`;
+  `;
 
 const Label = styled.label`
   min-width: 150px;
-  background-color: red;
 `;
+
 type DropdownLabelProps = {
   height: string;
   border: string;
@@ -55,7 +55,7 @@ const DropdownLabel: any = styled.div<DropdownLabelProps>`
 type DropdownContentProps = {
   display: boolean;
   width?: string;
-  fontSize: string;
+  fontSize?: string;
 };
 
 const DropdownContent: any = styled.div<DropdownContentProps>`
@@ -64,7 +64,7 @@ const DropdownContent: any = styled.div<DropdownContentProps>`
   background-color: #fff;
   min-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 99;
   border-radius: 5px;
   margin-top: 5px;
   left: 0;
@@ -74,7 +74,6 @@ const DropdownContent: any = styled.div<DropdownContentProps>`
     color: black;
     padding: 3px;
     font-size: ${({ fontSize }) => fontSize};
-    /* width:inherit; */
     text-decoration: none;
   }
 
@@ -86,35 +85,31 @@ const DropdownContent: any = styled.div<DropdownContentProps>`
     border-radius: 0px 0px 10px 10px;
   }
 
-  ul {
-    border: 1px solid #d1d5db;
-    display: none;
-    left: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-}
+  
   .hidden {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &:hover {
-        ul {
-            display: block;
-        }
-    }
+  }
+`;
+
+const DropdownItem = styled.ul<DropdownContentProps>`
+    display: ${({ display }) => (display ? "block" : "none")};
+    font-size: ${({ fontSize }) => fontSize};
+     min-width: 100%;
+    border: 1px solid #d1d5db;
+    left: 100%;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    list-style-type: none;
+    background-color: #fff;
 
     li {
         display: flex;
+        background-color: #fff;
     }
-  }
-
-  
-`;
+`
 
 const CheckboxInput = styled.input`
   &:checked + ${Label} > ${DropdownContent} {
@@ -146,18 +141,7 @@ const NestedDropdown: React.FC<DropdownProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isChecked, setIsChecked] = useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setIsChecked(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, []);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <DropdownWrap
@@ -174,27 +158,27 @@ const NestedDropdown: React.FC<DropdownProps> = ({
       </DropdownLabel>
       <DropdownContent display={isChecked} fontSize={fontSize}>
         {options?.map((data: any, idx: number) => (
-            <div className="hidden">
-                <div
-                    key={idx}
-                >
-                    {data?.value}
+            <>
+                <div className="hidden" key={idx} onClick={() => {setIsOpen(!isOpen)}}>
+                    <div   >
+                        {data?.value}
+                    </div>
+                    <div>{'>'}</div>
                 </div>
-                <div>{'>'}</div>
-                <ul>
+                <DropdownItem display={isOpen} fontSize={fontSize}>
                 {data?.option.map((data: any, idx: number) => (
                     <li
                     key={idx}
                     onClick={(e: any) => {
                         setValue(e.target.textContent);
-                      }}
+                        }}
                     >
                         <CheckboxInput type="checkbox" id="checkbox" />
                         <Label htmlFor="checkbox">{data?.value}</Label>
                     </li>
                 ))}
-                </ul>
-            </div>
+                </DropdownItem>
+            </>
         ))}
       </DropdownContent>
     </DropdownWrap>
