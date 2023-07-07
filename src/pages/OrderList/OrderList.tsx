@@ -21,6 +21,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Dropdown from "../../components/Common/Dropdown/Dropdown";
 import NestedDropdown from "../../components/Common/Dropdown/NestedDropdown";
+import MultiDropdown from "../../components/Common/Dropdown/MultiDropdown";
 
 const OrderList = () => {
   const { alertColumn } = useAlertColumn();
@@ -183,12 +184,12 @@ const OrderList = () => {
                 border= '1px solid #E4E4E4'
                 backgroundColor='#fff'
                 fontSize="14px"
-                width='174px'
+                width='150px'
                 height='40px'
                 value={sort}
                 setValue={setSort}
             />
-            <NestedDropdown
+            {/* <NestedDropdown
                 options={filters}
                 border= '1px solid #E4E4E4'
                 backgroundColor='#fff'
@@ -197,6 +198,12 @@ const OrderList = () => {
                 height='40px'
                 value={filter}
                 setValue={setFilter}
+            /> */}
+            <MultiDropdown
+              options={filters}
+              value={filter}
+              setValue={setFilter}
+              width='170px'
             />
             <Filter>
                 <img src={searchIc} alt="search" />
