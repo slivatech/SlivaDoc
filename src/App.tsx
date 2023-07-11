@@ -5,7 +5,7 @@ import DetailArtikel from "./pages/DetailArtikel/DetailArtikel";
 import GlobalCss from "./styles/Global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/Theme";
-import { useWindowDimensions } from './Hooks/useWindowDimensions';
+import { useWindowDimensions } from './hooks/useWindowDimensions';
 import Auth from './pages/Auth/Auth';
 import TablePage from './pages/Example/TablePage';
 import Invoice from './pages/InvoiceList/Invoice';
@@ -27,7 +27,7 @@ const App = () => {
       {/* <HomePage width={dimension.width} />
       <Artikel />
       <DetailArtikel /> */}
-      <Invoice/>
+      <Invoice />
     </ThemeProvider>
   );
 };

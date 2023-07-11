@@ -4,9 +4,9 @@ import { customers } from './InvoiceListData'
 import moneyIc from '../../assets/icon/payment.svg'
 import calenderIC from '../../assets/icon/Calendar.svg'
 import editIc from '../../assets/icon/edit.svg'
-import { Edit, IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
-import { GlobalFilter } from './GlobalFilter'
+import { Edit, GlobalSearch, IconColumn, NameColumn, StatusColumn } from './InvoiceListStyle'
 import { Container } from '../PageArtikel/PageArtikelStyle'
+import searchIc from '../../assets/icon/Search.svg'
 
 const Invoice = () => {
     const [editable, setEditable] = useState<number>(0);
@@ -64,8 +64,11 @@ const Invoice = () => {
   return (
     <Container style={{ background: 'rgba(153, 178, 198, 0.2)'}}>
         <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '2rem'}}>
-            <h2 style={{ fontSize: '2rem', fontWeight: '700'}}>Invoice List</h2>
-            <GlobalFilter/>
+            <h2 style={{ fontSize: '25.63px', fontWeight: '700'}}>Invoice List</h2>
+            <GlobalSearch>
+                <input type="text" placeholder="Search" />
+                <img src={searchIc} />
+            </GlobalSearch>
         </div>
         <div style={{width: '100%', height:'100%'}}>
             <TableV8 
